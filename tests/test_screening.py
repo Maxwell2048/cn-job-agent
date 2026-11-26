@@ -111,3 +111,11 @@ def test_posting_helpers():
 def test_planner_keyword_match(title, hits):
     from cn_job_agent.agents.planner import matched_keywords
     assert matched_keywords(title, ["RAG", "BI", "数据分析", "全栈"]) == hits
+
+
+@pytest.mark.parametrize("value, flagged", [("一定", False), ("有一定的软件开发经验", False), ("5", True), ("三", True),
+                                            ("3年", True), ("两年以上", True), ("3+ years", True)])
+def test_extraction_years_need_a_number_of_years(value, flagged):
+    requirement = {"category": "experience", "importance": "required", "source_quote": "x",
+                   "qualifiers": [{"type": "years", "value": value, "source_quote": "x"}]}
+    assert bool(screening.extraction_flags([requirement], PROFILE, [])) is flagged

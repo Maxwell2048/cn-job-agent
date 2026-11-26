@@ -227,7 +227,11 @@ def extraction_flags(requirements, profile, rules):
         for qualifier in requirement.get("qualifiers", []):
             if qualifier.get("type") != "years":
                 continue
-            match = re.search(NUM, str(qualifier.get("value", "")))
+            # A bare number ("5", "三") or a number with 年 ("3年", "两年以上");
+            # "一定的经验" has 一 inside a word and is not a number of years.
+            value = str(qualifier.get("value", "")).strip()
+            match = re.fullmatch(NUM + r"\s*\+?", value) or re.search(NUM + r"\s*\+?\s*年", value) \
+                or re.search(r"(\d+)\s*\+?\s*years?", value, re.I)
             years = cn_number(match[1]) if match else None
             if years is None or years <= own:
                 continue

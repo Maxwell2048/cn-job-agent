@@ -132,9 +132,11 @@ def _invoke(toolkit, checkpointer, run_id, payload):
     snapshot = graph.get_state(config)
     if snapshot.next:
         payloads = [i.value for task in snapshot.tasks for i in task.interrupts]
-        _mark(toolkit.database_url, run_id, status="interrupted", error="")
-        return Outcome(run_id, "interrupted", screening=snapshot.values.get("screening", {}),
-                       interrupt=payloads[0] if payloads else None)
+        screening = snapshot.values.get("screening", {})
+        # Saved on the run as well, so `cn-agent runs` can say why it is waiting.
+        _mark(toolkit.database_url, run_id, status="interrupted", error="", screening=screening,
+              trace=snapshot.values.get("trace", []))
+        return Outcome(run_id, "interrupted", screening=screening, interrupt=payloads[0] if payloads else None)
     with session_scope(toolkit.database_url) as s:
         run = s.get(AgentRun, run_id)
         return Outcome(run_id, run.status, run.report_path, run.screening, run.summary, error=run.error)
