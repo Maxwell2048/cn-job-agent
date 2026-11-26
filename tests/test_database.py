@@ -58,7 +58,7 @@ def test_seed_and_profile_upserts(pg_url):
     with session_scope(pg_url) as s:
         company = s.scalar(select(Company).where(Company.key == "acme"))
         assert company.name == "Acme 2"
-        [program] = s.scalars(select(CampusProgram)).all()
+        [program] = s.scalars(select(CampusProgram).where(CampusProgram.company_id == company.id)).all()
         assert program.window_start == date(2026, 1, 1) and program.window_end == date(2027, 12, 31)
         assert program.checked_on == date(2026, 11, 21)
 

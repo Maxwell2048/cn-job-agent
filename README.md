@@ -2,7 +2,34 @@
 
 用多个 Agent 协作查找国内的 Agent 开发、AI 全栈、数据和技术支持岗位：先确认求职意向，再按届别窗口、城市和证据匹配筛选岗位。经历库和证据检索复用 [job_rag_starter](../job_rag_starter)。
 
-> 当前完成 **P1**：粘贴一个 JD，由 LangGraph 调度筛选 Agent 和匹配 Agent，给出带原文引用的中文匹配报告。岗位采集和 React 前端在后续阶段加入，见文末路线图。
+> 当前完成 **P2**：搜索规划 Agent 从企业校招官网采集岗位，再由 LangGraph 调度筛选 Agent 和匹配 Agent，给出带原文引用的中文匹配报告。React 前端在后续阶段加入，见文末路线图。
+
+## 搜索规划 Agent（P2）
+
+```mermaid
+flowchart LR
+    P[planner<br/>本地模型 + bind_tools] -- tool_calls --> T[ToolNode]
+    T -- 工具结果 --> P
+    P -- 不再调用工具 --> E([结束])
+    T --- L[list_sources<br/>网站、届别判断、城市]
+    T --- S[search_jobs<br/>标题和城市，不含全文]
+    T --- V[save_jobs<br/>取完整 JD 存进 job_postings]
+```
+
+| 部分 | 说明 |
+| --- | --- |
+| 采集工具 | 读取企业校招官网自己页面调用的公开 JSON 接口，不登录、不过验证码、每个网站每秒最多 1 次请求。目前支持腾讯（join.qq.com）和 zhiye 平台上的科大讯飞、传音；新网站加一个 collector 即可 |
+| Agent 模式 | LangGraph 工具调用循环：模型自己决定在哪个网站搜什么关键词，读搜索结果的标题，判断哪些岗位符合求职画像再保存，每次保存写一句理由。工具只返回标题和城市，模型必须先搜到才能保存 |
+| 规则模式 | 同样三个工具、固定计划：每个届别窗口没排除的网站 × 每个岗位关键词，保留标题含关键词、在目标城市、不是实习和资深岗的结果。英文关键词按整词匹配（RAG 不会匹配 storage） |
+| auto 模式 | 本地模型在线且工具调用成功就用 Agent，否则自动改用规则模式，原因记在采集记录里 |
+| 采集记录 | `collection_runs` 表保存每次搜了什么、看到和保存了多少、Agent 的每次工具调用 |
+
+```powershell
+.\.venv\Scripts\cn-agent.exe collect                     # auto 模式
+.\.venv\Scripts\cn-agent.exe collections --trace         # 看 Agent 的工具调用过程
+.\.venv\Scripts\cn-agent.exe run --pending --limit 5     # 依次筛选、匹配新采集的岗位
+.\.venv\Scripts\cn-agent.exe schedule install --time 09:00   # Windows 任务计划：每天采集并处理
+```
 
 ## Agent 图（P1）
 
@@ -154,6 +181,6 @@ docker compose up -d db
 | --- | --- |
 | P0 ✅ | 仓库骨架、Postgres + pgvector、复用 RAG 核心、校招窗口数据 |
 | **P1 ✅** | 粘贴 JD → 筛选 Agent（届别、经验年限、学历门槛、年龄）→ 匹配 Agent（逐条要求的证据判断），用 LangGraph 串起来，可暂停、可续跑 |
-| P2 | 校招官网采集工具、搜索规划 Agent、定时任务 |
+| **P2 ✅** | 校招官网采集工具、搜索规划 Agent（工具调用 + 规则兜底）、待处理队列、定时任务 |
 | P3 | FastAPI + React 前端、Agent 运行轨迹可视化、中文简历和打招呼语 |
 | P4 | 面试准备、虚构数据的公开演示版 |

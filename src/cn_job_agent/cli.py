@@ -19,6 +19,7 @@
     cn-agent llm check              is the local model reachable?
 """
 import argparse
+import json
 import subprocess
 import sys
 from datetime import date
@@ -280,6 +281,8 @@ def _print_outcome(outcome):
 def cmd_run(args, settings):
     from .agents import runner
     toolkit = runner.Toolkit(settings)
+    if args.pending:
+        return _run_pending(args, settings, toolkit)
     with runner.postgres_checkpointer(settings) as saver:
         if args.resume:
             approve = True if args.approve else False if args.decline else None
@@ -290,6 +293,94 @@ def cmd_run(args, settings):
             outcome = runner.start(toolkit, saver, args.posting_id, force=args.force,
                                    auto_approve=args.approve_review)
     return _print_outcome(outcome)
+
+
+def _run_pending(args, settings, toolkit):
+    from .agents import runner
+    if not runner.pending_postings(toolkit.database_url, 1):
+        _out("没有待处理的新岗位")
+        return 0
+    try:
+        toolkit.get_llm()
+    except Exception as exc:  # noqa: BLE001
+        _out(f"本地模型不可用，先不处理新岗位：{exc}")
+        return 0
+    with runner.postgres_checkpointer(settings) as saver:
+        outcomes = runner.process_pending(toolkit, saver, limit=args.limit, auto_approve=args.approve_review,
+                                          on_start=lambda pid: _out(f"\n—— 岗位 {pid}"))
+        for _, outcome in outcomes:
+            _print_outcome(outcome)
+    return 0
+
+
+def cmd_collect(args, settings):
+    from .agents.collect import collect
+    _out(f"开始采集（模式 {args.mode}）……")
+    outcome = collect(settings, mode=args.mode, max_saves=args.max_saves, max_searches=args.max_searches)
+    _out(f"采集 {outcome.run_id}：{outcome.status}，实际模式 {outcome.mode}")
+    s = outcome.stats
+    _out(f"搜索 {s['searches']} 次，看到 {s['seen']} 个岗位，新保存 {s['saved']} 个，已存在 {s['duplicates']} 个，"
+         f"出错 {s['errors']} 次")
+    for item in outcome.saved:
+        _out(f"  岗位 {item['posting_id']} · {item['title']}  [{item['source']}]  {item.get('reason') or ''}")
+    if outcome.error:
+        _out(f"错误：{outcome.error}")
+    if outcome.saved:
+        _out("处理新岗位：cn-agent run --pending")
+    return 0 if outcome.status == "done" else 1
+
+
+def cmd_collections(args, settings):
+    from .db.models import CollectionRun
+    from .db.session import session_scope
+    with session_scope(settings.database_url) as session:
+        for run in session.scalars(select(CollectionRun).order_by(CollectionRun.started_at.desc()).limit(args.limit)):
+            stats = run.stats or {}
+            _out(f"{run.id}  [{run.status}]  模式 {run.mode}  搜索 {stats.get('searches', 0)}  "
+                 f"新保存 {stats.get('saved', 0)}" + (f"  错误：{run.error[:80]}" if run.error else ""))
+            if args.trace:
+                for step in run.trace or []:
+                    detail = step.get("args") or step.get("text") or step.get("keywords")
+                    _out(f"    {step['type']:<11} {step.get('tool', '')} {json.dumps(detail, ensure_ascii=False)[:160]}")
+    return 0
+
+
+TASK_NAME = "cn-job-agent-collect"
+
+
+def _schedule_script(settings):
+    exe = PROJECT_ROOT / ".venv" / "Scripts" / "cn-agent.exe"
+    log = settings.state_dir / "scheduled.log"
+    script = settings.state_dir / "scheduled_collect.cmd"
+    script.parent.mkdir(parents=True, exist_ok=True)
+    script.write_text("\r\n".join([
+        "@echo off",
+        "chcp 65001 > nul",
+        f'cd /d "{PROJECT_ROOT}"',
+        f'echo ==== %date% %time% >> "{log}"',
+        f'"{exe}" collect --mode auto >> "{log}" 2>&1',
+        f'"{exe}" run --pending --limit 5 >> "{log}" 2>&1',
+    ]) + "\r\n", encoding="utf-8")
+    return script
+
+
+def cmd_schedule(args, settings):
+    if args.action == "show":
+        done = subprocess.run(["schtasks", "/Query", "/TN", TASK_NAME, "/V", "/FO", "LIST"], capture_output=True)
+        _out(done.stdout.decode("gbk", errors="replace") if done.returncode == 0 else "没有安装定时采集")
+        return 0
+    if args.action == "remove":
+        done = subprocess.run(["schtasks", "/Delete", "/TN", TASK_NAME, "/F"], capture_output=True)
+        _out("已删除定时采集" if done.returncode == 0 else done.stderr.decode("gbk", errors="replace"))
+        return done.returncode
+    script = _schedule_script(settings)
+    done = subprocess.run(["schtasks", "/Create", "/SC", "DAILY", "/TN", TASK_NAME, "/TR", f'"{script}"',
+                           "/ST", args.time, "/F"], capture_output=True)
+    if done.returncode:
+        _out(done.stderr.decode("gbk", errors="replace"))
+        return done.returncode
+    _out(f"已安装：每天 {args.time} 采集并处理最多 5 个新岗位；日志 {settings.state_dir / 'scheduled.log'}")
+    return 0
 
 
 def cmd_runs(args, settings):
@@ -380,6 +471,8 @@ def build_parser():
     run.add_argument("--force", action="store_true", help="硬性不符也继续匹配")
     run.add_argument("--approve-review", action="store_true", help="需人工确认时直接继续，不暂停")
     run.add_argument("--resume", metavar="RUN_ID", help="继续一个暂停或失败的运行")
+    run.add_argument("--pending", action="store_true", help="依次处理还没运行过的新岗位")
+    run.add_argument("--limit", type=int, default=5, help="--pending 时最多处理几个")
     answer = run.add_mutually_exclusive_group()
     answer.add_argument("--approve", action="store_true")
     answer.add_argument("--decline", action="store_true")
@@ -388,6 +481,19 @@ def build_parser():
     runs.add_argument("--limit", type=int, default=20)
     runs.set_defaults(func=cmd_runs)
     sub.add_parser("graph", help="打印 Agent 图（Mermaid）").set_defaults(func=cmd_graph)
+    collect = sub.add_parser("collect", help="搜索规划 Agent：从校招官网采集岗位")
+    collect.add_argument("--mode", choices=["auto", "agent", "rules"], default="auto")
+    collect.add_argument("--max-saves", type=int, default=30)
+    collect.add_argument("--max-searches", type=int, default=100)
+    collect.set_defaults(func=cmd_collect)
+    collections = sub.add_parser("collections", help="最近的采集记录")
+    collections.add_argument("--limit", type=int, default=10)
+    collections.add_argument("--trace", action="store_true", help="显示 Agent 的工具调用过程")
+    collections.set_defaults(func=cmd_collections)
+    schedule = sub.add_parser("schedule", help="Windows 定时采集（任务计划程序）")
+    schedule.add_argument("action", choices=["show", "install", "remove"])
+    schedule.add_argument("--time", default="09:00", help="每天几点运行，HH:MM")
+    schedule.set_defaults(func=cmd_schedule)
     llm = sub.add_parser("llm", help="本地模型").add_subparsers(dest="llm_command", required=True)
     llm.add_parser("check", help="检查本地模型能否连接").set_defaults(func=cmd_llm_check)
     return parser

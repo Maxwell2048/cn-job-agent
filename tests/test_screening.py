@@ -99,3 +99,15 @@ def test_posting_helpers():
     assert postings.infer_channel("熟悉 Python") == "unknown"
     assert postings.infer_title("\n\n## AI Agent 开发工程师\n职责") == "AI Agent 开发工程师"
     assert postings.normalize("﻿a\r\nb") == "a\nb\n"
+
+
+@pytest.mark.parametrize("title, hits", [
+    ("RAG 应用工程师", ["RAG"]),
+    ("Storage Engineer", []),                    # "rag" inside "storage" is not RAG
+    ("Mobile 开发", []),                          # "bi" inside "mobile" is not BI
+    ("BI 数据分析师", ["BI", "数据分析"]),
+    ("AI全栈工程师", ["全栈"]),
+])
+def test_planner_keyword_match(title, hits):
+    from cn_job_agent.agents.planner import matched_keywords
+    assert matched_keywords(title, ["RAG", "BI", "数据分析", "全栈"]) == hits

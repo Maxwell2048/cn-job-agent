@@ -151,6 +151,23 @@ def start(toolkit, checkpointer, posting_id, force=False, auto_approve=False):
                    {"run_id": run_id, "posting_id": posting_id, "options": options})
 
 
+def pending_postings(database_url, limit):
+    with session_scope(database_url) as s:
+        from sqlalchemy import select
+        return list(s.scalars(select(JobPosting.id).where(JobPosting.status == "new")
+                              .order_by(JobPosting.id).limit(limit)))
+
+
+def process_pending(toolkit, checkpointer, limit=5, auto_approve=False, on_start=None):
+    """Run the job graph on postings nobody has looked at yet, oldest first."""
+    outcomes = []
+    for posting_id in pending_postings(toolkit.database_url, limit):
+        if on_start:
+            on_start(posting_id)
+        outcomes.append((posting_id, start(toolkit, checkpointer, posting_id, auto_approve=auto_approve)))
+    return outcomes
+
+
 def resume(toolkit, checkpointer, run_id, approve=None):
     """approve=True/False answers the review question; None retries a failed run."""
     with session_scope(toolkit.database_url) as s:

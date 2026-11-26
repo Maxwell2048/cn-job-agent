@@ -126,9 +126,14 @@ class KbChunk(Base):
 
 class JobPosting(Base):
     __tablename__ = "job_postings"
+    __table_args__ = (UniqueConstraint("source", "external_id", name="uq_postings_source_external"),)
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    source: Mapped[str] = mapped_column(String(32), default="manual")    # manual | file | clipboard | stdin
+    # manual | file | clipboard | stdin, or a collector key such as tencent / zhiye:iflytek
+    source: Mapped[str] = mapped_column(String(32), default="manual")
+    external_id: Mapped[str | None] = mapped_column(String(128), nullable=True)   # the job site's own id
+    posted_at: Mapped[str] = mapped_column(String(40), default="")
+    collection_run_id: Mapped[str | None] = mapped_column(String(40), nullable=True)
     title: Mapped[str] = mapped_column(String(300), default="")
     company_name: Mapped[str] = mapped_column(String(300), default="")
     company_id: Mapped[int | None] = mapped_column(ForeignKey("companies.id", ondelete="SET NULL"),
@@ -191,3 +196,18 @@ class RequirementMatch(Base):
     errors: Mapped[list] = mapped_column(JSON, default=list)
 
     run: Mapped[AgentRun] = relationship(back_populates="matches")
+
+
+class CollectionRun(Base):
+    """One run of the search planner: which searches it made and what it saved."""
+    __tablename__ = "collection_runs"
+
+    id: Mapped[str] = mapped_column(String(40), primary_key=True)
+    mode: Mapped[str] = mapped_column(String(16))                       # agent | rules
+    status: Mapped[str] = mapped_column(String(16), default="running")  # running | done | failed
+    plan: Mapped[list] = mapped_column(JSON, default=list)
+    stats: Mapped[dict] = mapped_column(JSON, default=dict)
+    trace: Mapped[list] = mapped_column(JSON, default=list)
+    error: Mapped[str] = mapped_column(Text, default="")
+    started_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+    finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
