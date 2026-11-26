@@ -72,6 +72,7 @@ class Toolkit:
                "judgment_prompt": bridge.load(home, "evidence_matcher").JUDGMENT_PROMPT_VERSION}
         if "llm" in self._built:
             out["model"] = getattr(self._built["llm"], "model", "")
+            out["provider"] = self.settings.llm_provider
         return out
 
 

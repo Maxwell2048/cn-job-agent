@@ -14,7 +14,6 @@ rules mode   the same tools driven by a fixed plan: every role keyword on
              are in a target city. Used when no model is available.
 """
 import json
-import os
 import re
 from typing import Annotated, TypedDict
 
@@ -262,14 +261,7 @@ def summarize_messages(messages):
 
 
 def build_chat_model(settings):
-    """A LangChain chat model for the local OpenAI-compatible server in job_rag_starter's config.
+    """A tool-calling LangChain chat model on the configured provider (local or a mainstream API).
     Tracing to LangSmith stays off: prompts contain the personal profile."""
-    from langchain_openai import ChatOpenAI
-
-    from ..rag import bridge
-    os.environ["LANGSMITH_TRACING"] = "false"
-    os.environ["LANGCHAIN_TRACING_V2"] = "false"
-    config = bridge.load(settings.job_rag_home, "local_llm").load_config(settings.llm_config_file)
-    return ChatOpenAI(model=config["model"], base_url=config["base_url"], api_key=config.get("api_key", "local"),
-                      temperature=0, timeout=config.get("timeout_seconds", 300),
-                      extra_body=config.get("extra_body") or None)
+    from .. import llm
+    return llm.build_chat_model(settings)

@@ -303,7 +303,7 @@ def _run_pending(args, settings, toolkit):
     try:
         toolkit.get_llm()
     except Exception as exc:  # noqa: BLE001
-        _out(f"本地模型不可用，先不处理新岗位：{exc}")
+        _out(f"模型不可用，先不处理新岗位：{exc}")
         return 0
     with runner.postgres_checkpointer(settings) as saver:
         outcomes = runner.process_pending(toolkit, saver, limit=args.limit, auto_approve=args.approve_review,
@@ -402,13 +402,51 @@ def cmd_graph(args, settings):
 
 
 def cmd_llm_check(args, settings):
-    from .agents.matching import build_llm
+    from . import llm
     try:
-        llm = build_llm(settings)
+        resolved = llm.resolve(settings)
+        adapter = llm.build_json_llm(settings, resolved)
     except Exception as exc:  # noqa: BLE001
-        _out(f"本地模型不可用：{exc}")
+        _out(f"模型不可用（CN_LLM_PROVIDER={settings.llm_provider}）：{exc}")
         return 1
-    _out(f"本地模型可用：{getattr(llm, 'model', '')}（配置 {settings.llm_config_file}）")
+    _out(f"模型：{resolved.label} · {resolved.model}")
+    _out(f"隐私：{resolved.privacy_note()}")
+    if not args.ping:
+        _out("加 --ping 发一个最小请求，确认 JSON 输出和工具调用是否可用")
+        return 0
+    code = 0
+    try:
+        data = adapter.generate_json("ping", "只输出 JSON。", {"say": "ok"},
+                                     {"type": "object", "required": ["ok"], "properties": {"ok": {"type": "boolean"}}},
+                                     timeout_seconds=60)
+        _out(f"JSON 输出：可用（{data}）")
+    except Exception as exc:  # noqa: BLE001
+        _out(f"JSON 输出：失败（{exc}）")
+        code = 1
+    try:
+        from langchain_core.tools import tool
+
+        @tool
+        def echo(text: str) -> str:
+            """Echo the given text back."""
+            return text
+
+        reply = llm.build_chat_model(settings, resolved).bind_tools([echo]).invoke(
+            "调用 echo 工具，参数 text 为 ok。")
+        _out("工具调用：可用，搜索规划可以用 Agent 模式" if reply.tool_calls
+             else "工具调用：模型没有发起工具调用，collect 的 auto 模式会改用规则")
+    except Exception as exc:  # noqa: BLE001
+        _out(f"工具调用：失败（{exc.__class__.__name__}: {str(exc)[:200]}），collect 的 auto 模式会改用规则")
+    return code
+
+
+def cmd_llm_providers(args, settings):
+    from . import llm
+    _out(f"当前：CN_LLM_PROVIDER={settings.llm_provider}\n")
+    _out(f"{'local':<18} 本机模型（job_rag_starter 的 config.local.json）")
+    for p in llm.PROVIDERS.values():
+        keys = "、".join(("CN_LLM_API_KEY",) + p.key_env)
+        _out(f"{p.key:<18} {p.label}  {p.base_url or '需要 CN_LLM_BASE_URL'}  密钥：{keys}")
     return 0
 
 
@@ -494,8 +532,11 @@ def build_parser():
     schedule.add_argument("action", choices=["show", "install", "remove"])
     schedule.add_argument("--time", default="09:00", help="每天几点运行，HH:MM")
     schedule.set_defaults(func=cmd_schedule)
-    llm = sub.add_parser("llm", help="本地模型").add_subparsers(dest="llm_command", required=True)
-    llm.add_parser("check", help="检查本地模型能否连接").set_defaults(func=cmd_llm_check)
+    llm = sub.add_parser("llm", help="语言模型（本机或主流 API）").add_subparsers(dest="llm_command", required=True)
+    check = llm.add_parser("check", help="当前模型和数据去向；--ping 实际发一个最小请求")
+    check.add_argument("--ping", action="store_true")
+    check.set_defaults(func=cmd_llm_check)
+    llm.add_parser("providers", help="支持的服务商").set_defaults(func=cmd_llm_providers)
     return parser
 
 

@@ -2,6 +2,7 @@
 from functools import lru_cache
 from pathlib import Path
 
+from pydantic import SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -17,6 +18,17 @@ class Settings(BaseSettings):
     profile_path: Path = Path("profile.local.yaml")
     seed_path: Path = PROJECT_ROOT / "data" / "seed" / "campus_2027.yaml"
     offline: bool = True
+    # Language model: "local" (job_rag_starter's config.local.json) or a mainstream API,
+    # see cn_job_agent.llm.PROVIDERS. Cloud providers need CN_LLM_MODEL and an API key.
+    llm_provider: str = "local"
+    llm_model: str = ""
+    llm_api_key: SecretStr | None = None
+    llm_base_url: str = ""
+    llm_response_format: str = ""          # empty: the provider's default
+    llm_context_budget: int | None = None
+    llm_max_output_tokens: int | None = None
+    llm_timeout_seconds: int = 300
+    llm_temperature: float = 0.0
     # Local model config in job_rag_starter's format (defaults to its config.local.json)
     llm_config: Path | None = None
     outputs_dir: Path = PROJECT_ROOT / "outputs"

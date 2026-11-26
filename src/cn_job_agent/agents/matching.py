@@ -13,7 +13,7 @@ from sqlalchemy import select
 
 from ..db.models import KbChunk
 from ..db.session import session_scope
-from ..rag import bridge, store
+from ..rag import store
 
 VALUE = {"direct": 1.0, "related": 0.5, "insufficient": 0.0}
 WEIGHT = {"required": 2.0, "unspecified": 1.0, "preferred": 0.5}
@@ -53,12 +53,10 @@ class PgRetriever:
 
 
 def build_llm(settings):
-    """The local model adapter from job_rag_starter's config, with diagnostics
-    written to this project's state folder instead of job_rag_starter's."""
-    local_llm = bridge.load(settings.job_rag_home, "local_llm")
-    config = local_llm.load_config(settings.llm_config_file)
-    config["diagnostics_dir"] = str(settings.state_dir / "llm_diagnostics")
-    return local_llm.build_llm(config)
+    """The JSON-task model adapter for the configured provider (local model or a
+    mainstream API, see cn_job_agent.llm); diagnostics go to this project's state folder."""
+    from .. import llm
+    return llm.build_json_llm(settings)
 
 
 def summarize(matches):

@@ -8,7 +8,7 @@
 
 ```mermaid
 flowchart LR
-    P[planner<br/>本地模型 + bind_tools] -- tool_calls --> T[ToolNode]
+    P[planner<br/>语言模型 + bind_tools] -- tool_calls --> T[ToolNode]
     T -- 工具结果 --> P
     P -- 不再调用工具 --> E([结束])
     T --- L[list_sources<br/>网站、届别判断、城市]
@@ -21,7 +21,7 @@ flowchart LR
 | 采集工具 | 读取企业校招官网自己页面调用的公开 JSON 接口，不登录、不过验证码、每个网站每秒最多 1 次请求。目前支持腾讯（join.qq.com）和 zhiye 平台上的科大讯飞、传音；新网站加一个 collector 即可 |
 | Agent 模式 | LangGraph 工具调用循环：模型自己决定在哪个网站搜什么关键词，读搜索结果的标题，判断哪些岗位符合求职画像再保存，每次保存写一句理由。工具只返回标题和城市，模型必须先搜到才能保存 |
 | 规则模式 | 同样三个工具、固定计划：每个届别窗口没排除的网站 × 每个岗位关键词，保留标题含关键词、在目标城市、不是实习和资深岗的结果。英文关键词按整词匹配（RAG 不会匹配 storage） |
-| auto 模式 | 本地模型在线且工具调用成功就用 Agent，否则自动改用规则模式，原因记在采集记录里 |
+| auto 模式 | 模型可用且工具调用成功就用 Agent，否则自动改用规则模式，原因记在采集记录里 |
 | 采集记录 | `collection_runs` 表保存每次搜了什么、看到和保存了多少、Agent 的每次工具调用 |
 
 ```powershell
@@ -37,7 +37,7 @@ flowchart LR
 flowchart TD
     S([开始]) --> L[load_posting<br/>读取岗位、画像、企业校招窗口]
     L --> R[rule_screen<br/>筛选 Agent：规则]
-    L --> X[extract<br/>提取 JD 要求：本地模型]
+    L --> X[extract<br/>提取 JD 要求：语言模型]
     R --> D{decide<br/>规则 + 模型交叉核对}
     X --> D
     D -- 硬性不符 --> F[finalize<br/>报告 + 入库]
@@ -53,7 +53,7 @@ flowchart TD
 | 节点 | 做什么 |
 | --- | --- |
 | `rule_screen` | 不用模型，逐句检查工作年限、博士学历、第一学历 985/211、QS 排名、年龄、实习岗、外语、城市，以及已知企业的校招届别窗口。每条结论都附 JD 原文 |
-| `extract` | 复用 job_rag_starter 的 `jd_parser`：本地模型把 JD 拆成逐条要求，引用必须能在原文里逐字找到 |
+| `extract` | 复用 job_rag_starter 的 `jd_parser`：语言模型把 JD 拆成逐条要求，引用必须能在原文里逐字找到 |
 | `decide` | 规则结论和模型提取的经验要求交叉核对：硬性不符直接筛掉，有疑问的交给你确认；模型单方面的判断从不直接筛掉岗位 |
 | `human_review` | `interrupt()` 暂停，进度存在 PostgreSQL（`PostgresSaver`）；隔天在另一个进程里 `--approve` 也能接着跑 |
 | `match_one` | 用 `Send` 每条要求一个分支并行跑，复用 job_rag_starter 的 `EvidenceMatcher`（direct / related / insufficient 和逐字引用校验），检索换成 pgvector |
@@ -140,7 +140,7 @@ docker compose up -d db
 .\.venv\Scripts\cn-agent.exe doctor
 ```
 
-匹配一个 JD（需要 job_rag_starter 的 `config.local.json` 里配置的本地模型正在运行）：
+匹配一个 JD（需要配置好的语言模型，见下面"语言模型"一节）：
 
 ```powershell
 .\.venv\Scripts\cn-agent.exe llm check
@@ -169,10 +169,29 @@ docker compose up -d db
 .\.venv\Scripts\python.exe -m pytest
 ```
 
+## 语言模型
+
+JD 要求提取、逐条证据判断和搜索规划 Agent 的工具调用用同一个模型，在 `.env` 里选：
+
+| `CN_LLM_PROVIDER` | 服务 |
+| --- | --- |
+| `local` | 本机模型（job_rag_starter 的 `config.local.json`），数据不出本机 |
+| `deepseek` · `qwen` · `zhipu` · `moonshot` · `doubao` · `siliconflow` | DeepSeek、通义千问（阿里云百炼）、智谱 GLM、Kimi、豆包（火山方舟）、硅基流动 |
+| `openai` · `anthropic` · `gemini` | OpenAI、Claude、Gemini（后两个走官方的 OpenAI 兼容接口） |
+| `openai_compatible` | 其他 OpenAI 兼容服务，配 `CN_LLM_BASE_URL` |
+
+云端服务需要 `CN_LLM_MODEL`（模型名以服务商文档为准）和 `CN_LLM_API_KEY`（或服务商的标准环境变量，如 `DEEPSEEK_API_KEY`）。所有云端服务都通过 OpenAI 兼容接口调用：JSON 任务仍经过 job_rag_starter 的适配器，重试、结构校验和逐字引用校验都不变；搜索规划用 LangChain 的 `ChatOpenAI` 做工具调用。
+
+```powershell
+.\.venv\Scripts\cn-agent.exe llm providers
+.\.venv\Scripts\cn-agent.exe llm check --ping    # 当前模型、数据去向，并实际测 JSON 输出和工具调用
+```
+
 ## 数据与隐私
 
-- `.env`、`profile.local.yaml` 不进 git。经历库留在 job_rag_starter 里，这个仓库不复制任何经历原文。
-- 向量和经历片段只存在本机的 PostgreSQL 里。
+- `.env`（含 API key）、`profile.local.yaml` 不进 git。经历库留在 job_rag_starter 里，这个仓库不复制任何经历原文。
+- 向量和经历片段存在本机的 PostgreSQL 里。
+- **用云端 API 时**，JD、求职画像和检索到的经历片段会发送给所选服务商，保留政策以服务商条款为准；`cn-agent llm check` 会写明数据发往哪里。本机模型不会自动换成云端 API，服务商永远由你在 `.env` 里明确选择。LangSmith 追踪始终关闭。
 - 校招数据大多来自高校就业网转载和第三方聚合站（`confidence` 字段标明），**投递前一定以企业官网公告为准**。
 
 ## 路线图
