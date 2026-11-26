@@ -86,3 +86,9 @@ def test_json_tasks_go_through_job_rag_starters_adapter(job_rag_home):
 def test_planner_chat_model_uses_the_same_provider():
     chat = llm.build_chat_model(settings(llm_provider="moonshot", llm_model="kimi-model", llm_api_key="k"))
     assert chat.model_name == "kimi-model" and chat.openai_api_base == "https://api.moonshot.cn/v1"
+
+
+def test_concurrency_defaults_by_provider():
+    assert settings(llm_provider="local").concurrency == 2
+    assert settings(llm_provider="deepseek").concurrency == 8
+    assert settings(llm_provider="deepseek", match_concurrency=3).concurrency == 3

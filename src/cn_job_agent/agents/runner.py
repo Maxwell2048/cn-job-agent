@@ -105,7 +105,7 @@ def new_run_id():
 
 
 def _config(run_id, settings):
-    return {"configurable": {"thread_id": run_id}, "max_concurrency": max(1, settings.match_concurrency)}
+    return {"configurable": {"thread_id": run_id}, "max_concurrency": settings.concurrency}
 
 
 def _mark(database_url, run_id, **fields):

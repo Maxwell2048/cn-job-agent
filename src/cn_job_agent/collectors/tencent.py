@@ -57,10 +57,11 @@ class TencentCollector:
         job.title = " ".join((d.get("title") or job.title).split())
         job.cities = cities
         job.category = d.get("projectName") or job.category
+        # Only facts the posting itself states. The recruiting project is kept on the posting
+        # (channel, category) rather than written into the JD, where the extraction model
+        # would read it as a candidate requirement.
         job.jd_text = compose_jd(job.title, self.company_name, [
             f"公司：{self.company_name}",
-            f"招聘类型：{job.category}（校园招聘）" if job.category else "招聘类型：校园招聘",
-            f"岗位类别：{d.get('tidName')}" if d.get("tidName") else "",
             f"工作地点：{'、'.join(cities)}" if cities else "",
         ], [("岗位描述", d.get("desc")), ("岗位要求", d.get("request")),
             ("加分项", d.get("graduateBonus"))])

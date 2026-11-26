@@ -40,6 +40,7 @@ def test_tencent_search_pages_and_detail():
     assert job.url.endswith("postid=1099")
     assert "岗位描述：\n1、负责 Agent 应用开发" in job.jd_text and "工作地点：深圳、杭州" in job.jd_text
     assert "加分项" not in job.jd_text      # empty sections are left out
+    assert "招聘类型" not in job.jd_text and "岗位类别" not in job.jd_text   # metadata is not JD text
 
 
 def test_tencent_error_status_raises():
@@ -68,6 +69,7 @@ def test_zhiye_search_builds_jd_from_the_list():
     assert job.source == "zhiye:iflytek" and job.cities == ["武汉"] and job.posted_at == "2026-08-26"
     assert job.url == "https://iflytek.zhiye.com/campus/detail?jobAdId=abc-1"
     assert "工作职责：\n负责 Agent" in job.jd_text and "任职要求：\n熟悉 Python" in job.jd_text
+    assert "招聘类型" not in job.jd_text and "发布日期" not in job.jd_text
     assert collector.detail(job) is job
 
 

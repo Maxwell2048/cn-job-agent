@@ -34,12 +34,19 @@ class Settings(BaseSettings):
     outputs_dir: Path = PROJECT_ROOT / "outputs"
     state_dir: Path = PROJECT_ROOT / "state"
     match_top_k: int = 5
-    # Requirements judged at the same time; keep at or below the model server's parallel slots.
-    match_concurrency: int = 2
+    # Requirements judged at the same time. Empty: 2 for the local model (keep at or below its
+    # server's parallel slots), 8 for a cloud API.
+    match_concurrency: int | None = None
 
     @property
     def experiences(self) -> Path:
         return self.experiences_dir or self.job_rag_home / "experiences"
+
+    @property
+    def concurrency(self) -> int:
+        if self.match_concurrency:
+            return max(1, self.match_concurrency)
+        return 2 if (self.llm_provider or "local").strip().lower() == "local" else 8
 
     @property
     def llm_config_file(self) -> Path:

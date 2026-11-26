@@ -43,11 +43,10 @@ class ZhiyeCollector:
                                 title=row.get("JobAdName", ""), cities=cities,
                                 url=f"{self.base}/campus/detail?jobAdId={row['Id']}",
                                 posted_at=(row.get("PostDate") or "")[:10], category=row.get("Category") or "")
+                # Category and post date live on the posting, not in the JD text the model reads.
                 job.jd_text = compose_jd(job.title, self.company_name, [
                     f"公司：{self.company_name}",
-                    f"招聘类型：{job.category}" if job.category else "",
                     f"工作地点：{'、'.join(row.get('LocNames') or [])}" if row.get("LocNames") else "",
-                    f"发布日期：{job.posted_at}" if job.posted_at else "",
                 ], [("工作职责", row.get("Duty")), ("任职要求", row.get("Require"))])
                 jobs.append(job)
             total = data.get("Count") or 0
