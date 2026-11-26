@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cn-job-agent"
+version = "0.1.0"
+description = "国内求职 Agent：多 Agent 调度、证据 RAG、PostgreSQL + pgvector"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+    "sqlalchemy>=2,<3",
+    "alembic>=1.13,<2",
+    "psycopg[binary]>=3.1,<4",
+    "pgvector>=0.3,<1",
+    "pydantic>=2,<3",
+    "pydantic-settings>=2,<3",
+    "pyyaml>=6,<7",
+    "numpy>=1.26",
+    # The E5 embedder; the retrieval and chunking code itself comes from job_rag_starter.
+    "sentence-transformers>=3,<6",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+cn-agent = "cn_job_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+cn_job_agent = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["pg: needs the PostgreSQL + pgvector database from compose.yaml"]

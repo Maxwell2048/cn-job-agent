@@ -1,0 +1,23 @@
+# Search profile. Copy to profile.local.yaml (ignored by git) and use your own values.
+# The values below are fictional.
+name: default
+roles:
+  - key: agent_llm_app
+    label: Agent / 大模型应用开发
+    keywords: [AI Agent, 智能体, 大模型应用, LLM 应用, RAG, AI 应用工程师]
+  - key: ai_fullstack_backend
+    label: AI 全栈 / 后端开发
+    keywords: [AI 全栈, 全栈, Python 后端, 后端开发, 软件开发, 金融科技]
+  - key: data
+    label: 数据分析 / 数据工程
+    keywords: [数据分析, 数据工程, 大数据, BI, 数据开发]
+  - key: support_solutions
+    label: 技术支持 / 解决方案
+    keywords: [技术支持, 解决方案, 实施工程师, 运维, IT 支持]
+cities: [苏州, 武汉, 深圳, 杭州]
+channels: [campus, social_entry, foreign_global]
+# Degree award (testamur) month: campus cohort windows are judged against it.
+testamur_month: 2025-12
+# Optional: CSCSE degree certification date (some employers use it instead), birth date for age limits.
+cscse_cert_date: null
+birth_date: null

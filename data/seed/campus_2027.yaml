@@ -1,0 +1,1111 @@
+# 2027 届大企业校招窗口（不含北京、上海工作地）
+#
+# 来源：个人求职档案 11_大企业校招手册.md（2026-11-21 联网整理、交叉核对）。
+# 只录入手册里有的内容，不补猜。window 是公开的毕业时间窗口：
+#   [起, 止]，写到月（2026-01）表示整月，写到日（2026-07-01）表示具体日期，null 表示没公布。
+# basis：窗口按哪个日期判断。testamur = 学位证落款日期；cscse_cert = 留服认证日期；unknown = 未写明。
+# confidence：official = 企业自己的页面；third_party = 高校就业网转载、媒体或聚合站；mixed = 两者都有。
+# 投递前一定以企业官网公告为准。
+
+source_doc: 11_大企业校招手册.md
+checked_on: 2026-11-21
+
+companies:
+
+  # ---------------------------------------------------------------- 互联网和科技大厂
+  - key: tencent
+    name: 腾讯
+    sector: internet
+    portal: join.qq.com
+    programs:
+      - title: 2027 校招（含补录、春招）
+        window: [2026-01-01, 2027-12-31]
+        window_text: 2026.01.01–2027.12.31，海外看学位证（个别报道写 2026.09 起，以官网 FAQ 为准）
+        status: 不设统一截止；上届补录在 12 月初到次年 1 月初
+        deadline_text: 12 月补录（待公布）
+        roles: [AI 全栈, Agent 开发, AI 应用, 后台开发, 前端, 数据]
+        cities: [深圳, 广州, 成都, 杭州]
+        apply_limit: 同时只能投 1 个岗位
+        confidence: mixed
+        sources:
+          - {label: 科技日报, url: "https://www.stdaily.com/web/gdxw/2026-08/12/content_562868.html"}
+          - {label: 新浪, url: "https://finance.sina.com.cn/roll/2026-08-11/doc-inimyaai4163915.shtml"}
+          - {label: 官方, url: "https://join.qq.com/detail.html?id=288"}
+
+  - key: tencent_music
+    name: 腾讯音乐（含酷狗）
+    sector: internet
+    portal: join.tencentmusic.com/campus
+    programs:
+      - title: 2027 校招
+        window: [2026-01, 2027-12]
+        window_text: 2026.01–2027.12，学位证（待官网复核）
+        status: 不设截止，招满即止
+        roles: [后台, 前端, 客户端, 算法, 数据]
+        cities: [深圳, 广州]
+        apply_limit: 只能投 1 个职位
+        confidence: official
+        sources:
+          - {label: 官方 FAQ, url: "https://join.tencentmusic.com/campus/faq/"}
+
+  - key: iflytek
+    name: 科大讯飞
+    sector: internet
+    portal: iflytek.zhiye.com；公众号"科大讯飞招聘"
+    programs:
+      - title: 2027 校招
+        window: [2025-06-01, 2027-08-31]
+        window_text: 2025.06.01–2027.08.31，学位证
+        status: 内推开到 2027 年 6 月
+        deadline_text: 内推到 2027-06
+        roles: [AI 研发, 研发, 大数据, 测试, 交付, 工程]
+        cities: [合肥, 武汉, 深圳, 广州, 杭州, 南京, 苏州, 西安, 成都]
+        requirements: [本科及以上]
+        confidence: third_party
+        sources:
+          - {label: 中央民大就业网, url: "https://career.muc.edu.cn/front/zwxx.jspa?xqzwId=37826&zpxxId=31835"}
+
+  - key: vipshop
+    name: 唯品会
+    sector: internet
+    portal: 公众号"唯品会招聘"
+    programs:
+      - title: 2027 校招
+        window: [2026-07-01, 2027-06-30]
+        window_text: 2026.07.01–2027.06.30，按留服证书日期
+        basis: cscse_cert
+        status: 8/17 开始，招满即止；是否补录未核实
+        roles: [AI, 技术, 数据分析]
+        cities: [广州]
+        requirements: [必须办留服认证]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://www.shushuqiuzhi.com/article/85048"}
+
+  - key: midea
+    name: 美的集团
+    sector: internet
+    portal: careers.midea.com（有留学生专区）
+    programs:
+      - title: 2027 校招
+        window: [2026-01-01, 2027-12-31]
+        window_text: 2026.01.01–2027.12.31，学位证
+        status: Offer 发到 12 月底，已近尾声
+        deadline_text: 流程到 12 月底
+        roles: [信息技术类, AI 研究院, 软件工程院]
+        cities: [佛山, 广州, 深圳, 武汉, 合肥, 无锡, 苏州, 重庆]
+        requirements: [本硕博]
+        confidence: mixed
+        sources:
+          - {label: 官方, url: "https://careers.midea.com/schoolOut/home?recruitType=1&v=1"}
+          - {label: 吉大就业网, url: "https://jdjyw.jlu.edu.cn/portal/jyzp/recruit/details?id=53ea705e9bf2471188d215ce32884e03"}
+
+  - key: xiaohongshu
+    name: 小红书
+    sector: internet
+    portal: job.xiaohongshu.com/campus
+    programs:
+      - key: regular
+        title: 2027 常规校招
+        window: [2026-09, 2027-08]
+        window_text: 常规 2026.09–2027.08
+        status: 招满即止；常规岗只能走社招
+        roles: [AI Agent, AI Infra, AI Coding]
+        cities: [杭州, 深圳, 武汉, 广州]
+        confidence: third_party
+        sources:
+          - {label: 腾讯新闻, url: "https://news.qq.com/rain/a/20260908A0AZA900"}
+      - key: redstar
+        title: REDstar 顶尖人才计划
+        window: [2024-09, 2027-08]
+        window_text: REDstar 2024.09–2027.08（第三方，待核实）
+        status: 招满即止；门槛高
+        roles: [AI Agent, AI Infra, AI Coding]
+        cities: [杭州, 深圳, 武汉, 广州]
+        apply_limit: REDstar 最多投 2 个
+        confidence: third_party
+        sources:
+          - {label: 腾讯新闻, url: "https://news.qq.com/rain/a/20260908A0AZA900"}
+
+  - key: kuaishou
+    name: 快手
+    sector: internet
+    portal: 快手校招官网
+    programs:
+      - key: kstar
+        title: 快Star 顶尖人才计划
+        window: [2025-01, 2027-10]
+        window_text: 2025.01–2027.10
+        status: 全年开放；属于顶尖人才项目
+        roles: [大模型, 推荐, 搜索]
+        cities: []
+        requirements: [京外城市未核实]
+        confidence: third_party
+        sources:
+          - {label: DoNews, url: "https://www.donews.com/news/detail/4/6668656.html"}
+      - key: regular
+        title: 2027 常规校招
+        window: [2026-11, null]
+        window_text: 常规岗窗口从 2026-11 开始
+        status: 窗口不含 2026-08，只能走社招
+        confidence: third_party
+
+  - key: kingsoft_office
+    name: 金山办公（WPS）
+    sector: internet
+    portal: join.wps.cn
+    programs:
+      - title: 2027 校招
+        window: null
+        window_text: 未查到
+        basis: unknown
+        status: 9 月发布过 2027 校招岗位
+        roles: [C++, 服务端, 全栈]
+        cities: [珠海, 武汉, 广州]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://www.wondercv.com/xiaozhao/kingsoft-wuhan-2027-2028-intern-11172-41a521/"}
+
+  # ---------------------------------------------------------------- 通信、硬件和科技制造
+  - key: huawei
+    name: 华为
+    sector: hardware
+    portal: career.huawei.com；公众号"华为留学生招聘"
+    programs:
+      - title: 2027 校招（含留学生专场）
+        window: [2026-01-01, 2027-12-31]
+        window_text: 2026.01.01–2027.12.31
+        status: 主网申 10 月已截止（第三方）；12 月留学生专场和补录待确认
+        deadline_text: 12 月（待确认）
+        roles: [软件开发, AI 应用, AI 模型（Agent）, 数据科学, 云服务]
+        cities: [深圳, 东莞, 杭州, 南京, 西安, 武汉]
+        requirements: [入职需留服认证]
+        apply_limit: 最多 2 个志愿
+        confidence: mixed
+        sources:
+          - {label: 官方 FAQ, url: "https://career.huawei.com/reccampportal/portal5/faq.html"}
+          - {label: 第三方, url: "https://www.shushuqiuzhi.com/position/382707"}
+
+  - key: honor
+    name: 荣耀
+    sector: hardware
+    portal: career.honor.com；talent_oversea@honor.com
+    programs:
+      - title: 2027 校招
+        window: [2026-01-01, 2027-09-30]
+        window_text: 2026.01.01–2027.09.30，学位证
+        status: 9-30 已截止；可发邮件询问补录
+        deadline: 2026-09-30
+        roles: [研发, AI 平台, 大模型]
+        cities: [南京, 西安, 深圳]
+        requirements: [限中国籍, 毕业后无全职经历]
+        confidence: official
+        sources:
+          - {label: 官方 FAQ, url: "https://www.honor.com/cn/career/faq/school/"}
+
+  - key: zte
+    name: 中兴通讯
+    sector: hardware
+    portal: job.zte.com.cn
+    programs:
+      - title: 2027 校招
+        window: [2026-01-01, 2027-12-31]
+        window_text: 2026.01.01–2027.12.31
+        status: 截止日未见
+        roles: [AI/算法, 软件开发, 软件测试]
+        cities: [深圳, 西安, 南京, 武汉, 长沙, 成都]
+        requirements: [本科及以上，不限专业]
+        confidence: third_party
+        sources:
+          - {label: 大连理工就业网, url: "https://pjcareer.dlut.edu.cn/info/1051/45332.htm"}
+
+  - key: oppo
+    name: OPPO
+    sector: hardware
+    portal: careers.oppo.com/university/oppo/campus
+    programs:
+      - title: 2027 校招
+        window: [2026-01, 2027-12]
+        window_text: 2026.01–2027.12
+        status: 官方写"招满即止"；第三方写 11-30 截止
+        deadline: 2026-11-30
+        deadline_text: 11-30（第三方）
+        roles: [AI/算法, 软件]
+        cities: [深圳, 东莞, 成都, 西安, 南京, 武汉]
+        confidence: third_party
+        sources:
+          - {label: 厦大嘉庚就业网, url: "https://career.xujc.com/2026/0720/c3959a172134/page.htm"}
+
+  - key: vivo
+    name: vivo
+    sector: hardware
+    portal: hr.vivo.com
+    programs:
+      - title: 2027 校招
+        window: [2026-08, 2027-07]
+        window_text: 2026 年 8 月–2027 年 7 月，学位证
+        status: 9-15 已截止；等补录或春招
+        deadline: 2026-09-15
+        roles: [算法, 软件]
+        cities: [东莞, 深圳, 南京, 杭州, 西安, 重庆]
+        requirements: [研发岗要笔试]
+        confidence: third_party
+        sources:
+          - {label: 搜狐, url: "https://www.sohu.com/a/1063003666_121124029"}
+
+  - key: transsion
+    name: 传音控股
+    sector: hardware
+    portal: transsion.zhiye.com/campus
+    programs:
+      - title: 2027 校招
+        window: [2026-08, 2027-07]
+        window_text: 2026 年 8 月–2027 年 7 月
+        status: 岗位持续上新；第三方写 11-29 截止
+        deadline: 2026-11-29
+        deadline_text: 11-29（第三方）
+        roles: [MLOps, AI SRE, GPU 基础设施, 软件, 数据]
+        cities: [深圳, 重庆]
+        requirements: [本科及以上]
+        confidence: third_party
+        sources:
+          - {label: 南开就业网, url: "https://career.nankai.edu.cn/correcruit/content/id/119756.html"}
+      - key: taig_ai
+        title: TAIG-AI 计划
+        window: [2023-01, 2027-12]
+        window_text: TAIG-AI 计划接受 2023–2027 届
+        status: 新上了大模型训推平台（MLOps）、AI SRE、软件开发岗
+        deadline: 2026-11-29
+        deadline_text: 11-29（第三方）
+        roles: [大模型训推平台（MLOps）, AI SRE, 软件开发]
+        cities: [深圳, 重庆]
+        confidence: third_party
+        sources:
+          - {label: 南开就业网, url: "https://career.nankai.edu.cn/correcruit/content/id/119756.html"}
+
+  - key: hikvision
+    name: 海康威视
+    sector: hardware
+    portal: campushr.hikvision.com
+    programs:
+      - title: 2027 校招
+        window: [2026-01, 2027-12]
+        window_text: 2026 年 1 月–2027 年 12 月
+        status: 分批上线，招满即止
+        roles: [大模型应用开发, AI Agent 开发, Java, C++, 前端, Go, 大数据, 云计算, 技术支持]
+        cities: [杭州, 武汉, 西安, 成都, 石家庄]
+        requirements: [技术支持岗全国, 测评每年只有 1 次]
+        apply_limit: 2 个志愿，多选城市也算多个志愿
+        confidence: third_party
+        sources:
+          - {label: 杭电就业网简章 PDF, url: "https://job.hdu.edu.cn/attachment/hdu/ueditor/file/20260904/6040_海康威视2027校园招聘简章.pdf"}
+
+  - key: byd
+    name: 比亚迪
+    sector: hardware
+    portal: job.byd.com
+    programs:
+      - title: 2027 校招
+        window: [2026-07-01, 2027-12-31]
+        window_text: 境外 2026.07.01–2027.12.31
+        status: 招满即止
+        roles: [AI Agent, 智能体, 大模型应用, 软件与数字化, 数据分析, 信息化, 技术支持]
+        cities: [深圳, 西安, 惠州, 长沙, 合肥, 成都, 重庆, 广州, 杭州, 武汉]
+        requirements: [计算机、电子信息类等]
+        confidence: third_party
+        sources:
+          - {label: 北大就业网简章 PDF, url: "https://scc.pku.edu.cn/upload/recruitmentinfo/202608/20260826133530cee226e6e9994b61b72d303460425cab.pdf"}
+          - {label: 新浪, url: "https://finance.sina.com.cn/wm/2026-08-19/doc-ininvwqs2624841.shtml"}
+
+  - key: catl
+    name: 宁德时代
+    sector: hardware
+    portal: Talent.CATL.com
+    programs:
+      - title: 2027 校招
+        window: [2026-07, 2027-12]
+        window_text: 2026 年 7 月–2027 年 12 月，学位证
+        status: 11 月中仍有转载；未见截止
+        roles: [计算机与 AI 类]
+        cities: [宁德, 福建, 浙江, 湖北]
+        apply_limit: 3 个志愿
+        confidence: third_party
+        sources:
+          - {label: 南开就业网, url: "https://career.nankai.edu.cn/correcruit/content/id/116814.html"}
+
+  - key: mindray
+    name: 迈瑞医疗
+    sector: hardware
+    portal: 公众号"迈瑞招聘"
+    programs:
+      - title: 2027 留学生专场
+        window: [2026-01, 2027-07]
+        window_text: 留学生专场 2026 年 1 月–2027 年 7 月
+        status: 截止日未见
+        roles: [IT 应用软件开发, 需求分析, 软件研发, 技术支持]
+        cities: [深圳, 武汉, 西安, 南京, 杭州]
+        requirements: [可能有语言测评]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://www.wondercv.com/xiaozhao/mindray-2027-global-international-students-campus-r-17109-cd64c1/"}
+
+  - key: dji
+    name: 大疆
+    sector: hardware
+    portal: careers.dji.com
+    programs:
+      - title: 2027 校招
+        window: null
+        window_text: "2027 届，优秀 2026 届可放宽"
+        basis: unknown
+        status: 接近尾声
+        roles: [软件, 测试开发, 嵌入式]
+        cities: [深圳]
+        apply_limit: 只能投 1 个职位
+        confidence: third_party
+        sources:
+          - {label: 搜狐, url: "https://www.sohu.com/a/1051023612_121106842"}
+
+  # ---------------------------------------------------------------- 银行和金融科技（秋招 9–11 月已截止，主要看 2027 年 2–4 月春招和补录）
+  - key: icbc
+    name: 工商银行（软件开发中心、分行）
+    sector: bank
+    portal: job.icbc.com.cn
+    programs:
+      - title: 2027 校招
+        window: [2026-01, 2027-07]
+        window_text: 2026.01–2027.07
+        status: 秋招 10-08 截止；等春招和补录
+        deadline: 2026-10-08
+        roles: [科技菁英, 软件开发]
+        cities: [珠海, 广州, 杭州, 成都, 西安]
+        requirements: [留服认证, 最高学历初次就业, 笔试含英语]
+        confidence: third_party
+        sources:
+          - {label: 新浪, url: "https://finance.sina.cn/2026-09-05/detail-iniqtnhe0710167.d.html?vt=4"}
+          - {label: 第三方, url: "https://campus.niuqizp.com/job-vwk5CNzCZ.html"}
+
+  - key: boc
+    name: 中国银行（软件中心、信息科技运营中心）
+    sector: bank
+    portal: campus.chinahr.com/pages/2027-boc
+    programs:
+      - title: 2027 全球校招
+        window: [2026-01-01, 2027-07-31]
+        window_text: 2026.01.01–2027.07.31
+        status: 秋招 10-09 截止；等春招和补录；运营中心偏 IT 运维
+        deadline: 2026-10-09
+        roles: [信息技术, IT 运维]
+        cities: [深圳, 西安, 合肥, 武汉, 成都]
+        apply_limit: 最多投 5 个岗位
+        confidence: mixed
+        sources:
+          - {label: 官方公告, url: "https://www.boc.cn/en/bocinfo/bi7/202609/t20260903_25689313.html"}
+          - {label: 第三方, url: "https://m.gwy.com/yhzp/412459.html"}
+
+  - key: ccb
+    name: 建设银行（建信金科、分行）
+    sector: bank
+    portal: job.ccb.com
+    programs:
+      - title: 2027 校招
+        window: [2026-01, 2027-07]
+        window_text: 2026.01–2027.07
+        status: 秋招 10-08 截止；等春招和补录
+        deadline: 2026-10-08
+        roles: [建信金科科技岗, 分行科技专员]
+        cities: [厦门, 广州, 武汉, 成都, 深圳]
+        requirements: [留服认证, 管培要求雅思 6.5 或同等]
+        confidence: third_party
+        sources:
+          - {label: 凤凰, url: "https://i.ifeng.com/c/8wnVm24TkOp"}
+
+  - key: abc
+    name: 农业银行
+    sector: bank
+    portal: career.abchina.com.cn
+    programs:
+      - title: 2027 校招
+        window: [2026-01, 2027-07]
+        window_text: 2026.01–2027.07
+        status: 秋招 10-08 截止；春招常在 2–4 月
+        deadline: 2026-10-08
+        roles: [研发中心, 数据中心, 分行科技岗]
+        cities: []
+        requirements: [城市未核实]
+        apply_limit: 最多投 2 家，每家 2 个岗位
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://m.gwy.com/yhzp/412465.html"}
+
+  - key: bankcomm
+    name: 交通银行
+    sector: bank
+    portal: job.bankcomm.com
+    programs:
+      - title: 2027 校招
+        window: [2026-01, 2027-07]
+        window_text: 2026.01–2027.07
+        status: 秋招 10-18 截止；春招常在 2–4 月
+        deadline: 2026-10-18
+        roles: [IT 系统管理, 软件开发, 安全]
+        cities: [上海以外的省直分行]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://m.gwy.com/yhzp/413051.html"}
+
+  - key: cmb
+    name: 招商银行
+    sector: bank
+    portal: career.cmbchina.com
+    programs:
+      - title: 2027 校招（有春招）
+        window: [2026-01-01, 2027-07-31]
+        window_text: 2026.01.01–2027.07.31（第三方）
+        status: 秋招 9-25 截止，有春招
+        deadline: 2026-09-25
+        roles: [金融科技岗]
+        cities: [深圳]
+        apply_limit: 秋招和春招合计最多投 5 家机构
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://campus.niuqizp.com/schedule-7rmYNNN5C.html"}
+
+  - key: cmbnt
+    name: 招银网络科技
+    sector: bank
+    portal: cmbnt.cmbchina.com
+    programs:
+      - title: 2027 校招
+        window: [2026-08-01, 2027-07-31]
+        window_text: 2026.08.01–2027.07.31
+        status: 秋招 9-20 截止；等春招
+        deadline: 2026-09-20
+        roles: [后端, 前端, 测试, 运维研发]
+        cities: [深圳, 杭州, 成都]
+        requirements: [2027 年 8 月底前取得认证]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://m.gwy.com/yhzp/411752.html"}
+
+  - key: pingan
+    name: 平安集团（平安科技、平安银行）
+    sector: bank
+    portal: campus.pingan.com
+    programs:
+      - key: pingan_tech
+        title: 平安科技 2027 校招
+        window: [2026-06, 2027-07]
+        window_text: 平安科技 2026.06–2027.07
+        status: 10-24 截止
+        deadline: 2026-10-24
+        roles: [AI, 大数据]
+        cities: [深圳]
+        confidence: third_party
+        sources:
+          - {label: 东方财富, url: "https://finance.eastmoney.com/a/202609113872175256.html"}
+      - key: pingan_bank
+        title: 平安银行 2027 校招
+        window: [2026-01, 2027-07]
+        window_text: 平安银行 2026.01–2027.07
+        status: 11-06 截止
+        deadline: 2026-11-06
+        roles: [AI, 大数据]
+        cities: [深圳]
+        confidence: third_party
+        sources:
+          - {label: 东方财富, url: "https://finance.eastmoney.com/a/202609113872175256.html"}
+
+  - key: citic_bank
+    name: 中信银行
+    sector: bank
+    portal: job.citicbank.com
+    programs:
+      - title: 2027 校招
+        window: [2026-01-01, 2027-08-31]
+        window_text: 2026.01.01–2027.08.31
+        status: 秋招 10-09 截止；春招常在 2–4 月
+        deadline: 2026-10-09
+        roles: [信息科技, 金融科技]
+        cities: [广州, 南京]
+        requirements: [初次就业, CET-4 或同等]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://m.gwy.com/yhzp/412250.html"}
+
+  - key: cib
+    name: 兴业银行
+    sector: bank
+    portal: job.cib.com.cn
+    programs:
+      - title: 2027 校招
+        window: [2026-01, 2027-08]
+        window_text: 2026.01–2027.08
+        status: 秋招 10 月中下旬截止；春招常在 2–4 月
+        deadline_text: 10 月中下旬
+        roles: [FinTech 管培]
+        cities: [深圳, 南昌]
+        requirements: [报到时取得认证]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://m.gwy.com/yhzp/413478.html"}
+
+  - key: cmbc
+    name: 民生银行
+    sector: bank
+    portal: 民生银行招聘官网
+    programs:
+      - title: 2027 校招
+        window: [2026-01, 2027-12]
+        window_text: 2026.01–2027.12
+        status: 深圳分行页面写 12-31 结束（待核实）
+        deadline: 2026-12-31
+        deadline_text: 12-31（第三方）
+        roles: ["\"扬帆\"计划", 科技岗]
+        cities: [深圳, 苏州]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://m.gwy.com/yhzp/414981.html"}
+
+  - key: ceb
+    name: 光大银行
+    sector: bank
+    portal: 光大银行招聘官网
+    programs:
+      - title: 2027 校招
+        window: [2026-01, 2027-07]
+        window_text: 2026.01–2027.07
+        status: 秋招 11-08 截止；春招常在 2–4 月
+        deadline: 2026-11-08
+        roles: [分行金融科技]
+        cities: [非京沪分行]
+        requirements: [总行科技岗要求硕士]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://m.gwy.com/yhzp/414073.html"}
+
+  - key: eximbank
+    name: 中国进出口银行
+    sector: bank
+    portal: eximbank2027.iguopin.com
+    programs:
+      - title: 2027 校招
+        window: [2026-01-01, 2027-07-31]
+        window_text: 2026.01.01–2027.07.31
+        status: 秋招 11-15 截止；春招常在 2–4 月
+        deadline: 2026-11-15
+        roles: [信息科技]
+        cities: [境内分行]
+        requirements: [初次就业, 留服认证]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://m.gwy.com/yhzp/415164.html"}
+
+  - key: cdb
+    name: 国家开发银行
+    sector: bank
+    portal: cdb2027.zhaopin.com
+    programs:
+      - title: 2027 校招
+        window: [2026-07-01, 2027-09-30]
+        window_text: 2026.07.01–2027.09.30
+        status: 秋招 10-07 截止；春招常在 2–4 月
+        deadline: 2026-10-07
+        roles: [信息科技]
+        cities: [青海, 新疆]
+        requirements: [回国后首次就业]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://m.gwy.com/yhzp/412983.html"}
+
+  - key: picc
+    name: 中国人保（人保科技）
+    sector: bank
+    portal: 公众号"中国人保"
+    programs:
+      - title: 2027 校招
+        window: [2026-07, 2027-06]
+        window_text: 2026.07–2027.06（深圳分公司口径）
+        status: 简历通道开到 2027-04-25（第三方）
+        deadline: 2027-04-25
+        roles: [人保科技软件开发, AI]
+        cities: [石家庄, 佛山, 合肥, 成都]
+        requirements: [教育部学历认证, 城市为 2026 届口径]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://m.gwy.com/gqzp/410811.html"}
+
+  - key: cgb
+    name: 广发银行
+    sector: bank
+    portal: cgbchina.com.cn
+    programs:
+      - title: 2027 校招
+        window: null
+        window_text: 只写"2027 届"，海外口径未写明
+        basis: unknown
+        status: 分行 11-15 截止
+        deadline: 2026-11-15
+        roles: [金融科技]
+        cities: [广州, 珠海]
+        requirements: [留服认证]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://m.gwy.com/yhzp/412779.html"}
+
+  - key: psbc
+    name: 邮储银行
+    sector: bank
+    portal: 邮储银行招聘官网
+    programs:
+      - title: 2027 校招
+        window: [2026-09-01, null]
+        window_text: 境外"原则上"从 2026-09-01 开始；可以打电话问能否例外
+        status: 窗口不含 2026-08
+        confidence: third_party
+
+  # ---------------------------------------------------------------- 运营商和央国企
+  - key: sgcc
+    name: 国家电网
+    sector: soe
+    portal: zhaopin.sgcc.com.cn（唯一渠道）
+    programs:
+      - key: batch1
+        title: 2027 第一批统一招聘
+        window: [2026-07-01, 2027-06-30]
+        window_text: 留学生 2026.07.01–2027.06.30 取得毕业证；2027-08-31 前完成认证
+        basis: graduation_cert
+        status: 多数 11-25 截止；笔试初定 12-06；第二批 2027 年 3 月
+        deadline: 2026-11-25
+        roles: [信息通信, 计算机, 通信]
+        cities: [各省]
+        requirements: [硕士一般不超过 28 岁（截至 2027-06-30）, 未与其他单位签约, 江苏的计算机岗主要在县级]
+        apply_limit: 一般只能报 1 个单位
+        confidence: third_party
+        sources:
+          - {label: 网易, url: "https://www.163.com/dy/article/LC1B39J80514S0EB.html"}
+          - {label: 江苏, url: "https://www.sigedu.cn/h-nd-15376.html"}
+
+  - key: nari
+    name: 南瑞集团
+    sector: soe
+    portal: 国网平台
+    programs:
+      - title: 随国网第一批
+        window: [2026-07-01, 2027-06-30]
+        window_text: 同国网
+        basis: graduation_cert
+        status: 11-17 至 11-25
+        deadline: 2026-11-25
+        roles: [电子信息类]
+        cities: [南京]
+        requirements: [同国网]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://www.gaoxiaojob.com/announcement/detail/446357.html"}
+
+  - key: sgit
+    name: 国网信息通信产业集团
+    sector: soe
+    portal: 国网平台
+    programs:
+      - title: 随国网第一批
+        window: [2026-07-01, 2027-06-30]
+        window_text: 同国网
+        basis: graduation_cert
+        status: 随国网第一批
+        deadline: 2026-11-25
+        roles: [计算机, 电子信息, 数学]
+        cities: [天津, 成都, 福州, 合肥, 厦门, 西安, 兰州]
+        requirements: [同国网]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://www.shanganclaw.com/announcements/188607/"}
+
+  - key: csg
+    name: 南方电网（南网数字集团）
+    sector: soe
+    portal: zhaopin.csg.cn
+    programs:
+      - title: 2027 校招
+        window: [2026-07, 2027-08]
+        window_text: 2026.07–2027.08
+        status: 11-02 截止
+        deadline: 2026-11-02
+        roles: [信息通信（计算机、网安、AI）]
+        cities: [广州, 深圳, 海口, 贵阳, 昆明, 南宁]
+        requirements: [硕士及以上, 国内无用人单位社保缴费记录]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://www.shanganclaw.com/announcements/196899/"}
+
+  - key: china_mobile
+    name: 中国移动
+    sector: soe
+    portal: job.10086.cn
+    programs:
+      - key: group
+        title: 集团统一招聘
+        window: null
+        window_text: 2027 届，加"2026 届未就业"
+        basis: unknown
+        accepts_prior_unemployed: true
+        status: 10 月中旬截止；春季补录约 2–4 月（第三方推测）
+        deadline_text: 10 月中旬
+        roles: [智算, 云, 大数据, AI, 软件, 网安]
+        cities: [各省公司]
+        requirements: [留服认证, 硕士不超过 29 岁（第三方）]
+        confidence: third_party
+        sources:
+          - {label: 吉大就业网, url: "https://jdjyw.jlu.edu.cn/portal/jyzp/recruit/details?id=5b2f744d687e49caa271f292066d91e5"}
+      - key: iot
+        title: 中移物联网
+        window: null
+        window_text: 同集团
+        basis: unknown
+        accepts_prior_unemployed: true
+        status: 10-16 截止
+        deadline: 2026-10-16
+        roles: [软件研发]
+        cities: [重庆, 成都]
+        apply_limit: 只能投 1 个岗位
+        confidence: third_party
+        sources:
+          - {label: 河北工大就业网, url: "https://career.hebut.edu.cn/correcruit/content/id/80542.html"}
+      - key: online
+        title: 中移在线营销服务中心
+        window: null
+        window_text: 2027 届或 2026 届未就业
+        basis: unknown
+        accepts_prior_unemployed: true
+        status: 截止日说法矛盾，待核实
+        roles: [算法, 开发, 数据分析]
+        cities: [广州, 深圳, 杭州, 成都, 武汉, 西安, 重庆]
+        requirements: [本科及以上]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://www.wondercv.com/xiaozhao/china-mobile-online-marketing-2027-autumn-campus-15533-d6a1c5/"}
+      - key: subsidiaries
+        title: 中移互联网、咪咕、中移杭研、苏州研发中心、成都产业研究院
+        window: null
+        window_text: 未取得 2027 届原文；集团口径下偏可报
+        basis: unknown
+        accepts_prior_unemployed: true
+        status: 推测已截止
+        roles: [后端, AI 智能体, 云, 研发]
+        cities: [广州, 成都, 杭州, 南京, 厦门, 深圳, 苏州]
+        confidence: unverified
+
+  - key: china_telecom
+    name: 中国电信
+    sector: soe
+    portal: job.chinatelecom.com.cn
+    programs:
+      - key: group
+        title: 集团统一招聘
+        window: null
+        window_text: 2027 届，加"2026 届未就业"；只有河南口径写了日期：2026.01.01–2027.12.31
+        basis: unknown
+        accepts_prior_unemployed: true
+        status: 各省 10-06 至 10-20 截止，广东 11-15
+        deadline_text: 各省 10-06 至 10-20，广东 11-15
+        roles: [AI, 软件, 大数据, 企业信息化, 云网运营]
+        cities: [各省]
+        requirements: [教育部学历认证]
+        confidence: official
+        sources:
+          - {label: 国家大学生就业服务平台, url: "https://job.ncss.cn/student/jobs/QyG2RcGTr77WdKqKF5VHEY/detail.html"}
+      - key: ctyun
+        title: 天翼云
+        window: null
+        window_text: 只写"2027 届"（手册判断：偏不符合）
+        basis: unknown
+        status: 10-03 截止
+        deadline: 2026-10-03
+        confidence: unverified
+
+  - key: china_unicom
+    name: 中国联通
+    sector: soe
+    portal: zglt.zhaopin.com / zglt.iguopin.com
+    programs:
+      - key: group
+        title: 集团统一招聘
+        window: null
+        window_text: 2027 届，加"2026 届未就业"
+        basis: unknown
+        accepts_prior_unemployed: true
+        status: 11 月上旬已笔试，个别单位可能还在收
+        roles: [AI 研发, 网络, 数据分析]
+        cities: [各省, 济南, 南京, 广州]
+        requirements: [软件研究院在济南、南京、广州]
+        apply_limit: 最多 2 家单位，每家 2 个岗位
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://www.shanganclaw.com/announcements/188873/"}
+      - key: unicom_digital
+        title: 联通数科
+        window: [2026-09, null]
+        window_text: 窗口从 2026-09 开始
+        status: 窗口不含 2026-08，只能走社招
+        confidence: third_party
+
+  - key: china_tower
+    name: 中国铁塔
+    sector: soe
+    portal: zhaopin.chinatowercom.cn
+    programs:
+      - title: 2027 校招
+        window: [null, 2027-12-31]
+        window_text: 境外"2027-12-31 前毕业"，没写下限
+        status: 10-27 截止，往年有春招
+        deadline: 2026-10-27
+        roles: [AI, 算力网络, 物联网, 网安]
+        cities: [各省]
+        requirements: [硕士 2000-01-01 后出生]
+        confidence: third_party
+        sources:
+          - {label: 吉大就业网, url: "https://jdjyw.jlu.edu.cn/portal/jyzp/recruit/details?id=01c3fde2294f446eb59398fa61334c5c"}
+
+  - key: china_tobacco
+    name: 中国烟草（国家局统招）
+    sector: soe
+    portal: bm.cpta.com.cn/yc2027
+    programs:
+      - title: 2027 统招
+        window: [2025-01-01, 2027-07-31]
+        window_text: 2025.01.01–2027.07.31 取得境外学位
+        status: 10-30 截止
+        deadline: 2026-10-30
+        roles: [IT 岗未核实]
+        cities: [各省]
+        requirements: [硕士 1999-01-01 后出生, 未落实工作]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://www.gwy.com/gqzp/414705.html"}
+
+  # ---------------------------------------------------------------- 外企在华研发和服务中心
+  - key: hsbc_tech
+    name: 汇丰科技
+    sector: foreign
+    portal: apply.careers.hsbc.com/emergingtalent
+    programs:
+      - title: 西安 Engineering Graduate
+        window: null
+        window_text: 近期毕业且工作经验不足 2 年，或 2027-07 前毕业
+        basis: unknown
+        status: 西安 Engineering 开放到 12-31（滚动审核，可能提前关闭）；广州 Data、Cyber 已招满
+        deadline: 2026-12-31
+        deadline_text: 12-31，滚动审核
+        roles: [软件工程]
+        cities: [西安]
+        requirements: [GPA 3.0/4.0 或海外等值, 英语和普通话流利, 近期毕业且工作经验不足 2 年]
+        apply_limit: 每个周期只能投 1 份
+        confidence: official
+        sources:
+          - {label: 官方岗位页, url: "https://apply.careers.hsbc.com/emergingtalent/job/Xi'an-Engineering-Graduate-SN-710077/1371118957/"}
+
+  - key: accenture
+    name: 埃森哲
+    sector: foreign
+    portal: 埃森哲中国校招页
+    programs:
+      - title: AAP AI-Native Analyst
+        window: [2026-01-01, 2027-08-31]
+        window_text: 2026.01.01–2027.08.31
+        status: 全年滚动
+        roles: [AI-Native 分析师（Digital Core 等）]
+        cities: [大连, 成都, 广州, 深圳]
+        confidence: official
+        sources:
+          - {label: 官方, url: "https://www.accenture.com/cn-zh/careers/local/accenture-china-campus-page"}
+
+  - key: intel
+    name: 英特尔
+    sector: foreign
+    portal: jobs.intel.cn
+    programs:
+      - title: 校招
+        window: null
+        window_text: '"2026/2027 届"（第三方）'
+        basis: unknown
+        status: 招满即止
+        roles: [软件, 系统软件]
+        cities: [深圳]
+        requirements: [全日制本硕博]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://campus.niuqizp.com/schedule-7mY85ZZnz.html"}
+
+  - key: schneider
+    name: 施耐德电气
+    sector: foreign
+    portal: careers.se.com/china
+    programs:
+      - title: 校招
+        window: null
+        window_text: '"2026 至 2027 届海内外"（第三方）'
+        basis: unknown
+        status: 正式批 10-13 截止，11 月仍有岗位
+        deadline_text: 正式批 10-13
+        roles: [数智化应用工程师, AI 应用顾问, E.IT Trainee]
+        cities: [厦门, 南京, 杭州, 武汉, 苏州, 西安, 无锡, 珠海]
+        requirements: [研发岗多要求硕士]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://campus.niuqizp.com/job-vly5aLMzn.html"}
+
+  - key: microsoft_suzhou
+    name: 微软苏州
+    sector: foreign
+    portal: careers.microsoft.com
+    programs:
+      - title: 初级岗（0–2 年经验）
+        window: null
+        window_text: 2027 届校招窗口未查到，大概率从 2026.09 开始；盯 "recently completed" 或 "0–2 年经验" 的初级岗
+        basis: unknown
+        status: 见过的两个岗位已关闭
+        roles: [软件工程（M365、Windows 365、AI 应用）]
+        cities: [苏州]
+        requirements: [偏好 AI Agent 经验和英语]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://jobs.anitab.org/companies/microsoft-2/jobs/92944607-software-engineer"}
+
+  - key: ericsson
+    name: 爱立信
+    sector: foreign
+    portal: jobs.ericsson.com
+    note: 2022–2025 年在华裁员超过 3,500 人，在华规模在缩小
+    programs:
+      - title: New Grad (Start ASAP)
+        window: null
+        window_text: 2027 届窗口未查到；有 "Start ASAP" 岗，适合已毕业者
+        basis: unknown
+        status: 宣讲在进行
+        roles: [AI 软件开发]
+        cities: [南京, 成都, 广州]
+        requirements: [AI 岗要求硕士和强英语]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://cn.prosple.com/graduate-employers/ericsson-china"}
+
+  - key: dell
+    name: 戴尔
+    sector: foreign
+    portal: chinajobs.dell.com
+    programs:
+      - title: 内部销售（非技术岗）
+        window: null
+        window_text: 销售类"2026、2027 届"
+        basis: unknown
+        status: 滚动；只限销售类
+        roles: [内部销售（非技术岗）]
+        cities: [厦门, 成都, 大连, 广州]
+        confidence: third_party
+        sources:
+          - {label: 第三方, url: "https://campus.niuqizp.com/job-vw85Cz5tz.html"}
+
+  - key: bosch_wuxi
+    name: 博世无锡 BCSC
+    sector: foreign
+    portal: 博世官网
+    programs:
+      - title: 2027 校招
+        window: null
+        window_text: 只写"2027 届"
+        basis: unknown
+        status: 已近尾声
+        roles: [大模型, 嵌入式]
+        cities: [无锡]
+        confidence: third_party
+        sources:
+          - {label: 博世, url: "https://campus.niuqizp.com/schedule-7UwkNaNat.html"}
+
+  - key: capgemini_dalian
+    name: 凯捷大连
+    sector: foreign
+    portal: 凯捷官网
+    programs:
+      - title: 2027 校招
+        window: null
+        window_text: 只写"2027 届"
+        basis: unknown
+        status: 10-16 启动，秋招可能还开
+        roles: [AI 开发, 数据开发, 运维]
+        cities: [大连]
+        confidence: third_party
+        sources:
+          - {label: 凯捷, url: "https://campus.niuqizp.com/schedule-7llk5znZM.html"}
+
+  # ---------------------------------------------------------------- 窗口不含 2026-08，只能走社招（手册第五节）
+  - {key: bytedance, name: 字节跳动, sector: internet, programs: [{title: 2027 校招, window: [2026-09, null], window_text: 窗口从 2026-09 开始, status: 只能走社招的"经验不限"岗位, confidence: third_party}]}
+  - {key: baidu, name: 百度, sector: internet, programs: [{title: 2027 校招, window: [2026-09, null], window_text: 窗口从 2026-09 开始, status: 只能走社招, confidence: third_party}]}
+  - {key: xiaomi, name: 小米, sector: hardware, programs: [{title: 2027 校招, window: [2026-09, null], window_text: 窗口从 2026-09 开始, status: 只能走社招, confidence: third_party}]}
+  - {key: lenovo, name: 联想, sector: hardware, programs: [{title: 2027 校招, window: [2026-09, null], window_text: 窗口从 2026-09 开始, status: 只能走社招, confidence: third_party}]}
+  - {key: tcl, name: TCL, sector: hardware, programs: [{title: 2027 校招, window: [2026-09, null], window_text: 窗口从 2026-09 开始, status: 只能走社招, confidence: third_party}]}
+  - {key: netease, name: 网易（游戏、雷火等）, sector: internet, programs: [{title: 2027 校招, window: [2026-09, null], window_text: 窗口从 2026-09 开始, status: 只能走社招, confidence: third_party}]}
+  - {key: bilibili, name: 哔哩哔哩, sector: internet, programs: [{title: 2027 校招, window: [2026-09, null], window_text: 窗口从 2026-09 开始, status: 只能走社招, confidence: third_party}]}
+  - {key: trip, name: 携程, sector: internet, programs: [{title: 2027 校招, window: [2026-09, null], window_text: 窗口从 2026-09 开始, status: 只能走社招, confidence: third_party}]}
+  - {key: didi, name: 滴滴, sector: internet, programs: [{title: 2027 校招, window: [2026-09, null], window_text: 窗口从 2026-09 开始, status: 只能走社招, confidence: third_party}]}
+  - {key: shopee, name: Shopee, sector: internet, programs: [{title: 2027 校招, window: [2026-09, null], window_text: 窗口从 2026-09 开始, status: 只能走社招, confidence: third_party}]}
+  - {key: g37, name: 三七互娱, sector: internet, programs: [{title: 2027 校招, window: [2026-09, null], window_text: 窗口从 2026-09 开始, status: 只能走社招, confidence: third_party}]}
+  - {key: dewu, name: 得物, sector: internet, programs: [{title: 2027 校招, window: [2026-09, null], window_text: 窗口从 2026-09 开始, status: 只能走社招, confidence: third_party}]}
+  - {key: shein, name: SHEIN, sector: internet, programs: [{title: 2027 校招, window: [2026-09-01, null], window_text: 窗口从 2026-09-01 开始, status: 只能走社招；英语有加分, confidence: third_party}]}
+  - {key: pdd, name: 拼多多, sector: internet, programs: [{title: 2027 校招, window: [2026-09, null], window_text: 窗口从 2026-09 开始, status: 只能走社招, confidence: third_party}]}
+  - key: amazon
+    name: 亚马逊
+    sector: foreign
+    programs:
+      - {key: aws_sa, title: AWS SA 岗, window: [2026-09, null], window_text: 窗口从 2026-09 开始, status: 只能走社招, confidence: third_party}
+      - {key: fulltime, title: 全职岗, window: [2026-10, null], window_text: 窗口从 2026-10 开始, status: 只能走社招, confidence: third_party}
+  - {key: jd, name: 京东, sector: internet, programs: [{title: 2027 校招, window: [2026-10, null], window_text: 窗口从 2026-10 开始，海内外都按毕业证, basis: graduation_cert, status: 只能走社招, confidence: third_party}]}
+  - {key: alibaba, name: 阿里巴巴（含阿里国际）, sector: internet, programs: [{title: 2027 校招, window: [2026-11, 2027-10], window_text: 2026.11–2027.10, status: 只能走社招；阿里 2027 届 AI 相关岗位约占 80%, confidence: third_party}]}
+  - {key: meituan, name: 美团, sector: internet, programs: [{title: 2027 校招, window: [2026-11, 2027-10], window_text: 2026.11–2027.10, status: 只能走社招, confidence: third_party}]}
+  - {key: antgroup, name: 蚂蚁集团, sector: internet, programs: [{title: 2027 校招, window: [2026-11, null], window_text: 窗口从 2026-11 开始, status: 只能走社招, confidence: third_party}]}
+  - {key: bigo, name: BIGO, sector: internet, programs: [{title: 2027 校招, window: [2026-11, null], window_text: 窗口从 2026-11 开始, status: 只能走社招, confidence: third_party}]}
+  - {key: nvidia, name: 英伟达, sector: foreign, programs: [{title: NCG, window: [2027-01, 2027-12], window_text: 只招 2027 年毕业或在校生, status: 不符合, confidence: third_party}]}
+  - {key: sap, name: SAP, sector: foreign, programs: [{title: STAR, window: [2027-01, 2027-12], window_text: 只招 2027 年毕业或在校生, status: 不符合, confidence: third_party}]}
+  - {key: honeywell, name: 霍尼韦尔, sector: foreign, programs: [{title: 校招, window: [2027-01, 2027-12], window_text: 只招 2027 年毕业或在校生, status: 不符合, confidence: third_party}]}
+  - {key: siemens, name: 西门子, sector: foreign, programs: [{title: Sales100, window: [2027-01, 2027-12], window_text: 只招 2027 年毕业或在校生, status: 不符合, confidence: third_party}]}
+
+  # ---------------------------------------------------------------- 2027 届公告未查到，待补查（手册第六节）
+  - {key: anker, name: 安克创新, sector: hardware, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: haier, name: 海尔, sector: hardware, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: gree, name: 格力, sector: hardware, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: geely, name: 吉利/极氪, sector: hardware, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: xpeng, name: 小鹏, sector: hardware, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: nio, name: 蔚来, sector: hardware, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: li_auto, name: 理想, sector: hardware, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: boe, name: 京东方, sector: hardware, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: inspur, name: 浪潮, sector: hardware, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: h3c, name: 新华三, sector: hardware, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: unigroup, name: 紫光, sector: hardware, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: sangfor, name: 深信服, sector: hardware, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: kingdee, name: 金蝶, sector: hardware, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: yonyou, name: 用友, sector: hardware, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: bambu, name: 拓竹, sector: hardware, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: htsc, name: 华泰证券, sector: bank, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: cmschina, name: 招商证券, sector: bank, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: citics, name: 中信证券, sector: bank, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: unionpay, name: 中国银联, sector: bank, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: chinalife, name: 中国人寿, sector: bank, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: cpic, name: 中国太保, sector: bank, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: cib_fintech, name: 兴业数金, sector: bank, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: webank, name: 微众银行, sector: bank, note: 只查到实习口径，海外从 2026-09 起，大概率不符合, programs: []}
+  - {key: cec, name: 中国电子（中国长城、中电金信、麒麟软件）, sector: soe, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: cetc, name: 中国电科各研究所, sector: soe, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: casic, name: 航天科工京外单位, sector: soe, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: cmhk, name: 招商局集团, sector: soe, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: sinopec, name: 中国石化, sector: soe, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: cnpc, name: 中国石油, sector: soe, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: crrc, name: 中国中车, sector: soe, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: tobacco_provincial, name: 各省烟草公司, sector: soe, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: ct_research, name: 中国电信研究院, sector: soe, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: arm_china, name: 安谋科技（ARM China）, sector: foreign, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: ntt_data, name: NTT DATA, sector: foreign, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: sc_gbs, name: 渣打 GBS, sector: foreign, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: citi_dalian, name: 花旗大连, sector: foreign, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: qualcomm_sz, name: 高通深圳, sector: foreign, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: apple, name: 苹果, sector: foreign, note: 2027 届公告未查到，待补查, programs: []}
+  - {key: amd, name: AMD, sector: foreign, note: 2027 届公告未查到，待补查, programs: []}

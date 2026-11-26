@@ -1,0 +1,239 @@
+"""cn-agent: command line for the P0 pieces.
+
+    cn-agent doctor                 check configuration, job_rag_starter, experiences, database
+    cn-agent db upgrade             create / migrate the schema (also installs pgvector)
+    cn-agent seed                   load data/seed/campus_2027.yaml
+    cn-agent profile                load the search profile (profile.local.yaml)
+    cn-agent index                  embed the experiences library into pgvector
+    cn-agent search "RAG 检索"      search the stored library
+    cn-agent parity "q1" "q2"       compare pgvector results with job_rag_starter's in-memory retriever
+    cn-agent companies [--city 武汉] [--all]   programmes with cohort eligibility for the profile
+    cn-agent setup                  db upgrade + seed + profile + index
+"""
+import argparse
+import sys
+from datetime import date
+
+from sqlalchemy import func, select
+
+from . import eligibility, geo
+from .config import PROJECT_ROOT, get_settings
+
+
+def _out(*parts):
+    print(*parts, flush=True)
+
+
+# ---------------------------------------------------------------- helpers
+def _embedder(settings):
+    from .rag import bridge
+    from .rag.embedder import E5Embedder
+    return E5Embedder(bridge.search_module(settings.job_rag_home).MODEL, offline=settings.offline)
+
+
+def _profile_row(session, name="default"):
+    from .db.models import SearchProfile
+    row = session.scalar(select(SearchProfile).where(SearchProfile.name == name))
+    if row is None:
+        raise SystemExit("数据库里还没有求职画像；先运行 cn-agent profile")
+    return row
+
+
+# ---------------------------------------------------------------- commands
+def cmd_doctor(args, settings):
+    from .db.session import database_status
+    from .rag import bridge
+    ok = True
+    _out(f"项目目录        {PROJECT_ROOT}")
+    try:
+        module = bridge.search_module(settings.job_rag_home)
+        _out(f"job_rag_starter {settings.job_rag_home}  (检索模型 {module.MODEL})")
+    except bridge.BridgeError as exc:
+        ok = False
+        _out(f"job_rag_starter 失败：{exc}")
+    files = sorted(p for p in settings.experiences.glob("*.md")) if settings.experiences.is_dir() else []
+    ok &= bool(files)
+    _out(f"经历库          {settings.experiences}  ({len(files)} 个 .md 文件)")
+    profile = settings.profile_file
+    _out(f"求职画像        {profile}  ({'存在' if profile.is_file() else '不存在：复制 profile.example.yaml'})")
+    db_ok, message = database_status(settings.database_url)
+    ok &= db_ok
+    _out(f"数据库          {message}")
+    return 0 if ok else 1
+
+
+def cmd_db_upgrade(args, settings):
+    from alembic import command
+    from alembic.config import Config
+    config = Config(str(PROJECT_ROOT / "alembic.ini"))
+    config.attributes["database_url"] = settings.database_url
+    command.upgrade(config, "head")
+    _out("数据库已迁移到最新版本")
+    return 0
+
+
+def cmd_seed(args, settings):
+    from .db.session import session_scope
+    from .seed.loader import load_seed, read_seed
+    seed = read_seed(args.file or settings.seed_path)
+    with session_scope(settings.database_url) as session:
+        counts = load_seed(session, seed)
+    _out(f"已导入 {counts['companies']} 家企业、{counts['programs']} 个招聘项目"
+         f"（删除 {counts['programs_removed']} 个已不在文件里的项目）；资料核对日期 {seed.checked_on}")
+    return 0
+
+
+def cmd_profile(args, settings):
+    from .db.session import session_scope
+    from .seed.loader import load_profile, read_profile
+    profile = read_profile(args.file or settings.profile_file)
+    with session_scope(settings.database_url) as session:
+        load_profile(session, profile)
+    _out(f"已保存求职画像 {profile.name}：岗位 {'、'.join(r.label for r in profile.roles)}；"
+         f"城市 {'、'.join(profile.cities)}；渠道 {'、'.join(profile.channels)}")
+    return 0
+
+
+def cmd_index(args, settings):
+    from .db.session import session_scope
+    from .rag import bridge, store
+    embedder = _embedder(settings)
+    chunks = bridge.experience_chunks(settings.job_rag_home, settings.experiences, embedder.tokenizer,
+                                      all_sections=args.all_sections)
+    with session_scope(settings.database_url) as session:
+        counts = store.index_chunks(session, embedder, chunks)
+    _out(f"经历库入库完成：共 {counts['total']} 个片段；新编码 {counts['added']}，"
+         f"沿用 {counts['kept']}，删除 {counts['removed']}")
+    return 0
+
+
+def _print_results(results):
+    for rank, r in enumerate(results, 1):
+        snippet = " ".join(r["matched_text"].split())[:90]
+        _out(f"{rank}. [{r['score']:.4f}] {r['project']} / {r['section']}  "
+             f"({r['source']}:{r['line_start']}-{r['line_end']})")
+        _out(f"   {snippet}")
+
+
+def cmd_search(args, settings):
+    from .db.session import session_scope
+    from .rag import bridge, store
+    embedder = _embedder(settings)
+    rank_sections = bridge.search_module(settings.job_rag_home).rank_sections
+    with session_scope(settings.database_url) as session:
+        if not session.scalar(select(func.count()).select_from(store.KbChunk)):
+            raise SystemExit("向量库是空的；先运行 cn-agent index")
+        results = store.search(session, embedder, rank_sections, args.query, top_k=args.top_k)
+    _print_results(results)
+    return 0
+
+
+def cmd_parity(args, settings):
+    """Same queries through job_rag_starter's in-memory ExperienceRetriever and
+    through pgvector: the section order and scores should agree."""
+    from .db.session import session_scope
+    from .rag import bridge, store
+    module = bridge.search_module(settings.job_rag_home)
+    embedder = _embedder(settings)
+    memory = module.ExperienceRetriever(settings.experiences, offline=settings.offline)
+    memory._load_model = lambda: embedder.model   # reuse the loaded model instead of loading it twice
+    memory.build()
+    failures = 0
+    for query in args.queries:
+        expected = memory.search(query, top_k=args.top_k)
+        with session_scope(settings.database_url) as session:
+            actual = store.search(session, embedder, module.rank_sections, query, top_k=args.top_k)
+        same_order = [r["section_id"] for r in expected] == [r["section_id"] for r in actual]
+        max_delta = max((abs(a["score"] - e["score"]) for a, e in zip(actual, expected)), default=0.0)
+        ok = same_order and max_delta < 1e-3
+        failures += not ok
+        _out(f"{'一致' if ok else '不一致'}  {query}  (前 {args.top_k} 名顺序{'相同' if same_order else '不同'}，"
+             f"最大分差 {max_delta:.5f})")
+    return 1 if failures else 0
+
+
+def cmd_companies(args, settings):
+    from .db.models import CampusProgram, Company
+    from .db.session import session_scope
+    today = date.today()
+    with session_scope(settings.database_url) as session:
+        profile = _profile_row(session)
+        cities = args.city or profile.cities
+        programs = session.scalars(select(CampusProgram).join(Company)).all()
+        rows = []
+        for program in programs:
+            kind, matched = geo.match(program.cities, cities)
+            if kind is None and not args.all:
+                continue
+            verdict = eligibility.judge(program, profile)
+            if verdict.status == eligibility.INELIGIBLE and not args.all:
+                continue
+            closed = program.deadline is not None and program.deadline < today
+            rows.append((eligibility.ORDER.index(verdict.status), closed, program.company.name, program, verdict,
+                         kind, matched, closed))
+        rows.sort(key=lambda r: (r[0], r[1], r[2]))
+        for _, _, name, program, verdict, kind, matched, closed in rows:
+            where = f"{geo.LABELS[kind]}：{'、'.join(matched)}" if kind else "城市不匹配"
+            deadline = "已截止" if closed else (program.deadline_text or (program.deadline.isoformat()
+                                                                         if program.deadline else ""))
+            _out(f"[{verdict.label}] {name} · {program.title}  |  {where}  |  {deadline or '未写截止'}")
+            _out(f"    {verdict.reason}")
+            if program.roles:
+                _out(f"    岗位：{'、'.join(program.roles)}")
+            if program.status_text:
+                _out(f"    状态：{program.status_text}")
+        total = session.scalar(select(func.count()).select_from(Company))
+    _out(f"\n共 {len(rows)} 个项目（数据库里共 {total} 家企业）；城市：{'、'.join(cities)}"
+         f"{'；含不符合和城市不匹配的项目' if args.all else ''}")
+    return 0
+
+
+def cmd_setup(args, settings):
+    for step in (cmd_db_upgrade, cmd_seed, cmd_profile, cmd_index):
+        code = step(argparse.Namespace(file=None, all_sections=False), settings)
+        if code:
+            return code
+    return 0
+
+
+def build_parser():
+    parser = argparse.ArgumentParser(prog="cn-agent", description="国内求职 Agent（P0）")
+    sub = parser.add_subparsers(dest="command", required=True)
+    sub.add_parser("doctor", help="检查配置、经历库和数据库").set_defaults(func=cmd_doctor)
+    db = sub.add_parser("db", help="数据库").add_subparsers(dest="db_command", required=True)
+    db.add_parser("upgrade", help="迁移到最新版本").set_defaults(func=cmd_db_upgrade)
+    seed = sub.add_parser("seed", help="导入校招种子数据")
+    seed.add_argument("--file")
+    seed.set_defaults(func=cmd_seed)
+    profile = sub.add_parser("profile", help="导入求职画像")
+    profile.add_argument("--file")
+    profile.set_defaults(func=cmd_profile)
+    index = sub.add_parser("index", help="经历库向量入库")
+    index.add_argument("--all-sections", action="store_true", help="也收录派生的 CV/STAR 章节")
+    index.set_defaults(func=cmd_index)
+    search = sub.add_parser("search", help="检索经历库")
+    search.add_argument("query")
+    search.add_argument("--top-k", type=int, default=5)
+    search.set_defaults(func=cmd_search)
+    parity = sub.add_parser("parity", help="与 job_rag_starter 的内存检索对比")
+    parity.add_argument("queries", nargs="+")
+    parity.add_argument("--top-k", type=int, default=5)
+    parity.set_defaults(func=cmd_parity)
+    companies = sub.add_parser("companies", help="按求职画像列出校招项目和届别判断")
+    companies.add_argument("--city", action="append", help="覆盖画像里的城市，可重复")
+    companies.add_argument("--all", action="store_true", help="也列出不符合和城市不匹配的项目")
+    companies.set_defaults(func=cmd_companies)
+    sub.add_parser("setup", help="迁移、导入种子和画像、入库经历").set_defaults(func=cmd_setup)
+    return parser
+
+
+def main(argv=None):
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8")
+    args = build_parser().parse_args(argv)
+    return args.func(args, get_settings())
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
