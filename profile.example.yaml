@@ -21,3 +21,9 @@ testamur_month: 2025-12
 # Optional: CSCSE degree certification date (some employers use it instead), birth date for age limits.
 cscse_cert_date: null
 birth_date: null
+# Full-time work experience a Chinese employer would count (years); part-time and overseas casual work usually do not.
+experience_years: 0
+education:
+  degree: master            # bachelor | master | phd
+  undergrad_tier: other     # 985 | 211 | double_first_class | other
+  qs_rank: 150              # QS rank of the highest-degree university, or null

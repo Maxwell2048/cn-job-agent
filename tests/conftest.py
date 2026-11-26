@@ -90,3 +90,60 @@ def pg_url():
     yield rendered
     config.attributes["database_url"] = rendered
     command.downgrade(config, "base")
+
+
+class FakeLLM:
+    """Stands in for job_rag_starter's local model adapter.
+
+    extract_requirements: one requirement per JD line that starts with "- ",
+    quoting the line verbatim (category from a keyword).
+    judge_evidence: "direct" with a verbatim quote from the first candidate when
+    the candidate shares a word with the requirement, else "insufficient".
+    """
+    model = "fake-llm"
+    prompt_char_budget = 200_000
+
+    def __init__(self, fail_extraction=False):
+        self.fail_extraction = fail_extraction
+        self.tasks = []
+
+    def estimate_context(self, task, system_prompt, payload, schema):
+        import json
+        return len(system_prompt) + len(json.dumps(payload, ensure_ascii=False))
+
+    def generate_json(self, task, system_prompt, payload, schema=None, timeout_seconds=None, validate=None):
+        self.tasks.append(task)
+        if task == "extract_requirements":
+            if self.fail_extraction:
+                from cn_job_agent.config import get_settings
+                from cn_job_agent.rag import bridge
+                raise bridge.load(get_settings().job_rag_home, "local_llm").ServiceError("model down")
+            items = []
+            for line in payload["jd_text"].splitlines():
+                if not line.startswith("- "):
+                    continue
+                body = line[2:].strip()
+                category = "experience" if "经验" in body else "education" if "学历" in body else "technical_skill"
+                items.append({"text": body, "category": category, "importance": "required",
+                              "source_quote": body, "importance_source_quote": body, "qualifiers": [],
+                              "search_queries": [body], "needs_review": False})
+            return {"requirements": items, "requirement_groups": []}
+        if task == "judge_evidence":
+            requirement = payload["requirement"]
+            words = [w for w in requirement["text"].replace("，", " ").split() if len(w) >= 2]
+            for candidate in payload["candidates"]:
+                hit = next((w for w in words if w in candidate["text"]), None)
+                if hit:
+                    return {"requirement_id": requirement["requirement_id"], "verdict": "direct",
+                            "reason": f"候选提到 {hit}", "evidence": [{"candidate_id": candidate["candidate_id"],
+                                                                     "quote": hit}],
+                            "missing_aspects": [], "questions_for_user": []}
+            return {"requirement_id": requirement["requirement_id"], "verdict": "insufficient",
+                    "reason": "当前检索资料未提供证据", "evidence": [], "missing_aspects": [requirement["text"]],
+                    "questions_for_user": []}
+        raise AssertionError(task)
+
+
+@pytest.fixture
+def fake_llm():
+    return FakeLLM()

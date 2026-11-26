@@ -7,6 +7,11 @@ search_profiles   what the job seeker is looking for: roles, cities, channels,
                   and the dates that decide cohort eligibility
 kb_chunks         retrieval chunks of a knowledge corpus with their E5 vectors
                   (pgvector); corpus "experience" is the job_rag_starter library
+job_postings      one JD the job seeker added (pasted, file, clipboard)
+agent_runs        one run of the LangGraph job graph over a posting; its
+                  thread_id is also the LangGraph checkpoint thread
+requirement_matches  one row per extracted requirement of a run, with the
+                  matching agent's verdict and verified evidence quotes
 """
 from datetime import date, datetime, timezone
 
@@ -85,6 +90,10 @@ class SearchProfile(Base):
     testamur_month: Mapped[date | None] = mapped_column(Date, nullable=True)   # first day of the month
     cscse_cert_date: Mapped[date | None] = mapped_column(Date, nullable=True)
     birth_date: Mapped[date | None] = mapped_column(Date, nullable=True)
+    # Full-time work experience that a Chinese employer would count, in years.
+    experience_years: Mapped[int] = mapped_column(Integer, default=0)
+    # {degree: bachelor|master|phd, undergrad_tier: 985|211|double_first_class|other, qs_rank: int|null}
+    education: Mapped[dict | None] = mapped_column(JSON, nullable=True)
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow, onupdate=utcnow)
 
 
@@ -113,3 +122,72 @@ class KbChunk(Base):
     model: Mapped[str] = mapped_column(String(100))
     embedding = mapped_column(Vector(EMBEDDING_DIM))
     indexed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class JobPosting(Base):
+    __tablename__ = "job_postings"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    source: Mapped[str] = mapped_column(String(32), default="manual")    # manual | file | clipboard | stdin
+    title: Mapped[str] = mapped_column(String(300), default="")
+    company_name: Mapped[str] = mapped_column(String(300), default="")
+    company_id: Mapped[int | None] = mapped_column(ForeignKey("companies.id", ondelete="SET NULL"),
+                                                   nullable=True, index=True)
+    city: Mapped[str] = mapped_column(String(100), default="")
+    url: Mapped[str] = mapped_column(String(500), default="")
+    # campus | social | unknown: given by the user or inferred from the JD
+    channel: Mapped[str] = mapped_column(String(16), default="unknown")
+    jd_text: Mapped[str] = mapped_column(Text)
+    jd_sha256: Mapped[str] = mapped_column(String(64), unique=True)
+    # new -> screened_out | review | matched | failed
+    status: Mapped[str] = mapped_column(String(16), default="new", index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+    company: Mapped[Company | None] = relationship()
+    runs: Mapped[list["AgentRun"]] = relationship(back_populates="posting", cascade="all, delete-orphan",
+                                                  order_by="AgentRun.started_at")
+
+
+class AgentRun(Base):
+    __tablename__ = "agent_runs"
+
+    id: Mapped[str] = mapped_column(String(40), primary_key=True)     # also the LangGraph thread_id
+    posting_id: Mapped[int] = mapped_column(ForeignKey("job_postings.id", ondelete="CASCADE"), index=True)
+    graph_version: Mapped[str] = mapped_column(String(16), default="")
+    # running | interrupted | rejected | done | failed
+    status: Mapped[str] = mapped_column(String(16), default="running", index=True)
+    screening: Mapped[dict] = mapped_column(JSON, default=dict)      # decision, flags, company verdicts
+    summary: Mapped[dict] = mapped_column(JSON, default=dict)        # coverage and score
+    versions: Mapped[dict] = mapped_column(JSON, default=dict)       # prompt versions, model
+    trace: Mapped[list] = mapped_column(JSON, default=list)          # visited nodes with timings
+    report_path: Mapped[str] = mapped_column(String(500), default="")
+    error: Mapped[str] = mapped_column(Text, default="")
+    started_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+    finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+
+    posting: Mapped[JobPosting] = relationship(back_populates="runs")
+    matches: Mapped[list["RequirementMatch"]] = relationship(back_populates="run", cascade="all, delete-orphan",
+                                                             order_by="RequirementMatch.requirement_id")
+
+
+class RequirementMatch(Base):
+    __tablename__ = "requirement_matches"
+    __table_args__ = (UniqueConstraint("run_id", "requirement_id", name="uq_match_run_requirement"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    run_id: Mapped[str] = mapped_column(ForeignKey("agent_runs.id", ondelete="CASCADE"), index=True)
+    requirement_id: Mapped[str] = mapped_column(String(16))
+    text: Mapped[str] = mapped_column(Text)
+    category: Mapped[str] = mapped_column(String(32), index=True)
+    importance: Mapped[str] = mapped_column(String(16))
+    source_quote: Mapped[str] = mapped_column(Text, default="")
+    # direct | related | insufficient | null when processing failed
+    verdict: Mapped[str | None] = mapped_column(String(16), nullable=True, index=True)
+    processing_status: Mapped[str] = mapped_column(String(16), default="")
+    reason: Mapped[str] = mapped_column(Text, default="")
+    evidence: Mapped[list] = mapped_column(JSON, default=list)
+    missing_aspects: Mapped[list] = mapped_column(JSON, default=list)
+    questions_for_user: Mapped[list] = mapped_column(JSON, default=list)
+    errors: Mapped[list] = mapped_column(JSON, default=list)
+
+    run: Mapped[AgentRun] = relationship(back_populates="matches")

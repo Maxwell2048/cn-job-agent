@@ -120,6 +120,26 @@ class RoleIn(BaseModel):
     keywords: list[str] = Field(default_factory=list)
 
 
+class EducationIn(BaseModel):
+    degree: str = "bachelor"                 # bachelor | master | phd
+    undergrad_tier: str = "other"            # 985 | 211 | double_first_class | other
+    qs_rank: int | None = None               # QS rank of the highest-degree university
+
+    @field_validator("degree")
+    @classmethod
+    def _degree(cls, value):
+        if value not in {"bachelor", "master", "phd"}:
+            raise ValueError("degree 必须是 bachelor、master 或 phd")
+        return value
+
+    @field_validator("undergrad_tier")
+    @classmethod
+    def _tier(cls, value):
+        if value not in {"985", "211", "double_first_class", "other"}:
+            raise ValueError("undergrad_tier 必须是 985、211、double_first_class 或 other")
+        return value
+
+
 class ProfileIn(BaseModel):
     name: str = "default"
     roles: list[RoleIn]
@@ -128,6 +148,8 @@ class ProfileIn(BaseModel):
     testamur_month: str | date | None = None
     cscse_cert_date: date | None = None
     birth_date: date | None = None
+    experience_years: int = 0
+    education: EducationIn = Field(default_factory=EducationIn)
 
     @field_validator("channels")
     @classmethod
@@ -193,6 +215,7 @@ def load_profile(session, profile: ProfileIn):
     row.cities, row.channels = profile.cities, profile.channels
     row.testamur_month = profile.testamur_first_day
     row.cscse_cert_date, row.birth_date = profile.cscse_cert_date, profile.birth_date
+    row.experience_years, row.education = profile.experience_years, profile.education.model_dump()
     session.add(row)
     session.flush()
     return row

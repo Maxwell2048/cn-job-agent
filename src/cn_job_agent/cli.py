@@ -9,8 +9,17 @@
     cn-agent parity "q1" "q2"       compare pgvector results with job_rag_starter's in-memory retriever
     cn-agent companies [--city 武汉] [--all]   programmes with cohort eligibility for the profile
     cn-agent setup                  db upgrade + seed + profile + index
+
+    cn-agent jd add [--file F | --stdin | --clipboard] [--title --company --city --url --channel]
+    cn-agent jd list | jd show ID
+    cn-agent run ID [--approve-review] [--force]      screen + match one posting (LangGraph)
+    cn-agent run --resume RUN_ID [--approve | --decline]
+    cn-agent runs                   recent runs
+    cn-agent graph                  the job graph as Mermaid
+    cn-agent llm check              is the local model reachable?
 """
 import argparse
+import subprocess
 import sys
 from datetime import date
 
@@ -68,7 +77,9 @@ def cmd_db_upgrade(args, settings):
     config = Config(str(PROJECT_ROOT / "alembic.ini"))
     config.attributes["database_url"] = settings.database_url
     command.upgrade(config, "head")
-    _out("数据库已迁移到最新版本")
+    from .agents.runner import setup_checkpointer
+    setup_checkpointer(settings)
+    _out("数据库已迁移到最新版本（含 LangGraph 检查点表）")
     return 0
 
 
@@ -188,6 +199,128 @@ def cmd_companies(args, settings):
     return 0
 
 
+def _read_jd(args):
+    if args.file:
+        from pathlib import Path
+        return Path(args.file).read_bytes().decode("utf-8-sig"), "file"
+    if args.clipboard:
+        command = "[Console]::OutputEncoding=[Text.Encoding]::UTF8; Get-Clipboard -Raw"
+        done = subprocess.run(["powershell", "-NoProfile", "-Command", command], capture_output=True)
+        return done.stdout.decode("utf-8-sig", errors="replace"), "clipboard"
+    return sys.stdin.buffer.read().decode("utf-8-sig"), "stdin"
+
+
+def cmd_jd_add(args, settings):
+    from .agents.postings import add_posting
+    from .db.session import session_scope
+    text, source = _read_jd(args)
+    with session_scope(settings.database_url) as session:
+        posting, created = add_posting(session, text, source=source, title=args.title or "",
+                                       company_name=args.company or "", city=args.city or "",
+                                       url=args.url or "", channel=args.channel or "")
+        company = posting.company.name if posting.company else "未关联已知企业"
+        _out(f"{'已保存' if created else '已存在相同 JD'}：岗位 {posting.id} · {posting.title}"
+             f" · {company} · 渠道 {posting.channel}")
+    return 0
+
+
+def cmd_jd_list(args, settings):
+    from .db.models import JobPosting
+    from .db.session import session_scope
+    with session_scope(settings.database_url) as session:
+        for p in session.scalars(select(JobPosting).order_by(JobPosting.id.desc()).limit(args.limit)):
+            _out(f"{p.id:>4}  [{p.status}]  {p.title}  ·  {p.company_name or (p.company.name if p.company else '')}"
+                 f"  ·  {p.city}  ·  {p.channel}")
+    return 0
+
+
+def cmd_jd_show(args, settings):
+    from .db.models import JobPosting
+    from .db.session import session_scope
+    with session_scope(settings.database_url) as session:
+        posting = session.get(JobPosting, args.id)
+        if posting is None:
+            raise SystemExit(f"没有编号为 {args.id} 的岗位")
+        _out(f"{posting.title}  ·  {posting.company_name}  ·  {posting.city}  ·  {posting.channel}  ·  {posting.status}")
+        for run in posting.runs:
+            score = run.summary.get("score") if run.summary else None
+            _out(f"  运行 {run.id}  [{run.status}]  分数 {score if score is not None else '-'}  {run.report_path}")
+        _out("")
+        _out(posting.jd_text)
+    return 0
+
+
+def _print_outcome(outcome):
+    from .agents.report import DECISION, SEVERITY
+    decision = outcome.screening.get("decision")
+    if decision:
+        _out(f"筛选：{DECISION.get(decision, decision)}")
+        for f in outcome.screening.get("flags", []):
+            if f["severity"] != "info":
+                _out(f"  [{SEVERITY[f['severity']]}] {f['message']}" + (f"  「{f['quote']}」" if f["quote"] else ""))
+    if outcome.status == "interrupted":
+        _out(f"\n运行 {outcome.run_id} 已暂停，等你确认。继续：cn-agent run --resume {outcome.run_id} --approve"
+             f"\n不继续：cn-agent run --resume {outcome.run_id} --decline")
+        return 0
+    if outcome.status == "failed":
+        _out(f"\n运行 {outcome.run_id} 失败：{outcome.error or '见报告'}"
+             + (f"\n报告：{outcome.report_path}" if outcome.report_path else "")
+             + f"\n修好原因后重试：cn-agent run --resume {outcome.run_id}")
+        return 1
+    if outcome.summary:
+        s = outcome.summary
+        score = "无法评分" if s.get("score") is None else f"{s['score']} 分（{s['label']}）"
+        _out(f"证据覆盖：{score}；必需条件有证据 {s['required_covered']}/{s['required_total']}；"
+             f"直接 {s['counts']['direct']} · 相关 {s['counts']['related']} · 不足 {s['counts']['insufficient']}"
+             f" · 失败 {s['counts']['error']}")
+    _out(f"运行 {outcome.run_id}：{outcome.status}\n报告：{outcome.report_path}")
+    return 0
+
+
+def cmd_run(args, settings):
+    from .agents import runner
+    toolkit = runner.Toolkit(settings)
+    with runner.postgres_checkpointer(settings) as saver:
+        if args.resume:
+            approve = True if args.approve else False if args.decline else None
+            outcome = runner.resume(toolkit, saver, args.resume, approve)
+        else:
+            if args.posting_id is None:
+                raise SystemExit("给出岗位编号，或用 --resume 继续一个运行")
+            outcome = runner.start(toolkit, saver, args.posting_id, force=args.force,
+                                   auto_approve=args.approve_review)
+    return _print_outcome(outcome)
+
+
+def cmd_runs(args, settings):
+    from .db.models import AgentRun
+    from .db.session import session_scope
+    with session_scope(settings.database_url) as session:
+        for run in session.scalars(select(AgentRun).order_by(AgentRun.started_at.desc()).limit(args.limit)):
+            score = (run.summary or {}).get("score")
+            _out(f"{run.id}  [{run.status}]  岗位 {run.posting_id} · {run.posting.title}  ·  "
+                 f"分数 {score if score is not None else '-'}")
+    return 0
+
+
+def cmd_graph(args, settings):
+    from .agents.graph import build_graph
+    from .agents.runner import Toolkit
+    _out(build_graph(Toolkit(settings)).get_graph().draw_mermaid())
+    return 0
+
+
+def cmd_llm_check(args, settings):
+    from .agents.matching import build_llm
+    try:
+        llm = build_llm(settings)
+    except Exception as exc:  # noqa: BLE001
+        _out(f"本地模型不可用：{exc}")
+        return 1
+    _out(f"本地模型可用：{getattr(llm, 'model', '')}（配置 {settings.llm_config_file}）")
+    return 0
+
+
 def cmd_setup(args, settings):
     for step in (cmd_db_upgrade, cmd_seed, cmd_profile, cmd_index):
         code = step(argparse.Namespace(file=None, all_sections=False), settings)
@@ -224,6 +357,39 @@ def build_parser():
     companies.add_argument("--all", action="store_true", help="也列出不符合和城市不匹配的项目")
     companies.set_defaults(func=cmd_companies)
     sub.add_parser("setup", help="迁移、导入种子和画像、入库经历").set_defaults(func=cmd_setup)
+
+    jd = sub.add_parser("jd", help="岗位 JD").add_subparsers(dest="jd_command", required=True)
+    add = jd.add_parser("add", help="保存一个 JD（默认从标准输入读取）")
+    source = add.add_mutually_exclusive_group()
+    source.add_argument("--file")
+    source.add_argument("--clipboard", action="store_true")
+    source.add_argument("--stdin", action="store_true")
+    for name in ("title", "company", "city", "url"):
+        add.add_argument(f"--{name}")
+    add.add_argument("--channel", choices=["campus", "social", "unknown"])
+    add.set_defaults(func=cmd_jd_add)
+    jd_list = jd.add_parser("list", help="最近的岗位")
+    jd_list.add_argument("--limit", type=int, default=30)
+    jd_list.set_defaults(func=cmd_jd_list)
+    show = jd.add_parser("show", help="岗位详情和运行记录")
+    show.add_argument("id", type=int)
+    show.set_defaults(func=cmd_jd_show)
+
+    run = sub.add_parser("run", help="对一个岗位运行筛选和匹配（LangGraph）")
+    run.add_argument("posting_id", type=int, nargs="?")
+    run.add_argument("--force", action="store_true", help="硬性不符也继续匹配")
+    run.add_argument("--approve-review", action="store_true", help="需人工确认时直接继续，不暂停")
+    run.add_argument("--resume", metavar="RUN_ID", help="继续一个暂停或失败的运行")
+    answer = run.add_mutually_exclusive_group()
+    answer.add_argument("--approve", action="store_true")
+    answer.add_argument("--decline", action="store_true")
+    run.set_defaults(func=cmd_run)
+    runs = sub.add_parser("runs", help="最近的运行")
+    runs.add_argument("--limit", type=int, default=20)
+    runs.set_defaults(func=cmd_runs)
+    sub.add_parser("graph", help="打印 Agent 图（Mermaid）").set_defaults(func=cmd_graph)
+    llm = sub.add_parser("llm", help="本地模型").add_subparsers(dest="llm_command", required=True)
+    llm.add_parser("check", help="检查本地模型能否连接").set_defaults(func=cmd_llm_check)
     return parser
 
 

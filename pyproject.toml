@@ -21,6 +21,12 @@ dependencies = [
     "numpy>=1.26",
     # The E5 embedder; the retrieval and chunking code itself comes from job_rag_starter.
     "sentence-transformers>=3,<6",
+    # Agent orchestration with checkpoints in PostgreSQL
+    "langgraph>=1.2,<2",
+    "langgraph-checkpoint-postgres>=3,<4",
+    # job_rag_starter's langchain_openai model adapter
+    "langchain-core>=1.8,<2",
+    "langchain-openai>=1.8,<2",
 ]
 
 [project.optional-dependencies]

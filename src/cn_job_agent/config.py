@@ -17,10 +17,26 @@ class Settings(BaseSettings):
     profile_path: Path = Path("profile.local.yaml")
     seed_path: Path = PROJECT_ROOT / "data" / "seed" / "campus_2027.yaml"
     offline: bool = True
+    # Local model config in job_rag_starter's format (defaults to its config.local.json)
+    llm_config: Path | None = None
+    outputs_dir: Path = PROJECT_ROOT / "outputs"
+    state_dir: Path = PROJECT_ROOT / "state"
+    match_top_k: int = 5
+    # Requirements judged at the same time; keep at or below the model server's parallel slots.
+    match_concurrency: int = 2
 
     @property
     def experiences(self) -> Path:
         return self.experiences_dir or self.job_rag_home / "experiences"
+
+    @property
+    def llm_config_file(self) -> Path:
+        return self.llm_config or self.job_rag_home / "config.local.json"
+
+    @property
+    def checkpoint_url(self) -> str:
+        """libpq URL for LangGraph's PostgresSaver (no SQLAlchemy driver suffix)."""
+        return self.database_url.replace("postgresql+psycopg://", "postgresql://", 1)
 
     @property
     def profile_file(self) -> Path:

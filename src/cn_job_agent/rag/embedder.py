@@ -2,6 +2,7 @@
 `name` and `encode(texts) -> normalized ndarray` works, so tests can use a
 small fake instead of the E5 model."""
 import sys
+import threading
 
 
 class E5Embedder:
@@ -15,10 +16,13 @@ class E5Embedder:
         self.model = SentenceTransformer(model_name, device="cpu", local_files_only=offline)
         self.tokenizer = self.model.tokenizer
         self.max_seq_length = self.model.max_seq_length
+        # The matching agent searches from parallel graph branches; encode one batch at a time.
+        self._lock = threading.Lock()
 
     def token_count(self, text):
         return len(self.tokenizer.encode(text))
 
     def encode(self, texts):
-        return self.model.encode(list(texts), normalize_embeddings=True, convert_to_numpy=True,
-                                 show_progress_bar=False, batch_size=16)
+        with self._lock:
+            return self.model.encode(list(texts), normalize_embeddings=True, convert_to_numpy=True,
+                                     show_progress_bar=False, batch_size=16)
