@@ -41,8 +41,12 @@ def new_collection_id():
     return f"c-{datetime.now():%Y%m%d-%H%M%S}-{uuid.uuid4().hex[:4]}"
 
 
-def collect(settings, mode="auto", database_url=None, collectors=None, chat_model=None, max_saves=30,
-            max_searches=100, run_id=None, on_event=None):
+SEARCHES_PER_SOURCE = 25
+
+
+def collect(settings, mode="auto", database_url=None, collectors=None, chat_model=None, max_saves=50,
+            max_searches=None, run_id=None, on_event=None):
+    """max_searches defaults to 25 per job site, so adding sites does not cut the plan short."""
     if mode not in ("auto", "agent", "rules"):
         raise ValueError("mode 必须是 auto、agent 或 rules")
     url = database_url or settings.database_url
@@ -51,6 +55,7 @@ def collect(settings, mode="auto", database_url=None, collectors=None, chat_mode
     if collectors is None:
         http = Http()
         collectors = build_collectors(http)
+    max_searches = max_searches or SEARCHES_PER_SOURCE * len(collectors)
     profile = load_profile(url)
     with session_scope(url) as s:
         s.add(CollectionRun(id=run_id, mode=mode, status="running", plan=[], stats={}, trace=[]))

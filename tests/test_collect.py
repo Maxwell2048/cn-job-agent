@@ -156,3 +156,16 @@ def test_collected_postings_are_processed_from_the_queue(sites, fake_embedder, t
     outcomes = runner.process_pending(kit, InMemorySaver(), limit=10)
     assert outcomes and all(o.status in ("done", "interrupted", "rejected") for _, o in outcomes)
     assert runner.pending_postings(sites["url"], 10) == []
+
+
+def test_social_postings_are_saved_with_their_channel(sites):
+    sites["good"].jobs.append(ListedJob(source="good", external_id="21", company_key="goodco", title="Agent 后端开发",
+                                        cities=["深圳"], url="https://example.test/good/21", channel="social"))
+    with session_scope(sites["url"]) as s:
+        load_profile(s, ProfileIn.model_validate({
+            "roles": [{"key": "agent", "label": "Agent 开发", "keywords": ["Agent"]}], "cities": ["深圳"],
+            "channels": ["campus", "social_entry"], "testamur_month": "2026-08"}))
+    collect(get_settings(), mode="rules", database_url=sites["url"], collectors={"good": sites["good"]})
+    with session_scope(sites["url"]) as s:
+        row = s.scalar(select(JobPosting).where(JobPosting.source == "good", JobPosting.external_id == "21"))
+        assert row is not None and row.channel == "social"

@@ -81,3 +81,17 @@ def test_city_of(name, city):
 def test_titles_are_single_line():
     from cn_job_agent.collectors import ListedJob
     assert ListedJob("s", "1", "c", "Data Agent研发工程师\n（大数据方向）").title == "Data Agent研发工程师 （大数据方向）"
+
+
+def test_zhiye_searches_configured_channels_and_tags_each_row():
+    def handler(request):
+        assert json.loads(request.content)["Category"] == ["2", "1"]
+        return httpx.Response(200, json={"Code": 200, "Count": 2, "Data": [
+            {"Id": "c1", "JobAdName": "Agent 工程师", "Category": "校园招聘", "CategoryId": "2", "LocNames": ["深圳市"]},
+            {"Id": "s1", "JobAdName": "后端开发", "Category": "社会招聘", "CategoryId": "1", "LocNames": ["杭州市"]}]})
+
+    collector = ZhiyeCollector(http_with(handler), "demo", "demo", "示例", channels=("campus", "social"))
+    campus, social = collector.search("开发")
+    assert (campus.channel, social.channel) == ("campus", "social")
+    assert social.url.endswith("/campus/detail?jobAdId=s1")      # the one detail path that opens social postings too
+    assert social.brief()["channel"] == "social"

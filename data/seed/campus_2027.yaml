@@ -1109,3 +1109,14 @@ companies:
   - {key: qualcomm_sz, name: 高通深圳, sector: foreign, note: 2027 届公告未查到，待补查, programs: []}
   - {key: apple, name: 苹果, sector: foreign, note: 2027 届公告未查到，待补查, programs: []}
   - {key: amd, name: AMD, sector: foreign, note: 2027 届公告未查到，待补查, programs: []}
+
+  # ---------------------------------------------------------------- zhiye 平台在线采集的企业（2026-11-27 实测接口可用）
+  # 这些企业的岗位由采集器直接从官网读取（校招和社招），这里只登记企业，没有整理 2027 届窗口。
+  - {key: cicc, name: 中金公司, sector: bank, portal: cicc.zhiye.com, note: zhiye 在线采集；2027 届窗口未整理, programs: []}
+  - {key: guosen, name: 国信证券, sector: bank, portal: guosen.zhiye.com, note: zhiye 在线采集；2027 届窗口未整理, programs: []}
+  - {key: unitree, name: 宇树科技, sector: hardware, portal: unitree.zhiye.com, note: zhiye 在线采集；2027 届窗口未整理, programs: []}
+  - {key: roborock, name: 石头科技, sector: hardware, portal: roborock.zhiye.com, note: zhiye 在线采集；2027 届窗口未整理, programs: []}
+  - {key: sugon, name: 中科曙光, sector: hardware, portal: sugon.zhiye.com, note: zhiye 在线采集；2027 届窗口未整理, programs: []}
+  - {key: dahua, name: 大华股份, sector: hardware, portal: dahua.zhiye.com, note: zhiye 在线采集；2027 届窗口未整理, programs: []}
+  - {key: sunwoda, name: 欣旺达, sector: hardware, portal: sunwoda.zhiye.com, note: zhiye 在线采集；2027 届窗口未整理, programs: []}
+  - {key: ninestar, name: 纳思达, sector: hardware, portal: ninestar.zhiye.com, note: zhiye 在线采集；2027 届窗口未整理, programs: []}

@@ -1,14 +1,16 @@
-"""Campus sites on the zhiye.com recruiting platform (one collector per company host).
+"""Company job sites on the zhiye.com recruiting platform (one collector per tenant host).
 
-The job list calls POST /api/Jobad/GetJobAdPageList; category "2" is
-校园招聘. The list rows already carry the duties (Duty) and requirements
-(Require), so no detail request is needed. robots.txt on these hosts allows
-all paths.
+The job list calls POST /api/Jobad/GetJobAdPageList. Category "2" is 校园招聘
+and "1" is 社会招聘; each tenant is searched in the channels configured for
+it, and every row is tagged campus or social from its own CategoryId. The
+list rows already carry the duties (Duty) and requirements (Require), so no
+detail request is needed. robots.txt on these hosts allows all paths.
 """
 from .base import ListedJob, SiteError, compose_jd
 
 PAGE_SIZE = 20
-CAMPUS = "2"
+CATEGORY = {"campus": "2", "social": "1"}
+CHANNEL = {code: channel for channel, code in CATEGORY.items()}
 
 
 def city_of(loc_name):
@@ -18,19 +20,21 @@ def city_of(loc_name):
 
 
 class ZhiyeCollector:
-    def __init__(self, http, host, company_key, company_name):
+    def __init__(self, http, host, company_key, company_name, channels=("campus",)):
         self.http = http
         self.host = host
         self.key = f"zhiye:{host}"
         self.company_key = company_key
         self.company_name = company_name
+        self.channels = tuple(channels)
         self.base = f"https://{host}.zhiye.com"
 
     def search(self, keyword, limit=40):
         jobs, page = [], 0
         headers = {"langType": "zh_CN", "X-Requested-With": "xmlhttprequest"}
+        codes = [CATEGORY[c] for c in self.channels]
         while len(jobs) < limit:
-            body = {"PageIndex": page, "PageSize": PAGE_SIZE, "Category": [CAMPUS], "KeyWords": keyword,
+            body = {"PageIndex": page, "PageSize": PAGE_SIZE, "Category": codes, "KeyWords": keyword,
                     "SpecialType": 0, "PortalId": "",
                     "DisplayFields": ["Category", "Kind", "LocId", "PostDate", "ClassificationOne"]}
             data = self.http.request("POST", f"{self.base}/api/Jobad/GetJobAdPageList", json=body, headers=headers)
@@ -38,9 +42,12 @@ class ZhiyeCollector:
                 raise SiteError(f"{self.company_name}搜索返回 Code={data.get('Code')}：{data.get('Message')}")
             rows = data.get("Data") or []
             for row in rows:
+                channel = CHANNEL.get(str(row.get("CategoryId") or ""), "campus" if "校园" in (row.get("Category") or "")
+                                      else "social")
                 cities = [city_of(n) for n in row.get("LocNames") or []]
+                # /campus/detail opens any posting of the tenant, social ones included (/social/detail does not).
                 job = ListedJob(source=self.key, external_id=str(row["Id"]), company_key=self.company_key,
-                                title=row.get("JobAdName", ""), cities=cities,
+                                title=row.get("JobAdName", ""), cities=cities, channel=channel,
                                 url=f"{self.base}/campus/detail?jobAdId={row['Id']}",
                                 posted_at=(row.get("PostDate") or "")[:10], category=row.get("Category") or "")
                 # Category and post date live on the posting, not in the JD text the model reads.

@@ -26,6 +26,7 @@ class ListedJob:
     posted_at: str = ""
     category: str = ""          # the site's recruiting project, e.g. 应届毕业生 / 校园招聘
     jd_text: str = ""           # empty until the detail has been fetched
+    channel: str = "campus"     # campus | social
 
     def __post_init__(self):
         self.title = " ".join((self.title or "").split())    # some sites put line breaks in titles
@@ -33,7 +34,7 @@ class ListedJob:
     def brief(self):
         """What the planner agent sees: enough to judge relevance, no full JD."""
         return {"source": self.source, "id": self.external_id, "title": self.title, "cities": self.cities,
-                "category": self.category, "posted_at": self.posted_at}
+                "channel": self.channel, "category": self.category, "posted_at": self.posted_at}
 
 
 class SiteError(RuntimeError):

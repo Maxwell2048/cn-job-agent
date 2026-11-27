@@ -119,3 +119,17 @@ def test_extraction_years_need_a_number_of_years(value, flagged):
     requirement = {"category": "experience", "importance": "required", "source_quote": "x",
                    "qualifiers": [{"type": "years", "value": value, "source_quote": "x"}]}
     assert bool(screening.extraction_flags([requirement], PROFILE, [])) is flagged
+
+
+def test_role_keywords_add_core_terms_of_multi_word_keywords():
+    from cn_job_agent.agents.planner import matched_keywords, role_keywords
+    words = role_keywords({"roles": [{"key": "a", "label": "A", "keywords": ["AI Agent", "Python 后端", "AI 应用工程师"]}]})
+    assert words == ["AI Agent", "Python 后端", "AI 应用工程师", "Agent", "Python", "后端", "应用工程师"]
+    assert "Agent" in matched_keywords("Agent开发工程师", words)        # missed before: "AI Agent" is not in the title
+
+
+def test_social_postings_follow_the_profile_channels():
+    from cn_job_agent.agents.planner import channel_allowed
+    assert channel_allowed("social", {"channels": ["campus", "social_entry"]})
+    assert not channel_allowed("social", {"channels": ["campus"]})
+    assert channel_allowed("campus", {"channels": ["campus"]})

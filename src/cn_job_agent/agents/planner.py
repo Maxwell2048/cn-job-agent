@@ -116,7 +116,7 @@ class Workspace:
             with session_scope(self.database_url) as s:
                 posting, created = postings.add_posting(
                     s, job.jd_text, source=job.source, title=job.title, company_name=self.collectors[source].company_name,
-                    city="、".join(job.cities), url=job.url, channel="campus", external_id=job.external_id,
+                    city="、".join(job.cities), url=job.url, channel=job.channel, external_id=job.external_id,
                     posted_at=job.posted_at, company_key=job.company_key, collection_run_id=self.run_id)
                 entry = {"posting_id": posting.id, "id": job.external_id, "title": job.title, "reason": reason}
             if created:
@@ -140,13 +140,37 @@ class Workspace:
                 "duplicates": len(self.duplicates), "errors": len(self.errors)}
 
 
+GENERIC_TERMS = {"ai", "it", "app", "应用", "开发", "工程师", "岗位"}
+
+
 def role_keywords(profile):
+    """The profile's role keywords, plus the core terms of multi-word ones, so a
+    title "Agent开发工程师" is found by the keyword "AI Agent"."""
     words = []
+
+    def add(word):
+        if word and word not in words:
+            words.append(word)
+
     for role in profile.get("roles") or []:
-        for word in role.get("keywords") or [role.get("label", "")]:
-            if word and word not in words:
-                words.append(word)
+        for keyword in role.get("keywords") or [role.get("label", "")]:
+            add(keyword)
+    for keyword in list(words):
+        parts = keyword.split()
+        if len(parts) > 1:
+            for part in parts:
+                latin = re.fullmatch(r"[A-Za-z0-9.+#-]+", part)
+                if part.lower() not in GENERIC_TERMS and len(part) >= (3 if latin else 2):
+                    add(part)
     return words
+
+
+def channel_allowed(channel, profile):
+    """Social postings only when the profile asks for social hiring (社招经验不限)."""
+    channels = profile.get("channels") or []
+    if channel == "social":
+        return "social_entry" in channels or "social" in channels
+    return True
 
 
 def matched_keywords(title, keywords):
@@ -176,7 +200,8 @@ def run_rules(ws):
                 continue
             for row in found["results"]:
                 hits = matched_keywords(row["title"], keywords)
-                if row["in_target_city"] and not row["already_saved"] and hits and not EXCLUDE_TITLE.search(row["title"]):
+                if (row["in_target_city"] and not row["already_saved"] and hits and not EXCLUDE_TITLE.search(row["title"])
+                        and channel_allowed(row.get("channel", "campus"), ws.profile)):
                     ws.save_jobs(source["source"], [row["id"]], reason=f"规则：标题含岗位关键词 {'、'.join(hits)}")
     return [{"type": "rules", "keywords": keywords}]
 
@@ -191,6 +216,8 @@ SYSTEM_PROMPT = """你是求职搜索规划 Agent，替一位求职者在企业�
 2. 对每个网站，用求职者目标岗位的关键词搜索（中文和英文各试，例如 "Agent"、"智能体"、"大模型应用"、"全栈"、"数据分析"、"技术支持"）。
 3. 只保存同时满足以下条件的岗位：标题和求职者的目标岗位类型相关；in_target_city 为 true；already_saved 为 false。
    不保存实习岗、资深/专家/经理/负责人岗，以及和目标岗位无关的岗位（如游戏策划、销售、硬件设计）。
+   每条结果的 channel 是 campus（校招）或 social（社招）。求职者接受社招时，社招岗位也可以保存，
+   但优先选标题看起来面向应届生或初级的；工作年限由后续的筛选 Agent 按 JD 原文判断。
 4. 用 save_jobs 一次保存同一网站的多个 id，并在 reason 里用一句话说明为什么相关。
 5. 每个网站都搜完后停止调用工具，用两三句话总结你搜了什么、保存了几个岗位。"""
 
@@ -238,8 +265,9 @@ def build_agent(chat_model, tools):
 
 def profile_brief(profile):
     roles = "；".join(f"{r['label']}（关键词：{'、'.join(r.get('keywords') or [])}）" for r in profile.get("roles") or [])
+    social = "接受社招（经验不限或初级岗位）" if channel_allowed("social", profile) else "只看校招"
     return (f"目标岗位：{roles}\n目标城市：{'、'.join(profile.get('cities') or [])}\n"
-            f"可计入的全职工作经验：{profile.get('experience_years') or 0} 年；已毕业，找校招和应届岗位。")
+            f"可计入的全职工作经验：{profile.get('experience_years') or 0} 年；已毕业，找校招和应届岗位，{social}。")
 
 
 def run_agent(ws, chat_model, max_steps=40):
