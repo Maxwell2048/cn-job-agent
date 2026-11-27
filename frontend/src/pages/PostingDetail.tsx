@@ -2,13 +2,14 @@ import { useMemo, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { api, type Match, type PostingDetail as Detail, type RunDetail } from "../api";
 import { useData } from "../hooks";
+import Materials from "./Materials";
 import { Badge, Card, Empty, ErrorBox, Loading, Modal, Quote, Score, Tabs } from "../components";
 import {
   CATEGORY, CHANNEL, COHORT, DECISION, IMPORTANCE, RUN_STATUS, SEVERITY, SOURCE, VERDICT,
   formatTime, label,
 } from "../labels";
 
-type Tab = "matches" | "screening" | "company" | "jd" | "runs";
+type Tab = "matches" | "materials" | "screening" | "company" | "jd" | "runs";
 
 export default function PostingDetail() {
   const { id } = useParams();
@@ -40,6 +41,7 @@ export default function PostingDetail() {
       <Card>
         <Tabs<Tab> active={tab} onChange={setTab} tabs={[
           { key: "matches", label: `逐条要求${run?.matches.length ? `（${run.matches.length}）` : ""}` },
+          { key: "materials", label: "申请材料" },
           { key: "screening", label: "筛选结果" },
           { key: "company", label: "企业校招窗口" },
           { key: "jd", label: "JD 原文" },
@@ -47,6 +49,7 @@ export default function PostingDetail() {
         ]} />
         {tab === "matches" && (run?.matches.length ? <Requirements matches={run.matches} />
           : <Empty>{run ? "这次运行没有做证据匹配（被筛掉、等确认或失败）" : "还没有运行 Agent"}</Empty>)}
+        {tab === "materials" && <Materials run={run} />}
         {tab === "screening" && <Screening run={run} />}
         {tab === "company" && <CompanyPrograms posting={p} />}
         {tab === "jd" && <pre className="jd">{p.jd_text}</pre>}

@@ -31,6 +31,9 @@ class Settings(BaseSettings):
     llm_temperature: float = 0.0
     # Local model config in job_rag_starter's format (defaults to its config.local.json)
     llm_config: Path | None = None
+    # Chinese base resume (private JSON: name, contact, education, confirmed skills) for the materials agent
+    resume_base: Path | None = None                 # env CN_RESUME_BASE
+    greeting_max_chars: int = 150
     outputs_dir: Path = PROJECT_ROOT / "outputs"
     state_dir: Path = PROJECT_ROOT / "state"
     match_top_k: int = 5

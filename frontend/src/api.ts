@@ -179,6 +179,29 @@ export interface LiveEvent {
   mode?: string;
 }
 
+export interface Cited { text: string; cites: string[] }
+
+export interface MaterialsData {
+  run_id: string;
+  created_at: string;
+  version: string;
+  model: string;
+  prompt_version: string;
+  posting: { id: number; title: string; company: string; city: string };
+  draft: {
+    target_title: string;
+    summary: Cited;
+    projects: { project_id: string; title: string; role: string; period: string;
+                bullets: { label: string; text: string; cites: string[] }[] }[];
+    greeting: Cited;
+  };
+  skills: [string, string][];
+  warnings: string[];
+  gaps: string[];
+  citations: Record<string, { project: string; section: string; source: string; line_start: number; line_end: number }>;
+  files: string[];
+}
+
 export class ApiError extends Error {
   constructor(public status: number, message: string) {
     super(message);
@@ -224,6 +247,9 @@ export const api = {
   run: (id: string) => request<RunDetail>(`/api/runs/${id}`),
   resume: (id: string, approve: boolean | null) => post<{ run_id: string }>(`/api/runs/${id}/resume`, { approve }),
   report: (id: string) => request<string>(`/api/runs/${id}/report`),
+  materials: (runId: string) => request<MaterialsData>(`/api/runs/${runId}/materials`),
+  generateMaterials: (runId: string) => post<{ job: string }>(`/api/runs/${runId}/materials`, {}),
+  materialFile: (runId: string, name: string) => `/api/runs/${runId}/materials/${name}`,
   collections: () => request<CollectionBrief[]>("/api/collections"),
   collection: (id: string) => request<CollectionDetail>(`/api/collections/${id}`),
   startCollection: (mode: string) => post<{ collection_id: string }>("/api/collections", { mode }),

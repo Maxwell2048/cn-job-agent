@@ -185,6 +185,41 @@ def create_app(settings=None, toolkit=None, checkpointer_factory=None, collect_o
             run = s.get(AgentRun, run_id)
             return run is None or run.status != "running"
 
+    # ---------------------------------------------------------------- materials (Chinese resume, greeting)
+    MATERIAL_FILES = {"resume_zh.docx", "resume_zh.md", "greeting.txt"}
+
+    @app.post("/api/runs/{run_id}/materials", status_code=202)
+    def generate_materials(run_id: str):
+        try:
+            return {"job": manager.generate_materials(run_id)}
+        except LookupError as exc:
+            raise HTTPException(404, str(exc)) from exc
+        except ValueError as exc:
+            raise HTTPException(409, str(exc)) from exc
+
+    @app.get("/api/runs/{run_id}/materials")
+    def get_materials(run_id: str):
+        from ..agents import materials as materials_module
+        folder = materials_module.latest(toolkit.outputs_dir, run_id)
+        if folder is None:
+            raise HTTPException(404, "还没有生成申请材料")
+        data = json.loads((folder / "materials.json").read_text(encoding="utf-8"))
+        data.pop("folder", None)                                  # no local paths in responses
+        return {**data, "version": folder.name, "files": sorted(f.name for f in folder.iterdir()
+                                                                 if f.name in MATERIAL_FILES)}
+
+    @app.get("/api/runs/{run_id}/materials/{name}")
+    def material_file(run_id: str, name: str):
+        from ..agents import materials as materials_module
+        folder = materials_module.latest(toolkit.outputs_dir, run_id)
+        if folder is None or name not in MATERIAL_FILES or not (folder / name).is_file():
+            raise HTTPException(404, "没有这个文件")
+        return FileResponse(folder / name, filename=f"{run_id}-{name}")
+
+    @app.get("/api/jobs/{key}/events")
+    async def job_events(key: str, start: int = 0):
+        return sse(key, start, lambda: True)
+
     # ---------------------------------------------------------------- collections
     @app.get("/api/collections")
     def list_collections(limit: int = Query(20, le=200)):

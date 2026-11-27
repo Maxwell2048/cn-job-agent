@@ -3,6 +3,7 @@ small thread pool, and every node update is kept as an event the browser
 follows over Server-Sent Events."""
 import threading
 from collections import defaultdict
+from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 
@@ -134,6 +135,34 @@ class JobManager:
         self.emit(collection_id, {"node": "__start__", "at": _now(), "mode": mode})
         self.futures[collection_id] = self.executor.submit(self._collect, collection_id, mode)
         return collection_id
+
+    # ---------------------------------------------------------------- materials
+    def _materials(self, key, run_id):
+        from ..agents import materials
+        try:
+            result = materials.build(self.settings, run_id, self.toolkit.get_llm(),
+                                     database_url=self.toolkit.database_url, outputs_dir=self.toolkit.outputs_dir)
+            self.emit(key, {"node": "materials", "at": _now(), "folder": Path(result.folder).name,
+                            "warnings": len(result.warnings)})
+        except Exception as exc:  # noqa: BLE001 - shown in the UI
+            self.emit(key, {"node": "__error__", "at": _now(), "error": f"{exc.__class__.__name__}: {exc}"})
+        finally:
+            self._finish(key)
+
+    def generate_materials(self, run_id):
+        """Start the materials agent for a finished run; returns the event key."""
+        from ..db.models import AgentRun
+        from ..db.session import session_scope
+        with session_scope(self.toolkit.database_url) as s:
+            run = s.get(AgentRun, run_id)
+            if run is None:
+                raise LookupError(f"没有编号为 {run_id} 的运行")
+            if run.status != "done":
+                raise ValueError("只有完成了证据匹配的运行才能生成申请材料")
+        key = f"m-{run_id}-{datetime.now(timezone.utc):%H%M%S%f}"
+        self.emit(key, {"node": "__start__", "at": _now()})
+        self.futures[key] = self.executor.submit(self._materials, key, run_id)
+        return key
 
     def shutdown(self):
         self.executor.shutdown(wait=False, cancel_futures=True)

@@ -458,6 +458,26 @@ def cmd_setup(args, settings):
     return 0
 
 
+def cmd_materials(args, settings):
+    from . import llm as llm_module
+    from .agents import materials
+    resolved = llm_module.resolve(settings)
+    _out(f"用 {resolved.label} · {resolved.model} 生成中文简历和打招呼语……")
+    result = materials.build(settings, args.run_id, llm_module.build_json_llm(settings, resolved))
+    d = result.data
+    _out(f"\n{d.get('target_title', '')}\n\n个人简介：{d.get('summary', {}).get('text', '')}\n")
+    for p in d.get("projects", []):
+        _out(f"■ {p['title']}　{p.get('role', '')}　{p.get('period', '')}")
+        for b in p["bullets"]:
+            _out(f"  - {b['label']}：{b['text']}  [{', '.join(b['cites'])}]")
+    greeting = d.get("greeting", {}).get("text", "")
+    _out(f"\n打招呼语（{len(greeting)} 字）：{greeting}")
+    for warning in result.warnings:
+        _out(f"  注意：{warning}")
+    _out(f"\n已保存：{result.folder}（resume_zh.docx、resume_zh.md、greeting.txt、materials.json）")
+    return 0
+
+
 def cmd_serve(args, settings):
     import uvicorn
 
@@ -497,6 +517,9 @@ def build_parser():
     companies.add_argument("--all", action="store_true", help="也列出不符合和城市不匹配的项目")
     companies.set_defaults(func=cmd_companies)
     sub.add_parser("setup", help="迁移、导入种子和画像、入库经历").set_defaults(func=cmd_setup)
+    mat = sub.add_parser("materials", help="材料 Agent：为一次已完成的运行生成中文简历和打招呼语")
+    mat.add_argument("run_id")
+    mat.set_defaults(func=cmd_materials)
     serve = sub.add_parser("serve", help="启动网页界面（FastAPI + React）")
     serve.add_argument("--host", default="127.0.0.1", help="默认只在本机可访问")
     serve.add_argument("--port", type=int, default=8100)
