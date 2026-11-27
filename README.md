@@ -1,5 +1,7 @@
 # 国内求职 Agent（cn-job-agent）
 
+[![CI](https://github.com/Maxwell2048/cn-job-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/Maxwell2048/cn-job-agent/actions/workflows/ci.yml)
+
 用多个 Agent 协作查找国内的 Agent 开发、AI 全栈、数据和技术支持岗位：先确认求职意向，再按届别窗口、城市和证据匹配筛选岗位。经历库和证据检索复用 [job_rag_starter](../job_rag_starter)。
 
 > 当前完成 **P3 和材料 Agent**：搜索规划 Agent 从企业校招官网采集岗位，LangGraph 调度筛选 Agent 和匹配 Agent，给出带原文引用的中文匹配报告；材料 Agent 为匹配好的岗位写定制中文简历和 BOSS 直聘打招呼语；网页界面可以实时看 Agent 的执行轨迹，并在网页上批准或放弃暂停的运行。

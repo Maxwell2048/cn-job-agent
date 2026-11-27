@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    name: Backend tests (PostgreSQL + pgvector)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg17
+        env:
+          POSTGRES_USER: cn_agent
+          POSTGRES_PASSWORD: ci-only-password
+          POSTGRES_DB: cn_job_agent
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U cn_agent -d cn_job_agent"
+          --health-interval 5s --health-timeout 3s --health-retries 20
+    env:
+      CN_DATABASE_URL: postgresql+psycopg://cn_agent:ci-only-password@localhost:5432/cn_job_agent
+      # The RAG core comes from the public job-application-assistant release (same modules as job_rag_starter).
+      CN_JOB_RAG_HOME: ${{ github.workspace }}/job-application-assistant
+      CN_OFFLINE: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: Maxwell2048/job-application-assistant
+          path: job-application-assistant
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install (CPU-only PyTorch, then the package)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -e ".[test]" pyflakes
+      - name: Lint
+        run: python -m pyflakes src/cn_job_agent/agents src/cn_job_agent/api src/cn_job_agent/collectors src/cn_job_agent/rag src/cn_job_agent/llm.py src/cn_job_agent/cli.py tests
+      - name: Tests
+        run: python -m pytest -q -p no:warnings
+
+  frontend:
+    name: Frontend type check and build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci --no-fund --no-audit
+      - run: npm run build
