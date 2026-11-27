@@ -25,6 +25,10 @@ def codes(flags, severity):
     ("至少5年后端开发经验", 5),
     ("工作经验：3年", 3),
     ("3+ years of experience with Python", 3),
+    ("5年左右JAVA 开发经验", 5),                   # 经验 is 9 characters after 年
+    ("需要约3年的后端开发相关工作经验", 3),
+    ("两年上下的数据分析经验", 2),
+    ("5年左右的时间完成学业", None),              # no 经验 in the clause
     ("熟悉 Python 和 SQL", None),
     ("2027年毕业，工作地点深圳", None),           # a calendar year, no 经验
     ("公司成立于2015年，经验丰富的团队", None),     # 2015 is not a number of years
@@ -35,6 +39,7 @@ def test_min_years(clause, years):
 
 def test_experience_severity_scales_with_the_gap():
     assert "experience" in codes(flags_for("要求：5年以上Java开发经验。"), HARD)
+    assert "experience" in codes(flags_for("任职要求：5年左右JAVA 开发经验。"), HARD)
     assert "experience" in codes(flags_for("要求：1-3年工作经验。"), SOFT)
     assert "experience" in codes(flags_for("3年以上大模型应用经验者优先。"), INFO)
     assert "entry_level" in codes(flags_for("经验不限，接受应届生。"), INFO)

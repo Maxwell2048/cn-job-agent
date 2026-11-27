@@ -28,6 +28,8 @@ EXP_WORD = re.compile(r"经验|从业|工作年限|experience", re.I)
 EXP_RANGE = re.compile(NUM + r"\s*[-~～—至到]\s*" + NUM + r"\s*年")
 EXP_MIN = re.compile(NUM + r"\s*(?:年\s*(?:及|或)?\s*以上|\+\s*年|年\s*\+)")
 EXP_ATLEAST = re.compile(r"(?:至少|不少于|不低于)\s*" + NUM + r"\s*年")
+# "5年左右JAVA 开发经验", "约3年": an approximate duration; 经验 may be further away
+EXP_ABOUT = re.compile(NUM + r"\s*年\s*(?:左右|上下)|(?:约|大约|大概)\s*" + NUM + r"\s*年")
 EXP_NEAR = re.compile(r"经验[^，。；\n]{0,4}?" + NUM + r"\s*年|" + NUM + r"\s*年[^，。；\n]{0,6}?经验")
 EXP_MIN_EN = re.compile(r"(\d+)\s*\+?\s*(?:or more\s+)?years?", re.I)
 EXP_ZERO = re.compile(r"经验不限|不限经验|无经验|零经验|接受应届|应届生|应届毕业生|在校生|无工作经验")
@@ -88,7 +90,7 @@ def min_years(clause):
                 found.append(value)
         return found
 
-    for pattern in (EXP_RANGE, EXP_MIN, EXP_ATLEAST, EXP_NEAR, EXP_MIN_EN):
+    for pattern in (EXP_RANGE, EXP_MIN, EXP_ATLEAST, EXP_ABOUT, EXP_NEAR, EXP_MIN_EN):
         values = numbers(pattern)
         if values:
             return min(values)
