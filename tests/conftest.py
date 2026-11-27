@@ -147,3 +147,47 @@ class FakeLLM:
 @pytest.fixture
 def fake_llm():
     return FakeLLM()
+
+
+# ---------------------------------------------------------------- shared world for graph, collect and API tests
+def chunk(i, project, body):
+    return {"chunk_id": f"g{i:015d}", "section_id": f"t{i:015d}", "project": project, "section": "我的贡献",
+            "source": f"{project}.md", "line_start": 1, "line_end": 2, "char_start": 0, "char_end": len(body),
+            "text": body, "parent_text": body, "search_keywords": "", "evidence": []}
+
+
+def _toolkit_base():
+    from cn_job_agent.agents import runner
+    return runner.Toolkit
+
+
+class FakeToolkit(_toolkit_base()):
+    """The real Toolkit (real jd_parser and EvidenceMatcher) around a fake model and embedder."""
+
+    def __init__(self, url, llm, embedder, outputs):
+        super().__init__(get_settings(), database_url=url)
+        self.outputs_dir = outputs
+        self._built.update(llm=llm, embedder=embedder)
+
+    def today(self):
+        from datetime import date
+        return date(2026, 11, 26)
+
+
+@pytest.fixture
+def world(pg_url, fake_embedder, tmp_path):
+    """Two indexed experience chunks, a profile and one eligible company (acme, 极光科技)."""
+    from cn_job_agent.db.session import session_scope
+    from cn_job_agent.rag import store
+    from cn_job_agent.seed.loader import ProfileIn, SeedFile, load_profile, load_seed
+    with session_scope(pg_url) as s:
+        store.index_chunks(s, fake_embedder, [chunk(1, "Backend", "用 Python 和 FastAPI 开发后端接口"),
+                                              chunk(2, "RAG", "用向量检索 RAG 做证据匹配")])
+        load_profile(s, ProfileIn.model_validate({
+            "roles": [{"key": "agent", "label": "Agent"}], "cities": ["深圳", "武汉"], "channels": ["campus"],
+            "testamur_month": "2026-08", "experience_years": 0,
+            "education": {"degree": "master", "undergrad_tier": "other", "qs_rank": 77}}))
+        load_seed(s, SeedFile.model_validate({"companies": [
+            {"key": "acme", "name": "极光科技", "sector": "internet", "programs": [
+                {"title": "2027 校招", "window": ["2026-01", "2027-12"], "cities": ["深圳"]}]}]}))
+    return {"url": pg_url, "embedder": fake_embedder, "outputs": tmp_path}

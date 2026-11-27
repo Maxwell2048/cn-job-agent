@@ -28,7 +28,8 @@ CHUNKS = [
 def test_index_is_incremental_and_search_ranks(pg_url, fake_embedder, job_rag_home):
     rank_sections = bridge.search_module(job_rag_home).rank_sections
     with session_scope(pg_url) as s:
-        assert store.index_chunks(s, fake_embedder, CHUNKS) == {"total": 3, "added": 3, "removed": 0, "kept": 0}
+        counts = store.index_chunks(s, fake_embedder, CHUNKS)      # earlier test files may have left other chunks
+        assert (counts["total"], counts["added"], counts["kept"]) == (3, 3, 0)
     calls = fake_embedder.calls
     with session_scope(pg_url) as s:   # unchanged corpus: nothing re-encoded
         assert store.index_chunks(s, fake_embedder, CHUNKS)["added"] == 0
@@ -46,7 +47,7 @@ def test_index_is_incremental_and_search_ranks(pg_url, fake_embedder, job_rag_ho
 
 def test_seed_and_profile_upserts(pg_url):
     seed = SeedFile.model_validate({"checked_on": "2026-11-21", "companies": [
-        {"key": "acme", "name": "Acme", "sector": "internet", "programs": [
+        {"key": "acme_db", "name": "Acme", "sector": "internet", "programs": [
             {"key": "a", "title": "A", "window": ["2026-01", "2027-12"], "cities": ["武汉"]},
             {"key": "b", "title": "B", "window": None, "basis": "unknown"}]}]})
     with session_scope(pg_url) as s:
@@ -56,7 +57,7 @@ def test_seed_and_profile_upserts(pg_url):
     with session_scope(pg_url) as s:
         assert load_seed(s, seed)["programs_removed"] == 1
     with session_scope(pg_url) as s:
-        company = s.scalar(select(Company).where(Company.key == "acme"))
+        company = s.scalar(select(Company).where(Company.key == "acme_db"))
         assert company.name == "Acme 2"
         [program] = s.scalars(select(CampusProgram).where(CampusProgram.company_id == company.id)).all()
         assert program.window_start == date(2026, 1, 1) and program.window_end == date(2027, 12, 31)

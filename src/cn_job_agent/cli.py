@@ -458,8 +458,19 @@ def cmd_setup(args, settings):
     return 0
 
 
+def cmd_serve(args, settings):
+    import uvicorn
+
+    from .api import FRONTEND_DIST, create_app
+    if not (FRONTEND_DIST / "index.html").is_file():
+        _out("还没有构建前端：在 frontend 目录运行 npm ci && npm run build；现在只提供 /api 接口")
+    _out(f"打开 http://{args.host}:{args.port}  （Ctrl+C 停止）")
+    uvicorn.run(create_app(settings), host=args.host, port=args.port, log_level="warning")
+    return 0
+
+
 def build_parser():
-    parser = argparse.ArgumentParser(prog="cn-agent", description="国内求职 Agent（P0）")
+    parser = argparse.ArgumentParser(prog="cn-agent", description="国内求职 Agent")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("doctor", help="检查配置、经历库和数据库").set_defaults(func=cmd_doctor)
     db = sub.add_parser("db", help="数据库").add_subparsers(dest="db_command", required=True)
@@ -486,6 +497,10 @@ def build_parser():
     companies.add_argument("--all", action="store_true", help="也列出不符合和城市不匹配的项目")
     companies.set_defaults(func=cmd_companies)
     sub.add_parser("setup", help="迁移、导入种子和画像、入库经历").set_defaults(func=cmd_setup)
+    serve = sub.add_parser("serve", help="启动网页界面（FastAPI + React）")
+    serve.add_argument("--host", default="127.0.0.1", help="默认只在本机可访问")
+    serve.add_argument("--port", type=int, default=8100)
+    serve.set_defaults(func=cmd_serve)
 
     jd = sub.add_parser("jd", help="岗位 JD").add_subparsers(dest="jd_command", required=True)
     add = jd.add_parser("add", help="保存一个 JD（默认从标准输入读取）")

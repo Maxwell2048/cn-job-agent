@@ -37,13 +37,14 @@ EXCLUDE_TITLE = re.compile(r"实习|intern|专家|资深|高级|总监|经理|le
 class Workspace:
     """State shared by the tools: what was searched, seen and saved in this run."""
 
-    def __init__(self, database_url, collectors, profile, run_id, max_saves=30, max_searches=100):
+    def __init__(self, database_url, collectors, profile, run_id, max_saves=30, max_searches=100, on_event=None):
         self.database_url = database_url
         self.collectors = collectors
         self.profile = profile
         self.run_id = run_id
         self.max_saves = max_saves
         self.max_searches = max_searches
+        self.on_event = on_event or (lambda kind, data: None)   # progress for a UI: ("search"|"save", dict)
         self.plan = []
         self.seen = {}
         self.saved, self.duplicates, self.errors = [], [], []
@@ -89,6 +90,7 @@ class Workspace:
                          "already_saved": job.external_id in known})
         self.plan.append({"source": source, "keyword": keyword, "hits": len(jobs),
                           "in_target_city": sum(r["in_target_city"] for r in rows)})
+        self.on_event("search", self.plan[-1])
         return {"source": source, "keyword": keyword, "results": rows}
 
     def save_jobs(self, source, ids, reason=""):
@@ -120,6 +122,7 @@ class Workspace:
             if created:
                 result["saved"].append(entry)
                 self.saved.append({**entry, "source": source})
+                self.on_event("save", {**entry, "source": source})
             else:
                 result["duplicates"].append(job.external_id)
                 self.duplicates.append(job.external_id)

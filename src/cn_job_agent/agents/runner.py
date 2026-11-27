@@ -120,11 +120,18 @@ def _mark(database_url, run_id, **fields):
             s.get(JobPosting, run.posting_id).status = "failed"
 
 
-def _invoke(toolkit, checkpointer, run_id, payload):
+def _invoke(toolkit, checkpointer, run_id, payload, on_event=None):
+    """Run the graph to the end or to the next interrupt. `on_event(run_id, node, update)`
+    is called after every node (graph.stream, stream_mode="updates"), so a UI can follow along."""
     graph = job_graph.build_graph(toolkit, checkpointer)
     config = _config(run_id, toolkit.settings)
     try:
-        graph.invoke(payload, config)
+        if on_event is None:
+            graph.invoke(payload, config)
+        else:
+            for chunk in graph.stream(payload, config, stream_mode="updates"):
+                for node, update in chunk.items():
+                    on_event(run_id, node, update)
     except Exception as exc:  # noqa: BLE001 - recorded on the run; the checkpoint allows a retry
         message = f"{exc.__class__.__name__}: {exc}"
         _mark(toolkit.database_url, run_id, status="failed", error=message)
@@ -142,7 +149,8 @@ def _invoke(toolkit, checkpointer, run_id, payload):
         return Outcome(run_id, run.status, run.report_path, run.screening, run.summary, error=run.error)
 
 
-def start(toolkit, checkpointer, posting_id, force=False, auto_approve=False):
+def create_run(toolkit, posting_id, force=False, auto_approve=False):
+    """Record a new run (status running) and return (run_id, the graph's first input)."""
     run_id = new_run_id()
     options = {"force": force, "auto_approve": auto_approve}
     with session_scope(toolkit.database_url) as s:
@@ -150,8 +158,16 @@ def start(toolkit, checkpointer, posting_id, force=False, auto_approve=False):
             raise ValueError(f"没有编号为 {posting_id} 的岗位；用 cn-agent jd list 查看")
         s.add(AgentRun(id=run_id, posting_id=posting_id, graph_version=job_graph.GRAPH_VERSION,
                        status="running", screening={}, summary={}, versions={"options": options}, trace=[]))
-    return _invoke(toolkit, checkpointer, run_id,
-                   {"run_id": run_id, "posting_id": posting_id, "options": options})
+    return run_id, {"run_id": run_id, "posting_id": posting_id, "options": options}
+
+
+def execute(toolkit, checkpointer, run_id, payload, on_event=None):
+    return _invoke(toolkit, checkpointer, run_id, payload, on_event)
+
+
+def start(toolkit, checkpointer, posting_id, force=False, auto_approve=False, on_event=None):
+    run_id, payload = create_run(toolkit, posting_id, force, auto_approve)
+    return execute(toolkit, checkpointer, run_id, payload, on_event)
 
 
 def pending_postings(database_url, limit):
@@ -171,8 +187,9 @@ def process_pending(toolkit, checkpointer, limit=5, auto_approve=False, on_start
     return outcomes
 
 
-def resume(toolkit, checkpointer, run_id, approve=None):
-    """approve=True/False answers the review question; None retries a failed run."""
+def prepare_resume(toolkit, run_id, approve=None):
+    """Check the run can continue, mark it running, return the graph input.
+    approve=True/False answers the review question; None retries a failed run."""
     with session_scope(toolkit.database_url) as s:
         run = s.get(AgentRun, run_id)
         if run is None:
@@ -182,5 +199,9 @@ def resume(toolkit, checkpointer, run_id, approve=None):
         if run.status not in ("interrupted", "failed"):
             raise ValueError(f"这个运行的状态是 {run.status}，不需要继续")
         run.status, run.error = "running", ""
-    payload = Command(resume=approve) if approve is not None else None
-    return _invoke(toolkit, checkpointer, run_id, payload)
+    return Command(resume=approve) if approve is not None else None
+
+
+def resume(toolkit, checkpointer, run_id, approve=None, on_event=None):
+    payload = prepare_resume(toolkit, run_id, approve)
+    return _invoke(toolkit, checkpointer, run_id, payload, on_event)

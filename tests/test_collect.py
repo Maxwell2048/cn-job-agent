@@ -17,7 +17,7 @@ from cn_job_agent.db.session import session_scope
 from cn_job_agent.seed.loader import ProfileIn, SeedFile, load_profile, load_seed
 
 from .conftest import FakeLLM
-from .test_graph import FakeToolkit
+from .conftest import FakeToolkit
 
 pytestmark = pytest.mark.pg
 

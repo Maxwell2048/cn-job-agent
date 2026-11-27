@@ -37,12 +37,16 @@ def load_profile(database_url, name="default"):
         return {k: getattr(row, k) for k in PROFILE_FIELDS}
 
 
+def new_collection_id():
+    return f"c-{datetime.now():%Y%m%d-%H%M%S}-{uuid.uuid4().hex[:4]}"
+
+
 def collect(settings, mode="auto", database_url=None, collectors=None, chat_model=None, max_saves=30,
-            max_searches=100):
+            max_searches=100, run_id=None, on_event=None):
     if mode not in ("auto", "agent", "rules"):
         raise ValueError("mode 必须是 auto、agent 或 rules")
     url = database_url or settings.database_url
-    run_id = f"c-{datetime.now():%Y%m%d-%H%M%S}-{uuid.uuid4().hex[:4]}"
+    run_id = run_id or new_collection_id()
     http = None
     if collectors is None:
         http = Http()
@@ -50,7 +54,8 @@ def collect(settings, mode="auto", database_url=None, collectors=None, chat_mode
     profile = load_profile(url)
     with session_scope(url) as s:
         s.add(CollectionRun(id=run_id, mode=mode, status="running", plan=[], stats={}, trace=[]))
-    ws = planner.Workspace(url, collectors, profile, run_id, max_saves=max_saves, max_searches=max_searches)
+    ws = planner.Workspace(url, collectors, profile, run_id, max_saves=max_saves, max_searches=max_searches,
+                           on_event=(lambda kind, data: on_event(run_id, kind, data)) if on_event else None)
     trace, used, status, error = [], mode, "done", ""
     try:
         if mode in ("auto", "agent"):
