@@ -187,3 +187,10 @@ def test_base_resume_role_and_period_win(library):
         {"label": "检索接口", "text": "用 Python 实现检索接口。", "cites": ["E001"]}]}])
     project = materials.build(library["settings"], library["run_id"], DraftLLM(data)).data["projects"][0]
     assert (project["role"], project["period"]) == ("全栈开发", "2025.03 - 至今")
+
+
+def test_slash_separated_tools_and_project_names_are_checked_separately():
+    # "Python/FastAPI" is two names, both in E001; the project title backs a word the section lacks.
+    assert errors(bullet("用 Python/FastAPI 实现检索接口。")) == []
+    data = bullet("为 Demo 项目实现检索接口。")      # "Demo" is only in the project title
+    assert errors(data) == []

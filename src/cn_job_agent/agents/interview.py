@@ -67,8 +67,13 @@ def check(data, inputs):
         if errors:
             problems.setdefault(key, []).extend(errors)
 
+    # The introduction may name confirmed skills and the role applied for; a gap answer may talk
+    # about what the JD asks for (what to learn), which is not a claim of having done it.
+    role_and_skills = "\n".join([f"{g} {i}" for g, i in inputs.skills] + [inputs.posting.get("title", "")])
+    jd_text = inputs.posting.get("jd_text", "")
     intro = data.get("self_intro") or {}
-    add("intro", m.text_errors("自我介绍", intro.get("text", ""), intro.get("cites", []), ids, inputs))
+    add("intro", m.text_errors("自我介绍", intro.get("text", ""), intro.get("cites", []), ids, inputs,
+                               role_and_skills))
     projects = {p["project_id"]: {s.id for s in p["sections"]} for p in inputs.projects}
     for i, q in enumerate(data.get("project_questions", [])):
         own = projects.get(q.get("project_id"))
@@ -89,7 +94,8 @@ def check(data, inputs):
         strategy = q.get("strategy") or {}
         errors = [f"缺口题 {i + 1} 写了不能写的内容：{r}" for p, r in m.FORBIDDEN if p.search(strategy.get("text", ""))]
         if strategy.get("cites"):      # citing is optional here, but what it cites must back the text
-            errors += m.text_errors(f"缺口题 {i + 1} 的应对", strategy.get("text", ""), strategy["cites"], ids, inputs)
+            errors += m.text_errors(f"缺口题 {i + 1} 的应对", strategy.get("text", ""), strategy["cites"], ids, inputs,
+                                    jd_text)
         add(("gap", i), errors)
     return problems
 

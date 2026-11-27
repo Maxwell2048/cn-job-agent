@@ -93,7 +93,8 @@ CONDITIONAL = ["多 Agent", "多Agent", "多智能体", "工具调用", "生产�
                # source (e.g. "AutoGen 的多 Agent 不适合") does not make it one.
                "Agent 系统", "Agent系统", "智能体系统", "Agent 平台", "Agent平台", "Agent 应用", "Agent应用"]
 GENERIC_LATIN = {"ai", "api", "apis", "web", "jd", "hr", "it", "ui", "ux", "app", "cv", "pc"}
-LATIN = re.compile(r"[A-Za-z][A-Za-z0-9+#]*(?:[.\-/][A-Za-z0-9+#]+)*")
+# "/" separates names ("LangChain/LangGraph" is two tools); "." and "-" stay inside one ("Node.js", "CI-CD").
+LATIN = re.compile(r"[A-Za-z][A-Za-z0-9+#]*(?:[.\-][A-Za-z0-9+#]+)*")
 NUMBER = re.compile(r"\d+(?:\.\d+)?")
 CONTACT = re.compile(r"@|\+?\d{3}[\s-]?\d{3,4}[\s-]?\d{4}|微信|wechat|电话|邮箱", re.I)
 
@@ -233,14 +234,17 @@ def gather(settings, run_id, database_url=None):
 
 # ---------------------------------------------------------------- checks
 def text_errors(where, text, cites, allowed, inputs, extra=""):
-    """Reasons one piece of generated text is not acceptable."""
+    """Reasons one piece of generated text is not acceptable. The supporting text is
+    the cited sections plus the names of their projects ("求职证据 RAG" backs "RAG"),
+    and `extra` for what a caller allows beyond them (confirmed skills, the JD title)."""
     errors = []
     if not cites:
         errors.append(f"{where} 没有在 cites 里列出依据")
     unknown = [c for c in cites if c not in allowed]
     if unknown:
         errors.append(f"{where} 引用了不能用的编号 {unknown}")
-    source = "\n".join(inputs.by_id[c].text for c in cites if c in inputs.by_id) + "\n" + extra
+    cited = [inputs.by_id[c] for c in cites if c in inputs.by_id]
+    source = "\n".join([s.text for s in cited] + sorted({s.project for s in cited}) + [extra])
     source_cf = source.casefold()
     for token in sorted(set(LATIN.findall(text))):
         if token.casefold() in GENERIC_LATIN:
@@ -268,7 +272,8 @@ def check(data, inputs):
             problems.setdefault(key, []).extend(errors)
 
     all_ids = set(inputs.by_id)
-    skills_text = "\n".join(f"{g} {i}" for g, i in inputs.skills)
+    # The summary and greeting may name the confirmed skills and the role applied for ("应聘 Data Agent 工程师").
+    skills_text = "\n".join([f"{g} {i}" for g, i in inputs.skills] + [inputs.posting.get("title", "")])
     target = data.get("target_title", "")
     add("target", [f"求职意向写了不能写的内容：{r}" for p, r in FORBIDDEN if p.search(target)])
     if len(target) > 40:

@@ -92,3 +92,13 @@ def test_build_and_api(library, fake_embedder):
         assert md.status_code == 200 and "项目深挖" in md.text
         assert client.post("/api/runs/nope/interview").status_code == 404
     get_settings.cache_clear()
+
+
+def test_intro_may_name_the_role_and_gaps_may_name_what_the_jd_asks():
+    data = prep(self_intro=cited("应聘 AI 应用工程师，我用 Python 实现过检索接口。", "E001"),
+                gap_questions=[{"requirement_id": "R2", "question": "会 Docker 吗？",
+                                "strategy": cited("没有用 Docker 部署过，但用 Python 实现过检索接口，会先补 Docker。", "E001")}])
+    assert problems(data) == {}
+    data = prep(technical_questions=[{"requirement_id": "R1", "question": "部署？", "answer_outline": "容器化部署。",
+                                      "my_experience": cited("我用 Docker 部署过检索接口。", "E001")}])
+    assert ("technical", 0) in problems(data)          # a personal claim still needs the experience itself
