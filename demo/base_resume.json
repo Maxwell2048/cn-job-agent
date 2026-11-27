@@ -1,0 +1,23 @@
+{
+  "name": "示例候选人",
+  "target": "求职意向：AI 应用开发工程师",
+  "contact": "邮箱：candidate@example.com  |  GitHub：github.com/example",
+  "sections": [
+    {"title": "教育背景", "entries": [
+      {"left": "示例理工大学（虚构）", "mid": "计算机科学与技术 硕士", "right": "2023.09 - 2026.06",
+       "notes": ["相关课程：机器学习；自然语言处理；数据库系统；分布式系统"]},
+      {"left": "示例理工大学（虚构）", "mid": "软件工程 学士", "right": "2019.09 - 2023.06", "notes": []}
+    ]},
+    {"title": "项目经历", "entries": [
+      {"left": "智能客服 RAG 问答助手", "mid": "全栈开发", "right": "2025.09 - 2025.12"},
+      {"left": "数据分析 Agent", "mid": "独立开发", "right": "2026.01 - 2026.04"},
+      {"left": "电商销售数据仓库与分析看板", "mid": "数据建模", "right": "2025.03 - 2025.06"}
+    ]},
+    {"title": "专业技能", "items": [
+      ["编程语言", "Python（熟练）；SQL（熟练）；TypeScript（了解）"],
+      ["AI 与大模型", "LangChain、LangGraph、RAG、PyTorch、Hugging Face Transformers"],
+      ["后端与数据", "FastAPI、PostgreSQL、pgvector、pandas、Power BI"],
+      ["工程工具", "Git、Docker、Linux、pytest"]
+    ]}
+  ]
+}

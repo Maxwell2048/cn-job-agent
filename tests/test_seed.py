@@ -86,3 +86,9 @@ def test_example_profile_is_valid():
 ])
 def test_city_match(cities, wanted, kind):
     assert geo.match(cities, wanted)[0] == kind
+
+
+def test_unquoted_school_tier_is_accepted():
+    profile = ProfileIn.model_validate({"roles": [], "cities": [], "channels": ["campus"],
+                                        "education": {"degree": "master", "undergrad_tier": 211}})
+    assert profile.education.undergrad_tier == "211"

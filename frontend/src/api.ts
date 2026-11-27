@@ -202,6 +202,24 @@ export interface MaterialsData {
   files: string[];
 }
 
+export interface InterviewData {
+  run_id: string;
+  created_at: string;
+  version: string;
+  model: string;
+  posting: { id: number; title: string; company: string };
+  project_titles: Record<string, string>;
+  draft: {
+    self_intro: Cited;
+    project_questions: { project_id: string; question: string; answer_points: Cited[] }[];
+    technical_questions: { requirement_id: string; question: string; answer_outline: string; my_experience: Cited }[];
+    gap_questions: { requirement_id: string; question: string; strategy: Cited }[];
+    questions_to_ask: string[];
+  };
+  warnings: string[];
+  citations: MaterialsData["citations"];
+}
+
 export class ApiError extends Error {
   constructor(public status: number, message: string) {
     super(message);
@@ -227,36 +245,79 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   return (type.includes("application/json") ? JSON.parse(text) : text) as T;
 }
 
-const post = <T>(path: string, body: unknown) => request<T>(path, { method: "POST", body: JSON.stringify(body) });
+/** Read-only demo: built with VITE_STATIC_DEMO=1, the app reads a static snapshot of the
+ *  API (demo/snapshot, published as demo-data/) instead of a running server. */
+export const STATIC_DEMO = import.meta.env.VITE_STATIC_DEMO === "1";
+const BASE = import.meta.env.BASE_URL;
+
+function staticFile(path: string) {
+  const url = new URL(path, "http://demo");
+  let name = url.pathname.replace(/^\/api\//, "");
+  if (name === "companies" && url.searchParams.get("all") === "true") name = "companies-all";
+  if (name.endsWith("/report")) return `${name}.txt`;
+  if (/\/materials\/[^/]+$/.test(name)) return name;
+  return `${name}.json`;
+}
+
+async function staticRequest<T>(path: string, init?: RequestInit): Promise<T> {
+  if (init?.method && init.method !== "GET") {
+    throw new ApiError(403, "这是只读的公开演示版：数据由真实流水线预先生成，不能在这里运行 Agent。克隆仓库在本机运行即可使用全部功能。");
+  }
+  const response = await fetch(`${BASE}demo-data/${staticFile(path)}`);
+  if (!response.ok) throw new ApiError(response.status === 404 ? 404 : response.status, "演示数据里没有这一项");
+  const text = await response.text();
+  return (path.endsWith("/report") ? text : JSON.parse(text)) as T;
+}
+
+const post = <T>(path: string, body: unknown) =>
+  (STATIC_DEMO ? staticRequest<T> : request<T>)(path, { method: "POST", body: JSON.stringify(body) });
+const get = <T>(path: string) => (STATIC_DEMO ? staticRequest<T>(path) : request<T>(path));
 
 export const api = {
-  overview: () => request<Overview>("/api/overview"),
-  model: () => request<ModelInfo>("/api/model"),
-  insights: () => request<Insights>("/api/insights"),
-  graph: () => request<GraphShape>("/api/graph"),
+  overview: () => get<Overview>("/api/overview"),
+  model: () => get<ModelInfo>("/api/model"),
+  insights: () => get<Insights>("/api/insights"),
+  graph: () => get<GraphShape>("/api/graph"),
   postings: (params: { status?: string; q?: string } = {}) => {
     const query = new URLSearchParams(Object.entries(params).filter(([, v]) => v) as [string, string][]);
-    return request<PostingBrief[]>(`/api/postings?${query}`);
+    if (STATIC_DEMO) {   // the snapshot holds every posting: filter here
+      const q = (params.q ?? "").toLowerCase();
+      return get<PostingBrief[]>("/api/postings").then((rows) => rows.filter((p) =>
+        (!params.status || p.status === params.status) &&
+        (!q || [p.title, p.company, p.city].some((v) => v?.toLowerCase().includes(q)))));
+    }
+    return get<PostingBrief[]>(`/api/postings?${query}`);
   },
-  posting: (id: number | string) => request<PostingDetail>(`/api/postings/${id}`),
+  posting: (id: number | string) => get<PostingDetail>(`/api/postings/${id}`),
   addPosting: (body: { text: string; title?: string; company?: string; city?: string; url?: string; channel?: string }) =>
     post<{ created: boolean; posting: PostingBrief }>("/api/postings", body),
   startRun: (postingId: number, options: { force?: boolean; auto_approve?: boolean } = {}) =>
     post<{ run_id: string }>(`/api/postings/${postingId}/runs`, options),
-  runs: () => request<RunBrief[]>("/api/runs"),
-  run: (id: string) => request<RunDetail>(`/api/runs/${id}`),
+  runs: () => get<RunBrief[]>("/api/runs"),
+  run: (id: string) => get<RunDetail>(`/api/runs/${id}`),
   resume: (id: string, approve: boolean | null) => post<{ run_id: string }>(`/api/runs/${id}/resume`, { approve }),
-  report: (id: string) => request<string>(`/api/runs/${id}/report`),
-  materials: (runId: string) => request<MaterialsData>(`/api/runs/${runId}/materials`),
+  report: (id: string) => get<string>(`/api/runs/${id}/report`),
+  materials: (runId: string) => get<MaterialsData>(`/api/runs/${runId}/materials`),
   generateMaterials: (runId: string) => post<{ job: string }>(`/api/runs/${runId}/materials`, {}),
-  materialFile: (runId: string, name: string) => `/api/runs/${runId}/materials/${name}`,
-  collections: () => request<CollectionBrief[]>("/api/collections"),
-  collection: (id: string) => request<CollectionDetail>(`/api/collections/${id}`),
+  interview: (runId: string) => get<InterviewData>(`/api/runs/${runId}/interview`),
+  generateInterview: (runId: string) => post<{ job: string }>(`/api/runs/${runId}/interview`, {}),
+  interviewFile: (runId: string) =>
+    STATIC_DEMO ? `${BASE}demo-data/runs/${runId}/interview.md` : `/api/runs/${runId}/interview/interview.md`,
+  materialFile: (runId: string, name: string) =>
+    STATIC_DEMO ? `${BASE}demo-data/runs/${runId}/materials/${name}` : `/api/runs/${runId}/materials/${name}`,
+  collections: () => get<CollectionBrief[]>("/api/collections"),
+  collection: (id: string) => get<CollectionDetail>(`/api/collections/${id}`),
   startCollection: (mode: string) => post<{ collection_id: string }>("/api/collections", { mode }),
   companies: (cities: string[] = [], all = false) => {
     const query = new URLSearchParams();
     cities.forEach((c) => query.append("city", c));
     if (all) query.set("all", "true");
-    return request<CompanyRow[]>(`/api/companies?${query}`);
+    if (STATIC_DEMO && !all) {   // keep programmes in the chosen cities (or nationwide ones)
+      return get<CompanyRow[]>("/api/companies").then((rows) => rows
+        .map((c) => ({ ...c, programs: c.programs.filter((p) => p.city_match === "nationwide" ||
+          (p.matched_cities ?? []).some((city) => cities.length === 0 || cities.includes(city))) }))
+        .filter((c) => c.programs.length));
+    }
+    return get<CompanyRow[]>(`/api/companies?${query}`);
   },
 };

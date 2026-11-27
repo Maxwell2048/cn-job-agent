@@ -216,6 +216,33 @@ def create_app(settings=None, toolkit=None, checkpointer_factory=None, collect_o
             raise HTTPException(404, "没有这个文件")
         return FileResponse(folder / name, filename=f"{run_id}-{name}")
 
+    @app.post("/api/runs/{run_id}/interview", status_code=202)
+    def generate_interview(run_id: str):
+        try:
+            return {"job": manager.generate_interview(run_id)}
+        except LookupError as exc:
+            raise HTTPException(404, str(exc)) from exc
+        except ValueError as exc:
+            raise HTTPException(409, str(exc)) from exc
+
+    @app.get("/api/runs/{run_id}/interview")
+    def get_interview(run_id: str):
+        from ..agents import interview as interview_module
+        folder = interview_module.latest(toolkit.outputs_dir, run_id)
+        if folder is None:
+            raise HTTPException(404, "还没有生成面试准备")
+        data = json.loads((folder / "interview.json").read_text(encoding="utf-8"))
+        data.pop("folder", None)
+        return {**data, "version": folder.name}
+
+    @app.get("/api/runs/{run_id}/interview/interview.md")
+    def interview_file(run_id: str):
+        from ..agents import interview as interview_module
+        folder = interview_module.latest(toolkit.outputs_dir, run_id)
+        if folder is None or not (folder / "interview.md").is_file():
+            raise HTTPException(404, "没有这个文件")
+        return FileResponse(folder / "interview.md", filename=f"{run_id}-interview.md")
+
     @app.get("/api/jobs/{key}/events")
     async def job_events(key: str, start: int = 0):
         return sse(key, start, lambda: True)

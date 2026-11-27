@@ -478,6 +478,22 @@ def cmd_materials(args, settings):
     return 0
 
 
+def cmd_interview(args, settings):
+    from . import llm as llm_module
+    from .agents import interview
+    resolved = llm_module.resolve(settings)
+    _out(f"用 {resolved.label} · {resolved.model} 准备面试……")
+    result = interview.build(settings, args.run_id, llm_module.build_json_llm(settings, resolved))
+    d = result["draft"]
+    _out(f"\n自我介绍：{d.get('self_intro', {}).get('text', '')}\n")
+    _out(f"项目深挖 {len(d.get('project_questions', []))} 题 · 技术与原理 {len(d.get('technical_questions', []))} 题 · "
+         f"缺口题 {len(d.get('gap_questions', []))} 题 · 反问 {len(d.get('questions_to_ask', []))} 个")
+    for warning in result["warnings"]:
+        _out(f"  注意：{warning}")
+    _out(f"\n已保存：{result['folder']}（interview.md、interview.json）")
+    return 0
+
+
 def cmd_serve(args, settings):
     import uvicorn
 
@@ -520,6 +536,9 @@ def build_parser():
     mat = sub.add_parser("materials", help="材料 Agent：为一次已完成的运行生成中文简历和打招呼语")
     mat.add_argument("run_id")
     mat.set_defaults(func=cmd_materials)
+    prep = sub.add_parser("interview", help="面试准备 Agent：为一次已完成的运行准备面试题和回答要点")
+    prep.add_argument("run_id")
+    prep.set_defaults(func=cmd_interview)
     serve = sub.add_parser("serve", help="启动网页界面（FastAPI + React）")
     serve.add_argument("--host", default="127.0.0.1", help="默认只在本机可访问")
     serve.add_argument("--port", type=int, default=8100)

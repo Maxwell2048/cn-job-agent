@@ -1,0 +1,22 @@
+# Demo search profile for the fictional candidate (public; not a real person).
+name: default
+roles:
+  - key: agent_llm_app
+    label: Agent / 大模型应用开发
+    keywords: [AI Agent, 智能体, 大模型应用, RAG, AI 应用工程师]
+  - key: ai_fullstack_backend
+    label: AI 全栈 / 后端开发
+    keywords: [AI 全栈, 全栈, Python 后端, 后端开发]
+  - key: data
+    label: 数据分析 / 数据工程
+    keywords: [数据分析, 数据工程, 大数据]
+cities: [深圳, 杭州, 苏州, 武汉]
+channels: [campus, social_entry]
+testamur_month: 2026-06
+cscse_cert_date: null
+birth_date: 2002-03-01
+experience_years: 0
+education:
+  degree: master
+  undergrad_tier: 211
+  qs_rank: null

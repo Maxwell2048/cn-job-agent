@@ -132,6 +132,11 @@ class EducationIn(BaseModel):
             raise ValueError("degree 必须是 bachelor、master 或 phd")
         return value
 
+    @field_validator("undergrad_tier", mode="before")
+    @classmethod
+    def _tier_text(cls, value):
+        return str(value)          # YAML reads an unquoted 985 / 211 as a number
+
     @field_validator("undergrad_tier")
     @classmethod
     def _tier(cls, value):

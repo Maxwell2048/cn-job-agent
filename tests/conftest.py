@@ -191,3 +191,46 @@ def world(pg_url, fake_embedder, tmp_path):
             {"key": "acme", "name": "极光科技", "sector": "internet", "programs": [
                 {"title": "2027 校招", "window": ["2026-01", "2027-12"], "cities": ["深圳"]}]}]}))
     return {"url": pg_url, "embedder": fake_embedder, "outputs": tmp_path}
+
+
+# ---------------------------------------------------------------- fictional library for the materials and interview tests
+@pytest.fixture
+def library(tmp_path, pg_url, job_rag_home):
+    import json
+    import uuid
+
+    from cn_job_agent.config import Settings
+    from cn_job_agent.db.models import AgentRun, JobPosting, RequirementMatch
+    from cn_job_agent.db.session import session_scope
+
+    experiences = tmp_path / "experiences"
+    experiences.mkdir()
+    (experiences / "demo.md").write_text(
+        "# Demo 项目：检索系统\n\n## 我的工作 检索\n"
+        "我用 Python 和 FastAPI 实现检索接口，测试 120 项全部通过。\n", encoding="utf-8")
+    (experiences / "profile.md").write_text("# 个人基本信息\n\n## 学历 Education\n信息技术硕士（人工智能方向）\n",
+                                            encoding="utf-8")
+    base = tmp_path / "base.json"
+    base.write_text(json.dumps({
+        "name": "测试用户", "contact": "电话：000  |  邮箱：test@example.com", "target": "求职意向：软件开发",
+        "sections": [{"title": "教育背景", "entries": [{"left": "示例大学", "mid": "信息技术 硕士", "right": "2024 - 2026",
+                                                     "notes": ["相关课程：机器学习"]}]},
+                     {"title": "项目经历", "entries": [{"left": "Demo 检索平台", "mid": "全栈开发", "right": "2025.03 - 至今"}]},
+                     {"title": "专业技能与综合评价", "items": [["办公软件", "Excel"], ["后端", "Python、FastAPI"]]}]}),
+        encoding="utf-8")
+    settings = Settings(_env_file=None, database_url=pg_url, job_rag_home=job_rag_home, experiences_dir=experiences,
+                        resume_base=base, outputs_dir=tmp_path / "outputs")
+    run_id = f"m-{uuid.uuid4().hex[:8]}"
+    with session_scope(pg_url) as s:
+        posting = JobPosting(title="AI 应用工程师", jd_text="熟悉 Python 和 FastAPI\n", jd_sha256=uuid.uuid4().hex,
+                             status="matched")
+        s.add(posting)
+        s.flush()
+        s.add(AgentRun(id=run_id, posting_id=posting.id, status="done", screening={}, summary={}, versions={}, trace=[]))
+        s.add(RequirementMatch(run_id=run_id, requirement_id="R001", text="熟悉 Python", category="technical_skill",
+                               importance="required", verdict="direct", evidence=[
+                                   {"candidate_id": "E001", "quote": "Python", "project": "Demo 项目：检索系统",
+                                    "section": "我的工作 检索", "source": "demo.md", "line_start": 6, "line_end": 7}]))
+        s.add(RequirementMatch(run_id=run_id, requirement_id="R002", text="熟悉 Kubernetes", category="technical_skill",
+                               importance="required", verdict="insufficient", evidence=[]))
+    return {"settings": settings, "run_id": run_id, "url": pg_url, "outputs": tmp_path / "outputs"}

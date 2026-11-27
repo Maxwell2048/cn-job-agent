@@ -149,6 +149,35 @@ class JobManager:
         finally:
             self._finish(key)
 
+    def _interview(self, key, run_id):
+        from ..agents import interview
+        try:
+            result = interview.build(self.settings, run_id, self.toolkit.get_llm(),
+                                     database_url=self.toolkit.database_url, outputs_dir=self.toolkit.outputs_dir)
+            self.emit(key, {"node": "interview", "at": _now(), "warnings": len(result["warnings"])})
+        except Exception as exc:  # noqa: BLE001 - shown in the UI
+            self.emit(key, {"node": "__error__", "at": _now(), "error": f"{exc.__class__.__name__}: {exc}"})
+        finally:
+            self._finish(key)
+
+    def generate_interview(self, run_id):
+        """Start the interview-prep agent for a finished run; returns the event key."""
+        self._check_done(run_id)
+        key = f"i-{run_id}-{datetime.now(timezone.utc):%H%M%S%f}"
+        self.emit(key, {"node": "__start__", "at": _now()})
+        self.futures[key] = self.executor.submit(self._interview, key, run_id)
+        return key
+
+    def _check_done(self, run_id):
+        from ..db.models import AgentRun
+        from ..db.session import session_scope
+        with session_scope(self.toolkit.database_url) as s:
+            run = s.get(AgentRun, run_id)
+            if run is None:
+                raise LookupError(f"没有编号为 {run_id} 的运行")
+            if run.status != "done":
+                raise ValueError("只有完成了证据匹配的运行才能生成面试准备或申请材料")
+
     def generate_materials(self, run_id):
         """Start the materials agent for a finished run; returns the event key."""
         from ..db.models import AgentRun

@@ -1,6 +1,6 @@
 import { NavLink, Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { api } from "./api";
+import { STATIC_DEMO, api } from "./api";
 import { useData } from "./hooks";
 import Overview from "./pages/Overview";
 import Postings from "./pages/Postings";
@@ -31,7 +31,7 @@ export default function App() {
     <div className="layout">
       <nav className="sidebar" aria-label="主导航">
         <div className="brand">
-          <img src="/favicon.svg" alt="" />
+          <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" />
           <div>国内求职 Agent<small>LangGraph · RAG · pgvector</small></div>
         </div>
         {NAV.map((item) => (
@@ -46,6 +46,12 @@ export default function App() {
         </div>
       </nav>
       <main className="main">
+        {STATIC_DEMO && (
+          <div className="notice warn" style={{ marginBottom: 16 }}>
+            公开演示版：候选人资料是虚构的，岗位来自企业官网的公开招聘信息；所有结果由真实流水线（LangGraph + DeepSeek）预先生成，
+            页面只读。完整功能请克隆 <a href="https://github.com/Maxwell2048/cn-job-agent">cn-job-agent</a> 在本机运行。
+          </div>
+        )}
         <Routes>
           <Route path="/" element={<Overview />} />
           <Route path="/postings" element={<Postings />} />
