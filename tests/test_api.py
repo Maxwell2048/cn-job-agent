@@ -127,3 +127,18 @@ def test_errors_and_report_path_guard(client, world):
     with session_scope(world["url"]) as s:
         s.get(AgentRun, run_id).report_path = "C:/Windows/win.ini"      # outside the outputs folder
     assert client.get(f"/api/runs/{run_id}/report").status_code == 404
+
+
+def test_insights_list_skill_gaps_only(client, world):
+    from cn_job_agent.db.models import RequirementMatch
+    pid = add(client, "缺口测试 API\n- Python 开发\n", city="深圳", channel="social")
+    run_id = client.post(f"/api/postings/{pid}/runs", json={}).json()["run_id"]
+    client.manager.wait(run_id)
+    with session_scope(world["url"]) as s:
+        for i, (text, category) in enumerate([("熟悉 Kubernetes", "technical_skill"), ("2027届应届毕业生", "education"),
+                                              ("能接受出差", "other"), ("工作地点深圳", "location")]):
+            s.add(RequirementMatch(run_id=run_id, requirement_id=f"X{i}", text=text, category=category,
+                                   importance="required", verdict="insufficient"))
+    gaps = [g["text"] for g in client.get("/api/insights").json()["top_gaps"]]
+    assert "熟悉 Kubernetes" in gaps
+    assert not {"2027届应届毕业生", "能接受出差", "工作地点深圳"} & set(gaps)

@@ -129,9 +129,16 @@ def insights(session):
     by_category = {}
     for category, verdict, count in rows:
         by_category.setdefault(category, {})[verdict or "error"] = count
+    # Skill and experience gaps only: work location, eligibility and cohort wording
+    # ("2027 届毕业生") are the screening agent's job, not something to learn.
     gaps = session.execute(
         select(RequirementMatch.text, func.count().label("n"))
         .where(RequirementMatch.verdict == "insufficient", RequirementMatch.importance != "preferred",
-               RequirementMatch.category != "responsibility")
+               RequirementMatch.category.not_in(NOT_SKILL_GAPS),
+               ~RequirementMatch.text.op("~")(COHORT_WORDING))
         .group_by(RequirementMatch.text).order_by(func.count().desc(), RequirementMatch.text).limit(15)).all()
     return {"by_category": by_category, "top_gaps": [{"text": t, "count": n} for t, n in gaps]}
+
+
+NOT_SKILL_GAPS = ("responsibility", "location", "work_authorization", "other")
+COHORT_WORDING = "届|应届|毕业生"
