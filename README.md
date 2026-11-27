@@ -1,6 +1,9 @@
 # 国内求职 Agent（cn-job-agent）
 
 [![CI](https://github.com/Maxwell2048/cn-job-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/Maxwell2048/cn-job-agent/actions/workflows/ci.yml)
+[![Demo](https://github.com/Maxwell2048/cn-job-agent/actions/workflows/pages.yml/badge.svg)](https://maxwell2048.github.io/cn-job-agent/)
+
+**在线演示：https://maxwell2048.github.io/cn-job-agent/**（只读。候选人是虚构的，岗位来自企业官网的公开招聘信息，结果由真实流水线预先生成。）
 
 用多个 Agent 协作查找国内的 Agent 开发、AI 全栈、数据和技术支持岗位：先确认求职意向，再按届别窗口、城市和证据匹配筛选岗位。经历库和证据检索复用 [job_rag_starter](../job_rag_starter)。
 
@@ -225,6 +228,26 @@ JD 要求提取、逐条证据判断和搜索规划 Agent 的工具调用用同�
 .\.venv\Scripts\cn-agent.exe llm check --ping    # 当前模型、数据去向，并实际测 JSON 输出和工具调用
 ```
 
+## 公开演示版与持续集成
+
+- **在线演示**（GitHub Pages）：React 应用以只读模式构建（`VITE_STATIC_DEMO=1`），读取 `demo/snapshot/` 里的 API 快照，不需要服务器。
+- **演示数据**：`demo/` 里是一位虚构候选人（经历库、画像、简历底稿）。`demo/build_demo.py` 在独立的 `cn_job_agent_demo` 数据库里跑一遍真实流水线（采集公开岗位、筛选、匹配、生成材料和面试准备），`demo/export_snapshot.py` 把结果导出成静态 JSON：
+
+```powershell
+.\.venv\Scripts\python.exe demo\build_demo.py
+.\.venv\Scripts\python.exe demo\export_snapshot.py
+```
+
+- **CI**（GitHub Actions）：在 `pgvector/pgvector:pg17` 服务上跑 pyflakes 和全部 pytest，RAG 核心取自公开的 [job-application-assistant](https://github.com/Maxwell2048/job-application-assistant)；前端做类型检查和生产构建。推送到 main 后自动重新部署演示页。
+
+## 面试准备 Agent
+
+对一次已完成匹配的运行，生成 1 分钟自我介绍、项目深挖题（回答要点引用经历原文）、技术原理题（提纲 + 引用的个人经历）、缺口题的诚实应对和可以反问的问题。和材料 Agent 共用一套校验：讲个人经历的内容必须有原文支撑，原理提纲不能夹带个人声称。
+
+```powershell
+.\.venv\Scripts\cn-agent.exe interview <运行编号>   # 也可以在岗位详情 →"面试准备"里生成
+```
+
 ## 数据与隐私
 
 - `.env`（含 API key）、`profile.local.yaml` 不进 git。经历库留在 job_rag_starter 里，这个仓库不复制任何经历原文。
@@ -241,4 +264,4 @@ JD 要求提取、逐条证据判断和搜索规划 Agent 的工具调用用同�
 | **P2 ✅** | 校招官网采集工具、搜索规划 Agent（工具调用 + 规则兜底）、待处理队列、定时任务 |
 | **P3 ✅** | FastAPI + React 网页界面、SSE 实时 Agent 轨迹、网页上批准 / 放弃暂停的运行 |
 | **材料 Agent ✅** | 定制中文简历（Word / Markdown）和 BOSS 直聘打招呼语，逐条引用、程序校验 |
-| 下一步 | 面试准备、虚构数据的公开演示版 |
+| **公开展示 ✅** | 面试准备 Agent、GitHub Actions CI、GitHub Pages 只读演示（虚构候选人） |

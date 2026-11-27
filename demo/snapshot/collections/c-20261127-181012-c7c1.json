@@ -1,0 +1,809 @@
+{
+ "id": "c-20261127-181012-c7c1",
+ "mode": "agent",
+ "status": "done",
+ "stats": {
+  "searches": 34,
+  "seen": 300,
+  "saved": 9,
+  "duplicates": 0,
+  "errors": 0
+ },
+ "started_at": "2026-11-27T10:10:12.302753+00:00",
+ "finished_at": "2026-11-27T10:11:18.680856+00:00",
+ "error": "",
+ "plan": [
+  {
+   "source": "tencent",
+   "keyword": "大模型应用",
+   "hits": 2,
+   "in_target_city": 2
+  },
+  {
+   "source": "tencent",
+   "keyword": "AI Agent",
+   "hits": 20,
+   "in_target_city": 17
+  },
+  {
+   "source": "tencent",
+   "keyword": "全栈",
+   "hits": 1,
+   "in_target_city": 1
+  },
+  {
+   "source": "tencent",
+   "keyword": "后端开发",
+   "hits": 0,
+   "in_target_city": 0
+  },
+  {
+   "source": "tencent",
+   "keyword": "数据分析",
+   "hits": 15,
+   "in_target_city": 15
+  },
+  {
+   "source": "tencent",
+   "keyword": "智能体",
+   "hits": 14,
+   "in_target_city": 14
+  },
+  {
+   "source": "tencent",
+   "keyword": "RAG",
+   "hits": 9,
+   "in_target_city": 6
+  },
+  {
+   "source": "tencent",
+   "keyword": "数据工程",
+   "hits": 2,
+   "in_target_city": 2
+  },
+  {
+   "source": "tencent",
+   "keyword": "后端",
+   "hits": 5,
+   "in_target_city": 5
+  },
+  {
+   "source": "tencent",
+   "keyword": "Python",
+   "hits": 20,
+   "in_target_city": 20
+  },
+  {
+   "source": "zhiye:iflytek",
+   "keyword": "大模型应用",
+   "hits": 15,
+   "in_target_city": 1
+  },
+  {
+   "source": "zhiye:iflytek",
+   "keyword": "全栈",
+   "hits": 13,
+   "in_target_city": 1
+  },
+  {
+   "source": "zhiye:iflytek",
+   "keyword": "AI Agent",
+   "hits": 12,
+   "in_target_city": 1
+  },
+  {
+   "source": "zhiye:iflytek",
+   "keyword": "智能体",
+   "hits": 20,
+   "in_target_city": 2
+  },
+  {
+   "source": "zhiye:iflytek",
+   "keyword": "后端开发",
+   "hits": 8,
+   "in_target_city": 3
+  },
+  {
+   "source": "zhiye:iflytek",
+   "keyword": "数据分析",
+   "hits": 20,
+   "in_target_city": 4
+  },
+  {
+   "source": "zhiye:iflytek",
+   "keyword": "RAG",
+   "hits": 20,
+   "in_target_city": 1
+  },
+  {
+   "source": "zhiye:iflytek",
+   "keyword": "AI应用",
+   "hits": 7,
+   "in_target_city": 1
+  },
+  {
+   "source": "zhiye:iflytek",
+   "keyword": "数据工程",
+   "hits": 9,
+   "in_target_city": 4
+  },
+  {
+   "source": "zhiye:iflytek",
+   "keyword": "大数据",
+   "hits": 20,
+   "in_target_city": 3
+  },
+  {
+   "source": "zhiye:iflytek",
+   "keyword": "Python",
+   "hits": 20,
+   "in_target_city": 2
+  },
+  {
+   "source": "zhiye:iflytek",
+   "keyword": "Java",
+   "hits": 20,
+   "in_target_city": 3
+  },
+  {
+   "source": "zhiye:iflytek",
+   "keyword": "软件开发工程师",
+   "hits": 20,
+   "in_target_city": 4
+  },
+  {
+   "source": "zhiye:transsion",
+   "keyword": "AI Agent",
+   "hits": 20,
+   "in_target_city": 11
+  },
+  {
+   "source": "zhiye:transsion",
+   "keyword": "大模型应用",
+   "hits": 18,
+   "in_target_city": 9
+  },
+  {
+   "source": "zhiye:transsion",
+   "keyword": "后端开发",
+   "hits": 10,
+   "in_target_city": 2
+  },
+  {
+   "source": "zhiye:transsion",
+   "keyword": "数据分析",
+   "hits": 20,
+   "in_target_city": 9
+  },
+  {
+   "source": "zhiye:transsion",
+   "keyword": "智能体",
+   "hits": 20,
+   "in_target_city": 13
+  },
+  {
+   "source": "zhiye:transsion",
+   "keyword": "全栈",
+   "hits": 9,
+   "in_target_city": 4
+  },
+  {
+   "source": "zhiye:transsion",
+   "keyword": "RAG",
+   "hits": 20,
+   "in_target_city": 16
+  },
+  {
+   "source": "zhiye:transsion",
+   "keyword": "Python",
+   "hits": 20,
+   "in_target_city": 12
+  },
+  {
+   "source": "zhiye:transsion",
+   "keyword": "AI应用",
+   "hits": 20,
+   "in_target_city": 12
+  },
+  {
+   "source": "zhiye:transsion",
+   "keyword": "数据工程",
+   "hits": 2,
+   "in_target_city": 1
+  },
+  {
+   "source": "zhiye:transsion",
+   "keyword": "大数据",
+   "hits": 20,
+   "in_target_city": 11
+  }
+ ],
+ "trace": [
+  {
+   "type": "tool_call",
+   "tool": "list_sources",
+   "args": {}
+  },
+  {
+   "type": "tool_result",
+   "tool": "list_sources",
+   "text": "[{\"source\": \"tencent\", \"company\": \"腾讯\", \"cohort\": \"符合\", \"cohort_status\": \"eligible\", \"cohort_reason\": \"学位证日期 2026-06 在窗口 2026-01-01 至 2027-12-31内\", \"program_cities\": [\"广州\", \"成都\", \"杭州\", \"深圳\"]}, {\"source\": \"zhiye:iflytek\", \"company\": \"科大讯飞\", \"cohort\": \"符合\", \"cohort_status\": \"eligible\", \"cohort_reason\""
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "source": "tencent",
+    "keyword": "AI Agent"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "source": "tencent",
+    "keyword": "大模型应用"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "source": "tencent",
+    "keyword": "全栈"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "source": "tencent",
+    "keyword": "后端开发"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "source": "tencent",
+    "keyword": "数据分析"
+   }
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"tencent\", \"keyword\": \"AI Agent\", \"results\": [{\"source\": \"tencent\", \"id\": \"1282707398326592512\", \"title\": \"AI全栈工程师\", \"cities\": [\"深圳\", \"北京\", \"上海\", \"广州\", \"成都\", \"杭州\"], \"channel\": \"campus\", \"category\": \"应届毕业生\", \"posted_at\": \"\", \"in_target_city\": true, \"already_saved\": false}, {\"source\": \"tenc"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"tencent\", \"keyword\": \"大模型应用\", \"results\": [{\"source\": \"tencent\", \"id\": \"1282707395466077186\", \"title\": \"AI算法工程\", \"cities\": [\"深圳\", \"北京\", \"上海\", \"广州\"], \"channel\": \"campus\", \"category\": \"应届毕业生\", \"posted_at\": \"\", \"in_target_city\": true, \"already_saved\": false}, {\"source\": \"tencent\", \"id\": \"128"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"tencent\", \"keyword\": \"全栈\", \"results\": [{\"source\": \"tencent\", \"id\": \"1282707398326592512\", \"title\": \"AI全栈工程师\", \"cities\": [\"深圳\", \"北京\", \"上海\", \"广州\", \"成都\", \"杭州\"], \"channel\": \"campus\", \"category\": \"应届毕业生\", \"posted_at\": \"\", \"in_target_city\": true, \"already_saved\": false}]}"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"tencent\", \"keyword\": \"后端开发\", \"results\": []}"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"tencent\", \"keyword\": \"数据分析\", \"results\": [{\"source\": \"tencent\", \"id\": \"1282707375417304064\", \"title\": \"市场营销\", \"cities\": [\"深圳\", \"北京\", \"上海\", \"广州\"], \"channel\": \"campus\", \"category\": \"应届毕业生\", \"posted_at\": \"\", \"in_target_city\": true, \"already_saved\": false}, {\"source\": \"tencent\", \"id\": \"128270"
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "智能体",
+    "source": "tencent"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "RAG",
+    "source": "tencent"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "数据工程",
+    "source": "tencent"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "后端",
+    "source": "tencent"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "Python",
+    "source": "tencent"
+   }
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"tencent\", \"keyword\": \"智能体\", \"results\": [{\"source\": \"tencent\", \"id\": \"1282707398326592512\", \"title\": \"AI全栈工程师\", \"cities\": [\"深圳\", \"北京\", \"上海\", \"广州\", \"成都\", \"杭州\"], \"channel\": \"campus\", \"category\": \"应届毕业生\", \"posted_at\": \"\", \"in_target_city\": true, \"already_saved\": false}, {\"source\": \"tencent\","
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"tencent\", \"keyword\": \"RAG\", \"results\": [{\"source\": \"tencent\", \"id\": \"1282707398326592512\", \"title\": \"AI全栈工程师\", \"cities\": [\"深圳\", \"北京\", \"上海\", \"广州\", \"成都\", \"杭州\"], \"channel\": \"campus\", \"category\": \"应届毕业生\", \"posted_at\": \"\", \"in_target_city\": true, \"already_saved\": false}, {\"source\": \"tencent\","
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"tencent\", \"keyword\": \"数据工程\", \"results\": [{\"source\": \"tencent\", \"id\": \"1283126531220382720\", \"title\": \"数据工程\", \"cities\": [\"深圳\", \"北京\", \"上海\", \"广州\"], \"channel\": \"campus\", \"category\": \"应届毕业生\", \"posted_at\": \"\", \"in_target_city\": true, \"already_saved\": false}, {\"source\": \"tencent\", \"id\": \"128668"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"tencent\", \"keyword\": \"后端\", \"results\": [{\"source\": \"tencent\", \"id\": \"1282707398326592512\", \"title\": \"AI全栈工程师\", \"cities\": [\"深圳\", \"北京\", \"上海\", \"广州\", \"成都\", \"杭州\"], \"channel\": \"campus\", \"category\": \"应届毕业生\", \"posted_at\": \"\", \"in_target_city\": true, \"already_saved\": false}, {\"source\": \"tencent\", "
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"tencent\", \"keyword\": \"Python\", \"results\": [{\"source\": \"tencent\", \"id\": \"1282707395466077184\", \"title\": \"Agent开发工程师\", \"cities\": [\"深圳\", \"北京\", \"上海\", \"广州\", \"成都\"], \"channel\": \"campus\", \"category\": \"应届毕业生\", \"posted_at\": \"\", \"in_target_city\": true, \"already_saved\": false}, {\"source\": \"tencent\","
+  },
+  {
+   "type": "tool_call",
+   "tool": "save_jobs",
+   "args": {
+    "source": "tencent",
+    "ids": [
+     "1282707395466077184",
+     "1282707395466077185",
+     "1282707398326592512",
+     "1282707383965295616",
+     "1283126531220382720",
+     "1282707405033302017",
+     "1284634302709277696"
+    ],
+    "reason": "腾讯校招应届岗，涵盖 Agent 开发、AI 应用、AI 全栈、后台开发、数据工程与数据科学方向，均在深圳/杭州等目标城市。"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "AI Agent",
+    "source": "zhiye:iflytek"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "大模型应用",
+    "source": "zhiye:iflytek"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "智能体",
+    "source": "zhiye:iflytek"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "全栈",
+    "source": "zhiye:iflytek"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "后端开发",
+    "source": "zhiye:iflytek"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "数据分析",
+    "source": "zhiye:iflytek"
+   }
+  },
+  {
+   "type": "tool_result",
+   "tool": "save_jobs",
+   "text": "{\"saved\": [{\"posting_id\": 1, \"id\": \"1282707395466077184\", \"title\": \"Agent开发工程师\", \"reason\": \"腾讯校招应届岗，涵盖 Agent 开发、AI 应用、AI 全栈、后台开发、数据工程与数据科学方向，均在深圳/杭州等目标城市。\"}, {\"posting_id\": 2, \"id\": \"1282707395466077185\", \"title\": \"AI应用工程师\", \"reason\": \"腾讯校招应届岗，涵盖 Agent 开发、AI 应用、AI 全栈、后台开发、数据工程与数据科学方向，均在深圳/杭州等目标城市。\"}"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:iflytek\", \"keyword\": \"AI Agent\", \"results\": [{\"source\": \"zhiye:iflytek\", \"id\": \"2ca30bc1-4bec-46f5-9dee-6b7c050fac3a\", \"title\": \"AI Agent 应用研发工程师(J14187)\", \"cities\": [\"合肥\"], \"channel\": \"campus\", \"category\": \"校园招聘\", \"posted_at\": \"2026-08-26\", \"in_target_city\": false, \"already_saved\""
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:iflytek\", \"keyword\": \"大模型应用\", \"results\": [{\"source\": \"zhiye:iflytek\", \"id\": \"fc9191fe-684d-4d23-8640-839e1d3fff2e\", \"title\": \"AI研究院-大模型应用统架构师\", \"cities\": [\"合肥\"], \"channel\": \"social\", \"category\": \"社会招聘\", \"posted_at\": \"2026-05-12\", \"in_target_city\": false, \"already_saved\": false}, {\""
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:iflytek\", \"keyword\": \"智能体\", \"results\": [{\"source\": \"zhiye:iflytek\", \"id\": \"c64a062b-eeff-4eb2-aff3-3ab1e2dd0cec\", \"title\": \"安全工程师-AI智能体方向(J14695)\", \"cities\": [\"合肥\"], \"channel\": \"campus\", \"category\": \"校园招聘\", \"posted_at\": \"2026-10-13\", \"in_target_city\": false, \"already_saved\": false}"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:iflytek\", \"keyword\": \"全栈\", \"results\": [{\"source\": \"zhiye:iflytek\", \"id\": \"5d3550b0-5668-4a23-97dc-603249f07e75\", \"title\": \"全栈开发工程师-合肥(J14044)\", \"cities\": [\"合肥\"], \"channel\": \"social\", \"category\": \"社会招聘\", \"posted_at\": \"2026-08-20\", \"in_target_city\": false, \"already_saved\": false}, {\""
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:iflytek\", \"keyword\": \"后端开发\", \"results\": [{\"source\": \"zhiye:iflytek\", \"id\": \"b8d68ef4-c577-41d8-8918-19c32e98e9a7\", \"title\": \"JAVA后端开发工程师(J14911)\", \"cities\": [\"合肥\"], \"channel\": \"social\", \"category\": \"社会招聘\", \"posted_at\": \"2026-11-16\", \"in_target_city\": false, \"already_saved\": false},"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:iflytek\", \"keyword\": \"数据分析\", \"results\": [{\"source\": \"zhiye:iflytek\", \"id\": \"2ff1c23c-5bd0-4851-974c-3a971976a8a1\", \"title\": \"数据分析师(J14783)\", \"cities\": [\"合肥\", \"成都\"], \"channel\": \"campus\", \"category\": \"校园招聘\", \"posted_at\": \"2026-10-25\", \"in_target_city\": false, \"already_saved\": false},"
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "RAG",
+    "source": "zhiye:iflytek"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "AI应用",
+    "source": "zhiye:iflytek"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "数据工程",
+    "source": "zhiye:iflytek"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "Python",
+    "source": "zhiye:iflytek"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "大数据",
+    "source": "zhiye:iflytek"
+   }
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:iflytek\", \"keyword\": \"RAG\", \"results\": [{\"source\": \"zhiye:iflytek\", \"id\": \"b8d68ef4-c577-41d8-8918-19c32e98e9a7\", \"title\": \"JAVA后端开发工程师(J14911)\", \"cities\": [\"合肥\"], \"channel\": \"social\", \"category\": \"社会招聘\", \"posted_at\": \"2026-11-16\", \"in_target_city\": false, \"already_saved\": false}, "
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:iflytek\", \"keyword\": \"AI应用\", \"results\": [{\"source\": \"zhiye:iflytek\", \"id\": \"506376e5-2b55-4b86-abdf-1514706356b0\", \"title\": \"AI研发工程师(J14377)\", \"cities\": [\"合肥\"], \"channel\": \"social\", \"category\": \"社会招聘\", \"posted_at\": \"2026-09-10\", \"in_target_city\": false, \"already_saved\": false}, {\"s"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:iflytek\", \"keyword\": \"数据工程\", \"results\": [{\"source\": \"zhiye:iflytek\", \"id\": \"e5a059b4-768a-46b8-9bbf-51fe4eca68d7\", \"title\": \"高级大数据工程师\", \"cities\": [\"武汉\"], \"channel\": \"social\", \"category\": \"社会招聘\", \"posted_at\": \"2026-05-12\", \"in_target_city\": true, \"already_saved\": false}, {\"source\": "
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:iflytek\", \"keyword\": \"Python\", \"results\": [{\"source\": \"zhiye:iflytek\", \"id\": \"2ff1c23c-5bd0-4851-974c-3a971976a8a1\", \"title\": \"数据分析师(J14783)\", \"cities\": [\"合肥\", \"成都\"], \"channel\": \"campus\", \"category\": \"校园招聘\", \"posted_at\": \"2026-10-25\", \"in_target_city\": false, \"already_saved\": false"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:iflytek\", \"keyword\": \"大数据\", \"results\": [{\"source\": \"zhiye:iflytek\", \"id\": \"56822c50-2df2-443c-9bab-546800544580\", \"title\": \"大数据工程师（大量HC）(J13405)\", \"cities\": [\"合肥\", \"武汉\", \"成都\"], \"channel\": \"campus\", \"category\": \"校园招聘\", \"posted_at\": \"2026-07-23\", \"in_target_city\": true, \"already_save"
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "Java",
+    "source": "zhiye:iflytek"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "软件开发工程师",
+    "source": "zhiye:iflytek"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "AI Agent",
+    "source": "zhiye:transsion"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "大模型应用",
+    "source": "zhiye:transsion"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "智能体",
+    "source": "zhiye:transsion"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "后端开发",
+    "source": "zhiye:transsion"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "数据分析",
+    "source": "zhiye:transsion"
+   }
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:iflytek\", \"keyword\": \"Java\", \"results\": [{\"source\": \"zhiye:iflytek\", \"id\": \"b8d68ef4-c577-41d8-8918-19c32e98e9a7\", \"title\": \"JAVA后端开发工程师(J14911)\", \"cities\": [\"合肥\"], \"channel\": \"social\", \"category\": \"社会招聘\", \"posted_at\": \"2026-11-16\", \"in_target_city\": false, \"already_saved\": false},"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:iflytek\", \"keyword\": \"软件开发工程师\", \"results\": [{\"source\": \"zhiye:iflytek\", \"id\": \"71b233f6-b218-4291-9b2c-24819f47e64f\", \"title\": \"嵌入式软件开发工程师-机器人关节控制方向(J13842)\", \"cities\": [\"合肥\"], \"channel\": \"campus\", \"category\": \"校园招聘\", \"posted_at\": \"2026-08-10\", \"in_target_city\": false, \"already_sav"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:transsion\", \"keyword\": \"AI Agent\", \"results\": [{\"source\": \"zhiye:transsion\", \"id\": \"0703c5c3-b3b4-4e83-8f7d-e3180e52c4c5\", \"title\": \"AI Agent 工程开发工程师(J20331)\", \"cities\": [\"上海\"], \"channel\": \"campus\", \"category\": \"校园招聘\", \"posted_at\": \"2026-08-21\", \"in_target_city\": false, \"already_sa"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:transsion\", \"keyword\": \"大模型应用\", \"results\": [{\"source\": \"zhiye:transsion\", \"id\": \"7767e016-2de4-4c35-87fa-eba9cbe8c5dd\", \"title\": \"安全攻防工程师(J19940)\", \"cities\": [\"深圳\"], \"channel\": \"social\", \"category\": \"社会招聘\", \"posted_at\": \"2026-10-09\", \"in_target_city\": true, \"already_saved\": false},"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:transsion\", \"keyword\": \"智能体\", \"results\": [{\"source\": \"zhiye:transsion\", \"id\": \"0eb855e7-8521-42cc-bb18-9efc38a2b36d\", \"title\": \"财务产品线负责人(J20385)\", \"cities\": [\"深圳\"], \"channel\": \"social\", \"category\": \"社会招聘\", \"posted_at\": \"2026-11-26\", \"in_target_city\": true, \"already_saved\": false}, "
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:transsion\", \"keyword\": \"后端开发\", \"results\": [{\"source\": \"zhiye:transsion\", \"id\": \"38b0c357-0d3e-45cc-a6ee-63923d20ee77\", \"title\": \"后端开发工程师（新零售方向）(J19622)\", \"cities\": [\"深圳\", \"重庆\"], \"channel\": \"social\", \"category\": \"社会招聘\", \"posted_at\": \"2026-04-23\", \"in_target_city\": true, \"already_sav"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:transsion\", \"keyword\": \"数据分析\", \"results\": [{\"source\": \"zhiye:transsion\", \"id\": \"694f6d87-bbb9-417c-a9be-86bbabd59cd5\", \"title\": \"高级数据分析经理(J20085)\", \"cities\": [\"深圳\"], \"channel\": \"social\", \"category\": \"社会招聘\", \"posted_at\": \"2026-11-26\", \"in_target_city\": true, \"already_saved\": false},"
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "全栈",
+    "source": "zhiye:transsion"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "RAG",
+    "source": "zhiye:transsion"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "数据工程",
+    "source": "zhiye:transsion"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "Python",
+    "source": "zhiye:transsion"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "大数据",
+    "source": "zhiye:transsion"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "search_jobs",
+   "args": {
+    "keyword": "AI应用",
+    "source": "zhiye:transsion"
+   }
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:transsion\", \"keyword\": \"全栈\", \"results\": [{\"source\": \"zhiye:transsion\", \"id\": \"6bae1ffa-9424-4668-9d04-207ebbd5fed5\", \"title\": \"AI全栈开发工程师（重庆）(J20347)\", \"cities\": [\"重庆\"], \"channel\": \"campus\", \"category\": \"校园招聘\", \"posted_at\": \"2026-09-16\", \"in_target_city\": false, \"already_saved\": fal"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:transsion\", \"keyword\": \"RAG\", \"results\": [{\"source\": \"zhiye:transsion\", \"id\": \"b1c1b703-1854-4a73-b72e-940605fc6b29\", \"title\": \"AI产品经理(J16160)\", \"cities\": [\"深圳\"], \"channel\": \"social\", \"category\": \"社会招聘\", \"posted_at\": \"2026-11-26\", \"in_target_city\": true, \"already_saved\": false}, {\""
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:transsion\", \"keyword\": \"数据工程\", \"results\": [{\"source\": \"zhiye:transsion\", \"id\": \"51bae249-f338-48ff-809a-ea4424f288ce\", \"title\": \"数据工程专家(J20002)\", \"cities\": [\"上海\"], \"channel\": \"social\", \"category\": \"社会招聘\", \"posted_at\": \"2026-08-07\", \"in_target_city\": false, \"already_saved\": false}, "
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:transsion\", \"keyword\": \"Python\", \"results\": [{\"source\": \"zhiye:transsion\", \"id\": \"a9b42661-a736-4172-b98d-f375017c319a\", \"title\": \"基带电源与磁仿真工程师(J20710)\", \"cities\": [\"重庆\"], \"channel\": \"social\", \"category\": \"社会招聘\", \"posted_at\": \"2026-11-25\", \"in_target_city\": false, \"already_saved\": f"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:transsion\", \"keyword\": \"大数据\", \"results\": [{\"source\": \"zhiye:transsion\", \"id\": \"79779d91-c142-4d59-b45b-3eaefb9562eb\", \"title\": \"Data Agent研发工程师 （大数据智能应用方向）(J20345)\", \"cities\": [\"深圳\"], \"channel\": \"campus\", \"category\": \"校园招聘\", \"posted_at\": \"2026-08-21\", \"in_target_city\": true, \"alrea"
+  },
+  {
+   "type": "tool_result",
+   "tool": "search_jobs",
+   "text": "{\"source\": \"zhiye:transsion\", \"keyword\": \"AI应用\", \"results\": [{\"source\": \"zhiye:transsion\", \"id\": \"8602700f-d893-470a-b3a8-c61a7bba6fdd\", \"title\": \"AI应用工程师（深圳）(J20353)\", \"cities\": [\"深圳\"], \"channel\": \"campus\", \"category\": \"校园招聘\", \"posted_at\": \"2026-08-21\", \"in_target_city\": true, \"already_saved\": fals"
+  },
+  {
+   "type": "tool_call",
+   "tool": "save_jobs",
+   "args": {
+    "ids": [
+     "cd5c300a-5661-409e-99f3-0fdfe7c9dca0",
+     "56822c50-2df2-443c-9bab-546800544580",
+     "631a6f99-4be7-4246-a30e-e7d575ec8a18",
+     "f22483d1-0388-4fe3-940b-4574d4d625c4",
+     "b4b3b9f5-8dea-417b-a218-78782128e405",
+     "dc445ff9-7d38-4bfb-be1b-0c52c40f05d0"
+    ],
+    "reason": "科大讯飞校招/社招的 AI 研发、大数据工程师、AI 数据工程师与武汉 JAVA 后端岗，与 Agent/大模型应用、数据工程和后端方向匹配，且工作地在武汉。",
+    "source": "zhiye:iflytek"
+   }
+  },
+  {
+   "type": "tool_call",
+   "tool": "save_jobs",
+   "args": {
+    "ids": [
+     "46d31168-d3a7-4558-b823-455945f5bcd8",
+     "8602700f-d893-470a-b3a8-c61a7bba6fdd",
+     "df74ffba-03f9-44c1-b697-8964e2c2fe0a",
+     "79779d91-c142-4d59-b45b-3eaefb9562eb",
+     "68695e06-9630-4e7c-a11e-0cf626054b15",
+     "fbb0fd52-a6df-4b46-a103-bcd97169389c",
+     "38b0c357-0d3e-45cc-a6ee-63923d20ee77"
+    ],
+    "reason": "传音控股在深圳的 AI Agent 研发、Data Agent、AI 应用、AI 全栈与后端开发岗，直接对应 Agent/大模型应用开发、全栈后端与数据方向。",
+    "source": "zhiye:transsion"
+   }
+  },
+  {
+   "type": "tool_result",
+   "tool": "save_jobs",
+   "text": "{\"saved\": [{\"posting_id\": 8, \"id\": \"cd5c300a-5661-409e-99f3-0fdfe7c9dca0\", \"title\": \"AI研发工程师(J13366)\", \"reason\": \"科大讯飞校招/社招的 AI 研发、大数据工程师、AI 数据工程师与武汉 JAVA 后端岗，与 Agent/大模型应用、数据工程和后端方向匹配，且工作地在武汉。\"}], \"duplicates\": [], \"errors\": [\"本次运行最多保存 8 个岗位，已达上限\"]}"
+  },
+  {
+   "type": "tool_result",
+   "tool": "save_jobs",
+   "text": "{\"saved\": [{\"posting_id\": 9, \"id\": \"46d31168-d3a7-4558-b823-455945f5bcd8\", \"title\": \"AI全栈开发工程师（深圳）(J20349)\", \"reason\": \"传音控股在深圳的 AI Agent 研发、Data Agent、AI 应用、AI 全栈与后端开发岗，直接对应 Agent/大模型应用开发、全栈后端与数据方向。\"}], \"duplicates\": [], \"errors\": [\"本次运行最多保存 8 个岗位，已达上限\"]}"
+  },
+  {
+   "type": "answer",
+   "text": "已达到本次运行保存岗位的上限（最多存 8 个），停止继续保存。以下是本次搜索总结：\n\n**搜索过程**：先查看了 3 个届别窗口符合的招聘网站（腾讯、科大讯飞、传音控股），其余网站没有校招窗口信息，因此没有可用岗；然后在这 3 个网站中，按“AI Agent、智能体、大模型应用、RAG、AI 应用、全栈、后端开发、Java、Python、数据分析、数据工程、大数据”等中文和英文关键词分别搜索。\n\n**保存结果（共 8 个，达到上限）**：\n- **腾讯（7 个）**：Agent 开发工程师、AI 应用工程师、AI 全栈工程师、后台开发、数据工程、算法-数据科学方向、财经线培训生-AI 应用开发（均为校招应届岗，在深圳、杭州等目标城市）。\n- **科大讯飞（1 个）**：AI 研发工程师（J13366，武汉）。\n- **传音控股（1 个）**：AI 全栈开发工程师（深圳，J20349）。\n\n保存第 8 个岗位后，系统提示“本次运行最多保存 8 个岗位”，因此后续这些符合条件但未能保存的岗位被截断：讯飞的大数据工程师（武汉）、AI 数据工程师-基座大模型方向（武汉）、3 个武汉中级软件开发工程师-JAVA；传音的 AI 应用工程师（深圳）、AI Agent 研发工程师-大数据、Data Agent 研发工程师、AI 全栈工程师（社招）、后端开发工程师（新零售）。如果我下一轮还想继续保存，这些会优先补上。"
+  }
+ ],
+ "saved": [
+  {
+   "posting_id": 1,
+   "id": "1282707395466077184",
+   "title": "Agent开发工程师",
+   "reason": "腾讯校招应届岗，涵盖 Agent 开发、AI 应用、AI 全栈、后台开发、数据工程与数据科学方向，均在深圳/杭州等目标城市。",
+   "source": "tencent"
+  },
+  {
+   "posting_id": 2,
+   "id": "1282707395466077185",
+   "title": "AI应用工程师",
+   "reason": "腾讯校招应届岗，涵盖 Agent 开发、AI 应用、AI 全栈、后台开发、数据工程与数据科学方向，均在深圳/杭州等目标城市。",
+   "source": "tencent"
+  },
+  {
+   "posting_id": 3,
+   "id": "1282707398326592512",
+   "title": "AI全栈工程师",
+   "reason": "腾讯校招应届岗，涵盖 Agent 开发、AI 应用、AI 全栈、后台开发、数据工程与数据科学方向，均在深圳/杭州等目标城市。",
+   "source": "tencent"
+  },
+  {
+   "posting_id": 4,
+   "id": "1282707383965295616",
+   "title": "后台开发",
+   "reason": "腾讯校招应届岗，涵盖 Agent 开发、AI 应用、AI 全栈、后台开发、数据工程与数据科学方向，均在深圳/杭州等目标城市。",
+   "source": "tencent"
+  },
+  {
+   "posting_id": 5,
+   "id": "1283126531220382720",
+   "title": "数据工程",
+   "reason": "腾讯校招应届岗，涵盖 Agent 开发、AI 应用、AI 全栈、后台开发、数据工程与数据科学方向，均在深圳/杭州等目标城市。",
+   "source": "tencent"
+  },
+  {
+   "posting_id": 6,
+   "id": "1282707405033302017",
+   "title": "算法-数据科学方向",
+   "reason": "腾讯校招应届岗，涵盖 Agent 开发、AI 应用、AI 全栈、后台开发、数据工程与数据科学方向，均在深圳/杭州等目标城市。",
+   "source": "tencent"
+  },
+  {
+   "posting_id": 7,
+   "id": "1284634302709277696",
+   "title": "财经线培训生-AI应用开发",
+   "reason": "腾讯校招应届岗，涵盖 Agent 开发、AI 应用、AI 全栈、后台开发、数据工程与数据科学方向，均在深圳/杭州等目标城市。",
+   "source": "tencent"
+  },
+  {
+   "posting_id": 8,
+   "id": "cd5c300a-5661-409e-99f3-0fdfe7c9dca0",
+   "title": "AI研发工程师(J13366)",
+   "reason": "科大讯飞校招/社招的 AI 研发、大数据工程师、AI 数据工程师与武汉 JAVA 后端岗，与 Agent/大模型应用、数据工程和后端方向匹配，且工作地在武汉。",
+   "source": "zhiye:iflytek"
+  },
+  {
+   "posting_id": 9,
+   "id": "46d31168-d3a7-4558-b823-455945f5bcd8",
+   "title": "AI全栈开发工程师（深圳）(J20349)",
+   "reason": "传音控股在深圳的 AI Agent 研发、Data Agent、AI 应用、AI 全栈与后端开发岗，直接对应 Agent/大模型应用开发、全栈后端与数据方向。",
+   "source": "zhiye:transsion"
+  }
+ ]
+}

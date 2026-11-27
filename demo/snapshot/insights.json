@@ -1,0 +1,89 @@
+{
+ "by_category": {
+  "experience": {
+   "direct": 18,
+   "insufficient": 19,
+   "related": 6
+  },
+  "other": {
+   "related": 27,
+   "insufficient": 5,
+   "direct": 12
+  },
+  "responsibility": {
+   "related": 41,
+   "insufficient": 7
+  },
+  "education": {
+   "related": 2,
+   "direct": 5
+  },
+  "technical_skill": {
+   "related": 42,
+   "direct": 23,
+   "insufficient": 25
+  }
+ },
+ "top_gaps": [
+  {
+   "text": "了解分布式系统原理",
+   "count": 1
+  },
+  {
+   "text": "了解性能测试",
+   "count": 1
+  },
+  {
+   "text": "了解系统监控",
+   "count": 1
+  },
+  {
+   "text": "具备扎实的数据结构与算法基础",
+   "count": 1
+  },
+  {
+   "text": "具备扎实的数据结构和算法功底",
+   "count": 1
+  },
+  {
+   "text": "对NoSQL, Key-value存储原理有一定了解",
+   "count": 1
+  },
+  {
+   "text": "掌握SQL性能优化",
+   "count": 1
+  },
+  {
+   "text": "掌握TCP/UDP网络协议及相关编程",
+   "count": 1
+  },
+  {
+   "text": "掌握常见的统计分析、实验设计、机器学习等领域的基础理论",
+   "count": 1
+  },
+  {
+   "text": "掌握进程间通讯编程",
+   "count": 1
+  },
+  {
+   "text": "熟悉Linux操作系统、网络等系统编程知识",
+   "count": 1
+  },
+  {
+   "text": "熟悉常见的算法与数据结构",
+   "count": 1
+  },
+  {
+   "text": "熟悉计算机视觉的基本原理",
+   "count": 1
+  },
+  {
+   "text": "熟练使用 AI 编程工具",
+   "count": 1
+  },
+  {
+   "text": "熟练掌握C++语言",
+   "count": 1
+  }
+ ]
+}

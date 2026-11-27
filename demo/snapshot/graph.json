@@ -1,0 +1,111 @@
+{
+ "nodes": [
+  {
+   "id": "__start__"
+  },
+  {
+   "id": "load_posting"
+  },
+  {
+   "id": "rule_screen"
+  },
+  {
+   "id": "extract"
+  },
+  {
+   "id": "decide"
+  },
+  {
+   "id": "human_review"
+  },
+  {
+   "id": "summarize"
+  },
+  {
+   "id": "finalize"
+  },
+  {
+   "id": "match_one"
+  },
+  {
+   "id": "__end__"
+  }
+ ],
+ "edges": [
+  {
+   "source": "__start__",
+   "target": "load_posting",
+   "conditional": false
+  },
+  {
+   "source": "decide",
+   "target": "finalize",
+   "conditional": true
+  },
+  {
+   "source": "decide",
+   "target": "human_review",
+   "conditional": true
+  },
+  {
+   "source": "decide",
+   "target": "match_one",
+   "conditional": true
+  },
+  {
+   "source": "decide",
+   "target": "summarize",
+   "conditional": true
+  },
+  {
+   "source": "extract",
+   "target": "decide",
+   "conditional": false
+  },
+  {
+   "source": "human_review",
+   "target": "finalize",
+   "conditional": true
+  },
+  {
+   "source": "human_review",
+   "target": "match_one",
+   "conditional": true
+  },
+  {
+   "source": "human_review",
+   "target": "summarize",
+   "conditional": true
+  },
+  {
+   "source": "load_posting",
+   "target": "extract",
+   "conditional": false
+  },
+  {
+   "source": "load_posting",
+   "target": "rule_screen",
+   "conditional": false
+  },
+  {
+   "source": "match_one",
+   "target": "summarize",
+   "conditional": false
+  },
+  {
+   "source": "rule_screen",
+   "target": "decide",
+   "conditional": false
+  },
+  {
+   "source": "summarize",
+   "target": "finalize",
+   "conditional": false
+  },
+  {
+   "source": "finalize",
+   "target": "__end__",
+   "conditional": false
+  }
+ ]
+}

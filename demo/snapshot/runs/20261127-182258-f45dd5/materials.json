@@ -1,0 +1,247 @@
+{
+ "run_id": "20261127-182258-f45dd5",
+ "created_at": "2026-11-27T18:30:06",
+ "prompt_version": "1",
+ "model": "deepseek-flash",
+ "posting": {
+  "id": 6,
+  "title": "算法-数据科学方向",
+  "city": "深圳、北京、上海、广州、成都",
+  "company": "腾讯"
+ },
+ "draft": {
+  "target_title": "算法-数据科学方向",
+  "summary": {
+   "text": "计算机科学与技术硕士（2026 年 6 月毕业），本科为软件工程专业，Python 与 SQL 使用熟练，具备机器学习和自然语言处理方向的实践项目经验。做过基于 LangGraph 的数据分析 Agent，支持用自然语言查询销售数据，并保证 SQL 只读、结论可复现；也在中文新闻数据集上完成 TextCNN 与微调 BERT 的对比实验，用验证集选择学习率和训练轮数。此外在 RAG 问答和数据仓库项目中完成了检索链路、后端接口与分析看板。",
+   "cites": [
+    "G01",
+    "E001",
+    "E002",
+    "E007",
+    "E005",
+    "E003"
+   ]
+  },
+  "projects": [
+   {
+    "project_id": "P1",
+    "role": "独立开发",
+    "period": "2026.01 - 2026.04",
+    "bullets": [
+     {
+      "label": "技术架构",
+      "text": "用 LangGraph 搭建数据分析 Agent，模型通过查看表结构、执行只读 SQL 查询、生成图表三个工具，完成自然语言查询销售数据的任务。",
+      "cites": [
+       "E001"
+      ]
+     },
+     {
+      "label": "安全与纠错",
+      "text": "SQL 工具限制为只执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+      "cites": [
+       "E001"
+      ]
+     },
+     {
+      "label": "效果验证",
+      "text": "在 30 个自建业务问题上，Agent 一次给出正确答案的有 24 个，加上一次纠错重试后为 27 个。",
+      "cites": [
+       "E001"
+      ]
+     },
+     {
+      "label": "结果可复现",
+      "text": "回答中说明使用的 SQL 和返回行数，并用 pandas、matplotlib 生成折线图或柱状图，每个回答附带可复现的 SQL 与图表文件，便于非技术人员核对结论。",
+      "cites": [
+       "E002"
+      ]
+     }
+    ],
+    "title": "数据分析 Agent：自然语言查询销售数据"
+   },
+   {
+    "project_id": "P4",
+    "role": "",
+    "period": "",
+    "bullets": [
+     {
+      "label": "模型对比",
+      "text": "在 10 类中文新闻数据集上比较 TextCNN 与微调 BERT 两种方法，负责数据预处理、训练脚本和评估。",
+      "cites": [
+       "E007"
+      ]
+     },
+     {
+      "label": "实验设计",
+      "text": "用验证集选择学习率和训练轮数，保证两种方法的对比在同一套评估流程下进行。",
+      "cites": [
+       "E007"
+      ]
+     },
+     {
+      "label": "实验结果",
+      "text": "测试集准确率 TextCNN 为 0.86，微调 BERT 为 0.93。",
+      "cites": [
+       "E007"
+      ]
+     }
+    ],
+    "title": "中文新闻文本分类"
+   },
+   {
+    "project_id": "P3",
+    "role": "全栈开发",
+    "period": "2025.09 - 2025.12",
+    "bullets": [
+     {
+      "label": "检索与生成",
+      "text": "面向示例电商客服场景搭建 RAG 问答链路：把 320 篇帮助中心文章按标题切分为片段，用开源中文向量模型编码后存入 PostgreSQL 的 pgvector，回答时先检索最相关的 5 个片段再交给大模型生成。",
+      "cites": [
+       "E005"
+      ]
+     },
+     {
+      "label": "引用与评估",
+      "text": "用 LangChain 封装模型调用与检索器，每个回答列出引用文章编号；在自建 60 条测试问题上，检索前 5 名命中正确文章的比例为 52/60。",
+      "cites": [
+       "E005"
+      ]
+     },
+     {
+      "label": "工程实现",
+      "text": "用 FastAPI 编写问答、反馈和文章管理三组接口，React 对话页面支持点赞点踩并写入数据库，系统用 Docker Compose 一键启动，接口有 41 项 pytest 测试。",
+      "cites": [
+       "E006"
+      ]
+     }
+    ],
+    "title": "智能客服 RAG 问答助手"
+   },
+   {
+    "project_id": "P2",
+    "role": "",
+    "period": "",
+    "bullets": [
+     {
+      "label": "数仓建模",
+      "text": "设计星型模型，包括一张订单事实表和商品、客户、日期三张维度表，并用 SQL 编写从原始订单数据到事实表的清洗与装载脚本，处理重复订单和缺失的地区字段。",
+      "cites": [
+       "E003"
+      ]
+     },
+     {
+      "label": "数据规模",
+      "text": "装载约 12 万条示例订单数据，脚本可以重复运行。",
+      "cites": [
+       "E003"
+      ]
+     },
+     {
+      "label": "分析看板",
+      "text": "与组员一起用 Power BI 完成销售分析看板，负责地区销售和复购率两个页面，并编写计算复购率的 DAX 度量。",
+      "cites": [
+       "E004"
+      ]
+     }
+    ],
+    "title": "电商销售数据仓库与分析看板"
+   }
+  ],
+  "greeting": {
+   "text": "您好，我是计算机科学与技术硕士应届生，2026年6月毕业，Python与SQL熟练。做过基于LangGraph的数据分析Agent，支持自然语言查询销售数据，SQL只读、回答附可复现语句；也做过中文新闻文本分类，用验证集调参对比TextCNN与BERT。希望进一步沟通数据科学岗位。",
+   "cites": [
+    "G01",
+    "E001",
+    "E002",
+    "E007"
+   ]
+  }
+ },
+ "skills": [
+  [
+   "编程语言",
+   "Python（熟练）；SQL（熟练）；TypeScript（了解）"
+  ],
+  [
+   "AI 与大模型",
+   "LangChain、LangGraph、RAG、PyTorch、Hugging Face Transformers"
+  ],
+  [
+   "后端与数据",
+   "FastAPI、PostgreSQL、pgvector、pandas、Power BI"
+  ],
+  [
+   "工程工具",
+   "Git、Docker、Linux、pytest"
+  ]
+ ],
+ "warnings": [],
+ "gaps": [
+  "掌握常见的统计分析、实验设计、机器学习等领域的基础理论",
+  "具备扎实的数据结构和算法功底"
+ ],
+ "citations": {
+  "E001": {
+   "project": "数据分析 Agent：自然语言查询销售数据",
+   "section": "我的工作 工具调用 Agent 设计",
+   "source": "data_agent.md",
+   "line_start": 10,
+   "line_end": 13
+  },
+  "E002": {
+   "project": "数据分析 Agent：自然语言查询销售数据",
+   "section": "我的工作 结果解释与可视化",
+   "source": "data_agent.md",
+   "line_start": 15,
+   "line_end": 17
+  },
+  "E003": {
+   "project": "电商销售数据仓库与分析看板",
+   "section": "我的工作 数据仓库建模",
+   "source": "sales_dashboard.md",
+   "line_start": 9,
+   "line_end": 12
+  },
+  "E004": {
+   "project": "电商销售数据仓库与分析看板",
+   "section": "我的工作 分析看板",
+   "source": "sales_dashboard.md",
+   "line_start": 14,
+   "line_end": 16
+  },
+  "E005": {
+   "project": "智能客服 RAG 问答助手",
+   "section": "我的工作 检索增强问答链路",
+   "source": "rag_support_assistant.md",
+   "line_start": 10,
+   "line_end": 13
+  },
+  "E006": {
+   "project": "智能客服 RAG 问答助手",
+   "section": "我的工作 后端接口与前端页面",
+   "source": "rag_support_assistant.md",
+   "line_start": 15,
+   "line_end": 17
+  },
+  "E007": {
+   "project": "中文新闻文本分类",
+   "section": "我的工作 模型微调与对比",
+   "source": "text_classification.md",
+   "line_start": 9,
+   "line_end": 11
+  },
+  "G01": {
+   "project": "个人基本信息（虚构演示数据）",
+   "section": "学历 Education",
+   "source": "profile.md",
+   "line_start": 6,
+   "line_end": 9
+  }
+ },
+ "version": "20261127-183006",
+ "files": [
+  "greeting.txt",
+  "resume_zh.docx",
+  "resume_zh.md"
+ ]
+}

@@ -1,0 +1,1731 @@
+[
+ {
+  "key": "eximbank",
+  "name": "中国进出口银行",
+  "sector": "bank",
+  "portal": "eximbank2027.iguopin.com",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": "2026-01-01",
+    "window_end": "2027-07-31",
+    "window_text": "2026.01.01–2027.07.31",
+    "basis": "testamur",
+    "status_text": "秋招 11-15 截止；春招常在 2–4 月",
+    "deadline": "2026-11-15",
+    "deadline_text": "",
+    "roles": [
+     "信息科技"
+    ],
+    "cities": [
+     "境内分行"
+    ],
+    "requirements": [
+     "初次就业",
+     "留服认证"
+    ],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "第三方",
+      "url": "https://m.gwy.com/yhzp/415164.html"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-07-31内",
+    "city_match": "nationwide",
+    "matched_cities": [
+     "深圳",
+     "杭州",
+     "苏州",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "boc",
+  "name": "中国银行（软件中心、信息科技运营中心）",
+  "sector": "bank",
+  "portal": "campus.chinahr.com/pages/2027-boc",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 全球校招",
+    "window_start": "2026-01-01",
+    "window_end": "2027-07-31",
+    "window_text": "2026.01.01–2027.07.31",
+    "basis": "testamur",
+    "status_text": "秋招 10-09 截止；等春招和补录；运营中心偏 IT 运维",
+    "deadline": "2026-10-09",
+    "deadline_text": "",
+    "roles": [
+     "信息技术",
+     "IT 运维"
+    ],
+    "cities": [
+     "深圳",
+     "西安",
+     "合肥",
+     "武汉",
+     "成都"
+    ],
+    "requirements": [],
+    "apply_limit": "最多投 5 个岗位",
+    "confidence": "mixed",
+    "sources": [
+     {
+      "label": "官方公告",
+      "url": "https://www.boc.cn/en/bocinfo/bi7/202609/t20260903_25689313.html"
+     },
+     {
+      "label": "第三方",
+      "url": "https://m.gwy.com/yhzp/412459.html"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-07-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "bankcomm",
+  "name": "交通银行",
+  "sector": "bank",
+  "portal": "job.bankcomm.com",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": "2026-01-01",
+    "window_end": "2027-07-31",
+    "window_text": "2026.01–2027.07",
+    "basis": "testamur",
+    "status_text": "秋招 10-18 截止；春招常在 2–4 月",
+    "deadline": "2026-10-18",
+    "deadline_text": "",
+    "roles": [
+     "IT 系统管理",
+     "软件开发",
+     "安全"
+    ],
+    "cities": [
+     "上海以外的省直分行"
+    ],
+    "requirements": [],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "第三方",
+      "url": "https://m.gwy.com/yhzp/413051.html"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-07-31内",
+    "city_match": "nationwide",
+    "matched_cities": [
+     "深圳",
+     "杭州",
+     "苏州",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "ceb",
+  "name": "光大银行",
+  "sector": "bank",
+  "portal": "光大银行招聘官网",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": "2026-01-01",
+    "window_end": "2027-07-31",
+    "window_text": "2026.01–2027.07",
+    "basis": "testamur",
+    "status_text": "秋招 11-08 截止；春招常在 2–4 月",
+    "deadline": "2026-11-08",
+    "deadline_text": "",
+    "roles": [
+     "分行金融科技"
+    ],
+    "cities": [
+     "非京沪分行"
+    ],
+    "requirements": [
+     "总行科技岗要求硕士"
+    ],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "第三方",
+      "url": "https://m.gwy.com/yhzp/414073.html"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-07-31内",
+    "city_match": "nationwide",
+    "matched_cities": [
+     "深圳",
+     "杭州",
+     "苏州",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "cib",
+  "name": "兴业银行",
+  "sector": "bank",
+  "portal": "job.cib.com.cn",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": "2026-01-01",
+    "window_end": "2027-08-31",
+    "window_text": "2026.01–2027.08",
+    "basis": "testamur",
+    "status_text": "秋招 10 月中下旬截止；春招常在 2–4 月",
+    "deadline": null,
+    "deadline_text": "10 月中下旬",
+    "roles": [
+     "FinTech 管培"
+    ],
+    "cities": [
+     "深圳",
+     "南昌"
+    ],
+    "requirements": [
+     "报到时取得认证"
+    ],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "第三方",
+      "url": "https://m.gwy.com/yhzp/413478.html"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-08-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "icbc",
+  "name": "工商银行（软件开发中心、分行）",
+  "sector": "bank",
+  "portal": "job.icbc.com.cn",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": "2026-01-01",
+    "window_end": "2027-07-31",
+    "window_text": "2026.01–2027.07",
+    "basis": "testamur",
+    "status_text": "秋招 10-08 截止；等春招和补录",
+    "deadline": "2026-10-08",
+    "deadline_text": "",
+    "roles": [
+     "科技菁英",
+     "软件开发"
+    ],
+    "cities": [
+     "珠海",
+     "广州",
+     "杭州",
+     "成都",
+     "西安"
+    ],
+    "requirements": [
+     "留服认证",
+     "最高学历初次就业",
+     "笔试含英语"
+    ],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "新浪",
+      "url": "https://finance.sina.cn/2026-09-05/detail-iniqtnhe0710167.d.html?vt=4"
+     },
+     {
+      "label": "第三方",
+      "url": "https://campus.niuqizp.com/job-vwk5CNzCZ.html"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-07-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "杭州"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "pingan",
+  "name": "平安集团（平安科技、平安银行）",
+  "sector": "bank",
+  "portal": "campus.pingan.com",
+  "note": "",
+  "programs": [
+   {
+    "title": "平安科技 2027 校招",
+    "window_start": "2026-06-01",
+    "window_end": "2027-07-31",
+    "window_text": "平安科技 2026.06–2027.07",
+    "basis": "testamur",
+    "status_text": "10-24 截止",
+    "deadline": "2026-10-24",
+    "deadline_text": "",
+    "roles": [
+     "AI",
+     "大数据"
+    ],
+    "cities": [
+     "深圳"
+    ],
+    "requirements": [],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "东方财富",
+      "url": "https://finance.eastmoney.com/a/202609113872175256.html"
+     }
+    ],
+    "verdict": "boundary",
+    "verdict_label": "符合（卡在边界）",
+    "verdict_reason": "学位证月份 2026-06 正好在窗口 2026-06-01 至 2027-07-31的边界上；确认网申没有把你算到相邻月份",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳"
+    ]
+   },
+   {
+    "title": "平安银行 2027 校招",
+    "window_start": "2026-01-01",
+    "window_end": "2027-07-31",
+    "window_text": "平安银行 2026.01–2027.07",
+    "basis": "testamur",
+    "status_text": "11-06 截止",
+    "deadline": "2026-11-06",
+    "deadline_text": "",
+    "roles": [
+     "AI",
+     "大数据"
+    ],
+    "cities": [
+     "深圳"
+    ],
+    "requirements": [],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "东方财富",
+      "url": "https://finance.eastmoney.com/a/202609113872175256.html"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-07-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "ccb",
+  "name": "建设银行（建信金科、分行）",
+  "sector": "bank",
+  "portal": "job.ccb.com",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": "2026-01-01",
+    "window_end": "2027-07-31",
+    "window_text": "2026.01–2027.07",
+    "basis": "testamur",
+    "status_text": "秋招 10-08 截止；等春招和补录",
+    "deadline": "2026-10-08",
+    "deadline_text": "",
+    "roles": [
+     "建信金科科技岗",
+     "分行科技专员"
+    ],
+    "cities": [
+     "厦门",
+     "广州",
+     "武汉",
+     "成都",
+     "深圳"
+    ],
+    "requirements": [
+     "留服认证",
+     "管培要求雅思 6.5 或同等"
+    ],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "凤凰",
+      "url": "https://i.ifeng.com/c/8wnVm24TkOp"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-07-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "cmb",
+  "name": "招商银行",
+  "sector": "bank",
+  "portal": "career.cmbchina.com",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招（有春招）",
+    "window_start": "2026-01-01",
+    "window_end": "2027-07-31",
+    "window_text": "2026.01.01–2027.07.31（第三方）",
+    "basis": "testamur",
+    "status_text": "秋招 9-25 截止，有春招",
+    "deadline": "2026-09-25",
+    "deadline_text": "",
+    "roles": [
+     "金融科技岗"
+    ],
+    "cities": [
+     "深圳"
+    ],
+    "requirements": [],
+    "apply_limit": "秋招和春招合计最多投 5 家机构",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "第三方",
+      "url": "https://campus.niuqizp.com/schedule-7rmYNNN5C.html"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-07-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "cmbc",
+  "name": "民生银行",
+  "sector": "bank",
+  "portal": "民生银行招聘官网",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": "2026-01-01",
+    "window_end": "2027-12-31",
+    "window_text": "2026.01–2027.12",
+    "basis": "testamur",
+    "status_text": "深圳分行页面写 12-31 结束（待核实）",
+    "deadline": "2026-12-31",
+    "deadline_text": "12-31（第三方）",
+    "roles": [
+     "\"扬帆\"计划",
+     "科技岗"
+    ],
+    "cities": [
+     "深圳",
+     "苏州"
+    ],
+    "requirements": [],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "第三方",
+      "url": "https://m.gwy.com/yhzp/414981.html"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-12-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳",
+     "苏州"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "accenture",
+  "name": "埃森哲",
+  "sector": "foreign",
+  "portal": "埃森哲中国校招页",
+  "note": "",
+  "programs": [
+   {
+    "title": "AAP AI-Native Analyst",
+    "window_start": "2026-01-01",
+    "window_end": "2027-08-31",
+    "window_text": "2026.01.01–2027.08.31",
+    "basis": "testamur",
+    "status_text": "全年滚动",
+    "deadline": null,
+    "deadline_text": "",
+    "roles": [
+     "AI-Native 分析师（Digital Core 等）"
+    ],
+    "cities": [
+     "大连",
+     "成都",
+     "广州",
+     "深圳"
+    ],
+    "requirements": [],
+    "apply_limit": "",
+    "confidence": "official",
+    "sources": [
+     {
+      "label": "官方",
+      "url": "https://www.accenture.com/cn-zh/careers/local/accenture-china-campus-page"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-08-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "microsoft_suzhou",
+  "name": "微软苏州",
+  "sector": "foreign",
+  "portal": "careers.microsoft.com",
+  "note": "",
+  "programs": [
+   {
+    "title": "初级岗（0–2 年经验）",
+    "window_start": null,
+    "window_end": null,
+    "window_text": "2027 届校招窗口未查到，大概率从 2026.09 开始；盯 \"recently completed\" 或 \"0–2 年经验\" 的初级岗",
+    "basis": "unknown",
+    "status_text": "见过的两个岗位已关闭",
+    "deadline": null,
+    "deadline_text": "",
+    "roles": [
+     "软件工程（M365、Windows 365、AI 应用）"
+    ],
+    "cities": [
+     "苏州"
+    ],
+    "requirements": [
+     "偏好 AI Agent 经验和英语"
+    ],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "第三方",
+      "url": "https://jobs.anitab.org/companies/microsoft-2/jobs/92944607-software-engineer"
+     }
+    ],
+    "verdict": "unknown",
+    "verdict_label": "待核实",
+    "verdict_reason": "窗口没有公布日期",
+    "city_match": "city",
+    "matched_cities": [
+     "苏州"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "schneider",
+  "name": "施耐德电气",
+  "sector": "foreign",
+  "portal": "careers.se.com/china",
+  "note": "",
+  "programs": [
+   {
+    "title": "校招",
+    "window_start": null,
+    "window_end": null,
+    "window_text": "\"2026 至 2027 届海内外\"（第三方）",
+    "basis": "unknown",
+    "status_text": "正式批 10-13 截止，11 月仍有岗位",
+    "deadline": null,
+    "deadline_text": "正式批 10-13",
+    "roles": [
+     "数智化应用工程师",
+     "AI 应用顾问",
+     "E.IT Trainee"
+    ],
+    "cities": [
+     "厦门",
+     "南京",
+     "杭州",
+     "武汉",
+     "苏州",
+     "西安",
+     "无锡",
+     "珠海"
+    ],
+    "requirements": [
+     "研发岗多要求硕士"
+    ],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "第三方",
+      "url": "https://campus.niuqizp.com/job-vly5aLMzn.html"
+     }
+    ],
+    "verdict": "unknown",
+    "verdict_label": "待核实",
+    "verdict_reason": "窗口没有公布日期",
+    "city_match": "city",
+    "matched_cities": [
+     "杭州",
+     "苏州",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "intel",
+  "name": "英特尔",
+  "sector": "foreign",
+  "portal": "jobs.intel.cn",
+  "note": "",
+  "programs": [
+   {
+    "title": "校招",
+    "window_start": null,
+    "window_end": null,
+    "window_text": "\"2026/2027 届\"（第三方）",
+    "basis": "unknown",
+    "status_text": "招满即止",
+    "deadline": null,
+    "deadline_text": "",
+    "roles": [
+     "软件",
+     "系统软件"
+    ],
+    "cities": [
+     "深圳"
+    ],
+    "requirements": [
+     "全日制本硕博"
+    ],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "第三方",
+      "url": "https://campus.niuqizp.com/schedule-7mY85ZZnz.html"
+     }
+    ],
+    "verdict": "unknown",
+    "verdict_label": "待核实",
+    "verdict_reason": "窗口没有公布日期",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "oppo",
+  "name": "OPPO",
+  "sector": "hardware",
+  "portal": "careers.oppo.com/university/oppo/campus",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": "2026-01-01",
+    "window_end": "2027-12-31",
+    "window_text": "2026.01–2027.12",
+    "basis": "testamur",
+    "status_text": "官方写\"招满即止\"；第三方写 11-30 截止",
+    "deadline": "2026-11-30",
+    "deadline_text": "11-30（第三方）",
+    "roles": [
+     "AI/算法",
+     "软件"
+    ],
+    "cities": [
+     "深圳",
+     "东莞",
+     "成都",
+     "西安",
+     "南京",
+     "武汉"
+    ],
+    "requirements": [],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "厦大嘉庚就业网",
+      "url": "https://career.xujc.com/2026/0720/c3959a172134/page.htm"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-12-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "zte",
+  "name": "中兴通讯",
+  "sector": "hardware",
+  "portal": "job.zte.com.cn",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": "2026-01-01",
+    "window_end": "2027-12-31",
+    "window_text": "2026.01.01–2027.12.31",
+    "basis": "testamur",
+    "status_text": "截止日未见",
+    "deadline": null,
+    "deadline_text": "",
+    "roles": [
+     "AI/算法",
+     "软件开发",
+     "软件测试"
+    ],
+    "cities": [
+     "深圳",
+     "西安",
+     "南京",
+     "武汉",
+     "长沙",
+     "成都"
+    ],
+    "requirements": [
+     "本科及以上，不限专业"
+    ],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "大连理工就业网",
+      "url": "https://pjcareer.dlut.edu.cn/info/1051/45332.htm"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-12-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "transsion",
+  "name": "传音控股",
+  "sector": "hardware",
+  "portal": "transsion.zhiye.com/campus",
+  "note": "",
+  "programs": [
+   {
+    "title": "TAIG-AI 计划",
+    "window_start": "2023-01-01",
+    "window_end": "2027-12-31",
+    "window_text": "TAIG-AI 计划接受 2023–2027 届",
+    "basis": "testamur",
+    "status_text": "新上了大模型训推平台（MLOps）、AI SRE、软件开发岗",
+    "deadline": "2026-11-29",
+    "deadline_text": "11-29（第三方）",
+    "roles": [
+     "大模型训推平台（MLOps）",
+     "AI SRE",
+     "软件开发"
+    ],
+    "cities": [
+     "深圳",
+     "重庆"
+    ],
+    "requirements": [],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "南开就业网",
+      "url": "https://career.nankai.edu.cn/correcruit/content/id/119756.html"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2023-01-01 至 2027-12-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "huawei",
+  "name": "华为",
+  "sector": "hardware",
+  "portal": "career.huawei.com；公众号\"华为留学生招聘\"",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招（含留学生专场）",
+    "window_start": "2026-01-01",
+    "window_end": "2027-12-31",
+    "window_text": "2026.01.01–2027.12.31",
+    "basis": "testamur",
+    "status_text": "主网申 10 月已截止（第三方）；12 月留学生专场和补录待确认",
+    "deadline": null,
+    "deadline_text": "12 月（待确认）",
+    "roles": [
+     "软件开发",
+     "AI 应用",
+     "AI 模型（Agent）",
+     "数据科学",
+     "云服务"
+    ],
+    "cities": [
+     "深圳",
+     "东莞",
+     "杭州",
+     "南京",
+     "西安",
+     "武汉"
+    ],
+    "requirements": [
+     "入职需留服认证"
+    ],
+    "apply_limit": "最多 2 个志愿",
+    "confidence": "mixed",
+    "sources": [
+     {
+      "label": "官方 FAQ",
+      "url": "https://career.huawei.com/reccampportal/portal5/faq.html"
+     },
+     {
+      "label": "第三方",
+      "url": "https://www.shushuqiuzhi.com/position/382707"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-12-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳",
+     "杭州",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "dji",
+  "name": "大疆",
+  "sector": "hardware",
+  "portal": "careers.dji.com",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": null,
+    "window_end": null,
+    "window_text": "2027 届，优秀 2026 届可放宽",
+    "basis": "unknown",
+    "status_text": "接近尾声",
+    "deadline": null,
+    "deadline_text": "",
+    "roles": [
+     "软件",
+     "测试开发",
+     "嵌入式"
+    ],
+    "cities": [
+     "深圳"
+    ],
+    "requirements": [],
+    "apply_limit": "只能投 1 个职位",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "搜狐",
+      "url": "https://www.sohu.com/a/1051023612_121106842"
+     }
+    ],
+    "verdict": "unknown",
+    "verdict_label": "待核实",
+    "verdict_reason": "窗口没有公布日期",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "hikvision",
+  "name": "海康威视",
+  "sector": "hardware",
+  "portal": "campushr.hikvision.com",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": "2026-01-01",
+    "window_end": "2027-12-31",
+    "window_text": "2026 年 1 月–2027 年 12 月",
+    "basis": "testamur",
+    "status_text": "分批上线，招满即止",
+    "deadline": null,
+    "deadline_text": "",
+    "roles": [
+     "大模型应用开发",
+     "AI Agent 开发",
+     "Java",
+     "C++",
+     "前端",
+     "Go",
+     "大数据",
+     "云计算",
+     "技术支持"
+    ],
+    "cities": [
+     "杭州",
+     "武汉",
+     "西安",
+     "成都",
+     "石家庄"
+    ],
+    "requirements": [
+     "技术支持岗全国",
+     "测评每年只有 1 次"
+    ],
+    "apply_limit": "2 个志愿，多选城市也算多个志愿",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "杭电就业网简章 PDF",
+      "url": "https://job.hdu.edu.cn/attachment/hdu/ueditor/file/20260904/6040_海康威视2027校园招聘简章.pdf"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-12-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "杭州",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "honor",
+  "name": "荣耀",
+  "sector": "hardware",
+  "portal": "career.honor.com；talent_oversea@honor.com",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": "2026-01-01",
+    "window_end": "2027-09-30",
+    "window_text": "2026.01.01–2027.09.30，学位证",
+    "basis": "testamur",
+    "status_text": "9-30 已截止；可发邮件询问补录",
+    "deadline": "2026-09-30",
+    "deadline_text": "",
+    "roles": [
+     "研发",
+     "AI 平台",
+     "大模型"
+    ],
+    "cities": [
+     "南京",
+     "西安",
+     "深圳"
+    ],
+    "requirements": [
+     "限中国籍",
+     "毕业后无全职经历"
+    ],
+    "apply_limit": "",
+    "confidence": "official",
+    "sources": [
+     {
+      "label": "官方 FAQ",
+      "url": "https://www.honor.com/cn/career/faq/school/"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-09-30内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "mindray",
+  "name": "迈瑞医疗",
+  "sector": "hardware",
+  "portal": "公众号\"迈瑞招聘\"",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 留学生专场",
+    "window_start": "2026-01-01",
+    "window_end": "2027-07-31",
+    "window_text": "留学生专场 2026 年 1 月–2027 年 7 月",
+    "basis": "testamur",
+    "status_text": "截止日未见",
+    "deadline": null,
+    "deadline_text": "",
+    "roles": [
+     "IT 应用软件开发",
+     "需求分析",
+     "软件研发",
+     "技术支持"
+    ],
+    "cities": [
+     "深圳",
+     "武汉",
+     "西安",
+     "南京",
+     "杭州"
+    ],
+    "requirements": [
+     "可能有语言测评"
+    ],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "第三方",
+      "url": "https://www.wondercv.com/xiaozhao/mindray-2027-global-international-students-campus-r-17109-cd64c1/"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-07-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳",
+     "杭州",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "xiaohongshu",
+  "name": "小红书",
+  "sector": "internet",
+  "portal": "job.xiaohongshu.com/campus",
+  "note": "",
+  "programs": [
+   {
+    "title": "REDstar 顶尖人才计划",
+    "window_start": "2024-09-01",
+    "window_end": "2027-08-31",
+    "window_text": "REDstar 2024.09–2027.08（第三方，待核实）",
+    "basis": "testamur",
+    "status_text": "招满即止；门槛高",
+    "deadline": null,
+    "deadline_text": "",
+    "roles": [
+     "AI Agent",
+     "AI Infra",
+     "AI Coding"
+    ],
+    "cities": [
+     "杭州",
+     "深圳",
+     "武汉",
+     "广州"
+    ],
+    "requirements": [],
+    "apply_limit": "REDstar 最多投 2 个",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "腾讯新闻",
+      "url": "https://news.qq.com/rain/a/20260908A0AZA900"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2024-09-01 至 2027-08-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳",
+     "杭州",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "iflytek",
+  "name": "科大讯飞",
+  "sector": "internet",
+  "portal": "iflytek.zhiye.com；公众号\"科大讯飞招聘\"",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": "2025-06-01",
+    "window_end": "2027-08-31",
+    "window_text": "2025.06.01–2027.08.31，学位证",
+    "basis": "testamur",
+    "status_text": "内推开到 2027 年 6 月",
+    "deadline": null,
+    "deadline_text": "内推到 2027-06",
+    "roles": [
+     "AI 研发",
+     "研发",
+     "大数据",
+     "测试",
+     "交付",
+     "工程"
+    ],
+    "cities": [
+     "合肥",
+     "武汉",
+     "深圳",
+     "广州",
+     "杭州",
+     "南京",
+     "苏州",
+     "西安",
+     "成都"
+    ],
+    "requirements": [
+     "本科及以上"
+    ],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "中央民大就业网",
+      "url": "https://career.muc.edu.cn/front/zwxx.jspa?xqzwId=37826&zpxxId=31835"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2025-06-01 至 2027-08-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳",
+     "杭州",
+     "苏州",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "midea",
+  "name": "美的集团",
+  "sector": "internet",
+  "portal": "careers.midea.com（有留学生专区）",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": "2026-01-01",
+    "window_end": "2027-12-31",
+    "window_text": "2026.01.01–2027.12.31，学位证",
+    "basis": "testamur",
+    "status_text": "Offer 发到 12 月底，已近尾声",
+    "deadline": null,
+    "deadline_text": "流程到 12 月底",
+    "roles": [
+     "信息技术类",
+     "AI 研究院",
+     "软件工程院"
+    ],
+    "cities": [
+     "佛山",
+     "广州",
+     "深圳",
+     "武汉",
+     "合肥",
+     "无锡",
+     "苏州",
+     "重庆"
+    ],
+    "requirements": [
+     "本硕博"
+    ],
+    "apply_limit": "",
+    "confidence": "mixed",
+    "sources": [
+     {
+      "label": "官方",
+      "url": "https://careers.midea.com/schoolOut/home?recruitType=1&v=1"
+     },
+     {
+      "label": "吉大就业网",
+      "url": "https://jdjyw.jlu.edu.cn/portal/jyzp/recruit/details?id=53ea705e9bf2471188d215ce32884e03"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-12-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳",
+     "苏州",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "tencent",
+  "name": "腾讯",
+  "sector": "internet",
+  "portal": "join.qq.com",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招（含补录、春招）",
+    "window_start": "2026-01-01",
+    "window_end": "2027-12-31",
+    "window_text": "2026.01.01–2027.12.31，海外看学位证（个别报道写 2026.09 起，以官网 FAQ 为准）",
+    "basis": "testamur",
+    "status_text": "不设统一截止；上届补录在 12 月初到次年 1 月初",
+    "deadline": null,
+    "deadline_text": "12 月补录（待公布）",
+    "roles": [
+     "AI 全栈",
+     "Agent 开发",
+     "AI 应用",
+     "后台开发",
+     "前端",
+     "数据"
+    ],
+    "cities": [
+     "深圳",
+     "广州",
+     "成都",
+     "杭州"
+    ],
+    "requirements": [],
+    "apply_limit": "同时只能投 1 个岗位",
+    "confidence": "mixed",
+    "sources": [
+     {
+      "label": "科技日报",
+      "url": "https://www.stdaily.com/web/gdxw/2026-08/12/content_562868.html"
+     },
+     {
+      "label": "新浪",
+      "url": "https://finance.sina.com.cn/roll/2026-08-11/doc-inimyaai4163915.shtml"
+     },
+     {
+      "label": "官方",
+      "url": "https://join.qq.com/detail.html?id=288"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-12-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳",
+     "杭州"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "tencent_music",
+  "name": "腾讯音乐（含酷狗）",
+  "sector": "internet",
+  "portal": "join.tencentmusic.com/campus",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": "2026-01-01",
+    "window_end": "2027-12-31",
+    "window_text": "2026.01–2027.12，学位证（待官网复核）",
+    "basis": "testamur",
+    "status_text": "不设截止，招满即止",
+    "deadline": null,
+    "deadline_text": "",
+    "roles": [
+     "后台",
+     "前端",
+     "客户端",
+     "算法",
+     "数据"
+    ],
+    "cities": [
+     "深圳",
+     "广州"
+    ],
+    "requirements": [],
+    "apply_limit": "只能投 1 个职位",
+    "confidence": "official",
+    "sources": [
+     {
+      "label": "官方 FAQ",
+      "url": "https://join.tencentmusic.com/campus/faq/"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-12-31内",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "kingsoft_office",
+  "name": "金山办公（WPS）",
+  "sector": "internet",
+  "portal": "join.wps.cn",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": null,
+    "window_end": null,
+    "window_text": "未查到",
+    "basis": "unknown",
+    "status_text": "9 月发布过 2027 校招岗位",
+    "deadline": null,
+    "deadline_text": "",
+    "roles": [
+     "C++",
+     "服务端",
+     "全栈"
+    ],
+    "cities": [
+     "珠海",
+     "武汉",
+     "广州"
+    ],
+    "requirements": [],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "第三方",
+      "url": "https://www.wondercv.com/xiaozhao/kingsoft-wuhan-2027-2028-intern-11172-41a521/"
+     }
+    ],
+    "verdict": "unknown",
+    "verdict_label": "待核实",
+    "verdict_reason": "窗口没有公布日期",
+    "city_match": "city",
+    "matched_cities": [
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "china_tobacco",
+  "name": "中国烟草（国家局统招）",
+  "sector": "soe",
+  "portal": "bm.cpta.com.cn/yc2027",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 统招",
+    "window_start": "2025-01-01",
+    "window_end": "2027-07-31",
+    "window_text": "2025.01.01–2027.07.31 取得境外学位",
+    "basis": "testamur",
+    "status_text": "10-30 截止",
+    "deadline": "2026-10-30",
+    "deadline_text": "",
+    "roles": [
+     "IT 岗未核实"
+    ],
+    "cities": [
+     "各省"
+    ],
+    "requirements": [
+     "硕士 1999-01-01 后出生",
+     "未落实工作"
+    ],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "第三方",
+      "url": "https://www.gwy.com/gqzp/414705.html"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2025-01-01 至 2027-07-31内",
+    "city_match": "nationwide",
+    "matched_cities": [
+     "深圳",
+     "杭州",
+     "苏州",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "china_telecom",
+  "name": "中国电信",
+  "sector": "soe",
+  "portal": "job.chinatelecom.com.cn",
+  "note": "",
+  "programs": [
+   {
+    "title": "集团统一招聘",
+    "window_start": null,
+    "window_end": null,
+    "window_text": "2027 届，加\"2026 届未就业\"；只有河南口径写了日期：2026.01.01–2027.12.31",
+    "basis": "unknown",
+    "status_text": "各省 10-06 至 10-20 截止，广东 11-15",
+    "deadline": null,
+    "deadline_text": "各省 10-06 至 10-20，广东 11-15",
+    "roles": [
+     "AI",
+     "软件",
+     "大数据",
+     "企业信息化",
+     "云网运营"
+    ],
+    "cities": [
+     "各省"
+    ],
+    "requirements": [
+     "教育部学历认证"
+    ],
+    "apply_limit": "",
+    "confidence": "official",
+    "sources": [
+     {
+      "label": "国家大学生就业服务平台",
+      "url": "https://job.ncss.cn/student/jobs/QyG2RcGTr77WdKqKF5VHEY/detail.html"
+     }
+    ],
+    "verdict": "likely",
+    "verdict_label": "大概率符合",
+    "verdict_reason": "窗口未写日期，但明文接收上一届未就业毕业生",
+    "city_match": "nationwide",
+    "matched_cities": [
+     "深圳",
+     "杭州",
+     "苏州",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "china_mobile",
+  "name": "中国移动",
+  "sector": "soe",
+  "portal": "job.10086.cn",
+  "note": "",
+  "programs": [
+   {
+    "title": "集团统一招聘",
+    "window_start": null,
+    "window_end": null,
+    "window_text": "2027 届，加\"2026 届未就业\"",
+    "basis": "unknown",
+    "status_text": "10 月中旬截止；春季补录约 2–4 月（第三方推测）",
+    "deadline": null,
+    "deadline_text": "10 月中旬",
+    "roles": [
+     "智算",
+     "云",
+     "大数据",
+     "AI",
+     "软件",
+     "网安"
+    ],
+    "cities": [
+     "各省公司"
+    ],
+    "requirements": [
+     "留服认证",
+     "硕士不超过 29 岁（第三方）"
+    ],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "吉大就业网",
+      "url": "https://jdjyw.jlu.edu.cn/portal/jyzp/recruit/details?id=5b2f744d687e49caa271f292066d91e5"
+     }
+    ],
+    "verdict": "likely",
+    "verdict_label": "大概率符合",
+    "verdict_reason": "窗口未写日期，但明文接收上一届未就业毕业生",
+    "city_match": "nationwide",
+    "matched_cities": [
+     "深圳",
+     "杭州",
+     "苏州",
+     "武汉"
+    ]
+   },
+   {
+    "title": "中移在线营销服务中心",
+    "window_start": null,
+    "window_end": null,
+    "window_text": "2027 届或 2026 届未就业",
+    "basis": "unknown",
+    "status_text": "截止日说法矛盾，待核实",
+    "deadline": null,
+    "deadline_text": "",
+    "roles": [
+     "算法",
+     "开发",
+     "数据分析"
+    ],
+    "cities": [
+     "广州",
+     "深圳",
+     "杭州",
+     "成都",
+     "武汉",
+     "西安",
+     "重庆"
+    ],
+    "requirements": [
+     "本科及以上"
+    ],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "第三方",
+      "url": "https://www.wondercv.com/xiaozhao/china-mobile-online-marketing-2027-autumn-campus-15533-d6a1c5/"
+     }
+    ],
+    "verdict": "likely",
+    "verdict_label": "大概率符合",
+    "verdict_reason": "窗口未写日期，但明文接收上一届未就业毕业生",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳",
+     "杭州",
+     "武汉"
+    ]
+   },
+   {
+    "title": "中移互联网、咪咕、中移杭研、苏州研发中心、成都产业研究院",
+    "window_start": null,
+    "window_end": null,
+    "window_text": "未取得 2027 届原文；集团口径下偏可报",
+    "basis": "unknown",
+    "status_text": "推测已截止",
+    "deadline": null,
+    "deadline_text": "",
+    "roles": [
+     "后端",
+     "AI 智能体",
+     "云",
+     "研发"
+    ],
+    "cities": [
+     "广州",
+     "成都",
+     "杭州",
+     "南京",
+     "厦门",
+     "深圳",
+     "苏州"
+    ],
+    "requirements": [],
+    "apply_limit": "",
+    "confidence": "unverified",
+    "sources": [],
+    "verdict": "likely",
+    "verdict_label": "大概率符合",
+    "verdict_reason": "窗口未写日期，但明文接收上一届未就业毕业生",
+    "city_match": "city",
+    "matched_cities": [
+     "深圳",
+     "杭州",
+     "苏州"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "china_unicom",
+  "name": "中国联通",
+  "sector": "soe",
+  "portal": "zglt.zhaopin.com / zglt.iguopin.com",
+  "note": "",
+  "programs": [
+   {
+    "title": "集团统一招聘",
+    "window_start": null,
+    "window_end": null,
+    "window_text": "2027 届，加\"2026 届未就业\"",
+    "basis": "unknown",
+    "status_text": "11 月上旬已笔试，个别单位可能还在收",
+    "deadline": null,
+    "deadline_text": "",
+    "roles": [
+     "AI 研发",
+     "网络",
+     "数据分析"
+    ],
+    "cities": [
+     "各省",
+     "济南",
+     "南京",
+     "广州"
+    ],
+    "requirements": [
+     "软件研究院在济南、南京、广州"
+    ],
+    "apply_limit": "最多 2 家单位，每家 2 个岗位",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "第三方",
+      "url": "https://www.shanganclaw.com/announcements/188873/"
+     }
+    ],
+    "verdict": "likely",
+    "verdict_label": "大概率符合",
+    "verdict_reason": "窗口未写日期，但明文接收上一届未就业毕业生",
+    "city_match": "nationwide",
+    "matched_cities": [
+     "深圳",
+     "杭州",
+     "苏州",
+     "武汉"
+    ]
+   }
+  ]
+ },
+ {
+  "key": "china_tower",
+  "name": "中国铁塔",
+  "sector": "soe",
+  "portal": "zhaopin.chinatowercom.cn",
+  "note": "",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": null,
+    "window_end": "2027-12-31",
+    "window_text": "境外\"2027-12-31 前毕业\"，没写下限",
+    "basis": "testamur",
+    "status_text": "10-27 截止，往年有春招",
+    "deadline": "2026-10-27",
+    "deadline_text": "",
+    "roles": [
+     "AI",
+     "算力网络",
+     "物联网",
+     "网安"
+    ],
+    "cities": [
+     "各省"
+    ],
+    "requirements": [
+     "硕士 2000-01-01 后出生"
+    ],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "吉大就业网",
+      "url": "https://jdjyw.jlu.edu.cn/portal/jyzp/recruit/details?id=01c3fde2294f446eb59398fa61334c5c"
+     }
+    ],
+    "verdict": "unknown",
+    "verdict_label": "待核实",
+    "verdict_reason": "窗口 未公布 至 2027-12-31：起点没公布，无法判断",
+    "city_match": "nationwide",
+    "matched_cities": [
+     "深圳",
+     "杭州",
+     "苏州",
+     "武汉"
+    ]
+   }
+  ]
+ }
+]

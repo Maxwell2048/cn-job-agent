@@ -1,0 +1,1801 @@
+{
+ "id": 5,
+ "title": "数据工程",
+ "company": "腾讯",
+ "company_key": "tencent",
+ "city": "深圳、北京、上海、广州",
+ "channel": "campus",
+ "source": "tencent",
+ "url": "https://join.qq.com/post_detail.html?postid=1283126531220382720",
+ "status": "matched",
+ "posted_at": "",
+ "created_at": "2026-11-27T10:10:38.028179+00:00",
+ "latest_run": {
+  "id": "20261127-181935-0238f3",
+  "status": "done",
+  "decision": "pass",
+  "score": 63,
+  "label": "可以投",
+  "required_covered": 15,
+  "required_total": 17,
+  "counts": {
+   "direct": 11,
+   "related": 15,
+   "insufficient": 8,
+   "error": 0
+  },
+  "started_at": "2026-11-27T10:19:35.688008+00:00",
+  "finished_at": "2026-11-27T10:22:58.742514+00:00"
+ },
+ "jd_text": "数据工程\n\n公司：腾讯\n工作地点：深圳、北京、上海、广州\n\n岗位描述：\n负责数据平台及工具研发及优化、数据处理、数仓建设、数据治理等工作，利用数据辅助产品运营决策。\n1、建设和优化常用的大数据基础组件及平台，提升数据团队整体的海量数据处理能力、处理效率，通过建设数据平台及工具降低业务团队使用海量数据的门槛；\n2、与业务团队紧密合作，理解业务需求，设计并实现高效、可扩展的数据解决方案；承接业务直接的数据需求交付；\n3、对数据进行清洗、转换、集成和建模，为产品迭代和数据科学、算法研究等提供系统化的工程方面的支持，达到工业界应用的工程水平；\n4、通过技术和机制进行数据治理工作，提升数据质量，优化数据处理流程和数据质量，确保数据的准确性和一致性，建设工具流程保障数据的合规，挖掘数据资产价值。\n5、探索AI/大模型在数据工程中的应用（如利用LLM进行智能数据清洗与标注、AI辅助SQL生成与优化、自然语言数据查询等），持续降低业务团队使用数据的门槛。\n\n岗位要求：\nAI应用技能：\n善于借助AI工具拆解复杂问题、探索解决方案，并能对AI的输出进行高质量判断，具备人机协同的工作意识和习惯。\n\n专业能力：\n1、本科以上学历，数学、统计、运筹学、计算机等相关专业；\n2、了解至少一种大数据常用组件及技术，如Spark、Flink、TensorFlow、PyTorch等；\n3、熟悉至少一种编程语言，如java、c++、python、shell等；\n4、熟练掌握SQL及其性能优化。\n\n其他：\n1、能够清晰沟通表达，有对事物完成抽象与概述的能力；\n2、具备逻辑推理思维和分析问题能力；\n3、热爱数据领域，面对技术难点，能主动学习相关知识；\n4、对AI/LLM在数据处理和分析中的应用有兴趣。\n\n加分项：\n1、在相关领域的顶会或核心刊物上发表过高水平论文；\n2、有相关实习经历，并具有数据仓库、数据处理项目经验，对数据仓库理论和数据建模有深入理解，熟悉常见的ETL工具和流程；\n3、在GitHub上参与过开源项目并做出过代码贡献；\n4、在业界公认的主流竞赛中取得过排名靠前的比赛成绩。\n",
+ "company_detail": {
+  "key": "tencent",
+  "name": "腾讯",
+  "portal": "join.qq.com",
+  "programs": [
+   {
+    "title": "2027 校招（含补录、春招）",
+    "window_start": "2026-01-01",
+    "window_end": "2027-12-31",
+    "window_text": "2026.01.01–2027.12.31，海外看学位证（个别报道写 2026.09 起，以官网 FAQ 为准）",
+    "basis": "testamur",
+    "status_text": "不设统一截止；上届补录在 12 月初到次年 1 月初",
+    "deadline": null,
+    "deadline_text": "12 月补录（待公布）",
+    "roles": [
+     "AI 全栈",
+     "Agent 开发",
+     "AI 应用",
+     "后台开发",
+     "前端",
+     "数据"
+    ],
+    "cities": [
+     "深圳",
+     "广州",
+     "成都",
+     "杭州"
+    ],
+    "requirements": [],
+    "apply_limit": "同时只能投 1 个岗位",
+    "confidence": "mixed",
+    "sources": [
+     {
+      "label": "科技日报",
+      "url": "https://www.stdaily.com/web/gdxw/2026-08/12/content_562868.html"
+     },
+     {
+      "label": "新浪",
+      "url": "https://finance.sina.com.cn/roll/2026-08-11/doc-inimyaai4163915.shtml"
+     },
+     {
+      "label": "官方",
+      "url": "https://join.qq.com/detail.html?id=288"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-12-31内"
+   }
+  ]
+ },
+ "runs": [
+  {
+   "id": "20261127-181935-0238f3",
+   "status": "done",
+   "decision": "pass",
+   "score": 63,
+   "label": "可以投",
+   "required_covered": 15,
+   "required_total": 17,
+   "counts": {
+    "direct": 11,
+    "related": 15,
+    "insufficient": 8,
+    "error": 0
+   },
+   "started_at": "2026-11-27T10:19:35.688008+00:00",
+   "finished_at": "2026-11-27T10:22:58.742514+00:00"
+  }
+ ],
+ "latest": {
+  "id": "20261127-181935-0238f3",
+  "status": "done",
+  "decision": "pass",
+  "score": 63,
+  "label": "可以投",
+  "required_covered": 15,
+  "required_total": 17,
+  "counts": {
+   "direct": 11,
+   "related": 15,
+   "insufficient": 8,
+   "error": 0
+  },
+  "started_at": "2026-11-27T10:19:35.688008+00:00",
+  "finished_at": "2026-11-27T10:22:58.742514+00:00",
+  "posting_id": 5,
+  "posting_title": "数据工程",
+  "screening": {
+   "decision": "pass",
+   "flags": [
+    {
+     "code": "city",
+     "severity": "info",
+     "message": "工作城市 深圳、北京、上海、广州 在你的目标城市里",
+     "quote": ""
+    },
+    {
+     "code": "cohort_window",
+     "severity": "info",
+     "message": "2027 校招（含补录、春招）：符合。学位证日期 2026-06 在窗口 2026-01-01 至 2027-12-31内",
+     "quote": ""
+    }
+   ]
+  },
+  "summary": {
+   "requirements": 34,
+   "counts": {
+    "direct": 11,
+    "related": 15,
+    "insufficient": 8,
+    "error": 0
+   },
+   "by_importance": {
+    "unspecified": {
+     "direct": 0,
+     "related": 6,
+     "insufficient": 0,
+     "error": 0
+    },
+    "required": {
+     "direct": 9,
+     "related": 6,
+     "insufficient": 2,
+     "error": 0
+    },
+    "preferred": {
+     "direct": 2,
+     "related": 3,
+     "insufficient": 6,
+     "error": 0
+    }
+   },
+   "score": 63,
+   "label": "可以投",
+   "required_covered": 15,
+   "required_total": 17,
+   "condition_insufficient_share": 0.286,
+   "formula": "加权平均：direct=1、related=0.5、insufficient=0；必需×2、未注明×1、优先×0.5；处理失败的要求不计入"
+  },
+  "trace": [
+   {
+    "node": "load_posting",
+    "seconds": 0.0
+   },
+   {
+    "node": "extract",
+    "seconds": 169.09
+   },
+   {
+    "node": "rule_screen",
+    "seconds": 0.0
+   },
+   {
+    "node": "decide",
+    "seconds": 0.0
+   },
+   {
+    "node": "match_one",
+    "requirement": "R005",
+    "seconds": 9.13
+   },
+   {
+    "node": "match_one",
+    "requirement": "R006",
+    "seconds": 12.7
+   },
+   {
+    "node": "match_one",
+    "requirement": "R007",
+    "seconds": 8.38
+   },
+   {
+    "node": "match_one",
+    "requirement": "R008",
+    "seconds": 7.59
+   },
+   {
+    "node": "match_one",
+    "requirement": "R009",
+    "seconds": 11.51
+   },
+   {
+    "node": "match_one",
+    "requirement": "R010",
+    "seconds": 10.24
+   },
+   {
+    "node": "match_one",
+    "requirement": "R011",
+    "seconds": 7.49
+   },
+   {
+    "node": "match_one",
+    "requirement": "R012",
+    "seconds": 10.11
+   },
+   {
+    "node": "match_one",
+    "requirement": "R013",
+    "seconds": 11.27
+   },
+   {
+    "node": "match_one",
+    "requirement": "R014",
+    "seconds": 14.19
+   },
+   {
+    "node": "match_one",
+    "requirement": "R015",
+    "seconds": 3.91
+   },
+   {
+    "node": "match_one",
+    "requirement": "R016",
+    "seconds": 2.22
+   },
+   {
+    "node": "match_one",
+    "requirement": "R017",
+    "seconds": 8.19
+   },
+   {
+    "node": "match_one",
+    "requirement": "R018",
+    "seconds": 13.09
+   },
+   {
+    "node": "match_one",
+    "requirement": "R019",
+    "seconds": 3.72
+   },
+   {
+    "node": "match_one",
+    "requirement": "R020",
+    "seconds": 11.05
+   },
+   {
+    "node": "match_one",
+    "requirement": "R021",
+    "seconds": 6.64
+   },
+   {
+    "node": "match_one",
+    "requirement": "R022",
+    "seconds": 5.12
+   },
+   {
+    "node": "match_one",
+    "requirement": "R023",
+    "seconds": 12.19
+   },
+   {
+    "node": "match_one",
+    "requirement": "R024",
+    "seconds": 4.74
+   },
+   {
+    "node": "match_one",
+    "requirement": "R025",
+    "seconds": 6.15
+   },
+   {
+    "node": "match_one",
+    "requirement": "R026",
+    "seconds": 4.61
+   },
+   {
+    "node": "match_one",
+    "requirement": "R027",
+    "seconds": 4.36
+   },
+   {
+    "node": "match_one",
+    "requirement": "R028",
+    "seconds": 9.16
+   },
+   {
+    "node": "match_one",
+    "requirement": "R029",
+    "seconds": 5.93
+   },
+   {
+    "node": "match_one",
+    "requirement": "R030",
+    "seconds": 4.79
+   },
+   {
+    "node": "match_one",
+    "requirement": "R031",
+    "seconds": 4.6
+   },
+   {
+    "node": "match_one",
+    "requirement": "R032",
+    "seconds": 4.77
+   },
+   {
+    "node": "match_one",
+    "requirement": "R033",
+    "seconds": 3.11
+   },
+   {
+    "node": "match_one",
+    "requirement": "R034",
+    "seconds": 7.08
+   },
+   {
+    "node": "match_one",
+    "requirement": "R035",
+    "seconds": 7.4
+   },
+   {
+    "node": "match_one",
+    "requirement": "R036",
+    "seconds": 3.15
+   },
+   {
+    "node": "match_one",
+    "requirement": "R037",
+    "seconds": 3.15
+   },
+   {
+    "node": "match_one",
+    "requirement": "R038",
+    "seconds": 3.69
+   },
+   {
+    "node": "summarize",
+    "seconds": 0.0
+   },
+   {
+    "node": "finalize",
+    "seconds": 0.03
+   }
+  ],
+  "versions": {
+   "options": {
+    "force": false,
+    "auto_approve": true
+   },
+   "graph": "2",
+   "extraction_prompt": "5",
+   "judgment_prompt": "3",
+   "model": "deepseek-flash",
+   "provider": "deepseek"
+  },
+  "error": "",
+  "has_report": true,
+  "matches": [
+   {
+    "requirement_id": "R005",
+    "text": "负责数据平台及工具研发及优化、数据处理、数仓建设、数据治理等工作，利用数据辅助产品运营决策",
+    "category": "responsibility",
+    "importance": "unspecified",
+    "source_quote": "负责数据平台及工具研发及优化、数据处理、数仓建设、数据治理等工作，利用数据辅助产品运营决策。",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选提供了数仓建模、数据处理、数据分析工具和看板等可迁移证据，但主要是个人/课程项目，未覆盖生产数据平台研发优化、数据治理及实际辅助产品运营决策。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我负责设计星型模型：一张订单事实表和商品、客户、日期三张维度表，并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本，处理了重复订单和缺失的地区字段。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E002",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E003",
+      "quote": "我和组员一起用 Power BI 做了销售分析看板，我负责其中的地区销售和复购率两个页面，并写了计算复购率的 DAX 度量。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 分析看板",
+      "source": "sales_dashboard.md",
+      "line_start": 14,
+      "line_end": 16,
+      "section_id": "f8445e382832fa57",
+      "chunk_id": "bd437a9281480634",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E004",
+      "quote": "我让 Agent 在回答里说明用了哪条 SQL、查询到多少行数据，并用 pandas 和 matplotlib 生成折线图或柱状图，方便非技术人员核对结论。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 结果解释与可视化",
+      "source": "data_agent.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "533b35d42869f4a4",
+      "chunk_id": "228f7abf21cec621",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未提供负责数据平台及工具研发、优化的明确证据",
+     "未提供数据治理（如数据质量、权限、元数据、规范等）的职责证据",
+     "现有经历为个人/课程项目，缺少生产环境数据平台经验",
+     "利用数据辅助产品运营决策的实际成果与业务影响未体现"
+    ],
+    "questions_for_user": [
+     "是否有生产环境中数据平台或数据工具研发、优化的经历？",
+     "是否负责过数据治理相关制度、数据质量、权限或元数据管理？",
+     "是否有利用数据或看板支持产品运营决策并产生业务效果的案例？",
+     "上述数仓、Agent 和看板项目是否属于商业生产项目而非课程/个人项目？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R006",
+    "text": "建设和优化常用的大数据基础组件及平台，提升数据团队整体的海量数据处理能力、处理效率，通过建设数据平台及工具降低业务团队使用海量数据的门槛",
+    "category": "responsibility",
+    "importance": "unspecified",
+    "source_quote": "建设和优化常用的大数据基础组件及平台，提升数据团队整体的海量数据处理能力、处理效率，通过建设数据平台及工具降低业务团队使用海量数据的门槛；",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选有个人建设数据仓库ETL脚本和数据分析Agent工具的经历，涉及数据处理工具开发并部分考虑非技术人员使用，但数据规模为示例级/自建问题，未体现常用大数据基础组件及平台的建设优化，也未证明提升数据团队海量数据处理能力或业务团队使用海量数据门槛的降低。",
+    "evidence": [
+     {
+      "candidate_id": "E002",
+      "quote": "我负责设计星型模型：一张订单事实表和商品、客户、日期三张维度表，并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本，处理了重复订单和缺失的地区字段。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E001",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E003",
+      "quote": "我让 Agent 在回答里说明用了哪条 SQL、查询到多少行数据，并用 pandas 和 matplotlib 生成折线图或柱状图，方便非技术人员核对结论。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 结果解释与可视化",
+      "source": "data_agent.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "533b35d42869f4a4",
+      "chunk_id": "228f7abf21cec621",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "海量数据处理规模：候选仅体现约12万条示例订单及30个自建业务问题，未证明海量数据场景",
+     "常用大数据基础组件及平台的建设与优化经验",
+     "通过平台或工具提升数据团队整体海量数据处理能力和效率的职责证据",
+     "生产环境中服务业务团队、降低其使用海量数据门槛的平台建设证据"
+    ],
+    "questions_for_user": [
+     "是否有在生产环境建设或优化常用大数据基础组件/平台（如Hadoop、Spark、Flink等）的经历？",
+     "你处理过的数据量级、并发或集群规模是多少？是否属于海量数据场景？",
+     "是否有通过数据平台或工具服务数据团队/业务团队并提升其数据处理效率的案例？",
+     "这些数据仓库、ETL或Agent工具是课程/示例项目还是生产系统？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R007",
+    "text": "与业务团队紧密合作，理解业务需求，设计并实现高效、可扩展的数据解决方案；承接业务直接的数据需求交付",
+    "category": "responsibility",
+    "importance": "unspecified",
+    "source_quote": "与业务团队紧密合作，理解业务需求，设计并实现高效、可扩展的数据解决方案；承接业务直接的数据需求交付；",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选展示数据仓库建模、ETL、Power BI 分析看板以及面向非技术人员的查询解释，属于数据解决方案的部分相关经验；但未证明与业务团队紧密合作、理解业务需求、设计高效可扩展方案并直接交付业务数据需求。",
+    "evidence": [
+     {
+      "candidate_id": "E004",
+      "quote": "我和组员一起用 Power BI 做了销售分析看板，我负责其中的地区销售和复购率两个页面，并写了计算复购率的 DAX 度量。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 分析看板",
+      "source": "sales_dashboard.md",
+      "line_start": 14,
+      "line_end": 16,
+      "section_id": "f8445e382832fa57",
+      "chunk_id": "bd437a9281480634",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E005",
+      "quote": "我负责设计星型模型：一张订单事实表和商品、客户、日期三张维度表，并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本，处理了重复订单和缺失的地区字段。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E002",
+      "quote": "我让 Agent 在回答里说明用了哪条 SQL、查询到多少行数据，并用 pandas 和 matplotlib 生成折线图或柱状图，方便非技术人员核对结论。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 结果解释与可视化",
+      "source": "data_agent.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "533b35d42869f4a4",
+      "chunk_id": "228f7abf21cec621",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "与业务团队紧密合作并理解业务需求的直接证据",
+     "设计并实现高效、可扩展的数据解决方案的证据",
+     "承接业务直接的数据需求交付的证据",
+     "真实业务/生产环境证据；当前候选包含小组作业和示例数据项目"
+    ],
+    "questions_for_user": [
+     "是否有与业务方共同梳理需求并交付数据方案或报表的具体项目？",
+     "是否在生产环境中设计并实现过高效、可扩展的数据解决方案？规模和性能指标如何？",
+     "是否有直接承接业务数据需求并完成交付的案例？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R008",
+    "text": "对数据进行清洗、转换、集成和建模，为产品迭代和数据科学、算法研究等提供系统化的工程方面的支持，达到工业界应用的工程水平",
+    "category": "responsibility",
+    "importance": "unspecified",
+    "source_quote": "对数据进行清洗、转换、集成和建模，为产品迭代和数据科学、算法研究等提供系统化的工程方面的支持，达到工业界应用的工程水平；",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选人本人完成了星型数据仓库建模，并编写 SQL 清洗和装载脚本处理重复订单与缺失地区，具备数据清洗、转换和建模的部分证据；但该工作基于示例订单数据，未证明达到工业界生产工程水平，也未体现对产品迭代、数据科学或算法研究的系统化支持。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我负责设计星型模型：一张订单事实表和商品、客户、日期三张维度表，并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本，处理了重复订单和缺失的地区字段。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E001",
+      "quote": "结果：装载约 12 万条示例订单数据，脚本可以重复运行。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "工业界生产环境中的实际数据工程项目证据，而非示例数据项目",
+     "跨数据源的数据集成证据",
+     "对产品迭代、数据科学或算法研究提供系统化工程支持的证据",
+     "数据规模、性能、可靠性、调度与运维等工业生产级工程水平证据"
+    ],
+    "questions_for_user": [
+     "你是否有在工业界生产环境中负责数据清洗、转换、集成和建模的项目？请说明数据源、数据规模及上线情况。",
+     "这些数据工程成果是否实际支持过产品迭代、数据科学或算法研究工作？",
+     "除示例订单数据外，是否有跨多个业务系统集成数据并长期稳定运行的经历？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R009",
+    "text": "通过技术和机制进行数据治理工作，提升数据质量，优化数据处理流程和数据质量，确保数据的准确性和一致性，建设工具流程保障数据的合规，挖掘数据资产价值",
+    "category": "responsibility",
+    "importance": "unspecified",
+    "source_quote": "通过技术和机制进行数据治理工作，提升数据质量，优化数据处理流程和数据质量，确保数据的准确性和一致性，建设工具流程保障数据的合规，挖掘数据资产价值。",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "E004显示本人负责数据仓库建模和可重复ETL，并清洗重复订单、缺失地区字段，部分支持数据质量与处理流程优化；E001显示在分析Agent中用只读SQL和返回行数限制防止误改数据，部分支持以工具机制保障数据安全合规。但均为项目/示例场景，未覆盖组织级数据治理机制、合规流程建设和数据资产价值挖掘。",
+    "evidence": [
+     {
+      "candidate_id": "E004",
+      "quote": "我负责设计星型模型：一张订单事实表和商品、客户、日期三张维度表，并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本，处理了重复订单和缺失的地区字段。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E001",
+      "quote": "我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "组织级数据治理制度、数据标准、元数据/血缘、权限与审计等机制",
+     "在生产环境或商业项目中持续提升数据质量并确保准确性和一致性的成效证据",
+     "本人负责建设合规工具/流程（如权限控制、审计、脱敏、隐私保护）的证据",
+     "数据资产盘点、指标/标签体系建设、价值评估或业务收益等数据资产价值挖掘证据",
+     "项目/示例数据环境与生产系统之间的差距"
+    ],
+    "questions_for_user": [
+     "您是否在生产或商业项目中负责过数据治理、数据质量规则或数据标准建设？覆盖范围和成效指标是什么？",
+     "您是否主导或参与过合规工具/流程建设（权限、审计、脱敏、隐私等）？本人具体职责是什么？",
+     "您是否有数据资产盘点、指标/标签体系建设或数据价值评估/业务收益案例？",
+     "E004中的ETL和清洗是否用于真实生产数据？数据规模、运行频率和持续维护方式是怎样的？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R010",
+    "text": "探索AI/大模型在数据工程中的应用（如利用LLM进行智能数据清洗与标注、AI辅助SQL生成与优化、自然语言数据查询等），持续降低业务团队使用数据的门槛",
+    "category": "responsibility",
+    "importance": "unspecified",
+    "source_quote": "探索AI/大模型在数据工程中的应用（如利用LLM进行智能数据清洗与标注、AI辅助SQL生成与优化、自然语言数据查询等），持续降低业务团队使用数据的门槛。",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "E001/E002 显示本人搭建了自然语言查询销售数据的 LLM Agent，并让回答附带 SQL 和图表以便非技术人员核对，覆盖“自然语言数据查询”和降低使用门槛的原型探索；但证据是自建问题上的项目原型，未证明已在业务团队或生产数据工程中持续应用，也未覆盖智能数据清洗与标注。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E002",
+      "quote": "我让 Agent 在回答里说明用了哪条 SQL、查询到多少行数据，并用 pandas 和 matplotlib 生成折线图或柱状图，方便非技术人员核对结论。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 结果解释与可视化",
+      "source": "data_agent.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "533b35d42869f4a4",
+      "chunk_id": "228f7abf21cec621",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未证明该 Agent 已在业务团队或生产环境中实际使用并持续降低数据使用门槛",
+     "未覆盖利用 LLM 进行智能数据清洗或数据标注的实践",
+     "仅报告 30 个自建业务问题上的效果，缺少真实业务使用、用户反馈或长期迭代证据"
+    ],
+    "questions_for_user": [
+     "该数据分析 Agent 是否部署给真实业务团队使用过？使用频率和用户反馈如何？",
+     "是否有利用 LLM 进行数据清洗、标注或辅助 SQL 优化的实际项目？",
+     "是否有持续迭代该能力并衡量业务团队数据使用门槛降低的指标或案例？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R011",
+    "text": "善于借助AI工具拆解复杂问题",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "善于借助AI工具拆解复杂问题",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "本人用LangGraph构建数据分析Agent，将自然语言查询拆解为查看表结构、执行SQL、生成图表三个工具步骤，并设计错误重写机制，体现借助AI工具拆解复杂问题。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R012",
+    "text": "善于借助AI工具探索解决方案",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "探索解决方案",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "E001、E002显示本人使用 LangGraph、LangChain 和大模型搭建 Agent/RAG 应用，属于借助 AI 技术解决问题的实践；但未明确体现“借助AI工具探索解决方案”的过程，如用 AI 工具分析问题、生成并比较方案或辅助定位解决路径，因此为部分相关。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E002",
+      "quote": "我用 LangChain 封装了模型调用和检索器，并要求每个回答都列出引用的文章编号。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未明确说明使用AI工具进行方案探索、比较或问题定位的过程",
+     "“善于”缺少更多行为或成果证据",
+     "未说明是否将AI工具用于非AI系统开发场景的问题解决"
+    ],
+    "questions_for_user": [
+     "是否曾用 ChatGPT、Copilot、Claude 等 AI 工具辅助分析问题、生成方案并比较选择？",
+     "能否给出一个借助 AI 工具探索并落地解决方案的具体案例？",
+     "有没有在非 AI 开发任务中使用 AI 工具解决实际问题的经历？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R013",
+    "text": "能对AI的输出进行高质量判断",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "能对AI的输出进行高质量判断",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选显示本人搭建了RAG/Agent，并用自建问题集统计答案正确性和检索命中情况，具备对AI输出做结果核验的间接证据；但未明确展示本人按高质量标准对生成内容进行人工评审/判断的流程、标准或规模。",
+    "evidence": [
+     {
+      "candidate_id": "E002",
+      "quote": "结果：在 30 个自建的业务问题上，Agent 一次给出正确答案的有 24 个，加上一次纠错重试后为 27 个。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E001",
+      "quote": "我用 LangChain 封装了模型调用和检索器，并要求每个回答都列出引用的文章编号。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E003",
+      "quote": "我让 Agent 在回答里说明用了哪条 SQL、查询到多少行数据，并用 pandas 和 matplotlib 生成折线图或柱状图，方便非技术人员核对结论。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 结果解释与可视化",
+      "source": "data_agent.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "533b35d42869f4a4",
+      "chunk_id": "228f7abf21cec621",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未说明对AI输出进行高质量判断的具体标准或评审规则（如准确性、完整性、引用一致性等）。",
+     "未体现本人负责人工审核、标注、评分或复核AI输出的流程与规模。",
+     "现有证据主要是自建小规模测试集上的正确率/命中率，检索命中率不等于对生成答案质量的高质量判断。",
+     "缺少真实业务或生产环境中对AI输出做质量判断的证据。"
+    ],
+    "questions_for_user": [
+     "你是否亲自制定过AI输出质量评估标准或评分表？",
+     "你是否有对AI生成答案进行人工审核、标注、评分或复核的经历？规模多大？",
+     "这些评估是在真实业务/生产系统中进行，还是课程或个人项目中的自建测试？",
+     "能否提供评估结果样例、判断依据及复核机制？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R014",
+    "text": "具备人机协同的工作意识和习惯",
+    "category": "other",
+    "importance": "required",
+    "source_quote": "具备人机协同的工作意识和习惯",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选显示本人设计过带权限限制、纠错、可解释输出和用户反馈机制的人机协同项目，具备相关意识和项目实践；但未明确体现真实工作环境中持续的人机协同习惯，也未说明本人日常如何划分人机职责。",
+    "evidence": [
+     {
+      "candidate_id": "E002",
+      "quote": "我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E004",
+      "quote": "我让 Agent 在回答里说明用了哪条 SQL、查询到多少行数据，并用 pandas 和 matplotlib 生成折线图或柱状图，方便非技术人员核对结论。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 结果解释与可视化",
+      "source": "data_agent.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "533b35d42869f4a4",
+      "chunk_id": "228f7abf21cec621",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E005",
+      "quote": "用户可以对回答点赞或点踩，反馈写入数据库用于后续改进。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "真实工作或实习环境中持续人机协同的习惯证据",
+     "本人日常工作中如何划分人机职责、保留人工确认环节的明确说明",
+     "从项目实现到工作习惯层面的直接证据"
+    ],
+    "questions_for_user": [
+     "你是否有在真实工作或实习中持续使用 AI/自动化工具并人工复核的习惯？",
+     "能否举例说明你在工作中如何划分人机职责、处理机器错误或设置人工确认环节？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R015",
+    "text": "本科以上学历",
+    "category": "education",
+    "importance": "required",
+    "source_quote": "本科以上学历",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选章节明确自述已取得软件工程本科学历，并正在/已就读计算机科学与技术工学硕士，满足“本科以上学历”要求。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "- 学校：示例理工大学（虚构），计算机科学与技术专业，工学硕士。\n- 状态：2026 年 6 月毕业，学位证落款日期 2026 年 6 月。\n- 本科：示例理工大学，软件工程专业，2023 年毕业。",
+      "project": "个人基本信息（虚构演示数据）",
+      "section": "学历 Education",
+      "source": "profile.md",
+      "line_start": 6,
+      "line_end": 9,
+      "section_id": "68c9dc36fed5ea97",
+      "chunk_id": "5fa7e141a7f297d6",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R016",
+    "text": "数学、统计、运筹学、计算机等相关专业",
+    "category": "education",
+    "importance": "required",
+    "source_quote": "数学、统计、运筹学、计算机等相关专业",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选明确自述硕士专业为计算机科学与技术，属于要求中的计算机相关专业；本科软件工程亦相关。",
+    "evidence": [
+     {
+      "candidate_id": "E004",
+      "quote": "- 学校：示例理工大学（虚构），计算机科学与技术专业，工学硕士。",
+      "project": "个人基本信息（虚构演示数据）",
+      "section": "学历 Education",
+      "source": "profile.md",
+      "line_start": 6,
+      "line_end": 9,
+      "section_id": "68c9dc36fed5ea97",
+      "chunk_id": "5fa7e141a7f297d6",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R017",
+    "text": "了解至少一种大数据常用组件及技术（如Spark、Flink、TensorFlow、PyTorch等）",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "了解至少一种大数据常用组件及技术，如Spark、Flink、TensorFlow、PyTorch等",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选 E002 明确本人负责 BERT 微调的训练脚本与评估，相关能力列出 PyTorch，覆盖“至少一种”示例技术（PyTorch）的使用证据。",
+    "evidence": [
+     {
+      "candidate_id": "E002",
+      "quote": "我在一个 10 类中文新闻数据集上，比较了 TextCNN 和微调 BERT 两种方法。我负责数据预处理、训练脚本和评估，用验证集选择学习率和训练轮数。\n结果：测试集准确率 TextCNN 为 0.86，微调 BERT 为 0.93。\n相关能力：PyTorch, Hugging Face Transformers, BERT fine-tuning, NLP, model evaluation.",
+      "project": "中文新闻文本分类",
+      "section": "我的工作 模型微调与对比",
+      "source": "text_classification.md",
+      "line_start": 9,
+      "line_end": 11,
+      "section_id": "c6bdbac8e86a18ae",
+      "chunk_id": "8a13788990ce3282",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R018",
+    "text": "熟悉至少一种编程语言（如java、c++、python、shell等）",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "熟悉至少一种编程语言，如java、c++、python、shell等",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "本人自述 Python 熟练，且有使用 FastAPI 编写后端接口、使用 pandas/matplotlib 处理与可视化的个人项目证据，覆盖“至少一种编程语言”的要求。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "Python（熟练）、SQL（熟练）、TypeScript（了解）。",
+      "project": "个人基本信息（虚构演示数据）",
+      "section": "编程语言与工具 Languages and Tools",
+      "source": "profile.md",
+      "line_start": 15,
+      "line_end": 16,
+      "section_id": "53cf86b24af2519b",
+      "chunk_id": "f1bf16de745d393b",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E005",
+      "quote": "我用 FastAPI 写了问答、反馈和文章管理三组接口，用 React 做了一个简单的对话页面",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E004",
+      "quote": "并用 pandas 和 matplotlib 生成折线图或柱状图",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 结果解释与可视化",
+      "source": "data_agent.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "533b35d42869f4a4",
+      "chunk_id": "228f7abf21cec621",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R019",
+    "text": "熟练掌握SQL",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "熟练掌握SQL",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "E001显示本人实际用SQL编写数据清洗与装载脚本，E004自述SQL熟练，二者结合可支持熟练掌握SQL的要求。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本，处理了重复订单和缺失的地区字段。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E004",
+      "quote": "- Python（熟练）、SQL（熟练）、TypeScript（了解）。",
+      "project": "个人基本信息（虚构演示数据）",
+      "section": "编程语言与工具 Languages and Tools",
+      "source": "profile.md",
+      "line_start": 15,
+      "line_end": 16,
+      "section_id": "53cf86b24af2519b",
+      "chunk_id": "f1bf16de745d393b",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R020",
+    "text": "掌握SQL性能优化",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "SQL及其性能优化",
+    "verdict": "insufficient",
+    "processing_status": "ok",
+    "reason": "候选仅显示用 SQL 编写清洗装载脚本和限制查询返回行数，未体现执行计划、索引、查询重写、慢查询分析等性能优化工作，也未证明熟练程度。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E002",
+      "quote": "执行只读 SQL 查询",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "缺少 SQL 性能优化实践证据，如执行计划分析、索引设计、查询重写或慢查询调优",
+     "未体现“熟练”程度",
+     "未说明优化前后的响应时间、扫描行数、吞吐等性能指标",
+     "示例数据或自建问题集不能覆盖生产环境真实负载下的性能优化"
+    ],
+    "questions_for_user": [
+     "你是否有实际做过的 SQL 性能优化案例，例如慢查询分析、执行计划优化、索引设计或 SQL 重写？",
+     "这些优化是在什么数据规模和环境下进行的，优化前后有哪些性能指标变化？",
+     "是否有在生产或真实业务系统中持续使用并优化 SQL 的经历？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R021",
+    "text": "能够清晰沟通表达",
+    "category": "other",
+    "importance": "required",
+    "source_quote": "能够清晰沟通表达",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选显示其设计解释型输出以便非技术人员核对结论，体现了受众意识与信息透明，但未直接证明本人清晰沟通表达的实际表现。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我让 Agent 在回答里说明用了哪条 SQL、查询到多少行数据，并用 pandas 和 matplotlib 生成折线图或柱状图，方便非技术人员核对结论。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 结果解释与可视化",
+      "source": "data_agent.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "533b35d42869f4a4",
+      "chunk_id": "228f7abf21cec621",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "缺少本人进行口头或书面沟通的示例",
+     "缺少他人对沟通清晰度的反馈或评价",
+     "未覆盖工作场景中向非技术人员解释复杂结论的直接证据"
+    ],
+    "questions_for_user": [
+     "能否提供一次你向非技术人员解释技术结论的具体例子及对方反馈？",
+     "是否有你撰写的说明文档、汇报材料或演示记录可证明表达清晰？",
+     "该岗位要求的沟通主要是口头、书面还是两者兼具？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R022",
+    "text": "有对事物完成抽象与概述的能力",
+    "category": "other",
+    "importance": "required",
+    "source_quote": "有对事物完成抽象与概述的能力",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选项目体现了流程设计、结果解释和面向非技术人员的说明，可部分反映抽象与概述能力，但未直接展示本人完成抽象、归纳或概念化概述的明确产物。",
+    "evidence": [
+     {
+      "candidate_id": "E003",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E002",
+      "quote": "我让 Agent 在回答里说明用了哪条 SQL、查询到多少行数据，并用 pandas 和 matplotlib 生成折线图或柱状图，方便非技术人员核对结论。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 结果解释与可视化",
+      "source": "data_agent.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "533b35d42869f4a4",
+      "chunk_id": "228f7abf21cec621",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未提供本人完成抽象与概述的直接证据，如概念模型、设计文档、总结报告或归纳框架",
+     "未说明如何从复杂事物中提炼关键要素并形成概述",
+     "现有证据偏具体实现与结果解释，抽象概括过程不明确"
+    ],
+    "questions_for_user": [
+     "是否有由你撰写的设计文档、架构说明或总结报告，能体现对复杂事物的抽象与概述？",
+     "能否举例说明你如何把业务问题或技术流程抽象为模型、框架或分层结构？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R023",
+    "text": "具备逻辑推理思维",
+    "category": "other",
+    "importance": "required",
+    "source_quote": "具备逻辑推理思维",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "E001显示候选人个人设计了工具调用流程、SQL 安全限制和错误回传重写机制，并用 30 个业务问题的重试结果验证纠错效果，体现任务分解、约束设计和基于反馈修正的逻辑推理；要求无限定条件。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E001",
+      "quote": "结果：在 30 个自建的业务问题上，Agent 一次给出正确答案的有 24 个，加上一次纠错重试后为 27 个。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R024",
+    "text": "具备分析问题能力",
+    "category": "other",
+    "importance": "required",
+    "source_quote": "分析问题能力",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选中有本人定位查询错误并反馈重写、处理重复订单和缺失地区字段等明确分析并解决问题的行动，可直接支持分析问题能力。",
+    "evidence": [
+     {
+      "candidate_id": "E003",
+      "quote": "查询出错时把错误信息交回模型重写。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E004",
+      "quote": "处理了重复订单和缺失的地区字段。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R025",
+    "text": "热爱数据领域",
+    "category": "other",
+    "importance": "required",
+    "source_quote": "热爱数据领域",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选显示本人参与并完成销售看板、数据仓库、数据分析 Agent 等数据相关工作，能体现对数据任务的投入，但未直接表达对数据领域的热爱或持久兴趣；课程项目也不能单独证明长期动机。",
+    "evidence": [
+     {
+      "candidate_id": "E002",
+      "quote": "我负责其中的地区销售和复购率两个页面，并写了计算复购率的 DAX 度量。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 分析看板",
+      "source": "sales_dashboard.md",
+      "line_start": 14,
+      "line_end": 16,
+      "section_id": "f8445e382832fa57",
+      "chunk_id": "bd437a9281480634",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E004",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E005",
+      "quote": "我负责设计星型模型：一张订单事实表和商品、客户、日期三张维度表，并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本，处理了重复订单和缺失的地区字段。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未提供明确表达热爱数据领域的自述或行为证据",
+     "未体现对数据领域的持续兴趣、自主投入或长期职业动机",
+     "现有数据工作主要来自课程/示例项目，不能单独证明稳定热情"
+    ],
+    "questions_for_user": [
+     "是否有明确表达过对数据领域的兴趣或热爱？",
+     "是否有课程之外持续学习数据技术、参与数据项目或相关职业规划的经历？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R026",
+    "text": "面对技术难点，能主动学习相关知识",
+    "category": "other",
+    "importance": "required",
+    "source_quote": "面对技术难点，能主动学习相关知识",
+    "verdict": "insufficient",
+    "processing_status": "ok",
+    "reason": "当前检索资料只显示候选完成过 RAG、Agent、Power BI 等项目，未提供其面对具体技术难点时主动查找资料、学习相关知识并解决问题的本人行动证据。",
+    "evidence": [
+     {
+      "candidate_id": "E003",
+      "quote": "我为一个示例电商客服场景搭建了 RAG 问答链路：把 320 篇帮助中心文章按标题切分成片段，用开源中文向量模型编码后存入 PostgreSQL 的 pgvector，回答时先检索最相关的 5 个片段，再交给大模型生成带引用的回答。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E004",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E005",
+      "quote": "- Python（熟练）、SQL（熟练）、TypeScript（了解）。\n- 常用工具：Git、Docker、Linux、VS Code、Jupyter。",
+      "project": "个人基本信息（虚构演示数据）",
+      "section": "编程语言与工具 Languages and Tools",
+      "source": "profile.md",
+      "line_start": 15,
+      "line_end": 16,
+      "section_id": "53cf86b24af2519b",
+      "chunk_id": "f1bf16de745d393b",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未说明遇到的具体技术难点是什么",
+     "未说明本人主动查找或学习相关知识的具体行动",
+     "未说明学习资源、学习方法或试验过程",
+     "未说明主动学习后如何解决难点及结果"
+    ],
+    "questions_for_user": [
+     "请举一个你遇到具体技术难点后主动学习相关知识并解决的例子。",
+     "当时你通过什么方式学习（文档、课程、社区、试验等），学到了什么？",
+     "该难点最终是否解决，结果如何？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R027",
+    "text": "对AI/LLM在数据处理和分析中的应用有兴趣",
+    "category": "other",
+    "importance": "required",
+    "source_quote": "对AI/LLM在数据处理和分析中的应用有兴趣",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选证据显示本人实际搭建并使用了基于LLM的分析Agent来完成数据查询、SQL解释和图表生成，直接体现对AI/LLM在数据处理和分析中应用的兴趣。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E002",
+      "quote": "我让 Agent 在回答里说明用了哪条 SQL、查询到多少行数据，并用 pandas 和 matplotlib 生成折线图或柱状图，方便非技术人员核对结论。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 结果解释与可视化",
+      "source": "data_agent.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "533b35d42869f4a4",
+      "chunk_id": "228f7abf21cec621",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R028",
+    "text": "在相关领域的顶会上发表过高水平论文",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "在相关领域的顶会或核心刊物上发表过高水平论文",
+    "verdict": "insufficient",
+    "processing_status": "ok",
+    "reason": "当前检索资料未提供在相关领域顶会发表高水平论文的证据；仅有文本分类项目实验和阅读英文论文的能力，未涉及论文发表、顶会录用或高水平成果。",
+    "evidence": [
+     {
+      "candidate_id": "E002",
+      "quote": "我在一个 10 类中文新闻数据集上，比较了 TextCNN 和微调 BERT 两种方法。我负责数据预处理、训练脚本和评估，用验证集选择学习率和训练轮数。",
+      "project": "中文新闻文本分类",
+      "section": "我的工作 模型微调与对比",
+      "source": "text_classification.md",
+      "line_start": 9,
+      "line_end": 11,
+      "section_id": "c6bdbac8e86a18ae",
+      "chunk_id": "8a13788990ce3282",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E003",
+      "quote": "英语：CET-6，可以阅读英文技术文档和论文。",
+      "project": "个人基本信息（虚构演示数据）",
+      "section": "语言能力 Language Proficiency",
+      "source": "profile.md",
+      "line_start": 11,
+      "line_end": 13,
+      "section_id": "c05a4221962edbf5",
+      "chunk_id": "f27e3fefa8674f10",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E001",
+      "quote": "本文件是公开演示用的虚构候选人资料，不对应任何真实的人。",
+      "project": "个人基本信息（虚构演示数据）",
+      "section": "个人基本信息（虚构演示数据）",
+      "source": "profile.md",
+      "line_start": 2,
+      "line_end": 4,
+      "section_id": "80e70ea0eb293ff4",
+      "chunk_id": "b57e3a98980b317f",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未提供相关领域顶会论文的发表记录",
+     "未提供会议名称、论文题目、发表年份或录用状态",
+     "未提供作者顺序及个人贡献",
+     "未证明论文达到“高水平”标准"
+    ],
+    "questions_for_user": [
+     "是否有在相关领域顶会发表论文？如有，请提供会议名称、论文题目、发表年份、作者顺序和录用状态。",
+     "该论文是否为你本人主导或核心参与完成？",
+     "是否有其他高水平期刊或会议论文可作为补充材料？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R029",
+    "text": "在相关领域的核心刊物上发表过高水平论文",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "核心刊物上发表过高水平论文",
+    "verdict": "insufficient",
+    "processing_status": "ok",
+    "reason": "当前候选章节未提供在相关领域核心刊物发表高水平论文的证据；仅有教育背景、英语阅读论文能力和项目经历，均不构成论文发表成果。",
+    "evidence": [],
+    "missing_aspects": [
+     "未提供在核心刊物发表论文的记录",
+     "未提供高水平论文成果、作者身份及发表/录用状态",
+     "未提供论文主题与相关领域的对应关系"
+    ],
+    "questions_for_user": [
+     "你是否有在核心刊物上发表过论文？",
+     "请提供论文题目、期刊名称、作者排序及发表或录用状态。",
+     "该论文是否属于相关领域，并达到所要求的高水平（如期刊级别或收录情况）？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R030",
+    "text": "有相关实习经历",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "有相关实习经历",
+    "verdict": "insufficient",
+    "processing_status": "ok",
+    "reason": "当前检索资料只提供了个人项目与技能自述，未提供任何实习单位、实习时间、实习岗位或实习职责证据，无法支持“有相关实习经历”。",
+    "evidence": [],
+    "missing_aspects": [
+     "缺少实习单位与岗位名称",
+     "缺少实习起止时间或时长",
+     "缺少实习期间的个人职责与成果",
+     "缺少该实习与目标岗位相关性的说明"
+    ],
+    "questions_for_user": [
+     "你是否有过与目标岗位相关的实习经历？",
+     "若有，请提供实习单位、岗位名称、起止时间和主要职责。",
+     "该实习中你具体负责了哪些工作，是否有可核实的成果或证明？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R031",
+    "text": "具有数据仓库、数据处理项目经验",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "具有数据仓库、数据处理项目经验",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "E001明确显示本人负责设计星型模型并编写从原始订单到事实表的清洗装载脚本，属于数据仓库与数据处理项目经验。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我负责设计星型模型：一张订单事实表和商品、客户、日期三张维度表，并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本，处理了重复订单和缺失的地区字段。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R032",
+    "text": "对数据仓库理论有深入理解",
+    "category": "technical_skill",
+    "importance": "preferred",
+    "source_quote": "数据仓库理论",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "E001显示本人设计过星型模型并编写事实表装载脚本，具备数据仓库建模的实践证据，但仅覆盖单个示例项目，尚不足以证明对数据仓库理论有“深入理解”。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我负责设计星型模型：一张订单事实表和商品、客户、日期三张维度表，并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本，处理了重复订单和缺失的地区字段。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "数据仓库理论体系的深入掌握证据（如维度建模方法、范式与反范式取舍、缓慢变化维、数据分层等）",
+     "复杂或生产环境下的数据仓库设计与治理经验",
+     "对数据仓库理论“深入”程度的直接证明，而非单个课程/示例项目"
+    ],
+    "questions_for_user": [
+     "你是否系统学习或实践过维度建模、缓慢变化维、数据仓库分层等理论？",
+     "你是否有生产环境或较大规模数据仓库的设计、ETL调度与治理经验？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R033",
+    "text": "对数据建模有深入理解",
+    "category": "technical_skill",
+    "importance": "preferred",
+    "source_quote": "数据建模",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选提供了本人设计星型模型的实践证据，但仅为一个示例项目中的简单模型，未体现“深入理解”所需的复杂建模权衡或更广范围经验。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我负责设计星型模型：一张订单事实表和商品、客户、日期三张维度表，并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本，处理了重复订单和缺失的地区字段。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "对数据建模“深入理解”的程度证据不足",
+     "缺少复杂业务场景、多主题域或生产环境建模经验",
+     "未体现规范化/维度建模取舍、模型演进或性能考量"
+    ],
+    "questions_for_user": [
+     "是否参与过更复杂或多主题域的数据仓库建模？",
+     "是否有生产环境中数据模型设计、评审或演进的经历？",
+     "能否说明模型设计中的规范化/反规范化、粒度或性能取舍？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R034",
+    "text": "熟悉常见的ETL工具",
+    "category": "technical_skill",
+    "importance": "preferred",
+    "source_quote": "熟悉常见的ETL工具",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "E001 显示本人用 SQL 编写从原始订单数据到事实表的清洗和装载脚本，属于 ETL 流程实践，但未证明使用或熟悉常见 ETL 工具，因此仅部分相关。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我负责设计星型模型：一张订单事实表和商品、客户、日期三张维度表，并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本，处理了重复订单和缺失的地区字段。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未证明使用过常见 ETL 工具（如 Kettle、Talend、Informatica 等）",
+     "未说明 ETL 工具的熟练度及项目或生产环境使用情况"
+    ],
+    "questions_for_user": [
+     "你是否使用过 Kettle、Talend、Informatica 等常见 ETL 工具？请说明项目场景和你的具体职责。",
+     "上述 ETL 脚本是课程/示例项目还是生产环境？对相关工具熟练度如何？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R035",
+    "text": "熟悉常见的ETL流程",
+    "category": "technical_skill",
+    "importance": "preferred",
+    "source_quote": "ETL工具和流程",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选人明确本人用 SQL 实现了从原始订单数据到事实表的清洗和装载脚本，并处理重复订单与缺失字段，覆盖抽取、转换、装载的核心 ETL 流程；要求未限定生产环境或特定 ETL 工具。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我负责设计星型模型：一张订单事实表和商品、客户、日期三张维度表，并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本，处理了重复订单和缺失的地区字段。\n结果：装载约 12 万条示例订单数据，脚本可以重复运行。\n相关能力：data warehouse, star schema, SQL, ETL, data cleaning, PostgreSQL.",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R036",
+    "text": "在GitHub上参与过开源项目",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "在GitHub上参与过开源项目",
+    "verdict": "insufficient",
+    "processing_status": "ok",
+    "reason": "当前检索资料未提供在 GitHub 上参与开源项目的证据；仅提到 Git 工具，不能证明曾参与 GitHub 开源项目。",
+    "evidence": [],
+    "missing_aspects": [
+     "未提供在 GitHub 平台上参与开源项目的经历",
+     "未说明具体开源项目、个人角色或贡献记录（如 PR、issue、代码提交等）"
+    ],
+    "questions_for_user": [
+     "你是否在 GitHub 上参与过开源项目？",
+     "能否提供项目名称、链接或你的具体贡献记录？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R037",
+    "text": "在GitHub上做出过代码贡献",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "做出过代码贡献",
+    "verdict": "insufficient",
+    "processing_status": "ok",
+    "reason": "候选章节仅显示使用 Git 工具及本机项目开发，未见在 GitHub 上进行代码贡献（仓库、提交、PR 等）的证据；Git 使用不等同于 GitHub 贡献。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "- 常用工具：Git、Docker、Linux、VS Code、Jupyter。",
+      "project": "个人基本信息（虚构演示数据）",
+      "section": "编程语言与工具 Languages and Tools",
+      "source": "profile.md",
+      "line_start": 15,
+      "line_end": 16,
+      "section_id": "53cf86b24af2519b",
+      "chunk_id": "f1bf16de745d393b",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "缺少在 GitHub 平台提交代码或参与仓库协作的证据",
+     "缺少个人贡献的具体形式（commit、PR、issue 修复等）及本人行动主体的说明",
+     "缺少可核验的 GitHub 仓库或账号信息"
+    ],
+    "questions_for_user": [
+     "你是否有公开的 GitHub 账号或仓库可以展示？",
+     "你是否向任何 GitHub 仓库提交过 commit 或 Pull Request？请说明具体项目和你本人负责的部分。"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R038",
+    "text": "在业界公认的主流竞赛中取得过排名靠前的比赛成绩",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "在业界公认的主流竞赛中取得过排名靠前的比赛成绩",
+    "verdict": "insufficient",
+    "processing_status": "ok",
+    "reason": "候选章节仅包含课程/个人项目成果，E001 的最高成绩是小组作业 A 等级，并非竞赛成绩；没有任何业界公认主流竞赛的参赛或排名证据。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "结果：小组作业获得 A 等级（虚构）。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 分析看板",
+      "source": "sales_dashboard.md",
+      "line_start": 14,
+      "line_end": 16,
+      "section_id": "f8445e382832fa57",
+      "chunk_id": "bd437a9281480634",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未提供参加业界公认主流竞赛（如 Kaggle、天池等）的证据",
+     "未提供任何竞赛排名结果或名次区间",
+     "未说明个人在竞赛中的角色与贡献",
+     "未说明竞赛规模、赛道与评测方式，无法判断“排名靠前”"
+    ],
+    "questions_for_user": [
+     "你是否参加过业界公认的主流数据/算法竞赛？具体是哪些赛事和赛道？",
+     "在对应赛事中的最终排名或百分位是多少？是个人参赛还是团队参赛？",
+     "是否有可核验的竞赛成绩页面或证书？"
+    ],
+    "errors": []
+   }
+  ]
+ }
+}

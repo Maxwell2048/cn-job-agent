@@ -1,0 +1,1867 @@
+{
+ "id": 3,
+ "title": "AI全栈工程师",
+ "company": "腾讯",
+ "company_key": "tencent",
+ "city": "深圳、北京、上海、广州、成都、杭州",
+ "channel": "campus",
+ "source": "tencent",
+ "url": "https://join.qq.com/post_detail.html?postid=1282707398326592512",
+ "status": "matched",
+ "posted_at": "",
+ "created_at": "2026-11-27T10:10:36.254689+00:00",
+ "latest_run": {
+  "id": "20261127-181340-756c01",
+  "status": "done",
+  "decision": "pass",
+  "score": 58,
+  "label": "可以投",
+  "required_covered": 15,
+  "required_total": 18,
+  "counts": {
+   "direct": 13,
+   "related": 15,
+   "insufficient": 7,
+   "error": 0
+  },
+  "started_at": "2026-11-27T10:13:40.938150+00:00",
+  "finished_at": "2026-11-27T10:16:39.595108+00:00"
+ },
+ "jd_text": "AI全栈工程师\n\n公司：腾讯\n工作地点：深圳、北京、上海、广州、成都、杭州\n\n岗位描述：\n1、负责产品业务系统的全栈开发，涵盖前端交互、后端服务、数据存储等，参与需求分析、架构设计、开发交付与迭代优化；\n2、构建基于大模型的全链路应用系统，包括AI能力接入、Agent架构设计、RAG系统搭建、业务知识库建设等，实现端到端的AI应用落地；\n3、跟踪AI与全栈技术的前沿发展，关注行业前沿动态，并结合业务场景进行落地实践。\n\n岗位要求：\n1、熟练掌握主流前后端技术栈，具备扎实的计算机基础知识和全栈工程能力，能够完成需求分析、方案设计、开发交付及迭代优化的完整流程；\n2、熟练使用 AI 编程工具，能通过 AI 完成业务开发与应用搭建；\n3、了解大模型基本原理与推理部署方式，熟悉RAG技术、Agent原理（包括 Tool Use、Planning、Memory 等），有相关实践经验；\n4、 具备系统设计能力，了解分布式系统、微服务架构、消息队列、缓存等后端核心技术；\n5、 对 AI 前沿技术有浓厚兴趣，愿意主动探索AI在业务场景的创新应用； \n6、具备良好的沟通协作与问题解决能力，有较强的责任心，能高效配合团队完成项目交付。\n\n加分项：\n1、有全栈项目经验（如独立开发过 Web 应用 / SaaS 产品 / AI 应用平台等）；\n2、具备模型算法调优经验、个人项目、开源项目或成熟业务系统开发经验者优先；\n3、有RAG、主流Agent框架（如LangGraph / AutoGen 等）使用经验；\n4、有复杂Agent构建经验，能够系统性评估质量、持续改进效果、优化应用性能/成本；\n5、参与过开源项目或有技术博客、技术作品；\n6、在技术竞赛、开源社区中有突出表现。\n",
+ "company_detail": {
+  "key": "tencent",
+  "name": "腾讯",
+  "portal": "join.qq.com",
+  "programs": [
+   {
+    "title": "2027 校招（含补录、春招）",
+    "window_start": "2026-01-01",
+    "window_end": "2027-12-31",
+    "window_text": "2026.01.01–2027.12.31，海外看学位证（个别报道写 2026.09 起，以官网 FAQ 为准）",
+    "basis": "testamur",
+    "status_text": "不设统一截止；上届补录在 12 月初到次年 1 月初",
+    "deadline": null,
+    "deadline_text": "12 月补录（待公布）",
+    "roles": [
+     "AI 全栈",
+     "Agent 开发",
+     "AI 应用",
+     "后台开发",
+     "前端",
+     "数据"
+    ],
+    "cities": [
+     "深圳",
+     "广州",
+     "成都",
+     "杭州"
+    ],
+    "requirements": [],
+    "apply_limit": "同时只能投 1 个岗位",
+    "confidence": "mixed",
+    "sources": [
+     {
+      "label": "科技日报",
+      "url": "https://www.stdaily.com/web/gdxw/2026-08/12/content_562868.html"
+     },
+     {
+      "label": "新浪",
+      "url": "https://finance.sina.com.cn/roll/2026-08-11/doc-inimyaai4163915.shtml"
+     },
+     {
+      "label": "官方",
+      "url": "https://join.qq.com/detail.html?id=288"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2026-01-01 至 2027-12-31内"
+   }
+  ]
+ },
+ "runs": [
+  {
+   "id": "20261127-181340-756c01",
+   "status": "done",
+   "decision": "pass",
+   "score": 58,
+   "label": "可以投",
+   "required_covered": 15,
+   "required_total": 18,
+   "counts": {
+    "direct": 13,
+    "related": 15,
+    "insufficient": 7,
+    "error": 0
+   },
+   "started_at": "2026-11-27T10:13:40.938150+00:00",
+   "finished_at": "2026-11-27T10:16:39.595108+00:00"
+  }
+ ],
+ "latest": {
+  "id": "20261127-181340-756c01",
+  "status": "done",
+  "decision": "pass",
+  "score": 58,
+  "label": "可以投",
+  "required_covered": 15,
+  "required_total": 18,
+  "counts": {
+   "direct": 13,
+   "related": 15,
+   "insufficient": 7,
+   "error": 0
+  },
+  "started_at": "2026-11-27T10:13:40.938150+00:00",
+  "finished_at": "2026-11-27T10:16:39.595108+00:00",
+  "posting_id": 3,
+  "posting_title": "AI全栈工程师",
+  "screening": {
+   "decision": "pass",
+   "flags": [
+    {
+     "code": "city",
+     "severity": "info",
+     "message": "工作城市 深圳、北京、上海、广州、成都、杭州 在你的目标城市里",
+     "quote": ""
+    },
+    {
+     "code": "cohort_window",
+     "severity": "info",
+     "message": "2027 校招（含补录、春招）：符合。学位证日期 2026-06 在窗口 2026-01-01 至 2027-12-31内",
+     "quote": ""
+    }
+   ]
+  },
+  "summary": {
+   "requirements": 35,
+   "counts": {
+    "direct": 13,
+    "related": 15,
+    "insufficient": 7,
+    "error": 0
+   },
+   "by_importance": {
+    "unspecified": {
+     "direct": 0,
+     "related": 4,
+     "insufficient": 0,
+     "error": 0
+    },
+    "required": {
+     "direct": 6,
+     "related": 9,
+     "insufficient": 3,
+     "error": 0
+    },
+    "preferred": {
+     "direct": 7,
+     "related": 2,
+     "insufficient": 4,
+     "error": 0
+    }
+   },
+   "score": 58,
+   "label": "可以投",
+   "required_covered": 15,
+   "required_total": 18,
+   "condition_insufficient_share": 0.226,
+   "formula": "加权平均：direct=1、related=0.5、insufficient=0；必需×2、未注明×1、优先×0.5；处理失败的要求不计入"
+  },
+  "trace": [
+   {
+    "node": "load_posting",
+    "seconds": 0.01
+   },
+   {
+    "node": "extract",
+    "seconds": 146.82
+   },
+   {
+    "node": "rule_screen",
+    "seconds": 0.0
+   },
+   {
+    "node": "decide",
+    "seconds": 0.0
+   },
+   {
+    "node": "match_one",
+    "requirement": "R002",
+    "seconds": 7.47
+   },
+   {
+    "node": "match_one",
+    "requirement": "R003",
+    "seconds": 8.66
+   },
+   {
+    "node": "match_one",
+    "requirement": "R004",
+    "seconds": 14.93
+   },
+   {
+    "node": "match_one",
+    "requirement": "R005",
+    "seconds": 11.74
+   },
+   {
+    "node": "match_one",
+    "requirement": "R006",
+    "seconds": 9.77
+   },
+   {
+    "node": "match_one",
+    "requirement": "R007",
+    "seconds": 5.61
+   },
+   {
+    "node": "match_one",
+    "requirement": "R008",
+    "seconds": 2.74
+   },
+   {
+    "node": "match_one",
+    "requirement": "R009",
+    "seconds": 7.84
+   },
+   {
+    "node": "match_one",
+    "requirement": "R010",
+    "seconds": 5.85
+   },
+   {
+    "node": "match_one",
+    "requirement": "R011",
+    "seconds": 4.39
+   },
+   {
+    "node": "match_one",
+    "requirement": "R012",
+    "seconds": 12.23
+   },
+   {
+    "node": "match_one",
+    "requirement": "R013",
+    "seconds": 4.04
+   },
+   {
+    "node": "match_one",
+    "requirement": "R014",
+    "seconds": 6.12
+   },
+   {
+    "node": "match_one",
+    "requirement": "R015",
+    "seconds": 5.14
+   },
+   {
+    "node": "match_one",
+    "requirement": "R016",
+    "seconds": 8.13
+   },
+   {
+    "node": "match_one",
+    "requirement": "R017",
+    "seconds": 8.99
+   },
+   {
+    "node": "match_one",
+    "requirement": "R018",
+    "seconds": 11.67
+   },
+   {
+    "node": "match_one",
+    "requirement": "R019",
+    "seconds": 8.29
+   },
+   {
+    "node": "match_one",
+    "requirement": "R020",
+    "seconds": 5.11
+   },
+   {
+    "node": "match_one",
+    "requirement": "R021",
+    "seconds": 7.98
+   },
+   {
+    "node": "match_one",
+    "requirement": "R022",
+    "seconds": 9.12
+   },
+   {
+    "node": "match_one",
+    "requirement": "R023",
+    "seconds": 9.79
+   },
+   {
+    "node": "match_one",
+    "requirement": "R024",
+    "seconds": 3.57
+   },
+   {
+    "node": "match_one",
+    "requirement": "R025",
+    "seconds": 5.73
+   },
+   {
+    "node": "match_one",
+    "requirement": "R026",
+    "seconds": 3.87
+   },
+   {
+    "node": "match_one",
+    "requirement": "R027",
+    "seconds": 8.81
+   },
+   {
+    "node": "match_one",
+    "requirement": "R028",
+    "seconds": 7.44
+   },
+   {
+    "node": "match_one",
+    "requirement": "R029",
+    "seconds": 5.08
+   },
+   {
+    "node": "match_one",
+    "requirement": "R030",
+    "seconds": 2.18
+   },
+   {
+    "node": "match_one",
+    "requirement": "R031",
+    "seconds": 4.66
+   },
+   {
+    "node": "match_one",
+    "requirement": "R032",
+    "seconds": 7.46
+   },
+   {
+    "node": "match_one",
+    "requirement": "R033",
+    "seconds": 5.03
+   },
+   {
+    "node": "match_one",
+    "requirement": "R034",
+    "seconds": 1.85
+   },
+   {
+    "node": "match_one",
+    "requirement": "R035",
+    "seconds": 4.34
+   },
+   {
+    "node": "match_one",
+    "requirement": "R036",
+    "seconds": 3.08
+   },
+   {
+    "node": "summarize",
+    "seconds": 0.0
+   },
+   {
+    "node": "finalize",
+    "seconds": 0.03
+   }
+  ],
+  "versions": {
+   "options": {
+    "force": false,
+    "auto_approve": true
+   },
+   "graph": "2",
+   "extraction_prompt": "5",
+   "judgment_prompt": "3",
+   "model": "deepseek-flash",
+   "provider": "deepseek"
+  },
+  "error": "",
+  "has_report": true,
+  "matches": [
+   {
+    "requirement_id": "R002",
+    "text": "负责产品业务系统的全栈开发，涵盖前端交互、后端服务、数据存储等",
+    "category": "responsibility",
+    "importance": "unspecified",
+    "source_quote": "负责产品业务系统的全栈开发，涵盖前端交互、后端服务、数据存储等",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "E001 明确体现本人用 FastAPI 写后端接口、用 React 做前端页面并将反馈写入数据库，具备全栈开发的部分直接证据；但该系统是“可演示”的项目，未证明是产品业务系统或生产环境，数据存储也仅体现反馈写入。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我用 FastAPI 写了问答、反馈和文章管理三组接口，用 React 做了一个简单的对话页面，用户可以对回答点赞或点踩，反馈写入数据库用于后续改进。整个系统用 Docker Compose 在本机一键启动。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E001",
+      "quote": "结果：完成可演示的端到端系统，接口有 41 项 pytest 测试。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未证明是在真实产品业务系统中负责全栈开发，而非演示项目",
+     "未明确前端交互的完整业务复杂度",
+     "未明确数据存储设计、建模与生产运营范围",
+     "未证明系统已上线或服务真实用户"
+    ],
+    "questions_for_user": [
+     "E001 的智能客服系统是否曾在真实产品业务环境中上线或供真实用户使用？",
+     "你在该项目中是否独立负责前端、后端和数据存储的完整开发？",
+     "数据存储部分是否包含表结构设计、数据建模或生产数据库运维，而不仅是反馈写入？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R003",
+    "text": "参与需求分析、架构设计、开发交付与迭代优化",
+    "category": "responsibility",
+    "importance": "unspecified",
+    "source_quote": "参与需求分析、架构设计、开发交付与迭代优化",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选显示本人参与 RAG 链路、接口页面和数据分析 Agent 的开发交付，并有数据仓库星型模型设计，但缺少需求分析及上线后迭代优化的明确个人行动证据，架构设计也主要限于数据模型层面。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我为一个示例电商客服场景搭建了 RAG 问答链路",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E002",
+      "quote": "我负责设计星型模型：一张订单事实表和商品、客户、日期三张维度表",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E003",
+      "quote": "我用 FastAPI 写了问答、反馈和文章管理三组接口，用 React 做了一个简单的对话页面",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E004",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "需求分析的具体个人行动证据",
+     "迭代优化的具体个人行动证据",
+     "完整系统架构设计的证据；现有仅体现数据仓库星型模型设计"
+    ],
+    "questions_for_user": [
+     "你是否参与过需求收集、需求澄清或需求文档编写？",
+     "你是否负责过系统整体架构设计，包括模块划分、技术选型或接口设计？",
+     "是否有上线后基于用户反馈或运行指标进行迭代优化的经历？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R004",
+    "text": "构建基于大模型的全链路应用系统，包括AI能力接入、Agent架构设计、RAG系统搭建、业务知识库建设等，实现端到端的AI应用落地",
+    "category": "responsibility",
+    "importance": "unspecified",
+    "source_quote": "构建基于大模型的全链路应用系统，包括AI能力接入、Agent架构设计、RAG系统搭建、业务知识库建设等，实现端到端的AI应用落地",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选显示本人搭建了 RAG 检索链路、业务文章知识库和可演示端到端系统，并在另一项目设计了工具调用 Agent；但 Agent 与 RAG/知识库未在同一全链路系统中整合，且落地环境主要是示例/本机演示。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我为一个示例电商客服场景搭建了 RAG 问答链路：把 320 篇帮助中心文章按标题切分成片段，用开源中文向量模型编码后存入 PostgreSQL 的 pgvector，回答时先检索最相关的 5 个片段，再交给大模型生成带引用的回答。我用 LangChain 封装了模型调用和检索器，并要求每个回答都列出引用的文章编号。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E002",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E003",
+      "quote": "整个系统用 Docker Compose 在本机一键启动。\n结果：完成可演示的端到端系统，接口有 41 项 pytest 测试。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未提供同一系统内 Agent 架构与 RAG、业务知识库整合的证据",
+     "未提供生产环境或真实业务端到端落地的证据，现有描述为示例场景和本机可演示系统",
+     "业务知识库的持续建设/治理（更新、权限、质量评估等）未展开"
+    ],
+    "questions_for_user": [
+     "是否有将 RAG 问答、业务知识库与工具调用/Agent 集成在同一系统的经历？",
+     "该项目是否已部署到真实业务环境并有用户使用，还是仅为本机演示？",
+     "业务知识库如何更新、维护和评估质量？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R005",
+    "text": "跟踪AI与全栈技术的前沿发展，关注行业前沿动态，并结合业务场景进行落地实践",
+    "category": "responsibility",
+    "importance": "unspecified",
+    "source_quote": "跟踪AI与全栈技术的前沿发展，关注行业前沿动态，并结合业务场景进行落地实践",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "有将 RAG、LangGraph Agent 和全栈接口用于示例电商客服及业务数据问答的项目实践，但未证明持续跟踪 AI/全栈前沿动态，场景也偏向示例或自建项目，非真实生产业务落地。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我为一个示例电商客服场景搭建了 RAG 问答链路：把 320 篇帮助中心文章按标题切分成片段，用开源中文向量模型编码后存入 PostgreSQL 的 pgvector，回答时先检索最相关的 5 个片段，再交给大模型生成带引用的回答。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E002",
+      "quote": "我用 FastAPI 写了问答、反馈和文章管理三组接口，用 React 做了一个简单的对话页面，用户可以对回答点赞或点踩，反馈写入数据库用于后续改进。整个系统用 Docker Compose 在本机一键启动。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E005",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未提供主动跟踪 AI 与全栈技术前沿发展、行业动态的明确证据",
+     "未证明在真实生产业务场景中落地并产生业务效果",
+     "未说明如何把行业前沿技术判断转化为业务场景中的持续实践"
+    ],
+    "questions_for_user": [
+     "你平时通过哪些渠道跟踪 AI/全栈前沿动态，是否有具体学习、分享或技术选型产出？",
+     "上述 RAG/Agent/全栈项目是否在真实业务或生产环境中上线，业务效果如何？",
+     "是否有将行业前沿技术引入实际业务场景并完成落地的案例？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R006",
+    "text": "熟练掌握主流前后端技术栈",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "熟练掌握主流前后端技术栈",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "E001 有本人使用 FastAPI 编写后端接口、用 React 实现前端页面的项目证据，但仅为一个可演示项目且前端为简单对话页面；E002 仅为自述 Python/SQL 熟练、TypeScript 了解，未覆盖“熟练掌握主流前后端技术栈”的广度、深度与生产环境证据。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我用 FastAPI 写了问答、反馈和文章管理三组接口，用 React 做了一个简单的对话页面",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E001",
+      "quote": "结果：完成可演示的端到端系统，接口有 41 项 pytest 测试。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E002",
+      "quote": "- Python（熟练）、SQL（熟练）、TypeScript（了解）。",
+      "project": "个人基本信息（虚构演示数据）",
+      "section": "编程语言与工具 Languages and Tools",
+      "source": "profile.md",
+      "line_start": 15,
+      "line_end": 16,
+      "section_id": "53cf86b24af2519b",
+      "chunk_id": "f1bf16de745d393b",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未证明前端技术栈达到“熟练掌握”（候选仅描述为简单对话页面）",
+     "未展示更广泛的主流前后端技术栈组合或技术深度",
+     "未提供生产环境或商业项目中的全栈开发证据",
+     "未证明后端技术栈的熟练程度仅有单个项目支撑"
+    ],
+    "questions_for_user": [
+     "除该 RAG 项目外，是否还有其他前后端项目或长期使用主流框架的经历？",
+     "React 前端页面的复杂度如何，是否涉及路由、状态管理、工程化或性能优化？",
+     "是否有生产环境部署、多人协作或商业项目中的全栈开发经验？",
+     "后端除 FastAPI 外是否使用过其他主流框架，熟练程度如何？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R007",
+    "text": "具备扎实的计算机基础知识",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "具备扎实的计算机基础知识",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "有个人完成全栈接口、RAG 与向量数据库项目的证据，可迁移体现一定计算机基础；但未直接证明“扎实”的计算机基础知识体系及掌握程度。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "- Python（熟练）、SQL（熟练）、TypeScript（了解）。",
+      "project": "个人基本信息（虚构演示数据）",
+      "section": "编程语言与工具 Languages and Tools",
+      "source": "profile.md",
+      "line_start": 15,
+      "line_end": 16,
+      "section_id": "53cf86b24af2519b",
+      "chunk_id": "f1bf16de745d393b",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E003",
+      "quote": "我用 FastAPI 写了问答、反馈和文章管理三组接口，用 React 做了一个简单的对话页面",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E004",
+      "quote": "把 320 篇帮助中心文章按标题切分成片段，用开源中文向量模型编码后存入 PostgreSQL 的 pgvector",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未明确覆盖数据结构、算法、操作系统、计算机网络、数据库原理等计算机基础知识",
+     "未提供“扎实”熟练度的直接证据或系统学习/考核证明"
+    ],
+    "questions_for_user": [
+     "你是否修读过数据结构、算法、操作系统、计算机网络、数据库原理等计算机基础课程？",
+     "能否举例说明你在项目中如何应用数据结构、算法或系统设计等基础知识？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R008",
+    "text": "具备全栈工程能力",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "具备扎实的计算机基础知识和全栈工程能力",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选章节明确记录本人用 FastAPI 实现多组后端接口、用 React 实现前端对话页面，并用 Docker Compose 完成端到端系统，直接支持全栈工程能力要求。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我用 FastAPI 写了问答、反馈和文章管理三组接口，用 React 做了一个简单的对话页面，用户可以对回答点赞或点踩，反馈写入数据库用于后续改进。整个系统用 Docker Compose 在本机一键启动。\n结果：完成可演示的端到端系统，接口有 41 项 pytest 测试。\n相关能力：FastAPI, REST API, React, Docker Compose, pytest, full-stack development.",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R009",
+    "text": "能够完成需求分析、方案设计、开发交付及迭代优化的完整流程",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "能够完成需求分析、方案设计、开发交付及迭代优化的完整流程",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "有方案设计、开发、端到端演示交付及错误恢复/反馈设计证据，但缺少明确的需求分析，且迭代优化未体现为基于反馈或指标的实际改进闭环。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我负责设计星型模型：一张订单事实表和商品、客户、日期三张维度表，并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本，处理了重复订单和缺失的地区字段。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E003",
+      "quote": "我用 FastAPI 写了问答、反馈和文章管理三组接口，用 React 做了一个简单的对话页面，用户可以对回答点赞或点踩，反馈写入数据库用于后续改进。整个系统用 Docker Compose 在本机一键启动。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E005",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "需求分析：与用户或业务方确认需求、范围及验收标准的明确证据",
+     "迭代优化：基于反馈或指标实际改进并复测的完整闭环证据",
+     "完整流程：同一项目中连贯完成需求分析、方案设计、开发交付及迭代优化的证据"
+    ],
+    "questions_for_user": [
+     "是否有项目从需求调研或用户访谈开始，并形成明确的需求文档或验收标准？",
+     "是否有基于用户反馈或评估指标进行至少一轮实际优化并复测的记录？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R010",
+    "text": "熟练使用 AI 编程工具",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "熟练使用 AI 编程工具",
+    "verdict": "insufficient",
+    "processing_status": "ok",
+    "reason": "候选章节仅体现 LangGraph/LangChain 等 AI 应用框架开发和常规开发工具使用，未提供使用 AI 编程工具的个人行动或熟练度证据。",
+    "evidence": [],
+    "missing_aspects": [
+     "未说明具体使用过哪些 AI 编程工具",
+     "未说明使用 AI 编程工具的熟练程度",
+     "未说明在项目中使用 AI 编程工具的个人行动与产出"
+    ],
+    "questions_for_user": [
+     "你具体使用过哪些 AI 编程工具？",
+     "你在哪些项目或任务中使用过 AI 编程工具，具体承担了什么工作？",
+     "你的使用频率或熟练程度如何，是否有可展示的使用产出？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R011",
+    "text": "能通过 AI 完成业务开发与应用搭建",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "能通过 AI 完成业务开发与应用搭建",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选章节显示本人使用 LangChain/LangGraph 搭建基于大模型的 RAG 问答与数据分析 Agent，具备通过 AI 完成应用搭建的个人行动证据。",
+    "evidence": [
+     {
+      "candidate_id": "E002",
+      "quote": "我为一个示例电商客服场景搭建了 RAG 问答链路：把 320 篇帮助中心文章按标题切分成片段，用开源中文向量模型编码后存入 PostgreSQL 的 pgvector，回答时先检索最相关的 5 个片段，再交给大模型生成带引用的回答。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E005",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R012",
+    "text": "了解大模型基本原理与推理部署方式",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "了解大模型基本原理与推理部署方式",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选中有大模型应用调用（RAG 生成回答）和 BERT 微调评估经历，可部分迁移到模型使用与实验评估；但未体现大模型基本原理，也未体现推理部署方式。",
+    "evidence": [
+     {
+      "candidate_id": "E004",
+      "quote": "我为一个示例电商客服场景搭建了 RAG 问答链路：把 320 篇帮助中心文章按标题切分成片段，用开源中文向量模型编码后存入 PostgreSQL 的 pgvector，回答时先检索最相关的 5 个片段，再交给大模型生成带引用的回答。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E001",
+      "quote": "我在一个 10 类中文新闻数据集上，比较了 TextCNN 和微调 BERT 两种方法。我负责数据预处理、训练脚本和评估，用验证集选择学习率和训练轮数。",
+      "project": "中文新闻文本分类",
+      "section": "我的工作 模型微调与对比",
+      "source": "text_classification.md",
+      "line_start": 9,
+      "line_end": 11,
+      "section_id": "c6bdbac8e86a18ae",
+      "chunk_id": "8a13788990ce3282",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E002",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "大模型基本原理（如 Transformer/LLM 架构、训练与推理机制）未体现",
+     "大模型推理部署方式（服务化、显存/吞吐优化、推理框架或批处理等）未体现",
+     "仅有应用层调用与 BERT 微调，不能等同于大模型原理与部署经验"
+    ],
+    "questions_for_user": [
+     "你是否实际参与过大模型推理服务的部署或优化？",
+     "你是否系统学习过大模型架构与推理机制？",
+     "你是否使用过 vLLM、TensorRT-LLM 等推理部署框架或做过显存/吞吐优化？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R013",
+    "text": "熟悉RAG技术",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "熟悉RAG技术",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选人明确描述本人搭建 RAG 问答链路，涵盖文档切分、向量编码、pgvector 检索、大模型生成与引用、LangChain 封装，并提供检索效果数据，足以支持“熟悉RAG技术”。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我为一个示例电商客服场景搭建了 RAG 问答链路：把 320 篇帮助中心文章按标题切分成片段，用开源中文向量模型编码后存入 PostgreSQL 的 pgvector，回答时先检索最相关的 5 个片段，再交给大模型生成带引用的回答。我用 LangChain 封装了模型调用和检索器，并要求每个回答都列出引用的文章编号。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R014",
+    "text": "熟悉Agent原理（包括 Tool Use、Planning、Memory 等）",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "熟悉Agent原理（包括 Tool Use、Planning、Memory 等）",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "E001 显示本人用 LangGraph 实现工具调用、SQL 限制与错误回传重写，支持 Tool Use 及部分错误恢复，但未覆盖 Planning 与 Memory 等 Agent 原理要素。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "Planning（任务规划/分解）原理证据",
+     "Memory（短期/长期记忆）机制证据",
+     "对 Agent 原理系统熟悉度的直接证据"
+    ],
+    "questions_for_user": [
+     "是否在 Agent 项目中实现过任务规划/分解（如 plan-and-execute、ReAct 等）？",
+     "是否实现或使用过 Memory 机制（对话记忆、向量记忆等）？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R015",
+    "text": "有相关实践经验",
+    "category": "experience",
+    "importance": "required",
+    "source_quote": "有相关实践经验",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选章节显示本人实际搭建并完成了RAG问答链路和前后端接口，有明确个人行动与结果，符合“相关实践经验”；要求未限定商业或生产环境。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我为一个示例电商客服场景搭建了 RAG 问答链路：把 320 篇帮助中心文章按标题切分成片段，用开源中文向量模型编码后存入 PostgreSQL 的 pgvector，回答时先检索最相关的 5 个片段，再交给大模型生成带引用的回答。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E003",
+      "quote": "我用 FastAPI 写了问答、反馈和文章管理三组接口，用 React 做了一个简单的对话页面，用户可以对回答点赞或点踩，反馈写入数据库用于后续改进。整个系统用 Docker Compose 在本机一键启动。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R016",
+    "text": "具备系统设计能力",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "具备系统设计能力",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选显示了个人搭建端到端演示系统及设计 Agent 工具调用/防护/纠错流程，具备部分系统设计证据；但系统架构设计深度、规模与生产环境等仍不明确。",
+    "evidence": [
+     {
+      "candidate_id": "E002",
+      "quote": "我用 FastAPI 写了问答、反馈和文章管理三组接口，用 React 做了一个简单的对话页面，用户可以对回答点赞或点踩，反馈写入数据库用于后续改进。整个系统用 Docker Compose 在本机一键启动。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E005",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "缺少对系统整体架构、模块划分、接口/数据流设计的明确说明",
+     "缺少技术选型权衡、扩展性、可靠性、安全性等非功能设计证据",
+     "项目规模较小且为本机/演示环境，未体现生产系统或复杂系统设计经验"
+    ],
+    "questions_for_user": [
+     "你是否独立负责过某个系统的整体架构设计，并能说明模块划分、接口设计和数据流？",
+     "是否有系统设计文档、架构图或技术选型权衡记录可供参考？",
+     "这些项目是否部署到生产环境，是否处理过并发、可靠性或安全等非功能需求？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R017",
+    "text": "了解分布式系统、微服务架构、消息队列、缓存等后端核心技术",
+    "category": "technical_skill",
+    "importance": "required",
+    "source_quote": "了解分布式系统、微服务架构、消息队列、缓存等后端核心技术",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选展示了 FastAPI 后端接口开发与 Docker Compose 单机部署，属于后端开发的部分相关经历；但未提供分布式系统、微服务架构、消息队列或缓存等核心技术的了解或使用证据。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我用 FastAPI 写了问答、反馈和文章管理三组接口，用 React 做了一个简单的对话页面，用户可以对回答点赞或点踩，反馈写入数据库用于后续改进。整个系统用 Docker Compose 在本机一键启动。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "分布式系统的了解或实践证据",
+     "微服务架构的了解或实践证据",
+     "消息队列的了解或使用证据",
+     "缓存的了解或使用证据",
+     "生产环境或一定规模系统下的后端核心技术经验"
+    ],
+    "questions_for_user": [
+     "你是否了解或实践过微服务拆分、服务发现、配置中心等微服务相关技术？",
+     "你是否使用过消息队列（如 Kafka、RabbitMQ）或缓存（如 Redis），用于什么场景？",
+     "你的后端经验是否涉及分布式部署、服务间通信或多节点系统，而非仅本机 Docker Compose？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R018",
+    "text": "对 AI 前沿技术有浓厚兴趣",
+    "category": "other",
+    "importance": "required",
+    "source_quote": "对 AI 前沿技术有浓厚兴趣",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选显示本人动手搭建 RAG 问答链路和基于 LangGraph 的工具调用 Agent，能部分说明对当代 AI 应用技术的投入；但未直接证明“浓厚兴趣”或持续关注 AI 前沿。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我为一个示例电商客服场景搭建了 RAG 问答链路：把 320 篇帮助中心文章按标题切分成片段，用开源中文向量模型编码后存入 PostgreSQL 的 pgvector，回答时先检索最相关的 5 个片段，再交给大模型生成带引用的回答。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E003",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未明确说明对 AI 前沿技术有浓厚兴趣或持续跟踪相关进展",
+     "未区分这些 AI 项目是自主兴趣驱动、课程要求还是工作任务",
+     "未提供跟踪前沿论文、模型发布或技术社区动态等证据"
+    ],
+    "questions_for_user": [
+     "这些 RAG/Agent 项目是您自主发起还是课程/工作任务？",
+     "您是否有持续关注 AI 前沿论文、模型发布或技术社区的习惯？能否举例？",
+     "是否还有其他个人探索 AI 前沿技术的经历？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R019",
+    "text": "愿意主动探索AI在业务场景的创新应用",
+    "category": "other",
+    "importance": "required",
+    "source_quote": "愿意主动探索AI在业务场景的创新应用",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选以个人行动在电商客服、销售数据分析等业务场景搭建 RAG 问答与数据分析 Agent，直接体现主动探索 AI 业务应用；要求未限定生产环境。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我为一个示例电商客服场景搭建了 RAG 问答链路：把 320 篇帮助中心文章按标题切分成片段，用开源中文向量模型编码后存入 PostgreSQL 的 pgvector，回答时先检索最相关的 5 个片段，再交给大模型生成带引用的回答。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E002",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R020",
+    "text": "具备良好的沟通协作能力",
+    "category": "other",
+    "importance": "required",
+    "source_quote": "具备良好的沟通协作与问题解决能力",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "E005 显示本人与组员共同完成看板并承担分工，能部分支持团队协作；但未明确体现沟通行为、沟通效果及“良好”程度。",
+    "evidence": [
+     {
+      "candidate_id": "E005",
+      "quote": "我和组员一起用 Power BI 做了销售分析看板，我负责其中的地区销售和复购率两个页面，并写了计算复购率的 DAX 度量。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 分析看板",
+      "source": "sales_dashboard.md",
+      "line_start": 14,
+      "line_end": 16,
+      "section_id": "f8445e382832fa57",
+      "chunk_id": "bd437a9281480634",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "沟通能力的明确证据（如跨角色协调、汇报、讨论、解决分歧等）",
+     "协作达到“良好”水平的证据",
+     "复杂或生产环境中的沟通协作表现"
+    ],
+    "questions_for_user": [
+     "是否有与组员、产品/业务方或其他角色沟通协调的具体事例？",
+     "在团队项目中是否负责过需求对齐、任务协调、汇报或冲突处理？",
+     "是否有他人反馈或结果能说明沟通协作达到“良好”？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R021",
+    "text": "具备良好的问题解决能力",
+    "category": "other",
+    "importance": "required",
+    "source_quote": "具备良好的沟通协作与问题解决能力",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "E001 显示本人主动设计 SQL 工具防护，并在查询出错时将错误交回模型重写，且有纠错重试后的结果指标；E005 也显示本人处理数据清洗中的重复订单和缺失字段，能直接支持问题解决能力。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E001",
+      "quote": "结果：在 30 个自建的业务问题上，Agent 一次给出正确答案的有 24 个，加上一次纠错重试后为 27 个。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E005",
+      "quote": "并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本，处理了重复订单和缺失的地区字段。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R022",
+    "text": "有较强的责任心",
+    "category": "other",
+    "importance": "required",
+    "source_quote": "有较强的责任心",
+    "verdict": "insufficient",
+    "processing_status": "ok",
+    "reason": "候选章节均为项目技术实现与结果描述，没有任何关于工作态度、责任担当、承诺兑现或他人评价的证据，因此无法判断“较强的责任心”这一程度性要求。E002 的端到端交付与测试、E005 的可重复运行脚本只能说明任务完成情况，不能等同于责任心证据。",
+    "evidence": [
+     {
+      "candidate_id": "E002",
+      "quote": "结果：完成可演示的端到端系统，接口有 41 项 pytest 测试。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E005",
+      "quote": "结果：装载约 12 万条示例订单数据，脚本可以重复运行。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "缺少对责任心/担当的具体事例描述（如主动承担、长期维护、按时交付压力下的处理）",
+     "缺少他人评价、绩效反馈或责任范围的说明",
+     "未体现“较强”这一程度限定"
+    ],
+    "questions_for_user": [
+     "你是否有主动承担额外任务、在截止期限前独立推进并交付的具体事例？",
+     "是否有他人（导师、组长、同事）对你可靠性与责任心的评价或反馈？",
+     "在项目中你是否负责长期维护、问题排查或对外承诺交付的部分？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R023",
+    "text": "能高效配合团队完成项目交付",
+    "category": "other",
+    "importance": "required",
+    "source_quote": "能高效配合团队完成项目交付",
+    "verdict": "insufficient",
+    "processing_status": "ok",
+    "reason": "当前检索资料声明为虚构演示数据，未提供可核验的真实个人团队协作交付证据；E003 虽描述与组员合作完成看板，但结果标注虚构，且未体现“高效”交付条件。",
+    "evidence": [
+     {
+      "candidate_id": "E004",
+      "quote": "本文件是公开演示用的虚构候选人资料，不对应任何真实的人。",
+      "project": "个人基本信息（虚构演示数据）",
+      "section": "个人基本信息（虚构演示数据）",
+      "source": "profile.md",
+      "line_start": 2,
+      "line_end": 4,
+      "section_id": "80e70ea0eb293ff4",
+      "chunk_id": "b57e3a98980b317f",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E003",
+      "quote": "我和组员一起用 Power BI 做了销售分析看板，我负责其中的地区销售和复购率两个页面，并写了计算复购率的 DAX 度量。\n结果：小组作业获得 A 等级（虚构）。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 分析看板",
+      "source": "sales_dashboard.md",
+      "line_start": 14,
+      "line_end": 16,
+      "section_id": "f8445e382832fa57",
+      "chunk_id": "bd437a9281480634",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "真实可核验的团队项目交付经历",
+     "高效配合团队的具体证据（如交付周期、协作机制、按时交付等）"
+    ],
+    "questions_for_user": [
+     "是否有真实（非虚构演示）的团队项目交付经历？",
+     "能否说明在团队交付中的具体角色、交付周期以及体现高效协作的事实？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R024",
+    "text": "有全栈项目经验（如独立开发过 Web 应用 / SaaS 产品 / AI 应用平台等）",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "有全栈项目经验（如独立开发过 Web 应用 / SaaS 产品 / AI 应用平台等）",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选 E001 明确记录本人用 FastAPI 写后端接口、用 React 做前端对话页面，并完成可演示的端到端系统，属于全栈 Web/AI 应用项目经验。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我用 FastAPI 写了问答、反馈和文章管理三组接口，用 React 做了一个简单的对话页面，用户可以对回答点赞或点踩，反馈写入数据库用于后续改进。整个系统用 Docker Compose 在本机一键启动。\n结果：完成可演示的端到端系统，接口有 41 项 pytest 测试。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R025",
+    "text": "具备模型算法调优经验",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "具备模型算法调优经验",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选明确记载本人负责训练脚本与评估，并使用验证集选择学习率和训练轮数，属于模型调优的个人实践。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我在一个 10 类中文新闻数据集上，比较了 TextCNN 和微调 BERT 两种方法。我负责数据预处理、训练脚本和评估，用验证集选择学习率和训练轮数。",
+      "project": "中文新闻文本分类",
+      "section": "我的工作 模型微调与对比",
+      "source": "text_classification.md",
+      "line_start": 9,
+      "line_end": 11,
+      "section_id": "c6bdbac8e86a18ae",
+      "chunk_id": "8a13788990ce3282",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R026",
+    "text": "具备个人项目",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "个人项目",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选提供本人以第一人称完成并交付项目的明确证据，覆盖“具备个人项目”的要求。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我用 FastAPI 写了问答、反馈和文章管理三组接口，用 React 做了一个简单的对话页面，用户可以对回答点赞或点踩，反馈写入数据库用于后续改进。整个系统用 Docker Compose 在本机一键启动。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E004",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R027",
+    "text": "具备开源项目",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "开源项目",
+    "verdict": "insufficient",
+    "processing_status": "ok",
+    "reason": "当前检索资料只描述了个人项目和使用开源工具/模型，未提供候选人公开发布或维护开源项目的证据；使用开源组件不等同于具备开源项目。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "整个系统用 Docker Compose 在本机一键启动。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E003",
+      "quote": "用开源中文向量模型编码后存入 PostgreSQL 的 pgvector",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "是否将项目代码公开发布到开源平台",
+     "是否采用开源许可证",
+     "是否有公开的 issue、PR、维护或社区贡献记录",
+     "开源项目是否为本人主导或核心贡献"
+    ],
+    "questions_for_user": [
+     "这些项目是否有公开代码仓库链接？",
+     "是否采用开源许可证并公开维护？",
+     "是否有面向社区的 issue、PR 或贡献记录？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R028",
+    "text": "具备成熟业务系统开发经验",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "成熟业务系统开发经验",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选提供了个人开发端到端 RAG 系统和电商数据仓库建模的明确行动，但均为本机演示、示例数据或项目作业，未证明属于成熟业务系统开发。",
+    "evidence": [
+     {
+      "candidate_id": "E002",
+      "quote": "我用 FastAPI 写了问答、反馈和文章管理三组接口，用 React 做了一个简单的对话页面，用户可以对回答点赞或点踩，反馈写入数据库用于后续改进。整个系统用 Docker Compose 在本机一键启动。\n结果：完成可演示的端到端系统，接口有 41 项 pytest 测试。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E004",
+      "quote": "我负责设计星型模型：一张订单事实表和商品、客户、日期三张维度表，并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本，处理了重复订单和缺失的地区字段。\n结果：装载约 12 万条示例订单数据，脚本可以重复运行。",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "成熟业务系统或生产环境中的开发经历",
+     "商业项目生命周期、上线运行或真实业务规模证据",
+     "个人在成熟业务系统中的职责范围与贡献"
+    ],
+    "questions_for_user": [
+     "是否有商业或生产环境业务系统的开发经历？",
+     "若有，系统是否上线运行、服务真实用户，你负责哪些模块？",
+     "这些候选中的系统或数据仓库是个人演示、课程作业还是公司项目？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R029",
+    "text": "有RAG使用经验",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "有RAG、主流Agent框架（如LangGraph / AutoGen 等）使用经验",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选 E001 明确为本人搭建了 RAG 问答链路，包含文章切分、向量编码、pgvector 检索、大模型生成带引用回答，覆盖“有 RAG 使用经验”的要求。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我为一个示例电商客服场景搭建了 RAG 问答链路：把 320 篇帮助中心文章按标题切分成片段，用开源中文向量模型编码后存入 PostgreSQL 的 pgvector，回答时先检索最相关的 5 个片段，再交给大模型生成带引用的回答。我用 LangChain 封装了模型调用和检索器，并要求每个回答都列出引用的文章编号。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R030",
+    "text": "有主流Agent框架使用经验（如LangGraph / AutoGen 等）",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "有RAG、主流Agent框架（如LangGraph / AutoGen 等）使用经验",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选人明确使用 LangGraph 搭建了工具调用 Agent，提供了主流 Agent 框架的实际项目使用证据。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R031",
+    "text": "有复杂Agent构建经验",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "有复杂Agent构建经验",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选人明确自述本人用 LangGraph 搭建了包含多工具调用、SQL 限制和错误重写的 Agent，直接覆盖复杂 Agent 构建经验。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [],
+    "errors": []
+   },
+   {
+    "requirement_id": "R032",
+    "text": "能够系统性评估质量、持续改进效果、优化应用性能/成本",
+    "category": "technical_skill",
+    "importance": "preferred",
+    "source_quote": "能够系统性评估质量、持续改进效果、优化应用性能/成本",
+    "verdict": "related",
+    "processing_status": "ok",
+    "reason": "候选展示了自建测试集上的检索/问答效果指标、重试纠错和反馈入库，属于质量评估与改进的部分证据；但未体现系统性质量评估闭环、持续改进效果验证，也未涉及应用性能或成本优化。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "结果：在自建的 60 条测试问题上，检索前 5 名命中正确文章的比例为 52/60。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E002",
+      "quote": "结果：在 30 个自建的业务问题上，Agent 一次给出正确答案的有 24 个，加上一次纠错重试后为 27 个。",
+      "project": "数据分析 Agent：自然语言查询销售数据",
+      "section": "我的工作 工具调用 Agent 设计",
+      "source": "data_agent.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "bdbeaeb4643d7bfd",
+      "chunk_id": "e3fa94283fb1a0af",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E005",
+      "quote": "用户可以对回答点赞或点踩，反馈写入数据库用于后续改进。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E005",
+      "quote": "结果：完成可演示的端到端系统，接口有 41 项 pytest 测试。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "未展示系统性质量评估框架或闭环（如基线、回归评估、监控指标、问题跟踪）",
+     "未展示持续改进前后的效果对比或验证结果",
+     "未展示应用性能或成本优化的行动与量化结果"
+    ],
+    "questions_for_user": [
+     "是否有生产环境或持续性的质量监控、回归评估与问题闭环案例？",
+     "是否有优化前后可对比的质量、性能或成本指标数据？",
+     "反馈数据是否实际用于改进，并有改进效果验证？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R033",
+    "text": "参与过开源项目",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "参与过开源项目",
+    "verdict": "insufficient",
+    "processing_status": "ok",
+    "reason": "当前检索资料未提供参与开源项目的证据。E003 仅说明使用开源向量模型，属于使用开源工具，不等同于参与开源项目。",
+    "evidence": [
+     {
+      "candidate_id": "E003",
+      "quote": "用开源中文向量模型编码后存入 PostgreSQL 的 pgvector",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [
+     "参与开源项目的经历",
+     "在开源项目中的具体角色或个人贡献",
+     "可核验的贡献记录，如代码、文档、issue 或 PR"
+    ],
+    "questions_for_user": [
+     "你是否曾参与开源项目，并实际提交过代码、文档、issue 或 PR？",
+     "你在开源项目中承担了什么具体角色和个人贡献？",
+     "是否有可核验的公开贡献记录或项目名称可供确认？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R034",
+    "text": "有技术博客",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "有技术博客",
+    "verdict": "insufficient",
+    "processing_status": "ok",
+    "reason": "当前检索资料未提供候选拥有或运营技术博客的证据；所列内容均为项目、技能自述，未提及博客写作或发布。",
+    "evidence": [],
+    "missing_aspects": [
+     "是否有本人创建或持续更新的技术博客",
+     "技术博客的链接或平台",
+     "博客内容是否为本人原创技术文章"
+    ],
+    "questions_for_user": [
+     "你是否拥有技术博客？如有，请提供博客链接和平台。",
+     "博客中的技术文章是否由你本人撰写并发布？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R035",
+    "text": "有技术作品",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "有技术作品",
+    "verdict": "direct",
+    "processing_status": "ok",
+    "reason": "候选章节显示候选人本人完成了多个可运行、可演示的技术作品（端到端 RAG 问答系统、RAG 检索链路、数据仓库建模与装载脚本），并非只有技能关键词或计划；有明确个人行动与产出证据，覆盖“有技术作品”要求。",
+    "evidence": [
+     {
+      "candidate_id": "E001",
+      "quote": "结果：完成可演示的端到端系统，接口有 41 项 pytest 测试。",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 后端接口与前端页面",
+      "source": "rag_support_assistant.md",
+      "line_start": 15,
+      "line_end": 17,
+      "section_id": "0566d0643cfaecb7",
+      "chunk_id": "4e65f9f9e386af0a",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E004",
+      "quote": "我为一个示例电商客服场景搭建了 RAG 问答链路",
+      "project": "智能客服 RAG 问答助手",
+      "section": "我的工作 检索增强问答链路",
+      "source": "rag_support_assistant.md",
+      "line_start": 10,
+      "line_end": 13,
+      "section_id": "9449dc7c39d9def8",
+      "chunk_id": "5d025374f43c4ab1",
+      "evidence_lines": []
+     },
+     {
+      "candidate_id": "E005",
+      "quote": "我负责设计星型模型：一张订单事实表和商品、客户、日期三张维度表，并用 SQL 写了从原始订单数据到事实表的清洗和装载脚本",
+      "project": "电商销售数据仓库与分析看板",
+      "section": "我的工作 数据仓库建模",
+      "source": "sales_dashboard.md",
+      "line_start": 9,
+      "line_end": 12,
+      "section_id": "444b297baf649a5e",
+      "chunk_id": "25bd1c079a95f8a7",
+      "evidence_lines": []
+     }
+    ],
+    "missing_aspects": [],
+    "questions_for_user": [
+     "这些技术作品是否有可公开访问的代码仓库或演示链接？",
+     "作品是以个人独立完成还是团队协作方式完成，个人负责范围分别是什么？"
+    ],
+    "errors": []
+   },
+   {
+    "requirement_id": "R036",
+    "text": "在技术竞赛、开源社区中有突出表现",
+    "category": "experience",
+    "importance": "preferred",
+    "source_quote": "在技术竞赛、开源社区中有突出表现",
+    "verdict": "insufficient",
+    "processing_status": "ok",
+    "reason": "当前候选章节只涉及个人项目开发、工具使用自述和虚构资料声明，未提供参加技术竞赛或参与开源社区的任何证据，无法判断是否有突出表现。",
+    "evidence": [],
+    "missing_aspects": [
+     "技术竞赛的参与记录、名次或奖项",
+     "开源社区的贡献证据（如提交、维护项目、社区角色等）",
+     "能体现“突出表现”的认可或成果"
+    ],
+    "questions_for_user": [
+     "你是否参加过编程/算法/数据类等技术竞赛？如果有，请说明赛事名称、个人角色和成绩。",
+     "你是否有开源社区经历？例如提交 PR、维护仓库、Issue 讨论或社区组织角色，可提供链接或说明。"
+    ],
+    "errors": []
+   }
+  ]
+ }
+}

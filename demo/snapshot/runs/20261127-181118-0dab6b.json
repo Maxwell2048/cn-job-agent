@@ -1,0 +1,1086 @@
+{
+ "id": "20261127-181118-0dab6b",
+ "status": "done",
+ "decision": "pass",
+ "score": 61,
+ "label": "可以投",
+ "required_covered": 10,
+ "required_total": 11,
+ "counts": {
+  "direct": 6,
+  "related": 13,
+  "insufficient": 2,
+  "error": 0
+ },
+ "started_at": "2026-11-27T10:11:18.723306+00:00",
+ "finished_at": "2026-11-27T10:12:06.056267+00:00",
+ "posting_id": 1,
+ "posting_title": "Agent开发工程师",
+ "screening": {
+  "decision": "pass",
+  "flags": [
+   {
+    "code": "city",
+    "severity": "info",
+    "message": "工作城市 深圳、北京、上海、广州、成都 在你的目标城市里",
+    "quote": ""
+   },
+   {
+    "code": "cohort_window",
+    "severity": "info",
+    "message": "2027 校招（含补录、春招）：符合。学位证日期 2026-06 在窗口 2026-01-01 至 2027-12-31内",
+    "quote": ""
+   }
+  ]
+ },
+ "summary": {
+  "requirements": 21,
+  "counts": {
+   "direct": 6,
+   "related": 13,
+   "insufficient": 2,
+   "error": 0
+  },
+  "by_importance": {
+   "unspecified": {
+    "direct": 0,
+    "related": 4,
+    "insufficient": 0,
+    "error": 0
+   },
+   "required": {
+    "direct": 4,
+    "related": 6,
+    "insufficient": 1,
+    "error": 0
+   },
+   "preferred": {
+    "direct": 2,
+    "related": 3,
+    "insufficient": 1,
+    "error": 0
+   }
+  },
+  "score": 61,
+  "label": "可以投",
+  "required_covered": 10,
+  "required_total": 11,
+  "condition_insufficient_share": 0.118,
+  "formula": "加权平均：direct=1、related=0.5、insufficient=0；必需×2、未注明×1、优先×0.5；处理失败的要求不计入"
+ },
+ "trace": [
+  {
+   "node": "load_posting",
+   "seconds": 0.01
+  },
+  {
+   "node": "extract",
+   "seconds": 28.85
+  },
+  {
+   "node": "rule_screen",
+   "seconds": 0.0
+  },
+  {
+   "node": "decide",
+   "seconds": 0.0
+  },
+  {
+   "node": "match_one",
+   "requirement": "R002",
+   "seconds": 5.96
+  },
+  {
+   "node": "match_one",
+   "requirement": "R003",
+   "seconds": 6.43
+  },
+  {
+   "node": "match_one",
+   "requirement": "R004",
+   "seconds": 5.84
+  },
+  {
+   "node": "match_one",
+   "requirement": "R005",
+   "seconds": 5.23
+  },
+  {
+   "node": "match_one",
+   "requirement": "R006",
+   "seconds": 5.97
+  },
+  {
+   "node": "match_one",
+   "requirement": "R007",
+   "seconds": 3.19
+  },
+  {
+   "node": "match_one",
+   "requirement": "R008",
+   "seconds": 7.73
+  },
+  {
+   "node": "match_one",
+   "requirement": "R009",
+   "seconds": 7.27
+  },
+  {
+   "node": "match_one",
+   "requirement": "R010",
+   "seconds": 5.65
+  },
+  {
+   "node": "match_one",
+   "requirement": "R011",
+   "seconds": 2.38
+  },
+  {
+   "node": "match_one",
+   "requirement": "R012",
+   "seconds": 7.59
+  },
+  {
+   "node": "match_one",
+   "requirement": "R013",
+   "seconds": 4.58
+  },
+  {
+   "node": "match_one",
+   "requirement": "R014",
+   "seconds": 3.51
+  },
+  {
+   "node": "match_one",
+   "requirement": "R015",
+   "seconds": 9.45
+  },
+  {
+   "node": "match_one",
+   "requirement": "R016",
+   "seconds": 6.02
+  },
+  {
+   "node": "match_one",
+   "requirement": "R017",
+   "seconds": 5.34
+  },
+  {
+   "node": "match_one",
+   "requirement": "R018",
+   "seconds": 8.91
+  },
+  {
+   "node": "match_one",
+   "requirement": "R019",
+   "seconds": 2.29
+  },
+  {
+   "node": "match_one",
+   "requirement": "R020",
+   "seconds": 3.53
+  },
+  {
+   "node": "match_one",
+   "requirement": "R021",
+   "seconds": 2.55
+  },
+  {
+   "node": "match_one",
+   "requirement": "R022",
+   "seconds": 3.7
+  },
+  {
+   "node": "summarize",
+   "seconds": 0.0
+  },
+  {
+   "node": "finalize",
+   "seconds": 0.06
+  }
+ ],
+ "versions": {
+  "options": {
+   "force": false,
+   "auto_approve": true
+  },
+  "graph": "2",
+  "extraction_prompt": "5",
+  "judgment_prompt": "3",
+  "model": "deepseek-flash",
+  "provider": "deepseek"
+ },
+ "error": "",
+ "has_report": true,
+ "matches": [
+  {
+   "requirement_id": "R002",
+   "text": "负责智能Agent系统的架构设计与开发，包括多Agent协作框架、任务规划与调度、工具调用与执行引擎等核心模块建设",
+   "category": "responsibility",
+   "importance": "unspecified",
+   "source_quote": "负责智能Agent系统的架构设计与开发，包括多Agent协作框架、任务规划与调度、工具调用与执行引擎等核心模块建设",
+   "verdict": "related",
+   "processing_status": "ok",
+   "reason": "候选显示本人用 LangGraph 搭建了单 Agent 并设计了工具调用与错误重试，但未体现多 Agent 协作框架、任务规划与调度、系统级架构设计等核心模块建设。",
+   "evidence": [
+    {
+     "candidate_id": "E001",
+     "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [
+    "多Agent协作框架的设计与开发证据",
+    "任务规划与调度模块证据",
+    "智能Agent系统的架构设计及核心模块建设证据",
+    "生产级系统而非个人项目环境的证据"
+   ],
+   "questions_for_user": [
+    "你是否实际设计或开发过多个Agent协作的框架？请说明你的个人职责。",
+    "是否有任务规划、任务调度或执行引擎相关的实现经验？",
+    "该Agent项目是个人演示项目还是生产系统？你在架构设计中承担了哪些核心模块？"
+   ],
+   "errors": []
+  },
+  {
+   "requirement_id": "R003",
+   "text": "设计并实现Agent的记忆系统、推理链路和决策机制，提升Agent在复杂业务场景下的自主性与可靠性",
+   "category": "responsibility",
+   "importance": "unspecified",
+   "source_quote": "设计并实现Agent的记忆系统、推理链路和决策机制，提升Agent在复杂业务场景下的自主性与可靠性",
+   "verdict": "related",
+   "processing_status": "ok",
+   "reason": "E001 显示本人用 LangGraph 设计并实现工具调用 Agent，包含工具选择、SQL 只读限制和错误回写重试，并自建 30 个业务问题评估可靠性，属于推理链路和决策/纠错机制的部分相关证据；但未明确设计实现 Agent 记忆系统，也未证明用于真实复杂业务场景或生产级可靠性。",
+   "evidence": [
+    {
+     "candidate_id": "E001",
+     "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E001",
+     "quote": "结果：在 30 个自建的业务问题上，Agent 一次给出正确答案的有 24 个，加上一次纠错重试后为 27 个。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [
+    "未提供设计并实现 Agent 记忆系统的证据",
+    "未明确说明推理链路和决策机制的具体架构与个人实现范围",
+    "30 个业务问题为自建评估，未证明面向真实复杂业务场景",
+    "未提供生产环境中的自主性或可靠性验证"
+   ],
+   "questions_for_user": [
+    "你是否设计并实现过 Agent 的短期/长期记忆、状态持久化或记忆检索机制？请说明具体方案与个人职责。",
+    "该 Agent 是否在真实复杂业务场景中运行？30 个业务问题来自真实业务还是自建示例？",
+    "推理链路、工具选择与决策机制由你本人设计实现了哪些部分？有无可靠性指标或线上监控结果？"
+   ],
+   "errors": []
+  },
+  {
+   "requirement_id": "R004",
+   "text": "搭建Agent应用的评测与质量保障体系，建立系统性的效果评估、持续优化与性能、成本管控机制",
+   "category": "responsibility",
+   "importance": "unspecified",
+   "source_quote": "搭建Agent应用的评测与质量保障体系，建立系统性的效果评估、持续优化与性能、成本管控机制",
+   "verdict": "related",
+   "processing_status": "ok",
+   "reason": "候选有 Agent 自建问题集准确率统计、RAG 检索命中评估、用户反馈与接口测试，属于局部效果验证；但未体现系统性评测与质量保障体系，也未覆盖持续优化、性能和成本管控机制。",
+   "evidence": [
+    {
+     "candidate_id": "E001",
+     "quote": "结果：在 30 个自建的业务问题上，Agent 一次给出正确答案的有 24 个，加上一次纠错重试后为 27 个。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E003",
+     "quote": "结果：在自建的 60 条测试问题上，检索前 5 名命中正确文章的比例为 52/60。",
+     "project": "智能客服 RAG 问答助手",
+     "section": "我的工作 检索增强问答链路",
+     "source": "rag_support_assistant.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "9449dc7c39d9def8",
+     "chunk_id": "5d025374f43c4ab1",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E004",
+     "quote": "用户可以对回答点赞或点踩，反馈写入数据库用于后续改进。",
+     "project": "智能客服 RAG 问答助手",
+     "section": "我的工作 后端接口与前端页面",
+     "source": "rag_support_assistant.md",
+     "line_start": 15,
+     "line_end": 17,
+     "section_id": "0566d0643cfaecb7",
+     "chunk_id": "4e65f9f9e386af0a",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E004",
+     "quote": "结果：完成可演示的端到端系统，接口有 41 项 pytest 测试。",
+     "project": "智能客服 RAG 问答助手",
+     "section": "我的工作 后端接口与前端页面",
+     "source": "rag_support_assistant.md",
+     "line_start": 15,
+     "line_end": 17,
+     "section_id": "0566d0643cfaecb7",
+     "chunk_id": "4e65f9f9e386af0a",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [
+    "系统性评测与质量保障体系",
+    "持续优化机制",
+    "性能管控机制",
+    "成本管控机制",
+    "生产环境或规模化评测证据"
+   ],
+   "questions_for_user": [
+    "你是否主导设计过 Agent 应用的评测集、评估指标和回归测试流程？",
+    "是否有基于线上反馈或监控数据持续优化 Agent 效果的闭环机制？",
+    "是否负责过 Agent 应用的性能优化或 token/调用成本管控？"
+   ],
+   "errors": []
+  },
+  {
+   "requirement_id": "R005",
+   "text": "跟踪Agent技术前沿发展，结合业务需求进行技术预研与落地实践",
+   "category": "responsibility",
+   "importance": "unspecified",
+   "source_quote": "跟踪Agent技术前沿发展，结合业务需求进行技术预研与落地实践",
+   "verdict": "related",
+   "processing_status": "ok",
+   "reason": "候选提供了本人用 LangGraph 设计并实现工具调用 Agent 的项目证据，包含权限限制、错误恢复和自建业务问题评估，属于 Agent 落地实践；但未明确体现持续跟踪 Agent 技术前沿、开展技术预研，以及预研与业务需求之间的结合过程。",
+   "evidence": [
+    {
+     "candidate_id": "E001",
+     "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E001",
+     "quote": "结果：在 30 个自建的业务问题上，Agent 一次给出正确答案的有 24 个，加上一次纠错重试后为 27 个。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [
+    "跟踪 Agent 技术前沿发展的具体活动或证据",
+    "结合业务需求开展技术预研的过程与产出",
+    "预研成果向实际落地转化或评估的证据"
+   ],
+   "questions_for_user": [
+    "你是否有持续跟踪 Agent 前沿技术（如论文、框架更新、行业方案）的具体记录或产出？",
+    "这个数据分析 Agent 项目是否源于明确的业务需求？需求来源和预研评估过程能否说明？",
+    "是否有将 Agent 新技术预研结果落地到实际项目并进行效果评估的经历？"
+   ],
+   "errors": []
+  },
+  {
+   "requirement_id": "R006",
+   "text": "熟练掌握至少一门主流编程语言（Python/TypeScript/Go 等）",
+   "category": "technical_skill",
+   "importance": "required",
+   "source_quote": "熟练掌握至少一门主流编程语言（Python/TypeScript/Go 等）",
+   "verdict": "direct",
+   "processing_status": "ok",
+   "reason": "E001 本人自述 Python 熟练；E002 显示本人用 FastAPI 实现后端接口并配有 pytest 测试，支持至少一门主流编程语言的熟练使用。",
+   "evidence": [
+    {
+     "candidate_id": "E001",
+     "quote": "- Python（熟练）、SQL（熟练）、TypeScript（了解）。",
+     "project": "个人基本信息（虚构演示数据）",
+     "section": "编程语言与工具 Languages and Tools",
+     "source": "profile.md",
+     "line_start": 15,
+     "line_end": 16,
+     "section_id": "53cf86b24af2519b",
+     "chunk_id": "f1bf16de745d393b",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E002",
+     "quote": "我用 FastAPI 写了问答、反馈和文章管理三组接口",
+     "project": "智能客服 RAG 问答助手",
+     "section": "我的工作 后端接口与前端页面",
+     "source": "rag_support_assistant.md",
+     "line_start": 15,
+     "line_end": 17,
+     "section_id": "0566d0643cfaecb7",
+     "chunk_id": "4e65f9f9e386af0a",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [],
+   "questions_for_user": [],
+   "errors": []
+  },
+  {
+   "requirement_id": "R007",
+   "text": "具备扎实的数据结构与算法基础",
+   "category": "technical_skill",
+   "importance": "required",
+   "source_quote": "具备扎实的数据结构与算法基础",
+   "verdict": "insufficient",
+   "processing_status": "ok",
+   "reason": "当前检索资料仅提供编程语言、RAG、数仓、后端和Agent项目证据，未出现数据结构与算法相关的学习、实现或应用证据，无法判断是否达到“扎实”要求。",
+   "evidence": [],
+   "missing_aspects": [
+    "未提供数据结构与算法基础的学习或应用证据",
+    "未提供证明“扎实”熟练度的项目、竞赛、课程成绩或工程案例",
+    "未提供算法设计、复杂度分析或性能优化等具体行动证据"
+   ],
+   "questions_for_user": [
+    "是否有数据结构与算法相关课程、成绩或系统学习经历？",
+    "是否在项目、竞赛或工作中独立实现过算法模块或进行过复杂度/性能优化？",
+    "有哪些材料可以证明数据结构与算法达到“扎实”水平？"
+   ],
+   "errors": []
+  },
+  {
+   "requirement_id": "R008",
+   "text": "代码质量意识强",
+   "category": "other",
+   "importance": "required",
+   "source_quote": "代码质量意识强",
+   "verdict": "direct",
+   "processing_status": "ok",
+   "reason": "候选显示本人实现后端接口并配有41项pytest测试，还在Agent中对SQL工具做只读、返回行数限制及错误回传重试，体现主动测试和防护性编码的代码质量意识。",
+   "evidence": [
+    {
+     "candidate_id": "E001",
+     "quote": "我用 FastAPI 写了问答、反馈和文章管理三组接口，用 React 做了一个简单的对话页面，用户可以对回答点赞或点踩，反馈写入数据库用于后续改进。整个系统用 Docker Compose 在本机一键启动。\n结果：完成可演示的端到端系统，接口有 41 项 pytest 测试。",
+     "project": "智能客服 RAG 问答助手",
+     "section": "我的工作 后端接口与前端页面",
+     "source": "rag_support_assistant.md",
+     "line_start": 15,
+     "line_end": 17,
+     "section_id": "0566d0643cfaecb7",
+     "chunk_id": "4e65f9f9e386af0a",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E003",
+     "quote": "我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [],
+   "questions_for_user": [],
+   "errors": []
+  },
+  {
+   "requirement_id": "R009",
+   "text": "深入理解Agent原理与架构，包括 Planning、Memory、Tool Use、Reflection等核心机制",
+   "category": "technical_skill",
+   "importance": "required",
+   "source_quote": "深入理解Agent原理与架构，包括 Planning、Memory、Tool Use、Reflection等核心机制",
+   "verdict": "related",
+   "processing_status": "ok",
+   "reason": "候选 E001 明确记录了本人用 LangGraph 搭建 Agent、接入三种工具，并处理查询错误重试，能支持 Tool Use 与部分错误恢复；但未明确覆盖 Planning、Memory、Reflection 等核心机制及“深入理解架构”的要求。",
+   "evidence": [
+    {
+     "candidate_id": "E001",
+     "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [
+    "当前候选未提供对 Agent 整体架构设计的深入理解证据",
+    "当前候选未明确覆盖 Planning 机制",
+    "当前候选未明确覆盖 Memory 机制",
+    "当前候选未明确覆盖 Reflection 机制",
+    "错误重试不等同于对 Reflection 机制的系统性实现或深入说明"
+   ],
+   "questions_for_user": [
+    "你是否在 Agent 项目中显式设计或实现过 Planning 模块？请说明具体方案与个人贡献。",
+    "你是否实现过 Memory 机制？例如短期对话记忆、长期记忆或检索式记忆，并如何管理？",
+    "你是否实现或评估过 Reflection 机制？例如自我 critique、错误反思、重试策略或结果校验？",
+    "你能否说明该 Agent 的整体架构及 Planning、Memory、Tool Use、Reflection 之间的设计取舍？"
+   ],
+   "errors": []
+  },
+  {
+   "requirement_id": "R010",
+   "text": "熟悉主流Agent开发框架（如 LangGraph、AutoGen、CrewAI、MetaGPT 等）",
+   "category": "technical_skill",
+   "importance": "required",
+   "source_quote": "熟悉主流Agent开发框架（如 LangGraph、AutoGen、CrewAI、MetaGPT 等）",
+   "verdict": "direct",
+   "processing_status": "ok",
+   "reason": "候选人自述用 LangGraph 亲自搭建了一个数据分析 Agent，实现三个工具调用、SQL 只读限制和错误回传重写，还给出 30 个自建业务问题的结果；LangGraph 属于要求列举的主流 Agent 框架，证明其具备实际开发经验，可判定为“熟悉”。",
+   "evidence": [
+    {
+     "candidate_id": "E002",
+     "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E002",
+     "quote": "我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [],
+   "questions_for_user": [],
+   "errors": []
+  },
+  {
+   "requirement_id": "R011",
+   "text": "有主流Agent开发框架的实际搭建经验",
+   "category": "experience",
+   "importance": "required",
+   "source_quote": "有实际搭建经验",
+   "verdict": "direct",
+   "processing_status": "ok",
+   "reason": "候选人明确说明本人使用 LangGraph 实际搭建了一个数据分析 Agent，覆盖主流 Agent 开发框架的实际搭建要求。",
+   "evidence": [
+    {
+     "candidate_id": "E001",
+     "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [],
+   "questions_for_user": [],
+   "errors": []
+  },
+  {
+   "requirement_id": "R012",
+   "text": "了解大模型基本原理",
+   "category": "technical_skill",
+   "importance": "required",
+   "source_quote": "了解大模型基本原理",
+   "verdict": "related",
+   "processing_status": "ok",
+   "reason": "有个人微调 BERT、使用 LangGraph 搭建模型工具调用 Agent 的经历，体现预训练模型微调和 LLM 应用经验；但未明确展示对“大模型基本原理”的系统理解，BERT 微调不等同于大模型原理，Agent 使用也可能是 API 层面的应用。",
+   "evidence": [
+    {
+     "candidate_id": "E002",
+     "quote": "我在一个 10 类中文新闻数据集上，比较了 TextCNN 和微调 BERT 两种方法。我负责数据预处理、训练脚本和评估，用验证集选择学习率和训练轮数。",
+     "project": "中文新闻文本分类",
+     "section": "我的工作 模型微调与对比",
+     "source": "text_classification.md",
+     "line_start": 9,
+     "line_end": 11,
+     "section_id": "c6bdbac8e86a18ae",
+     "chunk_id": "8a13788990ce3282",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E003",
+     "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [
+    "未明确覆盖大模型基本原理，如 Transformer 架构、注意力机制、预训练目标、解码机制等原理性知识",
+    "BERT 微调证据更偏向预训练语言模型的应用，不等同于大模型基本原理",
+    "LangGraph/工具调用证据可能主要是应用层使用，未说明是否理解底层大模型原理"
+   ],
+   "questions_for_user": [
+    "你是否系统学习过 Transformer/注意力机制、预训练与微调、token 与解码等大模型基本原理？",
+    "你微调 BERT 的工作是否包含对模型结构、预训练目标或训练机制的深入理解，而不只是调用训练脚本？",
+    "你在 LangGraph Agent 中使用的大模型，是否了解其推理/生成机制，还是主要调用现成 API？"
+   ],
+   "errors": []
+  },
+  {
+   "requirement_id": "R013",
+   "text": "熟悉Prompt Engineering技巧，能设计高质量的系统提示词与工具描述",
+   "category": "technical_skill",
+   "importance": "required",
+   "source_quote": "熟悉Prompt Engineering技巧，能设计高质量的系统提示词与工具描述",
+   "verdict": "related",
+   "processing_status": "ok",
+   "reason": "候选中有 Agent 工具约束、工具调用和让回答带引用的部分 prompt 设计痕迹，但未明确展示系统提示词设计、工具描述编写及“高质量”标准，熟练度也未得到直接验证。",
+   "evidence": [
+    {
+     "candidate_id": "E003",
+     "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E004",
+     "quote": "我用 LangChain 封装了模型调用和检索器，并要求每个回答都列出引用的文章编号。",
+     "project": "智能客服 RAG 问答助手",
+     "section": "我的工作 检索增强问答链路",
+     "source": "rag_support_assistant.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "9449dc7c39d9def8",
+     "chunk_id": "5d025374f43c4ab1",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E004",
+     "quote": "相关能力：RAG, LangChain, vector search, pgvector, PostgreSQL, prompt design, evaluation.",
+     "project": "智能客服 RAG 问答助手",
+     "section": "我的工作 检索增强问答链路",
+     "source": "rag_support_assistant.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "9449dc7c39d9def8",
+     "chunk_id": "5d025374f43c4ab1",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [
+    "未明确说明设计过系统提示词（system prompt）及其具体方法。",
+    "未明确展示工具描述（tool description）的编写与优化证据。",
+    "未提供“高质量”的评估标准、对比结果或实际效果证据。",
+    "未直接证明 Prompt Engineering 的熟练度。"
+   ],
+   "questions_for_user": [
+    "你是否独立编写或优化过系统提示词？请给出具体场景与迭代方法。",
+    "你是否编写过供模型调用的工具描述？能否说明如何定义参数、约束和失败处理？",
+    "是否有提示词质量评估、版本对比或线上效果数据？"
+   ],
+   "errors": []
+  },
+  {
+   "requirement_id": "R014",
+   "text": "对AI Agent技术有强烈兴趣并关注行业动态",
+   "category": "other",
+   "importance": "required",
+   "source_quote": "对AI Agent技术有强烈兴趣，关注行业动态",
+   "verdict": "related",
+   "processing_status": "ok",
+   "reason": "候选人显示了自行搭建 LangGraph 工具调用 Agent、并设计 Agent 输出解释的实践，可间接说明对 AI Agent 技术的投入与兴趣；但未提供关注行业动态（跟踪新模型/框架、资讯、社区、论文等）的任何证据，兴趣的持续性与主动性也无法核实。",
+   "evidence": [
+    {
+     "candidate_id": "E002",
+     "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E001",
+     "quote": "我让 Agent 在回答里说明用了哪条 SQL、查询到多少行数据，并用 pandas 和 matplotlib 生成折线图或柱状图，方便非技术人员核对结论。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 结果解释与可视化",
+     "source": "data_agent.md",
+     "line_start": 15,
+     "line_end": 17,
+     "section_id": "533b35d42869f4a4",
+     "chunk_id": "228f7abf21cec621",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [
+    "关注 AI Agent 行业动态的证据（如订阅技术资讯、参与社区、跟踪新模型或框架、阅读论文/博客等）",
+    "对 AI Agent 技术强烈兴趣的持续性或自驱性证据（如长期个人实验、主动学习记录）"
+   ],
+   "questions_for_user": [
+    "你平时通过哪些渠道跟踪 AI Agent 领域的最新进展（如论文、博客、社区、会议），频率如何？",
+    "除了项目需要外，是否有自发的 Agent 相关实验、学习笔记或技术分享可以补充？"
+   ],
+   "errors": []
+  },
+  {
+   "requirement_id": "R015",
+   "text": "具备独立调研与技术选型能力",
+   "category": "other",
+   "importance": "required",
+   "source_quote": "具备独立调研与技术选型能力",
+   "verdict": "related",
+   "processing_status": "ok",
+   "reason": "E001 显示本人比较了 TextCNN 与微调 BERT 并用验证集调参，E003 显示本人搭建 RAG 链路并采用向量模型、pgvector 和 LangChain；这些体现方法比较与技术落地，但未明确体现独立调研备选方案、制定选型标准并主导技术选型决策。",
+   "evidence": [
+    {
+     "candidate_id": "E001",
+     "quote": "我在一个 10 类中文新闻数据集上，比较了 TextCNN 和微调 BERT 两种方法。我负责数据预处理、训练脚本和评估，用验证集选择学习率和训练轮数。",
+     "project": "中文新闻文本分类",
+     "section": "我的工作 模型微调与对比",
+     "source": "text_classification.md",
+     "line_start": 9,
+     "line_end": 11,
+     "section_id": "c6bdbac8e86a18ae",
+     "chunk_id": "8a13788990ce3282",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E003",
+     "quote": "我为一个示例电商客服场景搭建了 RAG 问答链路：把 320 篇帮助中心文章按标题切分成片段，用开源中文向量模型编码后存入 PostgreSQL 的 pgvector，回答时先检索最相关的 5 个片段，再交给大模型生成带引用的回答。我用 LangChain 封装了模型调用和检索器，并要求每个回答都列出引用的文章编号。",
+     "project": "智能客服 RAG 问答助手",
+     "section": "我的工作 检索增强问答链路",
+     "source": "rag_support_assistant.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "9449dc7c39d9def8",
+     "chunk_id": "5d025374f43c4ab1",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [
+    "未明确说明独立调研备选方案的过程",
+    "未明确说明技术选型的评估维度、选型依据和最终决策",
+    "方法比较或技术栈使用不等同于完整的技术选型能力"
+   ],
+   "questions_for_user": [
+    "E001 中 TextCNN 与微调 BERT 的比较是否由你独立提出并最终据此选定方案？",
+    "E003 中向量模型、pgvector 和 LangChain 是否经过你独立调研与对比选型？当时有哪些备选方案和评估标准？",
+    "是否还有其他案例能证明你独立完成需求调研、方案评估并做出技术选型决策？"
+   ],
+   "errors": []
+  },
+  {
+   "requirement_id": "R016",
+   "text": "具备良好的系统思维和问题解决能力，能在复杂场景中设计可靠的Agent方案",
+   "category": "other",
+   "importance": "required",
+   "source_quote": "具备良好的系统思维和问题解决能力，能在复杂场景中设计可靠的Agent方案",
+   "verdict": "related",
+   "processing_status": "ok",
+   "reason": "E001显示本人实际设计并实现了一个带工具调用、只读约束和错误恢复的数据分析 Agent，具备一定的系统设计与问题解决证据；但其为小规模自建问题集上的项目验证，未明确覆盖“复杂场景”及生产环境下的可靠性要求，因此仅为部分支持。",
+   "evidence": [
+    {
+     "candidate_id": "E001",
+     "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [
+    "未明确证明场景的复杂性，如多系统集成、多轮复杂任务、生产约束或高异常流量",
+    "可靠性评估仅基于30个自建业务问题，且为项目验证而非生产环境验证",
+    "缺少在复杂场景中系统性分析问题、权衡方案并保障可靠性的完整证据"
+   ],
+   "questions_for_user": [
+    "是否有在生产或复杂业务场景中设计 Agent 方案的经历？",
+    "该数据分析 Agent 是否接入真实业务数据源，并处理过复杂权限、并发或异常流程？",
+    "除错误重试和只读限制外，是否还设计了监控、回滚、评估集或故障隔离等可靠性机制？"
+   ],
+   "errors": []
+  },
+  {
+   "requirement_id": "R017",
+   "text": "有Agent系统构建经验（如自主任务执行、多 Agent 协作、复杂工作流编排等）",
+   "category": "experience",
+   "importance": "preferred",
+   "source_quote": "有Agent系统构建经验（如自主任务执行、多 Agent 协作、复杂工作流编排等）",
+   "verdict": "direct",
+   "processing_status": "ok",
+   "reason": "候选人明确以本人行动使用 LangGraph 搭建数据分析 Agent，模型通过工具自主完成任务，并包含只读 SQL 限制与错误回交模型重写的自主纠错流程，覆盖 Agent 系统构建与自主任务执行的重要条件。",
+   "evidence": [
+    {
+     "candidate_id": "E001",
+     "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。我限制 SQL 工具只能执行 SELECT 语句并限制返回行数，防止误改数据；查询出错时把错误信息交回模型重写。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E001",
+     "quote": "结果：在 30 个自建的业务问题上，Agent 一次给出正确答案的有 24 个，加上一次纠错重试后为 27 个。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [],
+   "questions_for_user": [],
+   "errors": []
+  },
+  {
+   "requirement_id": "R018",
+   "text": "有Agent评测与质量体系建设经验，能系统性评估Agent效果并持续改进",
+   "category": "experience",
+   "importance": "preferred",
+   "source_quote": "有Agent评测与质量体系建设经验，能系统性评估Agent效果并持续改进",
+   "verdict": "related",
+   "processing_status": "ok",
+   "reason": "候选中有自建问题集评估 Agent 正确率、RAG 检索命中率及用户反馈/测试记录，属于部分相关的评测与质量保障证据；但未体现系统性质量体系建设，也未展示基于评测结果持续改进 Agent 的闭环。",
+   "evidence": [
+    {
+     "candidate_id": "E001",
+     "quote": "结果：在 30 个自建的业务问题上，Agent 一次给出正确答案的有 24 个，加上一次纠错重试后为 27 个。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E003",
+     "quote": "结果：在自建的 60 条测试问题上，检索前 5 名命中正确文章的比例为 52/60。",
+     "project": "智能客服 RAG 问答助手",
+     "section": "我的工作 检索增强问答链路",
+     "source": "rag_support_assistant.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "9449dc7c39d9def8",
+     "chunk_id": "5d025374f43c4ab1",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E004",
+     "quote": "用户可以对回答点赞或点踩，反馈写入数据库用于后续改进。",
+     "project": "智能客服 RAG 问答助手",
+     "section": "我的工作 后端接口与前端页面",
+     "source": "rag_support_assistant.md",
+     "line_start": 15,
+     "line_end": 17,
+     "section_id": "0566d0643cfaecb7",
+     "chunk_id": "4e65f9f9e386af0a",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [
+    "未体现Agent评测与质量体系的具体建设内容，如评测框架、指标体系、标注/回归规范",
+    "未体现系统性评估Agent整体效果的方法与覆盖范围",
+    "未提供基于评测结果持续改进Agent的闭环记录",
+    "评估规模较小且为自建/示例环境，非生产系统"
+   ],
+   "questions_for_user": [
+    "你是否设计或维护过Agent评测集、评测指标或评测框架？",
+    "是否有从badcase分析到Agent迭代改进的完整记录？",
+    "用户反馈和测试结果具体如何驱动Agent质量改进？",
+    "是否在生产环境中负责Agent效果评估与质量体系建设？"
+   ],
+   "errors": []
+  },
+  {
+   "requirement_id": "R019",
+   "text": "有RAG系统搭建经验",
+   "category": "experience",
+   "importance": "preferred",
+   "source_quote": "有RAG系统搭建经验",
+   "verdict": "direct",
+   "processing_status": "ok",
+   "reason": "候选人明确自述本人为示例电商客服场景搭建了RAG问答链路，并说明检索、向量存储与生成流程，覆盖“有RAG系统搭建经验”的要求。",
+   "evidence": [
+    {
+     "candidate_id": "E001",
+     "quote": "我为一个示例电商客服场景搭建了 RAG 问答链路：把 320 篇帮助中心文章按标题切分成片段，用开源中文向量模型编码后存入 PostgreSQL 的 pgvector，回答时先检索最相关的 5 个片段，再交给大模型生成带引用的回答。",
+     "project": "智能客服 RAG 问答助手",
+     "section": "我的工作 检索增强问答链路",
+     "source": "rag_support_assistant.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "9449dc7c39d9def8",
+     "chunk_id": "5d025374f43c4ab1",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [],
+   "questions_for_user": [],
+   "errors": []
+  },
+  {
+   "requirement_id": "R020",
+   "text": "了解向量检索、知识图谱等知识增强技术",
+   "category": "technical_skill",
+   "importance": "preferred",
+   "source_quote": "了解向量检索、知识图谱等知识增强技术",
+   "verdict": "related",
+   "processing_status": "ok",
+   "reason": "候选 E001 明确记录了本人搭建 RAG 链路并使用 pgvector 做向量检索，覆盖向量检索方向；但未提供知识图谱或其他知识增强技术的证据，故为部分相关。",
+   "evidence": [
+    {
+     "candidate_id": "E001",
+     "quote": "我为一个示例电商客服场景搭建了 RAG 问答链路：把 320 篇帮助中心文章按标题切分成片段，用开源中文向量模型编码后存入 PostgreSQL 的 pgvector，回答时先检索最相关的 5 个片段，再交给大模型生成带引用的回答。",
+     "project": "智能客服 RAG 问答助手",
+     "section": "我的工作 检索增强问答链路",
+     "source": "rag_support_assistant.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "9449dc7c39d9def8",
+     "chunk_id": "5d025374f43c4ab1",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [
+    "知识图谱相关技术的了解或实践证据",
+    "向量检索之外的其他知识增强技术证据"
+   ],
+   "questions_for_user": [
+    "你是否接触过知识图谱的构建、查询或实体关系抽取？",
+    "你是否了解或使用过向量检索、知识图谱之外的其他知识增强技术？"
+   ],
+   "errors": []
+  },
+  {
+   "requirement_id": "R021",
+   "text": "参与过相关开源项目",
+   "category": "experience",
+   "importance": "preferred",
+   "source_quote": "参与过相关开源项目",
+   "verdict": "insufficient",
+   "processing_status": "ok",
+   "reason": "当前检索资料未提供参与开源项目的证据；候选中的项目为自建应用与实践项目，使用开源模型或工具不等同于参与开源项目。",
+   "evidence": [],
+   "missing_aspects": [
+    "是否实际参与过开源项目",
+    "在开源项目中的个人贡献形式与角色",
+    "开源项目名称、仓库或社区参与记录（如 PR、issue、提交、维护等）"
+   ],
+   "questions_for_user": [
+    "你是否参与过相关开源项目？若有，请说明项目名称和你的具体贡献。",
+    "你的贡献形式是代码提交、文档、issue 讨论、测试还是社区维护？",
+    "是否有可核验的仓库链接或贡献记录？"
+   ],
+   "errors": []
+  },
+  {
+   "requirement_id": "R022",
+   "text": "有技术博客、Agent应用作品展示",
+   "category": "experience",
+   "importance": "preferred",
+   "source_quote": "有技术博客、Agent应用作品展示",
+   "verdict": "related",
+   "processing_status": "ok",
+   "reason": "有本人搭建数据分析 Agent 的项目证据，但未提供技术博客，也未说明该 Agent 作品已对外展示或提供作品链接。",
+   "evidence": [
+    {
+     "candidate_id": "E001",
+     "quote": "我用 LangGraph 搭了一个数据分析 Agent：模型通过三个工具完成任务——查看表结构、执行只读 SQL 查询、生成图表。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 工具调用 Agent 设计",
+     "source": "data_agent.md",
+     "line_start": 10,
+     "line_end": 13,
+     "section_id": "bdbeaeb4643d7bfd",
+     "chunk_id": "e3fa94283fb1a0af",
+     "evidence_lines": []
+    },
+    {
+     "candidate_id": "E002",
+     "quote": "我让 Agent 在回答里说明用了哪条 SQL、查询到多少行数据，并用 pandas 和 matplotlib 生成折线图或柱状图，方便非技术人员核对结论。",
+     "project": "数据分析 Agent：自然语言查询销售数据",
+     "section": "我的工作 结果解释与可视化",
+     "source": "data_agent.md",
+     "line_start": 15,
+     "line_end": 17,
+     "section_id": "533b35d42869f4a4",
+     "chunk_id": "228f7abf21cec621",
+     "evidence_lines": []
+    }
+   ],
+   "missing_aspects": [
+    "技术博客证据（平台、链接或文章内容）",
+    "Agent 应用作品的公开展示证据（演示地址、作品集或公开仓库等）"
+   ],
+   "questions_for_user": [
+    "你是否有技术博客？如有，平台、链接和代表性文章是什么？",
+    "该数据分析 Agent 是否有公开演示地址、作品集页面或代码仓库链接可供展示？"
+   ],
+   "errors": []
+  }
+ ]
+}

@@ -1,0 +1,154 @@
+[
+ {
+  "id": "20261127-182632-c29de0",
+  "status": "done",
+  "decision": "pass",
+  "score": 35,
+  "label": "勉强",
+  "required_covered": 6,
+  "required_total": 12,
+  "counts": {
+   "direct": 3,
+   "related": 8,
+   "insufficient": 8,
+   "error": 0
+  },
+  "started_at": "2026-11-27T10:26:32.194202+00:00",
+  "finished_at": "2026-11-27T10:28:57.564116+00:00",
+  "posting_id": 8,
+  "posting_title": "AI研发工程师(J13366)"
+ },
+ {
+  "id": "20261127-182400-0ecb48",
+  "status": "done",
+  "decision": "pass",
+  "score": 49,
+  "label": "勉强",
+  "required_covered": 0,
+  "required_total": 0,
+  "counts": {
+   "direct": 6,
+   "related": 24,
+   "insufficient": 8,
+   "error": 0
+  },
+  "started_at": "2026-11-27T10:24:00.882539+00:00",
+  "finished_at": "2026-11-27T10:26:32.165906+00:00",
+  "posting_id": 7,
+  "posting_title": "财经线培训生-AI应用开发"
+ },
+ {
+  "id": "20261127-182258-f45dd5",
+  "status": "done",
+  "decision": "pass",
+  "score": 60,
+  "label": "可以投",
+  "required_covered": 14,
+  "required_total": 16,
+  "counts": {
+   "direct": 8,
+   "related": 11,
+   "insufficient": 6,
+   "error": 0
+  },
+  "started_at": "2026-11-27T10:22:58.768840+00:00",
+  "finished_at": "2026-11-27T10:24:00.856474+00:00",
+  "posting_id": 6,
+  "posting_title": "算法-数据科学方向"
+ },
+ {
+  "id": "20261127-181935-0238f3",
+  "status": "done",
+  "decision": "pass",
+  "score": 63,
+  "label": "可以投",
+  "required_covered": 15,
+  "required_total": 17,
+  "counts": {
+   "direct": 11,
+   "related": 15,
+   "insufficient": 8,
+   "error": 0
+  },
+  "started_at": "2026-11-27T10:19:35.688008+00:00",
+  "finished_at": "2026-11-27T10:22:58.742514+00:00",
+  "posting_id": 5,
+  "posting_title": "数据工程"
+ },
+ {
+  "id": "20261127-181639-bdf67c",
+  "status": "done",
+  "decision": "pass",
+  "score": 36,
+  "label": "勉强",
+  "required_covered": 9,
+  "required_total": 14,
+  "counts": {
+   "direct": 5,
+   "related": 15,
+   "insufficient": 13,
+   "error": 0
+  },
+  "started_at": "2026-11-27T10:16:39.624020+00:00",
+  "finished_at": "2026-11-27T10:19:35.660168+00:00",
+  "posting_id": 4,
+  "posting_title": "后台开发"
+ },
+ {
+  "id": "20261127-181340-756c01",
+  "status": "done",
+  "decision": "pass",
+  "score": 58,
+  "label": "可以投",
+  "required_covered": 15,
+  "required_total": 18,
+  "counts": {
+   "direct": 13,
+   "related": 15,
+   "insufficient": 7,
+   "error": 0
+  },
+  "started_at": "2026-11-27T10:13:40.938150+00:00",
+  "finished_at": "2026-11-27T10:16:39.595108+00:00",
+  "posting_id": 3,
+  "posting_title": "AI全栈工程师"
+ },
+ {
+  "id": "20261127-181206-59bd7b",
+  "status": "done",
+  "decision": "pass",
+  "score": 57,
+  "label": "可以投",
+  "required_covered": 15,
+  "required_total": 16,
+  "counts": {
+   "direct": 6,
+   "related": 17,
+   "insufficient": 4,
+   "error": 0
+  },
+  "started_at": "2026-11-27T10:12:06.083460+00:00",
+  "finished_at": "2026-11-27T10:13:40.908397+00:00",
+  "posting_id": 2,
+  "posting_title": "AI应用工程师"
+ },
+ {
+  "id": "20261127-181118-0dab6b",
+  "status": "done",
+  "decision": "pass",
+  "score": 61,
+  "label": "可以投",
+  "required_covered": 10,
+  "required_total": 11,
+  "counts": {
+   "direct": 6,
+   "related": 13,
+   "insufficient": 2,
+   "error": 0
+  },
+  "started_at": "2026-11-27T10:11:18.723306+00:00",
+  "finished_at": "2026-11-27T10:12:06.056267+00:00",
+  "posting_id": 1,
+  "posting_title": "Agent开发工程师"
+ }
+]

@@ -1,0 +1,17 @@
+[
+ {
+  "id": "c-20261127-181012-c7c1",
+  "mode": "agent",
+  "status": "done",
+  "stats": {
+   "searches": 34,
+   "seen": 300,
+   "saved": 9,
+   "duplicates": 0,
+   "errors": 0
+  },
+  "started_at": "2026-11-27T10:10:12.302753+00:00",
+  "finished_at": "2026-11-27T10:11:18.680856+00:00",
+  "error": ""
+ }
+]

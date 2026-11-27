@@ -1,0 +1,9 @@
+{
+ "ok": true,
+ "provider": "deepseek",
+ "label": "DeepSeek",
+ "model": "deepseek-flash",
+ "host": "api.deepseek.com",
+ "cloud": true,
+ "privacy": "云端 API DeepSeek · deepseek-flash：JD、求职画像和经历库片段会发送到 api.deepseek.com；该服务商的数据保留政策以其条款为准"
+}

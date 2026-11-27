@@ -1,0 +1,90 @@
+{
+ "id": 9,
+ "title": "AI全栈开发工程师（深圳）(J20349)",
+ "company": "传音控股",
+ "company_key": "transsion",
+ "city": "深圳",
+ "channel": "campus",
+ "source": "zhiye:transsion",
+ "url": "https://transsion.zhiye.com/campus/detail?jobAdId=46d31168-d3a7-4558-b823-455945f5bcd8",
+ "status": "new",
+ "posted_at": "2026-08-21",
+ "created_at": "2026-11-27T10:11:15.944091+00:00",
+ "latest_run": null,
+ "jd_text": "AI全栈开发工程师（深圳）(J20349)\n\n公司：传音控股\n工作地点：广东省·深圳市\n\n工作职责：\n1.参与公司业务系统中AI应用功能的设计与开发，包括大模型集成、知识检索增强（RAG）、智能体（Agent）等前沿方向；\n2.承担全栈开发任务，完成接口设计、页面实现、服务联调、测试上线等全流程工作； \n3.深入探索AI与Agent技术在真实业务场景中的落地价值，持续跟踪技术发展动态，并在团队内推动新技术的试点与应用。\n\n任职要求：\n1.硕士及以上学历，计算机、人工智能、软件工程等相关专业，2027年应届毕业生；\n2.有企业级应用或中后台系统开发实习/项目经验，具备一定的前后端协同开发能力；\n3.熟悉至少一种前端框架（React/Vue）及TypeScript；熟悉Java、Python或Node.js等后端语言之一；\n4.了解API设计、数据库（SQL/NoSQL）、缓存、消息队列等常用技术组件的基本原理和使用场景；\n5.对大模型应用开发有浓厚兴趣，了解LangChain、RAG、Prompt工程、向量数据库等概念；有知识检索、智能问答、智能体等AI项目落地或竞赛经验者优先；\n6.具备良好的问题定位和调试能力，对代码质量和工程规范有基本认知；\n7.积极主动，善于协作，具备快速学习能力和强烈的交付责任心。\n",
+ "company_detail": {
+  "key": "transsion",
+  "name": "传音控股",
+  "portal": "transsion.zhiye.com/campus",
+  "programs": [
+   {
+    "title": "2027 校招",
+    "window_start": "2026-08-01",
+    "window_end": "2027-07-31",
+    "window_text": "2026 年 8 月–2027 年 7 月",
+    "basis": "testamur",
+    "status_text": "岗位持续上新；第三方写 11-29 截止",
+    "deadline": "2026-11-29",
+    "deadline_text": "11-29（第三方）",
+    "roles": [
+     "MLOps",
+     "AI SRE",
+     "GPU 基础设施",
+     "软件",
+     "数据"
+    ],
+    "cities": [
+     "深圳",
+     "重庆"
+    ],
+    "requirements": [
+     "本科及以上"
+    ],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "南开就业网",
+      "url": "https://career.nankai.edu.cn/correcruit/content/id/119756.html"
+     }
+    ],
+    "verdict": "ineligible",
+    "verdict_label": "不符合",
+    "verdict_reason": "学位证日期 2026-06 早于窗口 2026-08-01 至 2027-07-31"
+   },
+   {
+    "title": "TAIG-AI 计划",
+    "window_start": "2023-01-01",
+    "window_end": "2027-12-31",
+    "window_text": "TAIG-AI 计划接受 2023–2027 届",
+    "basis": "testamur",
+    "status_text": "新上了大模型训推平台（MLOps）、AI SRE、软件开发岗",
+    "deadline": "2026-11-29",
+    "deadline_text": "11-29（第三方）",
+    "roles": [
+     "大模型训推平台（MLOps）",
+     "AI SRE",
+     "软件开发"
+    ],
+    "cities": [
+     "深圳",
+     "重庆"
+    ],
+    "requirements": [],
+    "apply_limit": "",
+    "confidence": "third_party",
+    "sources": [
+     {
+      "label": "南开就业网",
+      "url": "https://career.nankai.edu.cn/correcruit/content/id/119756.html"
+     }
+    ],
+    "verdict": "eligible",
+    "verdict_label": "符合",
+    "verdict_reason": "学位证日期 2026-06 在窗口 2023-01-01 至 2027-12-31内"
+   }
+  ]
+ },
+ "runs": [],
+ "latest": null
+}
